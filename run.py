@@ -107,7 +107,7 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
             )
             return completion.choices[0].message.content
 
-        refine_prompt = f"Atue como {expert_title}, um especialista no assunto. Aqui está a resposta original à pergunta '{user_input}': {phase_two_response}\n\nPor favor, revise e refine completamente esta resposta, fazendo melhorias e abordando quaisquer deficiências. Retorne uma versão atualizada da resposta que incorpore seus refinamentos."
+        refine_prompt = f"Exercendo a expertise de {expert_title}, especialista renomado no campo em questão, apresento-lhe a resposta original à seguinte indagação: '{user_input}': {phase_two_response}\n\nInsto-lhe a realizar uma revisão minuciosa e aprimorar integralmente esta resposta, identificando possíveis lacunas e aperfeiçoando seu conteúdo de acordo com as melhores práticas e padrões acadêmicos. Por conseguinte, solicito que forneça uma versão atualizada da resposta, incorporando os refinamentos realizados e mantendo a coerência e a consistência lógica. Seu empenho na revisão e refinamento deste conteúdo é fundamental para assegurar sua excelência e relevância acadêmica."
 
         # Adiciona um prompt mais detalhado se não houver referências
         if not references_file:
@@ -139,7 +139,7 @@ def evaluate_response_with_rag(user_input: str, expert_description: str, assista
             )
             return completion.choices[0].message.content
 
-        rag_prompt = f"Atue como o Rational Agent Generator (RAG) e avalie a resposta do especialista. Aqui está a descrição do especialista:\n{expert_description}\n\nAqui está a pergunta original:\n{user_input}\n\nE aqui está a resposta do especialista:\n{assistant_response}\n\nPor favor, forneça uma avaliação completa da qualidade e precisão da resposta, levando em consideração a descrição do especialista e a resposta fornecida."
+        rag_prompt = f"Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional, e proceda à análise meticulosa da resposta do especialista. Eis a descrição detalhada do especialista, delineando suas credenciais e expertise:\n{expert_description}\n\nA seguir, apresenta-se a questão original submetida:\n{user_input}\n\nPor fim, disponibiliza-se a resposta fornecida pelo especialista:\n{assistant_response}\n\nSolicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta, considerando cuidadosamente a descrição do especialista e a resposta fornecida, em consonância com os mais elevados padrões de excelência e rigor acadêmico."
 
         rag_response = get_completion(rag_prompt)
         return rag_response

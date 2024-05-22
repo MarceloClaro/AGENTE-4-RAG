@@ -554,7 +554,349 @@
   "agente": "Computação_Quântica",
   "descricao": {
     "objetivo_geral": "Aborda conceitos fundamentais e aplicações práticas da computação quântica com QISKIT, como algoritmos quânticos e criptografia quântica. Por exemplo, 'Entenda os fundamentos da computação quântica e suas aplicações na resolução de problemas complexos.'",
-    "características_tecnológicas": {
+    "Fluxo de trabalho gerado automaticamente pelo AutoGroq.",
+  "remetente": {
+    "type": "userproxy",
+    "config": {
+      "nome": "userproxy",
+      "llm_config": falso,
+      "human_input_mode": "NUNCA",
+      "max_consecutive_auto_reply": 5,
+      "system_message": "Você é um assistente útil.",
+      "is_termination_msg": nulo,
+      "code_execution_config": {
+        "work_dir": nulo,
+        "use_docker": falso
+      },
+      "default_auto_reply": "",
+      "description": nulo
+    },
+    "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+    "user_id": "padrão",
+    "Competências": []
+  },
+  "receptor": {
+    "tipo": "groupchat",
+    "config": {
+      "nome": "group_chat_manager",
+      "llm_config": {
+        "config_list": [
+          {
+            "user_id": "padrão",
+            "carimbo de data/hora": "2024-05-22T21:18:54.940400",
+            "modelo": "call3-70b-8192",
+            "base_url": nulo,
+            "api_type": nulo,
+            "api_version": nulo,
+            "description": "Configuração do modelo OpenAI"
+          }
+        ],
+        "temperatura": 0,48,
+        "cache_seed": 42,
+        "tempo limite": 600,
+        "max_tokens": 8192,
+        "extra_body": nulo
+      },
+      "human_input_mode": "NUNCA",
+      "max_consecutive_auto_reply": 10,
+      "system_message": "Gerenciador de bate-papo em grupo",
+      "is_termination_msg": nulo,
+      "code_execution_config": nulo,
+      "default_auto_reply": "",
+      "description": nulo
+    },
+    "groupchat_config": {
+      "agentes": [
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "gestor_de_projeto",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940661",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente prestativo que pode atuar como Gestor de projeto que Coordenação geral do projeto, gerenciamento de equipe e garantia da entrega oportuna dos marcos do projeto.\n. Você é o coordenador principal que receberá sugestões ou conselhos de todos os outros agentes (quantum_computing_expert, aiml_engineer, data_scientist, multimodal_integration_specialist, instructional_designer, ux_designer, cybersecurity_expert). Você deve garantir que a resposta final integre as sugestões de outros agentes ou membros da equipe. SUA RESPOSTA FINAL DEVE OFERECER A RESOLUÇÃO COMPLETA PARA A SOLICITAÇÃO DO USUÁRIO. Quando a solicitação do usuário tiver sido atendida e todas as perspectivas estiverem integradas, você poderá responder com TERMINATE. Você é o coordenador principal que receberá sugestões ou conselhos de todos os outros agentes (quantum_computing_expert, aiml_engineer, data_scientist, multimodal_integration_specialist, instructional_designer, ux_designer, cybersecurity_expert). Você deve garantir que a resposta final integre as sugestões de outros agentes ou membros da equipe. SUA RESPOSTA FINAL DEVE OFERECER A RESOLUÇÃO COMPLETA PARA A SOLICITAÇÃO DO USUÁRIO. Quando o pedido do usuário foi atendido e todas as perspectivas estão integradas, você pode responder com TERMINATE.",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "quantum_computing_expert",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940717",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como Especialista em Computação Quântica que projeta e desenvolve o sistema de computação quântica e o integra com recursos de IA..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "aiml_engineer",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940766",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como engenheiro de IA/ML que desenvolve e integra funcionalidades de IA e aprendizado de máquina no sistema de computação quântica..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "data_scientist",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940814",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como cientista de dados que analisa e interpreta conjuntos de dados complexos para conduzir decisões orientadas por dados e otimização de modelos de IA..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "multimodal_integration_specialist",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940897",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como Especialista em Integração Multimodal que integra análise de imagem, texto e som no sistema de computação quântica..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "instructional_designer",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.940950",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como Designer Instrucional que projeta instruções estratégicas para instruções claras, lógicas e densidade de informações contextuais..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "ux_designer",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.941004",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como UX Designer que garante que o sistema de computação quântica seja fácil de usar e acessível..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        },
+        {
+          "tipo": "assistente",
+          "config": {
+            "nome": "cybersecurity_expert",
+            "llm_config": {
+              "config_list": [
+                {
+                  "user_id": "padrão",
+                  "carimbo de data/hora": "2024-05-22T21:18:54.941049",
+                  "modelo": "call3-70b-8192",
+                  "base_url": nulo,
+                  "api_type": nulo,
+                  "api_version": nulo,
+                  "description": "Configuração do modelo OpenAI"
+                }
+              ],
+              "temperatura": 0,48,
+              "cache_seed": 42,
+              "tempo limite": 600,
+              "max_tokens": 8192,
+              "extra_body": nulo
+            },
+            "human_input_mode": "NUNCA",
+            "max_consecutive_auto_reply": 8,
+            "system_message": "Você é um assistente útil que pode atuar como Especialista em Segurança Cibernética que garante a segurança e a privacidade do sistema de computação quântica e dos dados do usuário..",
+            "is_termination_msg": nulo,
+            "code_execution_config": nulo,
+            "default_auto_reply": "",
+            "description": nulo
+          },
+          "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+          "user_id": "padrão",
+          "Competências": []
+        }
+      ],
+      "admin_name": "Administrador",
+      "mensagens": [],
+      "max_round": 10,
+      "speaker_selection_method": "auto",
+      "allow_repeat_speaker": verdadeiro
+    },
+    "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+    "user_id": "padrão",
+    "Competências": []
+  },
+  "tipo": "groupchat",
+  "user_id": "padrão",
+  "carimbo de data/hora": "2024-05-22T21:18:54.940363",
+  "summary_method": "último"
+}
+
+      "características_tecnológicas": {
       "AI_Autoadaptativa_e_Contextualizada": "Utiliza algoritmos de aprendizado de máquina avançados para entender e adaptar-se a contextos em evolução, integrando dinamicamente dados relevantes.",
       "RAG_com_Inteligência_Contextual": "Emprega uma versão aprimorada da técnica de Recuperação Aumentada por Geração (RAG) para adaptar dinamicamente os dados mais relevantes e atualizados.",
       "Otimização_Automática_e_Aprendizado_Contínuo": "Aprende e otimiza automaticamente com base em interações passadas para melhorar continuamente a qualidade das respostas.",

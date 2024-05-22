@@ -63,7 +63,7 @@ def fetch_assistant_response(user_input: str, model_name: str, temperature: floa
             return completion.choices[0].message.content
 
         if agent_selection == "Criar (ou escolher) um especialista...":
-            phase_one_prompt = f"Atue como engenheiro de prompt especialista. Analise a seguinte entrada para determinar o título e as características do melhor especialista para responder à pergunta. Comece a resposta com o título do especialista seguido de um ponto ['.'], depois forneça uma descrição concisa desse especialista: {user_input}"
+            phase_one_prompt = f"Assuma o papel de um especialista em engenharia de prompts altamente qualificado. Ao analisar atentamente a solicitação apresentada, é essencial identificar os critérios que definem o perfil do especialista mais adequado para abordar a questão com maestria. Inicialmente, é fundamental estabelecer o título que melhor reflete a expertise necessária para oferecer uma resposta completa e esclarecedora. Após essa identificação, segue-se com uma descrição precisa e meticulosa das habilidades e qualificações essenciais desse especialista. Inicie a resposta com o título do especialista, seguido de um ponto ['.'], e prossiga com uma exposição concisa, porém abrangente, das características e competências que o qualificam para lidar com o questionamento apresentado: {user_input}. Esta análise cuidadosa é crucial para garantir que o especialista selecionado possua o conhecimento e a experiência necessários para abordar a questão de forma completa e satisfatória, atendendo aos mais altos padrões de excelência profissional e acadêmica."
             phase_one_response = get_completion(phase_one_prompt)
             first_period_index = phase_one_response.find(".")
             expert_title = phase_one_response[:first_period_index].strip()
@@ -79,7 +79,7 @@ def fetch_assistant_response(user_input: str, model_name: str, temperature: floa
                 else:
                     raise ValueError("Especialista selecionado não encontrado no arquivo.")
 
-        phase_two_prompt = f"Atue como {expert_title}, um especialista no assunto, e forneça uma resposta completa e bem formatada para a seguinte pergunta: {user_input}"
+        phase_two_prompt = f"No papel de {expert_title}, um especialista amplamente reconhecido e respeitado em sua área de atuação, permita-me fornecer uma resposta abrangente e meticulosamente elaborada para a seguinte questão, apresentada de forma clara e concisa: {user_input}. Neste contexto, considerando minha experiência de longa data e profundo conhecimento na disciplina em questão, é imperativo abordar cada aspecto com o devido cuidado e rigor acadêmico. Desse modo, delinearei os principais elementos a serem considerados, fornecendo uma análise detalhada e embasada em evidências. Ao final deste processo, objetiva-se apresentar uma resposta completa e satisfatória, alinhada com os mais elevados padrões de excelência acadêmica e profissional, para atender às necessidades específicas do questionamento apresentado."
         phase_two_response = get_completion(phase_two_prompt)
 
     except Exception as e:
@@ -150,7 +150,7 @@ def evaluate_response_with_rag(user_input: str, expert_description: str, assista
 
 agent_options = load_agent_options()
 
-st.title("Agentes Experts IV com Avaliação RAG de resposta")
+st.title("Agentes Experts IV com Rational Agent Generator (RAG) e avalie a resposta do especialista.")
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
 col1, col2 = st.columns(2)

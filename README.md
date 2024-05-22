@@ -2,6 +2,8 @@
 
 Este é um aplicativo web desenvolvido com Streamlit, uma biblioteca Python para criar aplicativos web interativos. O aplicativo é projetado para fornecer respostas especializadas a perguntas do usuário, utilizando modelos de linguagem treinados por meio da API Groq.
 
+(AGENTE 4 RAG)[https://agente4.streamlit.app/]
+
 ## Importações
 
 O código começa importando as bibliotecas necessárias:

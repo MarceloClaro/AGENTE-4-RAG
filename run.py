@@ -120,6 +120,34 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
         st.error(f"Ocorreu um erro durante o refinamento: {e}")
         return ""
 
+def evaluate_response_with_rag(user_input: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, groq_api_key: str) -> str:
+    try:
+        client = Groq(api_key=groq_api_key)
+
+        def get_completion(prompt: str) -> str:
+            completion = client.chat.completions.create(
+                messages=[
+                    {"role": "system", "content": "Você é um assistente útil."},
+                    {"role": "user", "content": prompt},
+                ],
+                model=model_name,
+                temperature=temperature,
+                max_tokens=get_max_tokens(model_name),
+                top_p=1,
+                stop=None,
+                stream=False
+            )
+            return completion.choices[0].message.content
+
+        rag_prompt = f"Atue como o Rational Agent Generator (RAG) e avalie a resposta do especialista. Aqui está a descrição do especialista:\n{expert_description}\n\nAqui está a pergunta original:\n{user_input}\n\nE aqui está a resposta do especialista:\n{assistant_response}\n\nPor favor, forneça uma avaliação completa da qualidade e precisão da resposta, levando em consideração a descrição do especialista e a resposta fornecida."
+
+        rag_response = get_completion(rag_prompt)
+        return rag_response
+
+    except Exception as e:
+        st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")
+        return ""
+
 agent_options = load_agent_options()
 
 st.title("Agentes Experts III")
@@ -138,6 +166,7 @@ with col1:
 
     fetch_clicked = st.button("Buscar Resposta")
     refine_clicked = st.button("Refinar Resposta")
+    evaluate_clicked = st.button("Avaliar Resposta com RAG")
     refresh_clicked = st.button("Atualizar")
 
     references_file = st.file_uploader("Upload do arquivo JSON com referências (opcional)", type="json", key="arquivo_referencias")
@@ -151,6 +180,8 @@ with col2:
         st.session_state.resposta_refinada = ""
     if 'resposta_original' not in st.session_state:
         st.session_state.resposta_original = ""
+    if 'rag_resposta' not in st.session_state:
+        st.session_state.rag_resposta = ""
 
     container_saida = st.container()
 
@@ -167,11 +198,19 @@ with col2:
         else:
             st.warning("Por favor, busque uma resposta antes de refinar.")
 
+    if evaluate_clicked:
+        if st.session_state.resposta_assistente and st.session_state.descricao_especialista_ideal:
+            st.session_state.rag_resposta = evaluate_response_with_rag(user_input, st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente, model_name, temperature, groq_api_key)
+        else:
+            st.warning("Por favor, busque uma resposta e forneça uma descrição do especialista antes de avaliar com RAG.")
+
     with container_saida:
         st.write(f"**Análise do Especialista:**\n{st.session_state.descricao_especialista_ideal}")
         st.write(f"\n**Resposta do Especialista:**\n{st.session_state.resposta_original}")
         if st.session_state.resposta_refinada:
             st.write(f"\n**Resposta Refinada:**\n{st.session_state.resposta_refinada}")
+        if st.session_state.rag_resposta:
+            st.write(f"\n**Avaliação com RAG:**\n{st.session_state.rag_resposta}")
 
 if refresh_clicked:
     st.session_state.clear()
@@ -187,7 +226,8 @@ st.sidebar.write("4. Ajuste o nível de criatividade do modelo com o controle de
 st.sidebar.write("5. Faça o upload de um arquivo JSON com referências para a resposta, se disponível. Isso ajudará o especialista a fornecer uma resposta mais fundamentada.")
 st.sidebar.write("6. Clique em 'Buscar Resposta' para obter a resposta inicial do especialista com base na sua solicitação e nas configurações selecionadas.")
 st.sidebar.write("7. Se necessário, refine a resposta com base nas referências fornecidas. Clique em 'Refinar Resposta' para obter uma resposta mais aprimorada.")
-st.sidebar.write("8. Visualize a análise do especialista, a resposta original e a resposta refinada para avaliar a qualidade e precisão da resposta.")
+st.sidebar.write("8. Avalie a resposta com o Rational Agent Generator (RAG) para determinar a qualidade e precisão da resposta. Clique em 'Avaliar Resposta com RAG' para iniciar a avaliação.")
+st.sidebar.write("9. Visualize a análise do especialista, a resposta original, a resposta refinada (se houver) e a avaliação com RAG para avaliar a qualidade e precisão da resposta.")
 
 st.sidebar.image("eu.ico", width=100)
 st.sidebar.write("""

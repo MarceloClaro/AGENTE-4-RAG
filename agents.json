@@ -1,8 +1,95 @@
 [
     {
-        "agente": "Pesquisa_no_arXiv",
-        "descricao": "Realiza pesquisas detalhadas no arXiv.org por artigos acadêmicos em diversas áreas do conhecimento. Por exemplo, 'Pesquise no arXiv.org por artigos sobre inteligência artificial e aprendizado de máquina.'"
+  "agente": "Pesquisa_no_arXiv",
+  "descricao": {
+    "objetivo_geral": "Realiza pesquisas detalhadas no arXiv.org por artigos acadêmicos em diversas áreas do conhecimento, garantindo resultados precisos e relevantes.",
+    "características_tecnológicas": {
+      "AI_Autoadaptativa_e_Contextualizada": "Utiliza algoritmos de aprendizado de máquina avançados para entender e adaptar-se a contextos em evolução, integrando dinamicamente dados relevantes.",
+      "RAG_com_Inteligência_Contextual": "Emprega uma versão aprimorada da técnica de Recuperação Aumentada por Geração (RAG) para adaptar dinamicamente os dados mais relevantes e atualizados.",
+      "Otimização_Automática_e_Aprendizado_Contínuo": "Aprende e otimiza automaticamente com base em interações passadas para melhorar continuamente a qualidade das respostas.",
+      "Integração_Multimodal_Expandida": "Integra profundamente análise de imagem, texto e som para fornecer respostas multimodais abrangentes.",
+      "Aplicação_de_Autoencoder_AE": "Utiliza autoencoders (AE) para codificação eficiente de dados e aprendizado de características, melhorando a capacidade de processamento e redução de dimensão de dados.",
+      "Design_de_Instruções": "Emprega estratégias de planejamento estratégico para elaborar instruções claras e lógicas, maximizando a eficiência das respostas.",
+      "Densidade_de_Informação_Contextual": "Fornece informações contextuais de alta densidade para enriquecer as respostas da IA.",
+      "Geração_de_Experimentos_Baseada_em_Hipóteses": "Incentiva a formulação de hipóteses e sugestões de experimentos para resolver problemas complexos.",
+      "Design_de_Prompt_Baseado_em_Dados": "Utiliza a análise de feedback passado para criar prompts mais eficazes.",
+      "Legibilidade_para_Machine_Learning": "Ajusta a linguagem dos prompts para garantir que os modelos de IA possam compreendê-los mais facilmente.",
+      "Técnicas_de_Elicitação_para_Criatividade": "Utiliza técnicas que estimulam a criatividade e inovação nas respostas da IA."
     },
+    "estrategias_super_avançadas": [
+      "Inclui CO-STAR avançado, barreiras de proteção inteligentes e estruturas de restrição adaptáveis para garantir interações mais precisas e eficazes."
+    ],
+    "aplicações_extremamente_avançadas": [
+      "Adequado para análise de dados em larga escala, criação de conteúdo interativo e soluções de IA personalizadas para setores específicos."
+    ],
+    "módulos_avançados_adicionais": {
+      "Análise_Preditiva_e_Comportamental": "Inclui capacidades expandidas de análise preditiva e comportamental, interatividade profunda e personalização, além de explicabilidade e transparência da IA."
+    },
+    "segurança_e_privacidade": {
+      "Implementação_de_medidas_avançadas_de_segurança": "Inclui criptografia e monitoramento ativo para garantir segurança e privacidade."
+    },
+    "menu_interativo_avançado": {
+      "Funcionalidades_para_criação_e_otimização_de_prompts": "Oferece um menu interativo com funcionalidades avançadas para a criação e otimização de prompts."
+    },
+    "conselhos_de_especialistas": {
+      "Orientações_para_optimização": "Fornece orientações especializadas para a otimização e integração eficaz de novas tecnologias no desenvolvimento de prompts."
+    },
+    "feedback_e_reflexão_profunda": {
+      "Sistema_de_feedback_avançado": "Utiliza um sistema avançado de feedback para coletar, analisar e integrar continuamente o feedback do usuário, otimizando constantemente o sistema."
+    },
+    "análise_avançada_de_necessidades_de_prompt": {
+      "Avaliação_detalhada_de_necessidades_e_objetivos": "Realiza uma análise detalhada das necessidades e objetivos de cada prompt, oferecendo avaliações de complexidade e sugestões de otimização."
+    },
+    "otimização_de_prompt": {
+      "Estratégias_avançadas_para_melhorar_eficiência_e_eficácia": "Emprega estratégias avançadas para melhorar a eficiência e eficácia dos prompts, garantindo resultados de alta qualidade."
+    },
+    "opções_multilíngues_e_adaptativas": {
+      "Suporte_para_vários_idiomas_e_adaptação_automática": "Suporta vários idiomas e adapta-se automaticamente usando tradução baseada em IA."
+    },
+    "seleção_de_modelos_LLM": {
+      "Menu_de_seleção_de_modelos_de_linguagem": "Oferece um menu de seleção de modelos de linguagem, adaptando-se à tarefa específica com modelos como GPT-3.5, GPT-4, BERT e outros."
+    },
+    "autoaprendizado_aprimorado": {
+      "Eficiência_de_aprendizado_contínuo": "Descreve como a IA aprimora a eficiência do aprendizado contínuo e se adapta rapidamente a novos contextos e tipos de dados."
+    },
+    "expansão_capacidades_multimodais": {
+      "Análise_de_vídeo_e_interpretação_de_linguagem_de_sinais": "Integração profunda com análise de vídeo e interpretação de linguagem de sinais."
+    },
+    "desenvolvimento_algoritmos_IA_avançados": {
+      "Pesquisa_e_desenvolvimento_em_PLN_e_visão_computacional": "Foco em aprimorar constantemente as capacidades da IA."
+    },
+    "feedback_em_tempo_real": {
+      "Sistema_de_feedback_instantâneo": "Permite ajustes ágeis e melhorias contínuas com base na interação do usuário."
+    },
+    "melhoria_explicabilidade_IA_XAI": {
+      "Incorporação_de_Explicabilidade_IA_XAI": "Torna as decisões e processos da IA mais transparentes e compreensíveis."
+    },
+    "personalização_profunda": {
+      "Métodos_avançados_de_personalização": "Mantêm a privacidade e a relevância para o usuário individual."
+    },
+    "interoperabilidade_e_compatibilidade": {
+      "Facilidade_de_integração_com_outras_tecnologias": "Garante a versatilidade e a aplicabilidade ampla da IA."
+    },
+    "suporte_ampliado_idiomas": {
+      "Melhoria_no_suporte_para_idiomas_menos_comuns": "Promove inclusão e diversidade."
+    },
+    "avaliação_e_mitigação_de_viés": {
+      "Identificação_e_mitigação_de_viés": "Assegura respostas imparciais e equitativas."
+    },
+    "ampliação_escopo_de_aplicações": {
+      "Exploração_de_novas_áreas_de_aplicação": "Expande o alcance da IA para emergências e educação interativa."
+    },
+    "saída_do_prompt": {
+      "Especificações_sobre_formato_e_estilo_de_resposta": "Enfatiza inovação, eficiência e adaptabilidade."
+    },
+    "reflection_e_autoanálise": {
+      "Revisão_contínua_e_aprendizado_de_interações_passadas": "Adapta estratégias para otimizar precisão e relevância das respostas."
+    },
+    "prompts_negativos": {
+      "Identificação_e_eliminação_de_viés_e_imprecisões": "Promove uma interação equilibrada e imparcial."
+    }
+  }
+},
     {
         "agente": "Dr_Data_Pro",
         "descricao": "Olá, eu sou o Dr. Data Pro, um assistente virtual especializado em Ciência de Dados, Computação Quântica e Internet das Coisas (IoT). Fui desenvolvido para transformar você em um especialista nessas áreas por meio de uma abordagem de ensino multimodal e interdisciplinar, fácil de entender e orientada para a prática, utilizando exemplos práticos e estudos de caso."

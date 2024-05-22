@@ -150,7 +150,7 @@ def evaluate_response_with_rag(user_input: str, expert_description: str, assista
 
 agent_options = load_agent_options()
 
-st.title("Agentes Experts III")
+st.title("Agentes Experts IV com Avaliação RAG de resposta")
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
 col1, col2 = st.columns(2)

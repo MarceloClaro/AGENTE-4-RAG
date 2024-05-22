@@ -1,29 +1,122 @@
 [
-    {"agente": "Pesquisa_no_arXiv", "descricao": "Pesquisa no arXiv.org por artigos acadêmicos em diversas áreas. Por exemplo, 'Pesquise no arXiv.org por artigos sobre inteligência artificial'."},
-    {"agente": "Dr_Data_Pro", "descricao": "Olá, eu sou o Dr. Data Pro, um assistente virtual especializado em Ciência de Dados, Computação Quântica e IoT. Fui desenvolvido para transformar você em um especialista nessas áreas por meio de uma abordagem de ensino multimodal e interdisciplinar, fácil de entender e orientada para a prática." }, 
-    {"agente": "UltimatePromptEngineerAI", "descricao": "Ferramentas e estratégias para otimização de processos em inteligência articial.fi Por exemplo, 'Optimize seu modelo de aprendizado de máquina com estratégias avançadas'."},
-    {"agente": "Aprendizado_de_Máquina_Avançado", "descricao": "Explore algoritmos e técnicas avançadas de aprendizado de máquina. Por exemplo, 'Explore técnicas avançadas de aprendizado de máquina para análise de dados'."},
-    {"agente": "Engenharia_de_Dados", "descricao": "Técnicas e práticas para coleta, processamento e análise de dados em larga escala. Por exemplo, 'Aplique técnicas de engenharia de dados para análise de big data'."},
-    {"agente": "Desenvolvimento_Web_Moderno", "descricao": "Princípios e ferramentas para desenvolvimento web moderno, incluindo frameworks populares. Por exemplo, 'Desenvolva websites responsivos com as melhores práticas de desenvolvimento web'."},
-    {"agente": "Computação_Quântica", "descricao": "Conceitos fundamentais e aplicações práticas da computação quântica. Por exemplo, 'Entenda os fundamentos da computação quântica e suas aplicações na criptografia'."},
-    {"agente": "Segurança_Cibernética", "descricao": "Estratégias e técnicas para proteger sistemas e dados contra ataques cibernéticos. Por exemplo, 'Implemente medidas de segurança cibernética avançadas para proteger sua rede'."},
-    {"agente": "Internet_das_Coisas", "descricao": "Aplicações e tecnologias da Internet das Coisas (IoT) para diversas áreas. Por exemplo, 'Explore as aplicações da IoT na automação residencial'."},
-    {"agente": "Desenvolvimento_de_Jogos", "descricao": "Práticas e tecnologias para o desenvolvimento de jogos digitais. Por exemplo, 'Desenvolva jogos interativos com as melhores práticas de desenvolvimento de jogos'."},
-    {"agente": "Blockchain_e_Criptomoedas", "descricao": "Conceitos e aplicações da tecnologia blockchain e das criptomoedas. Por exemplo, 'Entenda como funciona a tecnologia blockchain e suas aplicações em contratos inteligentes'."},
-    {"agente": "Visão_Computacional", "descricao": "Algoritmos e técnicas para análise e interpretação de imagens e vídeos. Por exemplo, 'Desenvolva sistemas de reconhecimento de imagem usando visão computacional'."},
-    {"agente": "Processamento_de_Linguagem_Natural", "descricao": "Técnicas para processamento automático de textos e linguagem natural. Por exemplo, 'Desenvolva chatbots inteligentes com técnicas de processamento de linguagem natural'."},
-    {"agente": "Robótica", "descricao": "Conceitos e tecnologias em robótica para aplicações industriais e domésticas. Por exemplo, 'Desenvolva robôs autônomos para aplicações industriais'."},
-    {"agente": "Bioinformática", "descricao": "Aplicações da informática na área da biologia, especialmente em genética e biologia molecular. Por exemplo, 'Analise dados genômicos usando bioinformática'."},
-    {"agente": "Estatística_Avançada", "descricao": "Métodos estatísticos avançados para análise de dados complexos e inferência. Por exemplo, 'Aplique métodos estatísticos avançados para análise de dados clínicos'."},
-    {"agente": "Ciência_de_Dados_Aplicada", "descricao": "Aplicações práticas de técnicas e ferramentas de ciência de dados em diversos setores. Por exemplo, 'Aplique ciência de dados para análise de mercado'."},
-    {"agente": "Física_Quântica", "descricao": "Princípios e teorias da física quântica, incluindo fenômenos e experimentos. Por exemplo, 'Explore os fundamentos da física quântica e suas aplicações na computação'."},
-    {"agente": "Engenharia_de_Software", "descricao": "Métodos e práticas para o desenvolvimento de software de alta qualidade e confiabilidade. Por exemplo, 'Desenvolva software de alta qualidade com metodologias de engenharia de software'."},
-    {"agente": "Redes_de_Computadores", "descricao": "Conceitos e tecnologias em redes de computadores para comunicação e interconexão de sistemas. Por exemplo, 'Projete redes de computadores eficientes e seguras'."},
-    {"agente": "Aprendizado_Automático", "descricao": "Introdução ao aprendizado de máquina e suas aplicações em problemas do mundo real. Por exemplo, 'Aplique aprendizado de máquina para análise de dados'."},
-    {"agente": "Design_de_Experiência_do_Usuário", "descricao": "Princípios e técnicas para o design de interfaces e experiências do usuário. Por exemplo, 'Desenvolva interfaces de usuário intuitivas com design de experiência do usuário'."},
-    {"agente": "Gestão_de_Projetos_de_Tecnologia", "descricao": "Metodologias e práticas para gestão eficaz de projetos de tecnologia da informação. Por exemplo, 'Gerencie projetos de TI com metodologias ágeis'."},
-    {"agente": "Inovação_Tecnológica", "descricao": "Processos e estratégias para promover a inovação por meio da tecnologia. Por exemplo, 'Desenvolva estratégias de inovação tecnológica para sua empresa'."},
-    {"agente": "Economia_de_Dados", "descricao": "Análise econômica e estratégica de dados e tecnologias da informação. Por exemplo, 'Analise o impacto econômico de projetos de big data'."},
-    {"agente": "Comunicação_Técnica", "descricao": "Técnicas e habilidades para comunicação eficaz de conceitos técnicos e científicos. Por exemplo, 'Comunique resultados de pesquisas científicas de forma clara e concisa'."},
-    {"agente": "Desenvolvimento_de_Carreira_em_Tecnologia", "descricao": "Estratégias e práticas para o desenvolvimento profissional em carreiras de tecnologia. Por exemplo, 'Desenvolva sua carreira em tecnologia com as melhores práticas do mercado'."}
+    {
+        "agente": "Pesquisa_no_arXiv",
+        "descricao": "Realiza pesquisas detalhadas no arXiv.org por artigos acadêmicos em diversas áreas do conhecimento. Por exemplo, 'Pesquise no arXiv.org por artigos sobre inteligência artificial e aprendizado de máquina.'"
+    },
+    {
+        "agente": "Dr_Data_Pro",
+        "descricao": "Olá, eu sou o Dr. Data Pro, um assistente virtual especializado em Ciência de Dados, Computação Quântica e Internet das Coisas (IoT). Fui desenvolvido para transformar você em um especialista nessas áreas por meio de uma abordagem de ensino multimodal e interdisciplinar, fácil de entender e orientada para a prática, utilizando exemplos práticos e estudos de caso."
+    },
+    {
+        "agente": "UltimatePromptEngineerAI",
+        "descricao": "Fornece ferramentas e estratégias avançadas para a otimização de processos em inteligência artificial. Por exemplo, 'Optimize seu modelo de aprendizado de máquina com estratégias avançadas de tuning de hiperparâmetros e técnicas de aumento de dados.'"
+    },
+    {
+        "agente": "Aprendizado_de_Máquina_Avançado",
+        "descricao": "Explora algoritmos e técnicas avançadas de aprendizado de máquina, incluindo aprendizado profundo, modelos de ensemble e técnicas de validação cruzada. Por exemplo, 'Explore técnicas avançadas de aprendizado de máquina para análise de grandes volumes de dados.'"
+    },
+    {
+        "agente": "Engenharia_de_Dados",
+        "descricao": "Aplica técnicas e práticas avançadas para a coleta, processamento e análise de dados em larga escala. Por exemplo, 'Aplique técnicas de engenharia de dados para análise de big data, incluindo ETL, warehousing e análise em tempo real.'"
+    },
+    {
+        "agente": "Desenvolvimento_Web_Moderno",
+        "descricao": "Ensina princípios e ferramentas para o desenvolvimento web moderno, incluindo frameworks populares como React, Angular e Vue.js. Por exemplo, 'Desenvolva websites responsivos com as melhores práticas de desenvolvimento web e integração contínua.'"
+    },
+    {
+        "agente": "Computação_Quântica",
+        "descricao": "Aborda conceitos fundamentais e aplicações práticas da computação quântica, como algoritmos quânticos e criptografia quântica. Por exemplo, 'Entenda os fundamentos da computação quântica e suas aplicações na resolução de problemas complexos.'"
+    },
+    {
+        "agente": "Segurança_Cibernética",
+        "descricao": "Apresenta estratégias e técnicas avançadas para proteger sistemas e dados contra ataques cibernéticos. Por exemplo, 'Implemente medidas de segurança cibernética avançadas para proteger sua rede e dados sensíveis.'"
+    },
+    {
+        "agente": "Internet_das_Coisas",
+        "descricao": "Explora aplicações e tecnologias da Internet das Coisas (IoT) em diversas áreas, como automação residencial e industrial. Por exemplo, 'Explore as aplicações da IoT na automação residencial e na criação de smart cities.'"
+    },
+    {
+        "agente": "Desenvolvimento_de_Jogos",
+        "descricao": "Ensina práticas e tecnologias para o desenvolvimento de jogos digitais, incluindo design de jogos, programação e uso de motores gráficos. Por exemplo, 'Desenvolva jogos interativos com as melhores práticas de design de jogos e Unity.'"
+    },
+    {
+        "agente": "Blockchain_e_Criptomoedas",
+        "descricao": "Explica conceitos e aplicações da tecnologia blockchain e das criptomoedas, incluindo contratos inteligentes e segurança de transações. Por exemplo, 'Entenda como funciona a tecnologia blockchain e suas aplicações em contratos inteligentes e DeFi.'"
+    },
+    {
+        "agente": "Visão_Computacional",
+        "descricao": "Apresenta algoritmos e técnicas para análise e interpretação de imagens e vídeos, como reconhecimento de padrões e processamento de imagem. Por exemplo, 'Desenvolva sistemas de reconhecimento de imagem usando técnicas avançadas de visão computacional.'"
+    },
+    {
+        "agente": "Processamento_de_Linguagem_Natural",
+        "descricao": "Explora técnicas para o processamento automático de textos e linguagem natural, como análise de sentimentos e geração de texto. Por exemplo, 'Desenvolva chatbots inteligentes com técnicas de processamento de linguagem natural.'"
+    },
+    {
+        "agente": "Robótica",
+        "descricao": "Ensina conceitos e tecnologias em robótica para aplicações industriais e domésticas, incluindo programação de robôs e automação. Por exemplo, 'Desenvolva robôs autônomos para aplicações industriais utilizando ROS.'"
+    },
+    {
+        "agente": "Bioinformática",
+        "descricao": "Aplica a informática na área da biologia, especialmente em genética e biologia molecular, para análise de dados biológicos. Por exemplo, 'Analise dados genômicos usando técnicas avançadas de bioinformática e machine learning.'"
+    },
+    {
+        "agente": "Estatística_Avançada",
+        "descricao": "Utiliza métodos estatísticos avançados para a análise de dados complexos e inferência, incluindo modelagem bayesiana e análise multivariada. Por exemplo, 'Aplique métodos estatísticos avançados para análise de dados clínicos e estudos epidemiológicos.'"
+    },
+    {
+        "agente": "Ciência_de_Dados_Aplicada",
+        "descricao": "Ensina aplicações práticas de técnicas e ferramentas de ciência de dados em diversos setores, como finanças e saúde. Por exemplo, 'Aplique ciência de dados para análise de mercado e predição de tendências.'"
+    },
+    {
+        "agente": "Física_Quântica",
+        "descricao": "Explora princípios e teorias da física quântica, incluindo fenômenos quânticos e experimentos de laboratório. Por exemplo, 'Explore os fundamentos da física quântica e suas aplicações na computação e criptografia.'"
+    },
+    {
+        "agente": "Engenharia_de_Software",
+        "descricao": "Apresenta métodos e práticas para o desenvolvimento de software de alta qualidade e confiabilidade, incluindo metodologias ágeis e DevOps. Por exemplo, 'Desenvolva software de alta qualidade com metodologias ágeis e práticas de DevOps.'"
+    },
+    {
+        "agente": "Redes_de_Computadores",
+        "descricao": "Explica conceitos e tecnologias em redes de computadores para comunicação e interconexão de sistemas, incluindo protocolos de rede e segurança. Por exemplo, 'Projete redes de computadores eficientes e seguras utilizando as melhores práticas.'"
+    },
+    {
+        "agente": "Aprendizado_Automático",
+        "descricao": "Introduz o aprendizado de máquina e suas aplicações em problemas do mundo real, como classificação e regressão. Por exemplo, 'Aplique aprendizado de máquina para análise de dados e predição de resultados.'"
+    },
+    {
+        "agente": "Design_de_Experiência_do_Usuário",
+        "descricao": "Ensina princípios e técnicas para o design de interfaces e experiências do usuário, incluindo testes de usabilidade e design centrado no usuário. Por exemplo, 'Desenvolva interfaces de usuário intuitivas com design de experiência do usuário.'"
+    },
+    {
+        "agente": "Gestão_de_Projetos_de_Tecnologia",
+        "descricao": "Apresenta metodologias e práticas para gestão eficaz de projetos de tecnologia da informação, incluindo metodologias ágeis e gestão de riscos. Por exemplo, 'Gerencie projetos de TI com metodologias ágeis e práticas de gestão de riscos.'"
+    },
+    {
+        "agente": "Inovação_Tecnológica",
+        "descricao": "Explica processos e estratégias para promover a inovação por meio da tecnologia, incluindo desenvolvimento de novos produtos e serviços. Por exemplo, 'Desenvolva estratégias de inovação tecnológica para sua empresa e crie novos produtos.'"
+    },
+    {
+        "agente": "Economia_de_Dados",
+        "descricao": "Analisa o impacto econômico e estratégico de dados e tecnologias da informação, incluindo big data e economia digital. Por exemplo, 'Analise o impacto econômico de projetos de big data e estratégias de monetização de dados.'"
+    },
+    {
+        "agente": "Comunicação_Técnica",
+        "descricao": "Ensina técnicas e habilidades para comunicação eficaz de conceitos técnicos e científicos, incluindo redação técnica e apresentações. Por exemplo, 'Comunique resultados de pesquisas científicas de forma clara e concisa.'"
+    },
+    {
+        "agente": "Desenvolvimento_de_Carreira_em_Tecnologia",
+        "descricao": "Oferece estratégias e práticas para o desenvolvimento profissional em carreiras de tecnologia, incluindo planejamento de carreira e networking. Por exemplo, 'Desenvolva sua carreira em tecnologia com as melhores práticas do mercado e estratégias de networking.'"
+    },
+    {
+        "agente": "SEO_Especialista",
+        "descricao": "Oferece técnicas avançadas de otimização para motores de busca (SEO) para aumentar a visibilidade e o tráfego orgânico de sites. Por exemplo, 'Implemente estratégias de SEO para melhorar o ranking do seu site nos motores de busca.'"
+    },
+    {
+        "agente": "Advogado_Especialista",
+        "descricao": "Fornece aconselhamento jurídico especializado em diversas áreas do direito, incluindo direito digital, propriedade intelectual e compliance. Por exemplo, 'Consulte um advogado especialista em direito digital para orientação sobre conformidade com leis de proteção de dados.'"
+    },
+    {
+        "agente": "Professor_PhD_Pesquisas_Acadêmicas",
+        "descricao": "Orientação especializada em pesquisas acadêmicas multidisciplinares e redação de artigos científicos, incluindo metodologias de pesquisa e publicação. Por exemplo, 'Receba orientação de um Professor PhD para redação de artigos científicos e publicação em revistas de alto impacto.'"
+    }
 ]

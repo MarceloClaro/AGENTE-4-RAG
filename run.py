@@ -16,7 +16,7 @@ MODEL_MAX_TOKENS = {
 }
 
 def load_agent_options() -> list:
-    agent_options = ['Criar (ou escolher) um especialista...']
+    agent_options = ['Escolher um especialista...']
     if os.path.exists(FILEPATH):
         with open(FILEPATH, 'r') as file:
             try:
@@ -107,7 +107,7 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
             )
             return completion.choices[0].message.content
 
-        refine_prompt = f"Exercendo a expertise de {expert_title}, especialista renomado no campo em questão, apresento-lhe a resposta original à seguinte indagação: '{user_input}': {phase_two_response}\n\nInsto-lhe a realizar uma revisão minuciosa e aprimorar integralmente esta resposta, identificando possíveis lacunas e aperfeiçoando seu conteúdo de acordo com as melhores práticas e padrões acadêmicos. Por conseguinte, solicito que forneça uma versão atualizada da resposta, incorporando os refinamentos realizados e mantendo a coerência e a consistência lógica. Seu empenho na revisão e refinamento deste conteúdo é fundamental para assegurar sua excelência e relevância acadêmica."
+        refine_prompt = f"Exercendo a expertise de {expert_title}, especialista renomado no campo em questão, apresento-lhe a resposta original e didaticamente acessivel à seguinte indagação: '{user_input}': {phase_two_response}\n\nInsto-lhe a realizar uma revisão minuciosa e aprimorar integralmente esta resposta, identificando possíveis lacunas e aperfeiçoando seu conteúdo de acordo com as melhores práticas e padrões acadêmicos. Por conseguinte, solicito que forneça uma versão atualizada da resposta, incorporando os refinamentos realizados e mantendo a coerência e a consistência lógica. Seu empenho na revisão e refinamento deste conteúdo é fundamental para assegurar sua excelência e relevância acadêmica. Mantendo um padrão de escrita com 10 parágrafos, cada parágrafos com 4 frases, cada frases com uma virgula. matendo sempre as melhores práticas didaticas aristótelicas "
 
         # Adiciona um prompt mais detalhado se não houver referências
         if not references_file:
@@ -139,7 +139,7 @@ def evaluate_response_with_rag(user_input: str, expert_description: str, assista
             )
             return completion.choices[0].message.content
 
-        rag_prompt = f"Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional, e proceda à análise meticulosa da resposta do especialista. Eis a descrição detalhada do especialista, delineando suas credenciais e expertise:\n{expert_description}\n\nA seguir, apresenta-se a questão original submetida:\n{user_input}\n\nPor fim, disponibiliza-se a resposta fornecida pelo especialista:\n{assistant_response}\n\nSolicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta, considerando cuidadosamente a descrição do especialista e a resposta fornecida, em consonância com os mais elevados padrões de excelência e rigor acadêmico."
+        rag_prompt = f"Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional, e proceda à análise meticulosa da resposta do especialista, gerando um json de agente e descrição complementar. Eis a descrição detalhada do especialista, delineando suas credenciais e expertise:\n{expert_description}\n\nA seguir, apresenta-se a questão original submetida:\n{user_input}\n\nPor fim, disponibiliza-se a resposta fornecida pelo especialista:\n{assistant_response}\n\nSolicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta, considerando cuidadosamente a descrição do especialista e a resposta fornecida, listando as seguintes analises swot, Matriz BCG,  Matriz de Risco, ANOVA e Q-ESTATISTICA E Q-EXPONENCIAL, em consonância com os mais elevados padrões de excelência e rigor acadêmico."
 
         rag_response = get_completion(rag_prompt)
         return rag_response

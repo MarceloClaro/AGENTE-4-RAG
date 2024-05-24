@@ -40,7 +40,7 @@ def save_expert(expert_title: str, expert_description: str):
         json.dump(agents, file, indent=4)
         file.truncate()
 
-def fetch_assistant_response(user_input: str, model_name: str, temperature: float, agent_selection: str, groq_api_key: str) -> Tuple[str, str]:
+def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str, temperature: float, agent_selection: str, groq_api_key: str) -> Tuple[str, str]:
     phase_two_response = ""
     expert_title = ""
 

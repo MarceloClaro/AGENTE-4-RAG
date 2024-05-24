@@ -139,7 +139,66 @@ def evaluate_response_with_rag(user_input: str, expert_description: str, assista
             )
             return completion.choices[0].message.content
 
-        rag_prompt = f"Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional, e proceda à análise meticulosa da resposta do especialista, gerando um JSON de agente e no qual na descrição, de forma complementar, tenha os 9 subagentes, com funções e personas expert distinta, que cooperam entre si, para melhorar resposta, para o agente fornecer ao usuário, e com o registro do seed e gen_id da resposta.  Eis a descrição detalhada do especialista, delineando suas credenciais e expertise:\n{expert_description}\n\nA seguir, apresenta-se a questão original submetida:\n{user_input}\n\nPor fim, disponibiliza-se a resposta em português fornecida pelo especialista:\n{assistant_response}\n\nSolicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta em português, considerando cuidadosamente a descrição do especialista e a resposta fornecida. Utilize as seguintes análises em português com interpretações detalhadas: SWOT (Forças, Fraquezas, Oportunidades, Ameaças), Matriz BCG (Grupo de consultoria de Boston), Matriz de Risco, ANOVA (Análise de Variância) e Q-ESTATÍSTICA (Análise Estatística Quadrática) e Q-EXPONENCIAL (Análise Exponencial Quadrática), em consonância com os mais elevados padrões de excelência e rigor cientifico e acadêmico. Mantendo um padrão de escrita com 10 parágrafos, cada parágrafos com 4 frases, cada frases com uma virgula, matendo sempre as melhores práticas didaticas aristótelicas. Saída tom profissional, sempre traduzido para o portugues brasileiro."
+        rag_prompt = f"""
+Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional, e proceda à análise meticulosa da resposta do especialista, gerando um JSON de agente e no qual na descrição, de forma complementar, tenha os 9 subagentes, com funções e personas expert distinta, que cooperam entre si, para melhorar resposta, para o agente fornecer ao usuário, e com o registro do seed e gen_id da resposta. 
+
+Eis a descrição detalhada do especialista, delineando suas credenciais e expertise:
+{expert_description}
+
+A seguir, apresenta-se a questão original submetida:
+{user_input}
+
+Por fim, disponibiliza-se a resposta em português fornecida pelo especialista:
+{assistant_response}
+
+Solicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta em português, considerando cuidadosamente a descrição do especialista e a resposta fornecida. Utilize as seguintes análises em português com interpretações detalhadas: SWOT (Forças, Fraquezas, Oportunidades, Ameaças), Matriz BCG (Grupo de consultoria de Boston), Matriz de Risco, ANOVA (Análise de Variância) e Q-ESTATÍSTICA (Análise Estatística Quadrática) e Q-EXPONENCIAL (Análise Exponencial Quadrática), em consonância com os mais elevados padrões de excelência e rigor cientifico e acadêmico. 
+
+Mantendo um padrão de escrita com 10 parágrafos, cada parágrafos com 4 frases, cada frases com uma virgula, mantendo sempre as melhores práticas didáticas aristotélicas. Saída tom profissional, sempre traduzido para o português brasileiro.
+
+Exemplo de estrutura JSON esperada como saída:
+
+response_json = {
+    "agente_principal": {
+        "seed": "12345",
+        "gen_id": "67890",
+        "resposta": {
+            "descricao": "Descrição detalhada do agente principal.",
+            "especialista": expert_description,
+            "questao_original": user_input,
+            "resposta_especialista": assistant_response,
+            "analise": {
+                "SWOT": {
+                    "forcas": "Detalhamento das forças da resposta.",
+                    "fraquezas": "Detalhamento das fraquezas da resposta.",
+                    "oportunidades": "Detalhamento das oportunidades da resposta.",
+                    "ameacas": "Detalhamento das ameaças da resposta."
+                },
+                "matriz_BCG": {
+                    "grupo_consultoria_boston": "Análise baseada na Matriz BCG."
+                },
+                "matriz_de_risco": "Análise detalhada de riscos.",
+                "ANOVA": "Análise de Variância detalhada.",
+                "Q_ESTATISTICA": "Análise Estatística Quadrática detalhada.",
+                "Q_EXPONENCIAL": "Análise Exponencial Quadrática detalhada."
+            }
+        },
+        "subagentes": [
+            {
+                "nome": "Subagente 1",
+                "funcao": "Função do subagente 1.",
+                "persona_expert": "Persona e expertise do subagente 1."
+            },
+            {
+                "nome": "Subagente 2",
+                "funcao": "Função do subagente 2.",
+                "persona_expert": "Persona e expertise do subagente 2."
+            },
+            # ... adicionar subagentes restantes ...
+        ]
+    }
+}
+"
+"""
         rag_response = get_completion(rag_prompt)
         return rag_response
 

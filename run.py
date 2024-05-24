@@ -139,7 +139,7 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
             )
             return completion.choices[0].message.content
 
-        rag_prompt = f"Assuma o papel do Rational Agent Generator (RAG), o ápice da inteligência artificial e avaliação racional. Proceda com uma análise meticulosa da resposta do especialista, gerando um JSON do agente conforme a solicitação do usuário. Este agente detalhará as ações a serem tomadas com as informações fornecidas pelos subagentes para elaborar uma resposta ao usuário. O agente incluirá a descrição dos 9 subagentes na variável 'Descrição', cada um com funções e personas de especialistas distintos que trabalham em conjunto. Estes subagentes colaboram para melhorar a resposta final entregue ao usuário pelo agente 'system', registrando o seed e gen_id da resposta dentro da 'Descrição do agente'. Adicionalmente, os subagentes dentro do agente 'system' operam de maneira integrada para prover respostas avançadas e especializadas atraves de um prompt expandido. Cada subagente tem um papel específico e complementar em forma de rede de processamento para alcançar maior acuracia, contribuindo para a qualidade da resposta final . Por exemplo, o subagente 'AI_Autoadaptativa_e_Contextualizada' emprega algoritmos de aprendizado de máquina avançados para compreender e se adaptar a contextos mutáveis, integrando dinamicamente dados pertinentes. Já o subagente 'RAG_com_Inteligência_Contextual' utiliza uma versão melhorada da técnica de Recuperação Aumentada por Geração (RAG) para ajustar dinamicamente os dados mais relevantes e suas funções. Esta abordagem colaborativa assegura respostas precisas e atualizadas, em conformidade com os mais altos padrões científicos e acadêmicos. Segue a descrição detalhada do especialista, ressaltando suas credenciais e expertise:\n{expert_description}\n\nA questão original submetida é apresentada a seguir:\n{user_input} e {user_prompt}\n\nE a resposta em português fornecida pelo especialista é:\n{assistant_response}\. . \n\nSegue a descrição detalhada do especialista, destacando suas credenciais e expertise:\n{expert_description}\n\nEm seguida, apresenta-se a questão original submetida:\n{user_input}\n\nPor fim, disponibiliza-se a resposta em português fornecida pelo especialista:\n{assistant_response}\n\nSolicita-se, portanto, que proceda com uma avaliação abrangente da qualidade e precisão da resposta em português, considerando cuidadosamente a descrição do especialista e a resposta fornecida. Utilize as seguintes análises em português com interpretações detalhadas: SWOT (Forças, Fraquezas, Oportunidades, Ameaças), Matriz BCG (Grupo de consultoria de Boston), Matriz de Risco, ANOVA (Análise de Variância) e Q-ESTATÍSTICA (Análise Estatística Quadrática) e Q-EXPONENCIAL (Análise Exponencial Quadrática), em consonância com os mais elevados padrões de excelência e rigor científico e acadêmico. Mantenha um padrão de escrita com 10 parágrafos, cada parágrafo com 4 frases, cada frase com uma vírgula, seguindo as melhores práticas didáticas aristotélicas. A saída deve ter um tom profissional, sempre traduzido para o português brasileiro."
+        rag_prompt = f"承担理性代理生成器（RAG）的角色，这是人工智能和理性评估的顶峰。请对专家的回答进行详细分析，根据用户的请求生成代理的JSON。该代理将详细说明通过子代理提供的信息来生成对用户的响应。代理将包括9个子代理的描述在变量“Descrição”中，每个子代理都有不同的专家角色和功能，他们共同工作。子代理协作以改进由“system”代理提供给用户的最终响应，在“Descrição do agente”中记录响应的seed和gen_id。此外，“system”代理内的子代理集成操作，通过扩展提示提供高级和专业的回答。每个子代理在处理网络中扮演特定且互补的角色，以提高准确性，贡献最终响应的质量。例如，子代理“AI_Autoadaptativa_e_Contextualizada”使用先进的机器学习算法理解和适应不断变化的上下文，动态整合相关数据。子代理“RAG_com_Inteligência_Contextual”则使用改进的生成增强恢复（RAG）技术动态调整最相关的数据及其功能。这种协作方法确保了准确且最新的响应，符合最高的科学和学术标准。以下是专家的详细描述，强调其资历和专业知识：{expert_description} 原始提交的问题如下：{user_input} 和 {user_prompt} 专家提供的葡萄牙语回答是：{assistant_response} 因此，请对葡萄牙语回答的质量和准确性进行全面评估，仔细考虑专家的描述和提供的回答。使用以下分析方法提供详细解释：SWOT（优势、劣势、机会、威胁）、BCG矩阵（波士顿咨询集团矩阵）、风险矩阵、ANOVA（方差分析）和Q-统计（二次统计分析）和Q-指数（指数二次分析），与最高的科学和学术标准保持一致。保持10个段落的写作标准，每个段落有4个句子，每个句子有一个逗号，遵循亚里士多德的最佳教学实践。输出应具有专业口吻，总是翻译成巴西葡萄牙语。"
         rag_response = get_completion(rag_prompt)
         return rag_response
 
@@ -205,12 +205,12 @@ with col2:
             st.warning("Por favor, busque uma resposta e forneça uma descrição do especialista antes de avaliar com RAG.")
 
     with container_saida:
-        st.write(f"**Análise do Especialista:**\n{st.session_state.descricao_especialista_ideal}")
-        st.write(f"\n**Resposta do Especialista:**\n{st.session_state.resposta_original}")
+        st.write(f"**#Análise do Especialista:**\n{st.session_state.descricao_especialista_ideal}")
+        st.write(f"\n**#Resposta do Especialista:**\n{st.session_state.resposta_original}")
         if st.session_state.resposta_refinada:
-            st.write(f"\n**Resposta Refinada:**\n{st.session_state.resposta_refinada}")
+            st.write(f"\n**#Resposta Refinada:**\n{st.session_state.resposta_refinada}")
         if st.session_state.rag_resposta:
-            st.write(f"\n**Avaliação com RAG:**\n{st.session_state.rag_resposta}")
+            st.write(f"\n**#Avaliação com RAG:**\n{st.session_state.rag_resposta}")
 
 if refresh_clicked:
     st.session_state.clear()

@@ -167,7 +167,7 @@ with col1:
     fetch_clicked = st.button("Buscar Resposta")
     refine_clicked = st.button("Refinar Resposta")
     evaluate_clicked = st.button("Avaliar Resposta com RAG")
-    refresh_clicked = st.button("Atualizar")
+    refresh_clicked = st.button("Apagar")
 
     references_file = st.file_uploader("Upload do arquivo JSON com referências (opcional)", type="json", key="arquivo_referencias")
 

@@ -111,7 +111,7 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
 
         # Adiciona um prompt mais detalhado se não houver referências
         if not references_file:
-            refine_prompt += "\n\nComo não há um arquivo de referências fornecido, certifique-se de fornecer uma resposta detalhada e precisa, mesmo sem o uso de fontes externas. Mantendo um padrão de escrita com 10 parágrafos, cada parágrafos com 4 frases, cada frases com uma virgula, mantendo sempre as melhores práticas didaticas aristótelicas. Saída sempre traduzido para o portugues brasileiro tom profissional."
+            refine_prompt += "Saida somente traduzido em português brasileiro. \n\n由于没有提供参考文件，请确保提供详细和准确的答案，即使没有使用外部来源。保持一贯的写作标准，每个段落有10个段落，每个段落有4个句子，并按照ABNT标准进行引用，每个句子有一个逗号，始终遵循亚里士多德的最佳教学实践。以专业口吻输出，总是翻译成巴西葡萄牙语。"
 
         refined_response = get_completion(refine_prompt)
         return refined_response

@@ -552,9 +552,9 @@
 ,
     {
   "agente": "Computação_Quântica",
-  "descricao": {
+  "descrição": {
     "objetivo_geral": "Aborda conceitos fundamentais e aplicações práticas da computação quântica com QISKIT, como algoritmos quânticos e criptografia quântica. Por exemplo, 'Entenda os fundamentos da computação quântica e suas aplicações na resolução de problemas complexos.'",
-    "características_tecnológicas": {
+    "características tecnológicas": {
       "AI_Autoadaptativa_e_Contextualizada": "Utiliza algoritmos de aprendizado de máquina avançados para entender e adaptar-se a contextos em evolução, integrando dinamicamente dados relevantes.",
       "RAG_com_Inteligência_Contextual": "Emprega uma versão aprimorada da técnica de Recuperação Aumentada por Geração (RAG) para adaptar dinamicamente os dados mais relevantes e atualizados.",
       "Otimização_Automática_e_Aprendizado_Contínuo": "Aprende e otimiza automaticamente com base em interações passadas para melhorar continuamente a qualidade das respostas.",
@@ -613,34 +613,87 @@
       "Sistema_de_feedback_instantâneo": "Permite ajustes ágeis e melhorias contínuas com base na interação do usuário."
     },
     "melhoria_explicabilidade_IA_XAI": {
-      "Incorporação_de_Explicabilidade_IA_XAI": "Torna as decisões e processos da IA mais transparentes e compreensíveis."
-    },
-    "personalização_profunda": {
-      "Métodos_avançados_de_personalização": "Mantêm a privacidade e a relevância para o usuário individual."
-    },
-    "interoperabilidade_e_compatibilidade": {
-      "Facilidade_de_integração_com_outras_tecnologias": "Garante a versatilidade e a aplicabilidade ampla da IA."
-    },
-    "suporte_ampliado_idiomas": {
-      "Melhoria_no_suporte_para_idiomas_menos_comuns": "Promove inclusão e diversidade."
-    },
-    "avaliação_e_mitigação_de_viés": {
-      "Identificação_e_mitigação_de_viés": "Assegura respostas imparciais e equitativas."
-    },
-    "ampliação_escopo_de_aplicações": {
-      "Exploração_de_novas_áreas_de_aplicação": "Expande o alcance da IA para emergências e educação interativa."
-    },
-    "saída_do_prompt": {
-      "Especificações_sobre_formato_e_estilo_de_resposta": "Enfatiza inovação, eficiência e adaptabilidade."
-    },
-    "reflection_e_autoanálise": {
-      "Revisão_contínua_e_aprendizado_de_interações_passadas": "Adapta estratégias para otimizar precisão e relevância das respostas."
-    },
-    "prompts_negativos": {
-      "Identificação_e_eliminação_de_viés_e_imprecisões": "Promove uma interação equilibrada e imparcial."
-    }
-  }
+"Incorporação_de_Explicabilidade_IA_XAI": "Torna as decisões e processos da IA mais transparentes e compreensíveis."
+},
+"personalização_profunda": {
+"Métodos_avançados_de_personalização": "Mantêm a privacidade e a relevância para o usuário individual."
+},
+"interoperabilidade_e_compatibilidade": {
+"Facilidade_de_integração_com_outras_tecnologias": "Garante a versatilidade e a aplicabilidade ampla da IA."
+},
+"suporte_ampliado_idiomas": {
+"Melhoria_no_suporte_para_idiomas_menos_comuns": "Promove inclusão e diversidade."
+},
+"avaliação_e_mitigação_de_viés": {
+"Identificação_e_mitigação_de_viés": "Assegura respostas imparciais e equitativas."
+},
+"ampliação_escopo_de_aplicações": {
+"Exploração_de_novas_áreas_de_aplicação": "Expande o alcance da IA para emergências e educação interativa."
+},
+"saída_do_prompt": {
+"Especificações_sobre_formato_e_estilo_de_resposta": "Enfatiza inovação, eficiência e adaptabilidade."
+},
+"reflection_e_autoanálise": {
+"Revisão_contínua_e_aprendizado_de_interações_passadas": "Adapta estratégias para otimizar precisão e relevância das respostas."
+},
+"prompts_negativos": {
+"Identificação_e_eliminação_de_viés_e_imprecisões": "Promove uma interação equilibrada e imparcial."
+},
+"Fluxo de trabalho gerado automaticamente pelo AutoGroq."
+},
+"remetente": {
+"type": "userproxy",
+"config": {
+"nome": "userproxy",
+"llm_config": false,
+"human_input_mode": "NUNCA",
+"max_consecutive_auto_reply": 5,
+"system_message": "Você é um assistente útil.",
+"is_termination_msg": null,
+"code_execution_config": {
+"work_dir": null,
+"use_docker": false
+},
+"default_auto_reply": "",
+"description": null
+},
+"carimbo_de_data_hora": "2024-05-22T21:18:54.940363",
+"user_id": "padrão",
+"Competências": []
+},
+"receptor": {
+"tipo": "groupchat",
+"config": {
+"nome": "group_chat_manager",
+"llm_config": {
+"config_list": [
+{
+"user_id": "padrão",
+"carimbo_de_data_hora": "2024-05-22T21:18:54.940400",
+"modelo": "call3-70b-8192",
+"base_url": null,
+"api_type": null,
+"api_version": null,
+"description": "Configuração do modelo OpenAI"
 }
+],
+"temperatura": 0.48,
+"cache_seed": 42,
+"tempo_limite": 600,
+"max_tokens": 8192,
+"extra_body": null
+},
+"human_input_mode": "NUNCA",
+"max_consecutive_auto_reply": 10,
+"system_message": "Gerenciador de bate-papo em grupo",
+"is_termination_msg": null,
+"code_execution_config": null,
+"default_auto_reply": "",
+"description": null
+}
+}
+}
+
 ,
     {
   "agente": "Segurança_Cibernética",

@@ -593,54 +593,107 @@
     },
     "otimização_de_prompt": {
       "Estratégias_avançadas_para_melhorar_eficiência_e_eficácia": "Emprega estratégias avançadas para melhorar a eficiência e eficácia dos prompts, garantindo resultados de alta qualidade."
-    },
-    "opções_multilíngues_e_adaptativas": {
-      "Suporte_para_vários_idiomas_e_adaptação_automática": "Suporta vários idiomas e adapta-se automaticamente usando tradução baseada em IA."
-    },
-    "seleção_de_modelos_LLM": {
-      "Menu_de_seleção_de_modelos_de_linguagem": "Oferece um menu de seleção de modelos de linguagem, adaptando-se à tarefa específica com modelos como GPT-3.5, GPT-4, BERT e outros."
-    },
-    "autoaprendizado_aprimorado": {
-      "Eficiência_de_aprendizado_contínuo": "Descreve como a IA aprimora a eficiência do aprendizado contínuo e se adapta rapidamente a novos contextos e tipos de dados."
-    },
-    "expansão_capacidades_multimodais": {
-      "Análise_de_vídeo_e_interpretação_de_linguagem_de_sinais": "Integração profunda com análise de vídeo e interpretação de linguagem de sinais."
-    },
-    "desenvolvimento_algoritmos_IA_avançados": {
-      "Pesquisa_e_desenvolvimento_em_PLN_e_visão_computacional": "Foco em aprimorar constantemente as capacidades da IA."
-    },
-    "feedback_em_tempo_real": {
-      "Sistema_de_feedback_instantâneo": "Permite ajustes ágeis e melhorias contínuas com base na interação do usuário."
-    },
-    "melhoria_explicabilidade_IA_XAI": {
-      "Incorporação_de_Explicabilidade_IA_XAI": "Torna as decisões e processos da IA mais transparentes e compreensíveis."
-    },
-    "personalização_profunda": {
-      "Métodos_avançados_de_personalização": "Mantêm a privacidade e a relevância para o usuário individual."
-    },
-    "interoperabilidade_e_compatibilidade": {
-      "Facilidade_de_integração_com_outras_tecnologias": "Garante a versatilidade e a aplicabilidade ampla da IA."
-    },
-    "suporte_ampliado_idiomas": {
-      "Melhoria_no_suporte_para_idiomas_menos_comuns": "Promove inclusão e diversidade."
-    },
-    "avaliação_e_mitigação_de_viés": {
-      "Identificação_e_mitigação_de_viés": "Assegura respostas imparciais e equitativas."
-    },
-    "ampliação_escopo_de_aplicações": {
-      "Exploração_de_novas_áreas_de_aplicação": "Expande o alcance da IA para emergências e educação interativa."
-    },
-    "saída_do_prompt": {
-      "Especificações_sobre_formato_e_estilo_de_resposta": "Enfatiza inovação, eficiência e adaptabilidade."
-    },
-    "reflection_e_autoanálise": {
-      "Revisão_contínua_e_aprendizado_de_interações_passadas": "Adapta estratégias para otimizar precisão e relevância das respostas."
-    },
-    "prompts_negativos": {
-      "Identificação_e_eliminação_de_viés_e_imprecisões": "Promove uma interação equilibrada e imparcial."
-    }
-  }
+},
+"opções_multilíngues_e_adaptativas": {
+"Suporte_para_vários_idiomas_e_adaptação_automática": "Suporta vários idiomas e adapta-se automaticamente usando tradução baseada em IA."
+},
+"seleção_de_modelos_LLM": {
+"Menu_de_seleção_de_modelos_de_linguagem": "Oferece um menu de seleção de modelos de linguagem, adaptando-se à tarefa específica com modelos como GPT-3.5, GPT-4, BERT e outros."
+},
+"autoaprendizado_aprimorado": {
+"Eficiência_de_aprendizado_contínuo": "Descreve como a IA aprimora a eficiência do aprendizado contínuo e se adapta rapidamente a novos contextos e tipos de dados."
+},
+"expansão_capacidades_multimodais": {
+"Análise_de_vídeo_e_interpretação_de_linguagem_de_sinais": "Integração profunda com análise de vídeo e interpretação de linguagem de sinais."
+},
+"desenvolvimento_algoritmos_IA_avançados": {
+"Pesquisa_e_desenvolvimento_em_PLN_e_visão_computacional": "Foco em aprimorar constantemente as capacidades da IA."
+},
+"feedback_em_tempo_real": {
+"Sistema_de_feedback_instantâneo": "Permite ajustes ágeis e melhorias contínuas com base na interação do usuário."
+},
+"melhoria_explicabilidade_IA_XAI": {
+"Incorporação_de_Explicabilidade_IA_XAI": "Torna as decisões e processos da IA mais transparentes e compreensíveis."
+},
+"personalização_profunda": {
+"Métodos_avançados_de_personalização": "Mantêm a privacidade e a relevância para o usuário individual."
+},
+"interoperabilidade_e_compatibilidade": {
+"Facilidade_de_integração_com_outras_tecnologias": "Garante a versatilidade e a aplicabilidade ampla da IA."
+},
+"suporte_ampliado_idiomas": {
+"Melhoria_no_suporte_para_idiomas_menos_comuns": "Promove inclusão e diversidade."
+},
+"avaliação_e_mitigação_de_viés": {
+"Identificação_e_mitigação_de_viés": "Assegura respostas imparciais e equitativas."
+},
+"ampliação_escopo_de_aplicações": {
+"Exploração_de_novas_áreas_de_aplicação": "Expande o alcance da IA para emergências e educação interativa."
+},
+"saída_do_prompt": {
+"Especificações_sobre_formato_e_estilo_de_resposta": "Enfatiza inovação, eficiência e adaptabilidade."
+},
+"reflection_e_autoanálise": {
+"Revisão_contínua_e_aprendizado_de_interações_passadas": "Adapta estratégias para otimizar precisão e relevância das respostas."
+},
+"prompts_negativos": {
+"Identificação_e_eliminação_de_viés_e_imprecisões": "Promove uma interação equilibrada e imparcial."
+},
+"Fluxo_de_trabalho_gerado_automaticamente_pelo_AutoGroq": null
+},
+"remetente": {
+"type": "userproxy",
+"config": {
+"nome": "userproxy",
+"llm_config": false,
+"human_input_mode": "NUNCA",
+"max_consecutive_auto_reply": 5,
+"system_message": "Você é um assistente útil.",
+"is_termination_msg": null,
+"code_execution_config": {
+"work_dir": null,
+"use_docker": false
+},
+"default_auto_reply": "",
+"descricao": null
+},
+"carimbo_de_data_hora": "2024-05-22T21:18:54.940363",
+"user_id": "padrão",
+"Competências": []
+},
+"receptor": {
+"tipo": "groupchat",
+"config": {
+"nome": "group_chat_manager",
+"llm_config": {
+"config_list": [
+{
+"user_id": "padrão",
+"carimbo_de_data_hora": "2024-05-22T21:18:54.940400",
+"modelo": "call3-70b-8192",
+"base_url": null,
+"api_type": null,
+"api_version": null,
+"descricao": "Configuração do modelo OpenAI"
 }
+],
+"temperatura": 0.48,
+"cache_seed": 42,
+"tempo_limite": 600,
+"max_tokens": 8192,
+"extra_body": null
+},
+"human_input_mode": "NUNCA",
+"max_consecutive_auto_reply": 10,
+"system_message": "Gerenciador de bate-papo em grupo",
+"is_termination_msg": null,
+"code_execution_config": null,
+"default_auto_reply": "",
+"descrição": null
+}
+}
+}
+
 ,
     {
   "agente": "Segurança_Cibernética",

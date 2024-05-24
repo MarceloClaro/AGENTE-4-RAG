@@ -155,8 +155,8 @@ st.write("Digite sua solicitação para que ela seja respondida pelo especialist
 col1, col2 = st.columns(2)
 
 with col1:
-    user_input = st.text_area("Por favor, insira sua solicitação:", "", key="entrada_usuario")
-    user_prompt = st.text_area("Escreva um prompt ou coloque o texto para consulta para o especialista (opcional):", "", key="prompt_usuario")
+    user_input = st.text_area("Por favor, insira sua solicitação:", height=200, "", key="entrada_usuario")
+    user_prompt = st.text_area("Escreva um prompt ou coloque o texto para consulta para o especialista (opcional):", height=200, "", key="prompt_usuario")
     agent_selection = st.selectbox("Escolha um Especialista", options=agent_options, index=0, key="selecao_agente")
     model_name = st.selectbox("Escolha um Modelo", list(MODEL_MAX_TOKENS.keys()), index=0, key="nome_modelo")
     temperature = st.slider("Nível de Criatividade", min_value=0.0, max_value=1.0, value=0.0, step=0.01, key="temperatura")

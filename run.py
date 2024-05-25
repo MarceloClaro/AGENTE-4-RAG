@@ -192,7 +192,7 @@ import streamlit as st
 # Função para criar um expander estilizado
 # Título da caixa de informação
 
-st.markdown("<h2 style='text-align: center;'>Manual de uso.</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>Manual de uso básico.</h2>", unsafe_allow_html=True)
 
 def expander(title: str, content: str, icon: str):
     with st.expander(title):
@@ -231,6 +231,7 @@ passo_3_content = """
 
 passo_4_content = """
 1. Se preferir avaliar a resposta com o RAG, clique em "Avaliar Resposta com o RAG". O RAG analisará a qualidade e a precisão da resposta do especialista e apresentará uma avaliação.
+
 2. Você terá a opção de concordar ou discordar com a avaliação do RAG e fornecer feedback adicional, se desejar.
 """
 

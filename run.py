@@ -256,13 +256,16 @@ if refresh_clicked:
 
 
 
+import streamlit as st
+
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
 st.sidebar.title("Manual de Uso")
 
 # Função para criar um expander estilizado
 def expander(title: str, content: str, icon: str):
-    st.markdown(f'<details><summary><img src="{icon}" style="vertical-align:middle"> {title}</summary>{content}</details>', unsafe_allow_html=True)
+    with st.beta_expander(title):
+        st.markdown(f'<img src="{icon}" style="vertical-align:middle"> {content}', unsafe_allow_html=True)
 
 # Conteúdo do manual de uso
 passo_1_content = """

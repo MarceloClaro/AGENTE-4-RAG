@@ -286,7 +286,7 @@ passo_5_content = """
 passo_6_content = """
 Para melhorar a eficiência e qualidade das respostas geradas pelos modelos de linguagem, o conteúdo inserido no campo "Escreva um prompt ou coloque o texto para consulta para o especialista (opcional)" deve ser detalhado, claro e específico. Aqui estão algumas diretrizes e possibilidades sobre o que incluir nesse campo:
         
-### Diretrizes para um Prompt Eficiente
+#### Diretrizes para um Prompt Eficiente
         
 1. **Contexto**: Forneça o contexto necessário para entender o problema ou a pergunta. Inclua informações relevantes sobre o cenário ou o objetivo da solicitação.
 2. **Detalhamento**: Seja detalhado em sua pergunta ou solicitação. Quanto mais informações você fornecer, melhor o modelo poderá entender e responder.
@@ -294,7 +294,7 @@ Para melhorar a eficiência e qualidade das respostas geradas pelos modelos de l
 4. **Formato de Resposta**: Indique o formato desejado para a resposta (por exemplo, uma explicação passo a passo, código em Python com comentários, etc.).
 5. **Referências**: Se aplicável, inclua referências ou fontes de informação que podem ser úteis para a resposta.
         
-### Exemplos de Prompts
+#### Exemplos de Prompts
         
 1. **Análise de Dados**
    - Contexto: "Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano."
@@ -320,14 +320,14 @@ Para melhorar a eficiência e qualidade das respostas geradas pelos modelos de l
    - Objetivos: "Preciso de uma revisão bibliográfica detalhada, incluindo as principais pesquisas recentes e suas conclusões."
    - Formato de Resposta: "Por favor, forneça um resumo estruturado com citações em formato ABNT."
         
-## Exemplo de Prompt Detalhado
+#### Exemplo de Prompt Detalhado
         
         
 Contexto: Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano. Os dados incluem colunas para data, produto, quantidade vendida e receita.
 Objetivos: Gostaria de saber quais produtos têm o maior crescimento de vendas mensal e identificar padrões sazonais.
 Formato de Resposta: Por favor, forneça uma análise em Python, incluindo gráficos e comentários explicativos.
         
-### Conclusão
+#### Conclusão
         
 A qualidade do prompt é fundamental para obter respostas úteis e precisas de modelos de linguagem. Seguindo essas diretrizes e incluindo detalhes específicos no campo de prompt, você maximizará a eficiência e a qualidade das respostas geradas.
 """

@@ -331,3 +331,44 @@ Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instag
 """)
 st.sidebar.image("eu.ico", width=80)
 
+import streamlit as st
+import streamlit_webrtc as webrtc
+from streamlit_webrtc import ClientSettings
+from streamlit_webrtc import WebRtcMode
+from streamlit_webrtc import webrtc_streamer
+
+# Importar a biblioteca para reprodução de áudio
+from playsound import playsound
+
+# Função para reproduzir o som
+def play_sound():
+    playsound("caminho_para_o_arquivo_de_audio.mp3")
+
+# Configurações do cliente para reprodução de áudio
+client_settings = ClientSettings(
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+)
+
+# Exibir um botão para reproduzir o som
+if st.button("Reproduzir som"):
+    play_sound()
+
+# Exibir um botão para parar o som
+if st.button("Parar som"):
+    pass  # Implementação para parar o som
+
+# Exibir o WebRTC Streamer
+webrtc_streamer(
+    key="audio",
+    mode=WebRtcMode.SENDRECV,
+    client_settings=client_settings,
+)
+
+# Exemplo de uso de um som de fundo
+st.write("Aqui está o som de fundo tocando:")
+
+# Reproduza um som de fundo continuamente
+while True:
+    play_sound()
+
+

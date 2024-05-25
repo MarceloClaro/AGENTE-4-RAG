@@ -152,7 +152,8 @@ agent_options = load_agent_options()
 st.image('updating.gif', width=300, caption='Atualizando...', use_column_width='always', output_format='auto')
 
 st.title("Agentes Experts Geomaker")
-st.subheader("Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.")
+st.markdown("<h2 style='text-align: center;'>Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.</h2>", unsafe_allow_html=True)
+
 st.markdown("<hr>", unsafe_allow_html=True)
 st.info("""
 O Rational Agent Generator (RAG) é usado para avaliar a resposta fornecida pelo especialista. Aqui está uma explicação mais detalhada de como ele é usado:

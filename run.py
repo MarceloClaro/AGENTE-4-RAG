@@ -190,6 +190,10 @@ st.markdown("<hr>", unsafe_allow_html=True)
 import streamlit as st
 
 # Função para criar um expander estilizado
+# Título da caixa de informação
+
+st.markdown("<h2 style='text-align: center;'>Manual de uso.</h2>", unsafe_allow_html=True)
+
 def expander(title: str, content: str, icon: str):
     with st.expander(title):
         st.markdown(f'<img src="{icon}" style="vertical-align:middle"> {content}', unsafe_allow_html=True)
@@ -230,7 +234,7 @@ expander("Passo 2: Acesso ao Streamlit Chat Application", passo_2_content, "http
 expander("Passo 3: Refinamento da Resposta", passo_3_content, "https://img.icons8.com/office/30/000000/edit-property.png")
 expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https://img.icons8.com/office/30/000000/like--v1.png")
 expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
-
+st.markdown("<hr>", unsafe_allow_html=True)
 
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
@@ -303,7 +307,7 @@ st.sidebar.image("logo.png", width=200)
 
 
 # Informações de contato
-st.sidebar.image("eu.ico", width=80)
+
 st.sidebar.write("""
 Projeto Geomaker + IA 
 - Professor: Marcelo Claro.
@@ -314,4 +318,5 @@ Whatsapp: (88)981587145
 
 Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
 """)
+st.sidebar.image("eu.ico", width=80)
 

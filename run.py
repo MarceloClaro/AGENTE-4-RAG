@@ -236,8 +236,7 @@ if refresh_clicked:
     st.experimental_rerun()
 
 # Sidebar com manual de uso
-st.sidebar.markdown("<div style='text-align: center;'><img src='logo.png' width='100'></div>", unsafe_allow_html=True)
-
+st.sidebar.image("logo.png", width=100)
 st.sidebar.title("Manual de Uso")
 st.sidebar.write("1. Digite sua solicitação na caixa de texto. Isso será usado para solicitar uma resposta de um especialista.")
 st.sidebar.write("2. Escolha um especialista da lista ou crie um novo. Se você escolher 'Criar (ou escolher) um especialista...', você será solicitado a descrever as características do especialista.")

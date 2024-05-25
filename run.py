@@ -339,7 +339,7 @@ expander("Passo 2: Acesso ao Streamlit Chat Application", passo_2_content, "http
 expander("Passo 3: Refinamento da Resposta", passo_3_content, "https://img.icons8.com/office/30/000000/edit-property.png")
 expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https://img.icons8.com/office/30/000000/like--v1.png")
 expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
-expander("Passo 6: Construindo o Prompt", passo_5_content, "https://img.icons8.com/dusk/64/000000/code-file.png")
+expander("Passo 6: Construindo o Prompt", passo_6_content, "https://img.icons8.com/dusk/64/000000/code-file.png")
 st.markdown("<hr>", unsafe_allow_html=True)
 
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")

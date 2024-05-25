@@ -444,8 +444,6 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 def main():
     with st.sidebar.expander("Insights do Código"):
-    st.sidebar.title("Visualização de Código Python do Agente Expert Geomaker")
-
     with open("run.py", "r") as file:
         code = file.read()
 

@@ -172,6 +172,48 @@ with st.expander("Clique para saber mais"):
     st.write("6. **Inovação e tecnologia educacional:** Nossa plataforma incorpora as mais recentes tecnologias para proporcionar uma experiência educacional moderna e eficiente.")
 
 
+# Função para criar um expander estilizado
+def expander(title: str, content: str, icon: str):
+    with st.beta_expander(title):
+        st.markdown(f'<img src="{icon}" style="vertical-align:middle"> {content}', unsafe_allow_html=True)
+
+# Conteúdo do manual de uso
+passo_1_content = """
+1. Acesse o Groq Playground em [https://console.groq.com/playground](https://console.groq.com/playground).
+2. Faça login na sua conta ou crie uma nova conta.
+3. No menu lateral, selecione "API Keys".
+4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
+"""
+
+passo_2_content = """
+1. Acesse o Streamlit Chat Application em [URL do seu aplicativo].
+2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
+3. Escolha um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
+4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".
+5. O aplicativo consultará o Groq API e apresentará a resposta do especialista. Você terá a opção de refinar a resposta ou avaliá-la com o RAG.
+"""
+
+passo_3_content = """
+1. Se desejar refinar a resposta do especialista, clique em "Refinar Resposta". Digite mais detalhes ou correções na caixa de texto e clique em "Enviar".
+2. O aplicativo consultará novamente o Groq API e apresentará a resposta refinada.
+"""
+
+passo_4_content = """
+1. Se preferir avaliar a resposta com o RAG, clique em "Avaliar Resposta com o RAG". O RAG analisará a qualidade e a precisão da resposta do especialista e apresentará uma avaliação.
+2. Você terá a opção de concordar ou discordar com a avaliação do RAG e fornecer feedback adicional, se desejar.
+"""
+
+passo_5_content = """
+1. Após refinar a resposta ou avaliá-la com o RAG, você poderá encerrar a consulta ou fazer uma nova pergunta.
+"""
+
+# Exibição do manual de uso com expander estilizado
+expander("Passo 1: Criação da Chave API no Groq Playground", passo_1_content, "https://img.icons8.com/office/30/000000/api-settings.png")
+expander("Passo 2: Acesso ao Streamlit Chat Application", passo_2_content, "https://img.icons8.com/office/30/000000/chat.png")
+expander("Passo 3: Refinamento da Resposta", passo_3_content, "https://img.icons8.com/office/30/000000/edit-property.png")
+expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https://img.icons8.com/office/30/000000/like--v1.png")
+expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
+
 st.markdown("<hr>", unsafe_allow_html=True)
 # Informações sobre o Rational Agent Generator (RAG)
 with st.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"):

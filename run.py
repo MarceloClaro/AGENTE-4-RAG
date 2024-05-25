@@ -259,7 +259,7 @@ passo_2_content = """
 
 2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
 
-3. Escolha um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
+3. Escolha um Agente Especializado e um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
 
 4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".
 

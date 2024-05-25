@@ -495,12 +495,19 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 
 def main():
-    st.sidebar.write("""
+   st.sidebar.write("""
         Código principal do Agente Expert Geomaker
         """)
     with open("run.py", "r") as file:
             code = file.read()
             st.sidebar.code(code, language='python')
+         st.sidebar.write("""
+        Código dos Agentes contidosno código agents.jsonn
+        """)
+    with open("agents.json", "r") as file:
+            code = file.read()
+            st.sidebar.code(code, language='json')
+            
             
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)

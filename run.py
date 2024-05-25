@@ -236,7 +236,6 @@ if refresh_clicked:
     st.experimental_rerun()
 
 # Sidebar com manual de uso
-st.set_page_config(page_icon="💬", layout="wide", page_title="Interface de Chat Avançado com RAG")
 st.image("logo.png", width=100)
 st.sidebar.title("Manual de Uso")
 st.sidebar.write("1. Digite sua solicitação na caixa de texto. Isso será usado para solicitar uma resposta de um especialista.")

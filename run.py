@@ -201,9 +201,13 @@ def expander(title: str, content: str, icon: str):
 # Conteúdo do manual de uso
 passo_1_content = """
 1. Acesse o Groq Playground em https://console.groq.com/playground.
+
 2. Faça login na sua conta ou crie uma nova conta.
+
 3. No menu lateral, selecione "API Keys".
+
 4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
+
 5. Se quiser usar esta API Key provisória: [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] , lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
 """
 

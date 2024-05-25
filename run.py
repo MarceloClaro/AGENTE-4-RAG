@@ -338,9 +338,9 @@ from pydub.playback import play
 # Carregar o arquivo de áudio
 audio = AudioSegment.from_file("caminho_para_o_arquivo_de_audio.mp3", format="mp3")
 
-# Exibir um botão para controlar a reprodução do som
-play_button = st.button("Reproduzir som")
-stop_button = st.button("Parar som")
+# Exibir um botão na barra lateral para controlar a reprodução do som
+play_button = st.sidebar.button("Reproduzir som")
+stop_button = st.sidebar.button("Parar som")
 
 # Lógica para reproduzir ou parar o som
 if play_button:
@@ -351,4 +351,5 @@ if play_button:
             break
 
 if stop_button:
-    st.write("Som parado")
+    st.sidebar.write("Som parado")
+

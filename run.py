@@ -151,7 +151,7 @@ agent_options = load_agent_options()
 
 st.image('updating.gif')
 st.title("Agentes Experts Geomaker")
-st.subheader(""Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão."")
+st.subheader("Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.")
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
 col1, col2 = st.columns(2)

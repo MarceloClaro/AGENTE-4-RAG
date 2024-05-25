@@ -248,7 +248,7 @@ st.sidebar.write("7. Se necessário, refine a resposta com base nas referências
 st.sidebar.write("8. Avalie a resposta com o Rational Agent Generator (RAG) para determinar a qualidade e precisão da resposta. Clique em 'Avaliar Resposta com RAG' para iniciar a avaliação.")
 st.sidebar.write("9. Visualize a análise do especialista, a resposta original, a resposta refinada (se houver) e a avaliação com RAG para avaliar a qualidade e precisão da resposta.")
 
-st.sidebar.image("eu.ico", width=100)
+st.sidebar.image("eu.ico", width=200)
 st.sidebar.write("""
 Projeto Geomaker + IA 
 - Professor: Marcelo Claro.

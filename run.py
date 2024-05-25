@@ -150,8 +150,8 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
 agent_options = load_agent_options()
 
 st.image('updating.gif', width=300, caption='Atualizando...', use_column_width='always', output_format='auto')
+st.markdown("<h1 style='text-align: center;'>Agentes Experts Geomaker</h1>", unsafe_allow_html=True)
 
-st.title("Agentes Experts Geomaker")
 st.markdown("<h2 style='text-align: center;'>Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.</h2>", unsafe_allow_html=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)

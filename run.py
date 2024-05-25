@@ -189,7 +189,7 @@ with st.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"
 st.markdown("<hr>", unsafe_allow_html=True)
 
 
-with st.expander("Informações sobre Análises de Avaliação"):
+with st.expander("Informações sobre Análises de Avaliação do RAG"):
     st.markdown("""
     ### As análises realizadas por diferentes modelos de avaliação são cruciais para garantir a qualidade e a precisão das respostas fornecidas pelos especialistas. Aqui estão as análises mencionadas no código e suas explicações:
     

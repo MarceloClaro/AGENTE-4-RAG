@@ -255,8 +255,6 @@ if refresh_clicked:
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
 st.sidebar.title("Manual de Uso")
-import streamlit as st
-
 with st.beta_expander("Manual de Uso - Clique para saber mais sobre Consultas com o Rational Agent Generator (RAG)"):
     st.markdown("""
         **Passo 1: Criação da Chave API no Groq Playground**
@@ -301,4 +299,5 @@ Contatos: marceloclaro@gmail.com
 Whatsapp: (88)981587145
 
 Instagram: https://www.instagram.com/marceloclaro.geomaker/
-""")  
+""")
+

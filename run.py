@@ -448,10 +448,11 @@ def main():
         Código principal do Agente Expert Geomaker
         """)
         
-    with st.sidebar.expander("Insights do Código"):
+    with st.sidebar.expander("codigo"):
         with open("run.py", "r") as file:
             code = file.read()
             st.sidebar.code(code, language='python')
+            
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""

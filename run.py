@@ -161,7 +161,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.write("# Descubra como nossa plataforma pode revolucionar a educação")
 
 # Conteúdo da caixa de informação
-with st.beta_expander("Clique para saber mais"):
+with st.expander("Clique para saber mais"):
     st.write("1. **Conecte-se instantaneamente com especialistas:** Imagine ter acesso direto a especialistas em diversas áreas do conhecimento, prontos para responder às suas dúvidas e orientar seus estudos e pesquisas.")
     st.write("2. **Aprendizado personalizado e interativo:** Receba respostas detalhadas e educativas, adaptadas às suas necessidades específicas, tornando o aprendizado mais eficaz e envolvente.")
     st.write("3. **Suporte acadêmico abrangente:** Desde aulas particulares até orientações para projetos de pesquisa, nossa plataforma oferece um suporte completo para alunos, professores e pesquisadores.")
@@ -169,7 +169,6 @@ with st.beta_expander("Clique para saber mais"):
     st.write("5. **Desenvolvimento profissional e acadêmico:** Professores podem encontrar recursos e orientações para melhorar suas práticas de ensino, enquanto pesquisadores podem obter insights valiosos para suas investigações.")
     st.write("6. **Inovação e tecnologia educacional:** Nossa plataforma incorpora as mais recentes tecnologias para proporcionar uma experiência educacional moderna e eficiente.")
 
-# Exemplo de uso: st.write("Aqui está o seu código Streamlit!")
 
 st.markdown("<hr>", unsafe_allow_html=True)
 st.info("""

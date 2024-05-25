@@ -290,26 +290,82 @@ expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https:/
 expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
 st.markdown("<hr>", unsafe_allow_html=True)
 
+st.title("Assistente de Consultas Especializadas")
+
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([1, 3])
 
 with col1:
     user_input = st.text_area("Por favor, insira sua solicitação:", height=200, key="entrada_usuario")
+    with st.expander("Diretrizes para um Prompt Eficiente"):
+        st.markdown("""
+        Para melhorar a eficiência e qualidade das respostas geradas pelos modelos de linguagem, o conteúdo inserido no campo "Escreva um prompt ou coloque o texto para consulta para o especialista (opcional)" deve ser detalhado, claro e específico. Aqui estão algumas diretrizes e possibilidades sobre o que incluir nesse campo:
+        
+        ### Diretrizes para um Prompt Eficiente
+        
+        1. **Contexto**: Forneça o contexto necessário para entender o problema ou a pergunta. Inclua informações relevantes sobre o cenário ou o objetivo da solicitação.
+        2. **Detalhamento**: Seja detalhado em sua pergunta ou solicitação. Quanto mais informações você fornecer, melhor o modelo poderá entender e responder.
+        3. **Objetivos**: Especifique claramente o que você espera obter com a resposta. Isso ajuda o modelo a focar nos aspectos mais importantes.
+        4. **Formato de Resposta**: Indique o formato desejado para a resposta (por exemplo, uma explicação passo a passo, código em Python com comentários, etc.).
+        5. **Referências**: Se aplicável, inclua referências ou fontes de informação que podem ser úteis para a resposta.
+        
+        ### Exemplos de Prompts
+        
+        1. **Análise de Dados**
+           - Contexto: "Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano."
+           - Detalhamento: "Os dados incluem colunas para data, produto, quantidade vendida e receita."
+           - Objetivos: "Gostaria de saber quais produtos têm o maior crescimento de vendas mensal e identificar padrões sazonais."
+           - Formato de Resposta: "Por favor, forneça uma análise em Python, incluindo gráficos e comentários explicativos."
+        
+        2. **Desenvolvimento de Modelo de Machine Learning**
+           - Contexto: "Estou trabalhando em um projeto de previsão de preços de imóveis."
+           - Detalhamento: "Os dados incluem características dos imóveis, como número de quartos, localização, tamanho e preço."
+           - Objetivos: "Preciso desenvolver um modelo de machine learning que preveja os preços dos imóveis com base nessas características."
+           - Formato de Resposta: "Gostaria de um exemplo de código em Python usando scikit-learn, com explicações sobre a escolha do modelo e a avaliação de desempenho."
+        
+        3. **Revisão de Código**
+           - Contexto: "Estou desenvolvendo um script para automatizar a coleta de dados da web."
+           - Detalhamento: "O script é escrito em Python e utiliza bibliotecas como BeautifulSoup e requests."
+           - Objetivos: "Gostaria de uma revisão do código para identificar possíveis melhorias em termos de eficiência e boas práticas de programação."
+           - Formato de Resposta: "Por favor, forneça sugestões de melhorias e justifique-as com exemplos de código."
+        
+        4. **Pesquisa Acadêmica**
+           - Contexto: "Estou escrevendo um artigo sobre os impactos das mudanças climáticas na biodiversidade."
+           - Detalhamento: "Estou focando nos efeitos em ecossistemas marinhos e terrestres."
+           - Objetivos: "Preciso de uma revisão bibliográfica detalhada, incluindo as principais pesquisas recentes e suas conclusões."
+           - Formato de Resposta: "Por favor, forneça um resumo estruturado com citações em formato ABNT."
+        
+        ### Implementação no Código
+        
+        No código fornecido, a variável `user_prompt` pode ser usada para armazenar o conteúdo do prompt detalhado:
+        
+        ```python
+        user_prompt = st.text_area("Escreva um prompt ou coloque o texto para consulta para o especialista (opcional):", height=200, key="prompt_usuario")
+        ```
+        
+        Esse prompt será então incluído nos prompts usados nas funções `fetch_assistant_response`, `refine_response`, e `evaluate_response_with_rag`, garantindo que o modelo de linguagem receba todas as informações necessárias para gerar uma resposta precisa e completa.
+        
+        ### Exemplo de Prompt Detalhado
+        
+        ```python
+        user_prompt = """
+        Contexto: Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano. Os dados incluem colunas para data, produto, quantidade vendida e receita.
+        Objetivos: Gostaria de saber quais produtos têm o maior crescimento de vendas mensal e identificar padrões sazonais.
+        Formato de Resposta: Por favor, forneça uma análise em Python, incluindo gráficos e comentários explicativos.
+        """
+        ```
+        
+        ### Conclusão
+        
+        A qualidade do prompt é fundamental para obter respostas úteis e precisas de modelos de linguagem. Seguindo essas diretrizes e incluindo detalhes específicos no campo de prompt, você maximizará a eficiência e a qualidade das respostas geradas.
+        """)
+
     user_prompt = st.text_area("Escreva um prompt ou coloque o texto para consulta para o especialista (opcional):", height=200, key="prompt_usuario")
     agent_selection = st.selectbox("Escolha um Especialista", options=agent_options, index=0, key="selecao_agente")
     model_name = st.selectbox("Escolha um Modelo", list(MODEL_MAX_TOKENS.keys()), index=0, key="nome_modelo")
     temperature = st.slider("Nível de Criatividade", min_value=0.0, max_value=1.0, value=0.0, step=0.01, key="temperatura")
-    groq_api_key = st.text_input("Chave da API Groq:", key="groq_api_key")
-    max_tokens = get_max_tokens(model_name)
-    st.write(f"Número Máximo de Tokens para o modelo selecionado: {max_tokens}")
-
-    fetch_clicked = st.button("Buscar Resposta")
-    refine_clicked = st.button("Refinar Resposta")
-    evaluate_clicked = st.button("Avaliar Resposta com RAG")
-    refresh_clicked = st.button("Apagar")
-
-    references_file = st.file_uploader("Upload do arquivo JSON com referências (opcional)", type="json", key="arquivo_referencias")
+    groq_api_key = st.text_input("Chave da API GROQ", key="groq_api_key")
 
 with col2:
     if 'resposta_assistente' not in st.session_state:

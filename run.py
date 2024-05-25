@@ -255,44 +255,7 @@ if refresh_clicked:
 
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
-st.sidebar.title("Manual de Uso")
 
-# Conteúdo do manual de uso
-manual_text = """
-**Passo 1: Criação da Chave API no Groq Playground**
-
-1. Acesse o Groq Playground em [https://console.groq.com/playground](https://console.groq.com/playground).
-2. Faça login na sua conta ou crie uma nova conta.
-3. No menu lateral, selecione "API Keys".
-4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
-
-**Passo 2: Acesso ao Streamlit Chat Application**
-
-1. Acesse o Streamlit Chat Application em [URL do seu aplicativo].
-2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
-3. Escolha um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
-4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".
-5. O aplicativo consultará o Groq API e apresentará a resposta do especialista. Você terá a opção de refinar a resposta ou avaliá-la com o RAG.
-
-**Passo 3: Refinamento da Resposta**
-
-1. Se desejar refinar a resposta do especialista, clique em "Refinar Resposta". Digite mais detalhes ou correções na caixa de texto e clique em "Enviar".
-2. O aplicativo consultará novamente o Groq API e apresentará a resposta refinada.
-
-**Passo 4: Avaliação da Resposta com o RAG**
-
-1. Se preferir avaliar a resposta com o RAG, clique em "Avaliar Resposta com o RAG". O RAG analisará a qualidade e a precisão da resposta do especialista e apresentará uma avaliação.
-2. Você terá a opção de concordar ou discordar com a avaliação do RAG e fornecer feedback adicional, se desejar.
-
-**Passo 5: Conclusão da Consulta**
-
-1. Após refinar a resposta ou avaliá-la com o RAG, você poderá encerrar a consulta ou fazer uma nova pergunta.
-
-**Observação:** Lembre-se de manter a chave API do Groq segura e não compartilhá-la com outras pessoas. Utilize-a apenas no seu Streamlit Chat Application para consultas ao Groq API.
-"""
-
-# Exibição do manual de uso dentro de uma caixa de informação
-st.info(manual_text)
 
 # Informações de contato
 st.sidebar.image("eu.ico", width=80)

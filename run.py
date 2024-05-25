@@ -455,12 +455,12 @@ Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instag
 
 
 def main():
-    st.title("Visualização de Código Python")
+    st.sidebar.title("Visualização de Código Python")
 
     with open("run.py", "r") as file:
         code = file.read()
 
-    st.code(code, language='python')
+    st.sidebar.code(code, language='python')
 
 if __name__ == "__main__":
     main()

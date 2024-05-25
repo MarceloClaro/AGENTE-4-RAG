@@ -387,7 +387,7 @@ st.sidebar.info("""
 """)
 
 # Informações de contato
-
+st.sidebar.image("eu.ico", width=80)
 st.sidebar.write("""
 Projeto Geomaker + IA 
 - Professor: Marcelo Claro.
@@ -398,6 +398,6 @@ Whatsapp: (88)981587145
 
 Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
 """)
-st.sidebar.image("eu.ico", width=80)
+
 
 

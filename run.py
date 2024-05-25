@@ -444,21 +444,21 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 def main():
     with st.sidebar.expander("Insights do Código"):
-    with open("run.py", "r") as file:
-        code = file.read()
+        with open("run.py", "r") as file:
+            code = file.read()
 
-    st.sidebar.code(code, language='python')
-# Informações de contato
-st.sidebar.image("eu.ico", width=80)
-st.sidebar.write("""
-Projeto Geomaker + IA 
-- Professor: Marcelo Claro.
+        st.sidebar.code(code, language='python')
+    # Informações de contato
+    st.sidebar.image("eu.ico", width=80)
+    st.sidebar.write("""
+    Projeto Geomaker + IA 
+    - Professor: Marcelo Claro.
 
-Contatos: marceloclaro@gmail.com
+    Contatos: marceloclaro@gmail.com
 
-Whatsapp: (88)981587145
+    Whatsapp: (88)981587145
 
-Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
-""")
+    Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
+    """)
 if __name__ == "__main__":
     main()

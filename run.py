@@ -152,7 +152,7 @@ agent_options = load_agent_options()
 
 
 
-st.image('updating.gif', width=300, caption='Laboratário de Educação e Inteligência Artificial - Geomaker.', use_column_width='always', output_format='auto')
+st.image('updating.gif', width=300, caption='Laboratório de Educação e Inteligência Artificial - Geomaker.', use_column_width='always', output_format='auto')
 st.markdown("<h1 style='text-align: center;'>Agentes Experts Geomaker</h1>", unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center;'>Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.</h2>", unsafe_allow_html=True)

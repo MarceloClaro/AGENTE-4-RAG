@@ -334,22 +334,37 @@ st.sidebar.image("eu.ico", width=80)
 import streamlit as st
 from pydub import AudioSegment
 from pydub.playback import play
+import threading
+
+# Função para reproduzir o áudio em um thread separado
+def play_audio():
+    while play_audio_thread.is_playing:
+        play(audio)
 
 # Carregar o arquivo de áudio
-audio = AudioSegment.from_file("ambienteindia.mp3", format="mp3")
+try:
+    audio = AudioSegment.from_file("caminho_para_o_arquivo_de_audio/ambienteindia.mp3", format="mp3")
+except FileNotFoundError:
+    st.error("Arquivo de áudio não encontrado. Verifique o caminho do arquivo e tente novamente.")
 
-# Exibir um botão na barra lateral para controlar a reprodução do som
+# Configurar a barra lateral
+st.sidebar.title("Controle de Reprodução de Áudio")
 play_button = st.sidebar.button("Reproduzir som")
 stop_button = st.sidebar.button("Parar som")
 
+# Variável global para controlar a reprodução
+play_audio_thread = threading.Thread(target=play_audio)
+play_audio_thread.is_playing = False
+
 # Lógica para reproduzir ou parar o som
 if play_button:
-    # Reproduzir o som em loop
-    while True:
-        play(audio)
-        if stop_button:
-            break
+    if not play_audio_thread.is_playing:
+        play_audio_thread.is_playing = True
+        play_audio_thread.start()
 
 if stop_button:
+    if play_audio_thread.is_playing:
+        play_audio_thread.is_playing = False
+        play_audio_thread.join()  # Esperar o thread parar
     st.sidebar.write("Som parado")
 

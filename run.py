@@ -336,7 +336,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 # Carregar o arquivo de áudio
-audio = AudioSegment.from_file("caminho_para_o_arquivo_de_audio.mp3", format="mp3")
+audio = AudioSegment.from_file("ambienteindia.mp3", format="mp3")
 
 # Exibir um botão na barra lateral para controlar a reprodução do som
 play_button = st.sidebar.button("Reproduzir som")

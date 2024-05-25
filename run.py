@@ -251,7 +251,7 @@ passo_1_content = """
 
 4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
 
-5. Se quiser usar esta API Key provisória: [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]. Lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
+5. Se quiser usar esta API Key provisória: [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]. Lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
 """
 
 passo_2_content = """

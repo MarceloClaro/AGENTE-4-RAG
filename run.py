@@ -163,7 +163,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Descubra como nossa plataforma pode revolucionar a educação.</h2>", unsafe_allow_html=True)
 
 # Conteúdo da caixa de informação
-with st.expander("Clique para saber mais"):
+with st.expander("Clique para saber mais sobre os Agentes Experts Geomaker."):
     st.write("1. **Conecte-se instantaneamente com especialistas:** Imagine ter acesso direto a especialistas em diversas áreas do conhecimento, prontos para responder às suas dúvidas e orientar seus estudos e pesquisas.")
     st.write("2. **Aprendizado personalizado e interativo:** Receba respostas detalhadas e educativas, adaptadas às suas necessidades específicas, tornando o aprendizado mais eficaz e envolvente.")
     st.write("3. **Suporte acadêmico abrangente:** Desde aulas particulares até orientações para projetos de pesquisa, nossa plataforma oferece um suporte completo para alunos, professores e pesquisadores.")
@@ -207,7 +207,7 @@ passo_1_content = """
 """
 
 passo_2_content = """
-1. Acesse o Streamlit Chat Application em [URL do seu aplicativo].
+1. Acesse o Streamlit Chat Application em [https://agente4.streamlit.app/#87cc9dff](Agentes Experts Geomaker).
 2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
 3. Escolha um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
 4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".

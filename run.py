@@ -290,12 +290,6 @@ expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https:/
 expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
 st.markdown("<hr>", unsafe_allow_html=True)
 
-    user_prompt = st.text_area("Escreva um prompt ou coloque o texto para consulta para o especialista (opcional):", height=200, key="prompt_usuario")
-    agent_selection = st.selectbox("Escolha um Especialista", options=agent_options, index=0, key="selecao_agente")
-    model_name = st.selectbox("Escolha um Modelo", list(MODEL_MAX_TOKENS.keys()), index=0, key="nome_modelo")
-    temperature = st.slider("Nível de Criatividade", min_value=0.0, max_value=1.0, value=0.0, step=0.01, key="temperatura")
-    groq_api_key = st.text_input("Chave da API GROQ", key="groq_api_key")
-
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
 col1, col2 = st.columns(2)

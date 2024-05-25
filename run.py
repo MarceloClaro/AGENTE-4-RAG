@@ -149,6 +149,8 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
 
 agent_options = load_agent_options()
 
+st.set_page_config(page_icon="💬", layout="wide", page_title="Interface de Chat Avançado com RAG")
+
 st.image('updating.gif', width=300, caption='Atualizando...', use_column_width='always', output_format='auto')
 st.markdown("<h1 style='text-align: center;'>Agentes Experts Geomaker</h1>", unsafe_allow_html=True)
 
@@ -234,7 +236,7 @@ if refresh_clicked:
     st.experimental_rerun()
 
 # Sidebar com manual de uso
-
+st.image("logo.png", width=100)
 st.sidebar.title("Manual de Uso")
 st.sidebar.write("1. Digite sua solicitação na caixa de texto. Isso será usado para solicitar uma resposta de um especialista.")
 st.sidebar.write("2. Escolha um especialista da lista ou crie um novo. Se você escolher 'Criar (ou escolher) um especialista...', você será solicitado a descrever as características do especialista.")

@@ -204,11 +204,11 @@ passo_1_content = """
 2. Faça login na sua conta ou crie uma nova conta.
 3. No menu lateral, selecione "API Keys".
 4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
-5. Se quiser usar esta API Key provisória: `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`, lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
+5. Se quiser usar esta API Key provisória: [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] , lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
 """
 
 passo_2_content = """
-1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (*Agentes Experts Geomaker*).
+1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes Experts Geomaker).
 2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
 3. Escolha um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'llama3-70b-8192', 'llama3-11b', 'llama3-4b', ou 'llama3-turbo'.
 4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".

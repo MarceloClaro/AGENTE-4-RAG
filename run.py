@@ -448,7 +448,6 @@ def main():
         Código principal do Agente Expert Geomaker
         """)
         
-    with st.sidebar.expander("codigo"):
         with open("run.py", "r") as file:
             code = file.read()
             st.sidebar.code(code, language='python')

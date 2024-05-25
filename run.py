@@ -443,6 +443,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 
 def main():
+    with st.sidebar.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"):
     st.sidebar.write("""
    Código principal do Agente Expert Geomaker
     """)

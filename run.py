@@ -440,6 +440,16 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
     Esta avaliação reflete um bom equilíbrio entre funcionalidade, usabilidade e boas práticas de desenvolvimento, com algumas áreas para melhorias em termos de segurança, documentação e eficiência.
     """)
+
+
+def main():
+    with st.sidebar.expander("Insights do Código"):
+    st.sidebar.title("Visualização de Código Python do Agente Expert Geomaker")
+
+    with open("run.py", "r") as file:
+        code = file.read()
+
+    st.sidebar.code(code, language='python')
 # Informações de contato
 st.sidebar.image("eu.ico", width=80)
 st.sidebar.write("""
@@ -452,15 +462,5 @@ Whatsapp: (88)981587145
 
 Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
 """)
-
-
-def main():
-    st.sidebar.title("Visualização de Código Python")
-
-    with open("run.py", "r") as file:
-        code = file.read()
-
-    st.sidebar.code(code, language='python')
-
 if __name__ == "__main__":
     main()

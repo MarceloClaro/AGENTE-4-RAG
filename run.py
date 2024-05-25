@@ -495,20 +495,19 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 
 def main():
-   st.sidebar.write("""
+    st.sidebar.write("""
         Código principal do Agente Expert Geomaker
         """)
     with open("run.py", "r") as file:
-            code = file.read()
-            st.sidebar.code(code, language='python')
-         st.sidebar.write("""
-        Código dos Agentes contidosno código agents.jsonn
+        code = file.read()
+        st.sidebar.code(code, language='python')
+    st.sidebar.write("""
+        Código dos Agentes contidos no arquivo agents.json
         """)
     with open("agents.json", "r") as file:
-            code = file.read()
-            st.sidebar.code(code, language='json')
-            
-            
+        code = file.read()
+        st.sidebar.code(code, language='json')
+        
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""
@@ -521,5 +520,6 @@ def main():
 
     Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
     """)
+
 if __name__ == "__main__":
     main()

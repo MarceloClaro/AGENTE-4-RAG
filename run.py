@@ -148,8 +148,10 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
         return ""
 
 agent_options = load_agent_options()
+
 st.image('updating.gif')
-st.title("Agentes Experts IV com Rational Agent Generator (RAG) e avalie a resposta do especialista.")
+st.title("Agentes Experts Geomaker")
+st.subheader(""Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão."")
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 
 col1, col2 = st.columns(2)

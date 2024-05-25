@@ -148,7 +148,7 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
         return ""
 
 agent_options = load_agent_options()
-
+st.image('updating.gif', use_column_width=True)
 st.title("Agentes Experts IV com Rational Agent Generator (RAG) e avalie a resposta do especialista.")
 st.write("Digite sua solicitação para que ela seja respondida pelo especialista ideal.")
 

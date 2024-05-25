@@ -443,6 +443,9 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 
 def main():
+    st.sidebar.write("""
+   Código principal do Agente Expert Geomaker
+    """)
     with st.sidebar.expander("Insights do Código"):
         with open("run.py", "r") as file:
             code = file.read()

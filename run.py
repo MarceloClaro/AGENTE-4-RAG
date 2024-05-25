@@ -236,7 +236,7 @@ if refresh_clicked:
     st.experimental_rerun()
 
 # Sidebar com manual de uso
-st.sidebar.image("logo.png", width=100)
+st.sidebar.image("logo.png", width=200)
 st.sidebar.title("Manual de Uso")
 st.sidebar.write("1. Digite sua solicitação na caixa de texto. Isso será usado para solicitar uma resposta de um especialista.")
 st.sidebar.write("2. Escolha um especialista da lista ou crie um novo. Se você escolher 'Criar (ou escolher) um especialista...', você será solicitado a descrever as características do especialista.")
@@ -248,7 +248,7 @@ st.sidebar.write("7. Se necessário, refine a resposta com base nas referências
 st.sidebar.write("8. Avalie a resposta com o Rational Agent Generator (RAG) para determinar a qualidade e precisão da resposta. Clique em 'Avaliar Resposta com RAG' para iniciar a avaliação.")
 st.sidebar.write("9. Visualize a análise do especialista, a resposta original, a resposta refinada (se houver) e a avaliação com RAG para avaliar a qualidade e precisão da resposta.")
 
-st.sidebar.image("eu.ico", width=200)
+st.sidebar.image("eu.ico", width=80)
 st.sidebar.write("""
 Projeto Geomaker + IA 
 - Professor: Marcelo Claro.

@@ -331,10 +331,17 @@ Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instag
 """)
 st.sidebar.image("eu.ico", width=80)
 
-import streamlit as st
+
 from pydub import AudioSegment
 from pydub.playback import play
 import threading
+import ffmpeg
+
+# Verificar se o ffmpeg está instalado
+try:
+    ffmpeg.input('dummy.mp3').output('dummy.wav').run(overwrite_output=True)
+except ffmpeg.Error as e:
+    st.error("O ffmpeg não está instalado. Por favor, instale o ffmpeg para continuar.")
 
 # Função para reproduzir o áudio em um thread separado
 def play_audio():
@@ -349,6 +356,25 @@ except FileNotFoundError:
 
 # Configurar a barra lateral
 st.sidebar.title("Controle de Reprodução de Áudio")
+play_button = st.sidebar.button("Reproduzir som")
+stop_button = st.sidebar.button("Parar som")
+
+# Variável global para controlar a reprodução
+play_audio_thread = threading.Thread(target=play_audio)
+play_audio_thread.is_playing = False
+
+# Lógica para reproduzir ou parar o som
+if play_button:
+    if not play_audio_thread.is_playing:
+        play_audio_thread.is_playing = True
+        play_audio_thread.start()
+
+if stop_button:
+    if play_audio_thread.is_playing:
+        play_audio_thread.is_playing = False
+        play_audio_thread.join()  # Esperar o thread parar
+    st.sidebar.write("Som parado")
+
 play_button = st.sidebar.button("Reproduzir som")
 stop_button = st.sidebar.button("Parar som")
 

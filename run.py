@@ -457,7 +457,7 @@ Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instag
 def main():
     st.title("Visualização de Código Python")
 
-    with open("seu_arquivo.py", "r") as file:
+    with open("run.py", "r") as file:
         code = file.read()
 
     st.code(code, language='python')

@@ -444,14 +444,14 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 def main():
     with st.sidebar.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"):
-    st.sidebar.write("""
-   Código principal do Agente Expert Geomaker
-    """)
+        st.sidebar.write("""
+        Código principal do Agente Expert Geomaker
+        """)
+        
     with st.sidebar.expander("Insights do Código"):
         with open("run.py", "r") as file:
             code = file.read()
-
-        st.sidebar.code(code, language='python')
+            st.sidebar.code(code, language='python')
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""

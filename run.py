@@ -343,7 +343,7 @@ def play_audio():
 
 # Carregar o arquivo de áudio
 try:
-    audio = AudioSegment.from_file("caminho_para_o_arquivo_de_audio/ambienteindia.mp3", format="mp3")
+    audio = AudioSegment.from_file("ambienteindia.mp3", format="mp3")
 except FileNotFoundError:
     st.error("Arquivo de áudio não encontrado. Verifique o caminho do arquivo e tente novamente.")
 

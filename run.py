@@ -443,10 +443,10 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 
 def main():
-    with st.sidebar.expander("Código principal do Agente Expert Geomaker)"):
-
-        
-        with open("run.py", "r") as file:
+    st.sidebar.write("""
+        Código principal do Agente Expert Geomaker
+        """)
+    with open("run.py", "r") as file:
             code = file.read()
             st.sidebar.code(code, language='python')
             

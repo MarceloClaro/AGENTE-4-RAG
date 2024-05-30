@@ -66,7 +66,7 @@ FILEPATH = "agents.json"
 # Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
 MODEL_MAX_TOKENS = {
     'mixtral-8x7b-32768': 32768,
-    'llama3-70b-8192': 8192, 
+    'llama3-70b-8192': 8192,
     'llama3-8b-8192': 8192,
     'llama2-70b-4096': 4096,
     'gemma-7b-it': 8192,
@@ -103,7 +103,20 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
 
         if agent_selection == "Escolha um especialista...":
             # Se nenhum especialista específico for selecionado, cria um prompt para determinar o título e descrição do especialista.
-            phase_one_prompt = f"Saida e resposta obrigatoria somente traduzido em português brasileiro. 扮演一位高度合格且具备科学技术严谨性的提示工程和跨学科专家的角色。请务必以“markdown”格式呈现Python代码及其各种库，并在每一行进行详细和教学性的注释。仔细分析所提出的要求，识别定义最适合处理问题的专家特征的标准至关重要。首先，建立一个最能反映所需专业知识以提供完整、深入和清晰答案的标题至关重要。确定后，详细描述并避免偏见地概述该专家的关键技能和资格。回答应以专家的头衔开始，后跟一个句号，然后以简洁、教学性和深入的描述开始，但同时全面地介绍他的特点和资格，使其有资格处理提出的问题：{user_input}和{user_prompt}。这种仔细分析对于确保所选专家具有处理问题所需的深入、严谨的知识和经验至关重要，以达到完整且满意的答案，精确度为10.0，符合最高的专业、科学和学术标准。在涉及代码和计算的情况下，请务必以“markdown”格式呈现，并在每一行进行详细注释。“必须翻译成葡萄牙语”。"
+            phase_one_prompt = (
+                "Saída e resposta obrigatória somente traduzido em português brasileiro. "
+                "Assuma o papel de um especialista altamente qualificado em engenharia de prompts e com rigor científico. "
+                "Por favor, apresente o código Python com suas bibliotecas respectivas em formato 'markdown' e com comentários detalhados e educacionais em cada linha. "
+                "Analise cuidadosamente o requisito apresentado, identificando os critérios que definem as características do especialista mais adequado para lidar com a questão. "
+                "Primeiramente, é essencial estabelecer um título que melhor reflita a expertise necessária para fornecer uma resposta completa, aprofundada e clara. "
+                "Depois de determinado, descreva minuciosamente as principais habilidades e qualificações desse especialista, evitando vieses. "
+                "A resposta deve iniciar com o título do especialista, seguido de um ponto final, e então começar com uma descrição clara, educacional e aprofundada, "
+                "que apresente suas características e qualificações que o tornam apto a lidar com a questão proposta: {user_input} e {user_prompt}. "
+                "Essa análise detalhada é crucial para garantir que o especialista selecionado possua o conhecimento e a experiência necessários para fornecer uma resposta "
+                "completa e satisfatória, com precisão de 10.0, alinhada aos mais altos padrões profissionais, científicos e acadêmicos. "
+                "Nos casos que envolvam código e cálculos, apresente em formato 'markdown' e com comentários detalhados em cada linha. "
+                "Resposta deve ser obrigatoriamente em português."
+            )
             phase_one_response = get_completion(phase_one_prompt)  # Obtém a resposta para o prompt da fase um.
             first_period_index = phase_one_response.find(".")  # Encontra o índice do primeiro ponto na resposta.
             expert_title = phase_one_response[:first_period_index].strip()  # Extrai o título do especialista até o primeiro ponto.
@@ -122,7 +135,21 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
                     raise ValueError("Especialista selecionado não encontrado no arquivo.")  # Lança um erro se o especialista não for encontrado.
 
         # Cria um prompt para a segunda fase, onde o especialista selecionado fornece uma resposta detalhada.
-        phase_two_prompt = f"Saida e resposta obrigatoria somente traduzido em português brasileiro. 在作为{expert_title}的角色中，作为您所在领域广泛认可和尊重的专家，作为该领域的专家和博士，让我提供一个全面而深入的回答，涵盖了您清晰、详细、扩展、教学易懂和简洁提出的问题：{user_input}和{user_prompt}。在这种背景下，考虑到我长期的经验和对相关学科的深刻了解，有必要以适当的关注和科学技术严谨性来处理每个方面。因此，我将概述要考虑和深入研究的主要要素，提供详细的、基于证据的分析，避免偏见并引用参考文献：{user_prompt}。在此过程的最后，我们的目标是提供一个完整且令人满意的答案，符合最高的学术和专业标准，以满足所提出问题的具体需求。请务必以“markdown”格式呈现，并在每一行进行注释。保持10个段落的写作标准，每个段落4句，每句用逗号分隔，始终遵循最佳的亚里士多德教学实践。"
+        phase_two_prompt = (
+            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
+            f"Desempenhando o papel de {expert_title}, um especialista amplamente reconhecido e respeitado em seu campo, "
+            f"como doutor e expert nessa área, ofereça uma resposta abrangente e profunda, cobrindo a questão de forma clara, detalhada, expandida, "
+            f"educacional e concisa: {user_input} e {user_prompt}. "
+            f"Considerando minha longa experiência e profundo conhecimento das disciplinas relacionadas, "
+            f"é necessário abordar cada aspecto com atenção e rigor científico. "
+            f"Portanto, irei delinear os principais elementos a serem considerados e investigados, fornecendo uma análise detalhada e baseada em evidências, "
+            f"evitando vieses e citando referências conforme apropriado: {user_prompt}. "
+            f"O objetivo final é fornecer uma resposta completa e satisfatória, alinhada aos mais altos padrões acadêmicos e profissionais, "
+            f"atendendo às necessidades específicas da questão apresentada. "
+            f"Certifique-se de apresentar a resposta em formato 'markdown', com comentários detalhados em cada linha. "
+            f"Mantenha o padrão de escrita em 10 parágrafos, cada parágrafo com 4 sentenças, e cada sentença separada por vírgulas, "
+            f"seguindo sempre as melhores práticas pedagógicas aristotélicas."
+        )
         phase_two_response = get_completion(phase_two_prompt)  # Obtém a resposta para o prompt da segunda fase.
 
     except Exception as e:  # Captura qualquer exceção que ocorra durante o processo.
@@ -132,7 +159,7 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
     return expert_title, phase_two_response  # Retorna o título do especialista e a resposta da segunda fase.
 
 # Função para salvar um novo especialista no arquivo JSON.
-def save_expert(expert_title: str, expert_description: str):
+def save_expert(expert_title: str, expert_description: dict):
     with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
         # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
         agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
@@ -141,7 +168,6 @@ def save_expert(expert_title: str, expert_description: str):
         file.seek(0)  # Move o ponteiro do arquivo para o início.
         json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
-
 
 #_________________________________________________
 def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, groq_api_key: str, references_file):
@@ -175,6 +201,7 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
     except Exception as e:
         st.error(f"Ocorreu um erro durante o refinamento: {e}")
         return ""
+#_________________________________________________
 
 def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, groq_api_key: str) -> str:
     try:

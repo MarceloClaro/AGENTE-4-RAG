@@ -47,7 +47,7 @@
 ![Fluxograma Manual](https://raw.githubusercontent.com/MarceloClaro/AGENTE-4-RAG/main/fluxograma%20manual%20agente%204.png)
 
 #### Interface do Usuário
-![Interface do Usuário](https://raw.githubusercontent.com/MarceloClaro/AGENTE-4-RAG/main/interface%20agente%204.png)
+![Interface do Usuário](https://raw.githubusercontent.com/MarceloClaro/AGENTE-4-RAG/main/fluxograma%20agente%204.png)
 
 ---
 

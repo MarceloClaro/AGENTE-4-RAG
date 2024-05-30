@@ -659,7 +659,7 @@ st.sidebar.image("logo.png", width=200)
 with st.sidebar.expander("Insights do Código"):
     
     st.markdown("""
-    O código do Agente Expert Geomaker é um exemplo de uma aplicação de chat baseada em modelos de linguagem (LLMs) utilizando a biblioteca Streamlit e a API Groq. Aqui, vamos analisar detalhadamente o código e discutir suas inovações, pontos positivos e limitações.
+    O código do Agentes Alan Kay é um exemplo de uma aplicação de chat baseada em modelos de linguagem (LLMs) utilizando a biblioteca Streamlit e a API Groq. Aqui, vamos analisar detalhadamente o código e discutir suas inovações, pontos positivos e limitações.
 
     **Inovações:**
     - Suporte a múltiplos modelos de linguagem: O código permite que o usuário escolha entre diferentes modelos de linguagem, como o LLaMA, para gerar respostas mais precisas e personalizadas.
@@ -740,7 +740,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
 def main():
     st.sidebar.write("""
-        Código principal do Agente Expert Geomaker
+        Código principal do Agentes Alan Kay
         """)
     with open("runBR.py", "r") as file:
         code = file.read()

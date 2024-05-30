@@ -48,4 +48,4 @@ AGENTE-4 RAG é um aplicativo web desenvolvido com Streamlit para fornecer respo
 
 ---
 
-Para mais detalhes, visite o [repositório do AGENTE-4 RAG no Streamlit]([https://github.com/MarceloClaro/AGENTE-4-RAG](https://agente4.streamlit.app/)).
+Para mais detalhes, visite o [repositório do AGENTE-4 RAG no Streamlit]([https://agente4.streamlit.app/]).

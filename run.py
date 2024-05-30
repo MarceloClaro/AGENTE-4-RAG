@@ -306,8 +306,8 @@ with st.expander("Clique para saber mais sobre os Agentes Experts Geomaker."):
     st.write("6. **Inovação e tecnologia educacional:** Nossa plataforma incorpora as mais recentes tecnologias para proporcionar uma experiência educacional moderna e eficiente.")
     st.image("fluxograma agente 4.png")
     
-    st.markdown("### Explicando o Fluxograma para o Blog\n"
-                "Neste post, vamos detalhar o processo de utilização da plataforma, conforme representado no fluxograma, passo a passo. A plataforma é projetada para ajudar usuários a interagir com modelos de linguagem avançados através de uma interface intuitiva. Vamos explorar cada etapa para que você possa aproveitar ao máximo todas as funcionalidades oferecidas.\n"
+    st.markdown("### Explicando o Fluxograma de Utilização\n"
+                "Vamos detalhar o processo de utilização da plataforma, conforme representado no fluxograma, passo a passo. A plataforma é projetada para ajudar usuários a interagir com modelos de linguagem avançados através de uma interface intuitiva. Vamos explorar cada etapa para que você possa aproveitar ao máximo todas as funcionalidades oferecidas.\n"
                 "#### Passo a Passo do Fluxograma\n"
                 "1. **Início**:\n"
                 "   - O fluxo começa com o início da execução do aplicativo.\n"

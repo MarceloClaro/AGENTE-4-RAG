@@ -374,7 +374,8 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Manual de uso básico.</h2>", unsafe_allow_html=True)
 
 def expander(title: str, content: str, icon: str):
-    with st.expander(title):
+    with st.expander(title): 
+        st.image("fluxograma agente 4.png")
         st.markdown(f'<img src="{icon}" style="vertical-align:middle"> {content}', unsafe_allow_html=True)
 
 # Conteúdo do manual de uso

@@ -545,9 +545,10 @@ if refresh_clicked:
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
 
-
+st.sidebar.image("diagram agente 4.png")
 
 with st.sidebar.expander("Insights do Código"):
+    
     st.markdown("""
     O código do Agente Expert Geomaker é um exemplo de uma aplicação de chat baseada em modelos de linguagem (LLMs) utilizando a biblioteca Streamlit e a API Groq. Aqui, vamos analisar detalhadamente o código e discutir suas inovações, pontos positivos e limitações.
 

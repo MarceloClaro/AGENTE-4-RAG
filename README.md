@@ -1,6 +1,6 @@
 ### AGENTE-4 RAG
 
-[AGENTE-4 RAG](https://agente4.streamlit.app/) é um aplicativo web desenvolvido com Streamlit para fornecer respostas especializadas utilizando modelos de linguagem treinados pela API Groq.
+[AGENTE-4 RAG](https://agente4.streamlit.app/?embed_options=dark_theme) é um aplicativo web desenvolvido com Streamlit para fornecer respostas especializadas utilizando modelos de linguagem treinados pela API Groq.
 
 ---
 
@@ -10,7 +10,7 @@
 - **get_max_tokens**: Retorna o número máximo de tokens para um modelo específico.
 - **fetch_assistant_response**: Obtém a resposta do especialista para uma pergunta do usuário.
 - **refine_response**: Refina a resposta do especialista com base em referências fornecidas.
-- **evaluate_response_with_rag**: Avalia a resposta do especialista usando RAG (Retrieval-Augmented Generation).
+- **evaluate_response_with_rag**: Avalia a resposta do especialista usando RAG (Retrieval-Augmented Generation), combinando a recuperação de informações relevantes com a geração de texto.
 
 ---
 
@@ -46,6 +46,9 @@
 #### Fluxograma Manual
 ![Fluxograma Manual](https://raw.githubusercontent.com/MarceloClaro/AGENTE-4-RAG/main/fluxograma%20manual%20agente%204.png)
 
+#### Interface do Usuário
+![Interface do Usuário](https://raw.githubusercontent.com/MarceloClaro/AGENTE-4-RAG/main/interface%20agente%204.png)
+
 ---
 
-Para mais detalhes, visite o [AGENTE-4 RAG no Streamlit](https://agente4.streamlit.app/).
+Para mais detalhes, visite o [AGENTE-4 RAG](https://agente4.streamlit.app/?embed_options=dark_theme).

@@ -1,6 +1,6 @@
 ### AGENTE-4 RAG
 
-AGENTE-4 RAG é um aplicativo web desenvolvido com Streamlit para fornecer respostas especializadas utilizando modelos de linguagem treinados pela API Groq.
+[AGENTE-4 RAG](https://agente4.streamlit.app/) é um aplicativo web desenvolvido com Streamlit para fornecer respostas especializadas utilizando modelos de linguagem treinados pela API Groq.
 
 ---
 

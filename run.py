@@ -54,12 +54,6 @@ def save_expert(expert_title: str, expert_description: str):
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
 #_________________________________________________
 
-from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados precisos para a função.
-import json  # Importa o módulo json para trabalhar com dados JSON.
-import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
-import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
-from groq import Groq  # Importa a biblioteca Groq para interagir com a API Groq.
-
 # Define o caminho para o arquivo JSON que contém os especialistas.
 FILEPATH = "agents.json"
 
@@ -104,19 +98,20 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
         if agent_selection == "Escolha um especialista...":
             # Se nenhum especialista específico for selecionado, cria um prompt para determinar o título e descrição do especialista.
             phase_one_prompt = (
-                "Saída e resposta obrigatória somente traduzido em português brasileiro. "
-                "Assuma o papel de um especialista altamente qualificado em engenharia de prompts e com rigor científico. "
-                "Por favor, apresente o código Python com suas bibliotecas respectivas em formato 'markdown' e com comentários detalhados e educacionais em cada linha. "
-                "Analise cuidadosamente o requisito apresentado, identificando os critérios que definem as características do especialista mais adequado para lidar com a questão. "
-                "Primeiramente, é essencial estabelecer um título que melhor reflita a expertise necessária para fornecer uma resposta completa, aprofundada e clara. "
-                "Depois de determinado, descreva minuciosamente as principais habilidades e qualificações desse especialista, evitando vieses. "
-                "A resposta deve iniciar com o título do especialista, seguido de um ponto final, e então começar com uma descrição clara, educacional e aprofundada, "
-                "que apresente suas características e qualificações que o tornam apto a lidar com a questão proposta: {user_input} e {user_prompt}. "
-                "Essa análise detalhada é crucial para garantir que o especialista selecionado possua o conhecimento e a experiência necessários para fornecer uma resposta "
-                "completa e satisfatória, com precisão de 10.0, alinhada aos mais altos padrões profissionais, científicos e acadêmicos. "
-                "Nos casos que envolvam código e cálculos, apresente em formato 'markdown' e com comentários detalhados em cada linha. "
-                "Resposta deve ser obrigatoriamente em português."
+                "输出和响应必须仅翻译成巴西葡萄牙语。 "
+                "假设自己是一位具有高度科学严谨性的高级提示工程专家。 "
+                "请以'markdown'格式呈现Python代码及其相应的库，并在每行中添加详细的教育性注释。 "
+                "仔细分析所提出的要求，识别定义最适合处理该问题的专家特征的标准。 "
+                "首先，有必要确定一个最能反映提供完整、深入且清晰回答所需专业知识的标题。 "
+                "确定后，详细描述该专家的主要技能和资格，避免偏见。 "
+                "回答必须以专家的标题开始，后跟一个句号，然后以清晰、教育性和深入的描述开始， "
+                "介绍使其能够处理所提出问题的特征和资格：{user_input}和{user_prompt}。 "
+                "这种详细的分析对于确保所选专家具备提供完整和满意回答所需的知识和经验至关重要， "
+                "精确度为10.0，符合最高的专业、科学和学术标准。 "
+                "对于涉及代码和计算的情况，请以'markdown'格式呈现，并在每行中添加详细的注释。 "
+                "回答必须仅用葡萄牙语。"
             )
+
             phase_one_response = get_completion(phase_one_prompt)  # Obtém a resposta para o prompt da fase um.
             first_period_index = phase_one_response.find(".")  # Encontra o índice do primeiro ponto na resposta.
             expert_title = phase_one_response[:first_period_index].strip()  # Extrai o título do especialista até o primeiro ponto.
@@ -136,19 +131,19 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
 
         # Cria um prompt para a segunda fase, onde o especialista selecionado fornece uma resposta detalhada.
         phase_two_prompt = (
-            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
-            f"Desempenhando o papel de {expert_title}, um especialista amplamente reconhecido e respeitado em seu campo, "
-            f"como doutor e expert nessa área, ofereça uma resposta abrangente e profunda, cobrindo a questão de forma clara, detalhada, expandida, "
-            f"educacional e concisa: {user_input} e {user_prompt}. "
-            f"Considerando minha longa experiência e profundo conhecimento das disciplinas relacionadas, "
-            f"é necessário abordar cada aspecto com atenção e rigor científico. "
-            f"Portanto, irei delinear os principais elementos a serem considerados e investigados, fornecendo uma análise detalhada e baseada em evidências, "
-            f"evitando vieses e citando referências conforme apropriado: {user_prompt}. "
-            f"O objetivo final é fornecer uma resposta completa e satisfatória, alinhada aos mais altos padrões acadêmicos e profissionais, "
-            f"atendendo às necessidades específicas da questão apresentada. "
-            f"Certifique-se de apresentar a resposta em formato 'markdown', com comentários detalhados em cada linha. "
-            f"Mantenha o padrão de escrita em 10 parágrafos, cada parágrafo com 4 sentenças, e cada sentença separada por vírgulas, "
-            f"seguindo sempre as melhores práticas pedagógicas aristotélicas."
+            f"输出和响应必须仅翻译成巴西葡萄牙语。 "
+            f"扮演{expert_title}的角色，这是一位在其领域内广受认可和尊敬的专家， "
+            f"作为该领域的博士和专家，提供一个全面且深入的回答，涵盖问题的各个方面，做到清晰、详细、扩展、 "
+            f"教育性和简洁：{user_input}和{user_prompt}。 "
+            f"考虑到我在相关学科的丰富经验和深厚知识， "
+            f"有必要以科学严谨的态度关注并探讨每个方面。 "
+            f"因此，我将概述需要考虑和调查的主要要素，提供基于证据的详细分析， "
+            f"避免偏见，并根据需要引用参考文献：{user_prompt}。 "
+            f"最终目标是提供一个完整且令人满意的回答，符合最高的学术和专业标准， "
+            f"满足所提出问题的具体需求。 "
+            f"确保以'markdown'格式呈现回答，并在每行中添加详细注释。 "
+            f"保持写作标准在10个段落，每个段落4句话，每句话用逗号分隔， "
+            f"始终遵循亚里士多德的最佳教育实践。"
         )
         phase_two_response = get_completion(phase_two_prompt)  # Obtém a resposta para o prompt da segunda fase.
 
@@ -193,20 +188,21 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
 
         # Cria um prompt detalhado para refinar a resposta.
         refine_prompt = (
-            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
-            f"Desempenhando o papel de {expert_title}, um especialista amplamente reconhecido e respeitado em seu campo, "
-            f"como doutor e expert nessa área, ofereça uma resposta abrangente e profunda, cobrindo a questão de forma clara, detalhada, expandida, "
-            f"educacional e concisa: {user_input} e {user_prompt}. "
-            f"Considerando minha longa experiência e profundo conhecimento das disciplinas relacionadas, "
-            f"é necessário abordar cada aspecto com atenção e rigor científico. "
-            f"Portanto, irei delinear os principais elementos a serem considerados e investigados, fornecendo uma análise detalhada e baseada em evidências, "
-            f"evitando vieses e citando referências conforme apropriado: {phase_two_response}. "
-            f"O objetivo final é fornecer uma resposta completa e satisfatória, alinhada aos mais altos padrões acadêmicos e profissionais, "
-            f"atendendo às necessidades específicas da questão apresentada. "
-            f"Certifique-se de apresentar a resposta em formato 'markdown', com comentários detalhados em cada linha. "
-            f"Mantenha o padrão de escrita em 10 parágrafos, cada parágrafo com 4 sentenças, e cada sentença separada por vírgulas, "
-            f"seguindo sempre as melhores práticas pedagógicas aristotélicas."
+            f"输出和响应必须仅翻译成巴西葡萄牙语。 "
+            f"扮演{expert_title}的角色，这是一位在其领域内广受认可和尊敬的专家， "
+            f"作为该领域的博士和专家，提供一个全面且深入的回答，涵盖问题的各个方面，做到清晰、详细、扩展、 "
+            f"教育性和简洁：{user_input}和{user_prompt}。 "
+            f"考虑到我在相关学科的丰富经验和深厚知识， "
+            f"有必要以科学严谨的态度关注并探讨每个方面。 "
+            f"因此，我将概述需要考虑和调查的主要要素，提供基于证据的详细分析， "
+            f"避免偏见，并根据需要引用参考文献：{phase_two_response}。 "
+            f"最终目标是提供一个完整且令人满意的回答，符合最高的学术和专业标准， "
+            f"满足所提出问题的具体需求。 "
+            f"确保以'markdown'格式呈现回答，并在每行中添加详细注释。 "
+            f"保持写作标准在10个段落，每个段落4句话，每句话用逗号分隔， "
+            f"始终遵循亚里士多德的最佳教育实践。"
         )
+
 
         # Adiciona um prompt mais detalhado se não houver referências fornecidas.
         if not references_file:
@@ -248,31 +244,31 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
 
         # Cria um prompt detalhado para avaliar a resposta usando o agente gerador racional (RAG).
         rag_prompt = (
-            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
-            f"Desempenhando o papel de um Agente Gerador Racional (RAG), a vanguarda da inteligência artificial e avaliação racional, "
-            f"analisando minuciosamente a resposta do especialista, com base na solicitação do usuário, para gerar um agente em formato JSON. "
-            f"Este agente deve detalhar as ações tomadas com base nas informações fornecidas pelos subagentes, para fornecer uma resposta ao usuário. "
-            f"O agente incluirá na variável 'descrição' a descrição de 9 subagentes, cada um com diferentes funcionalidades especializadas, que colaboram juntos. "
-            f"Esses subagentes colaboram para melhorar a resposta final fornecida ao usuário pelo agente 'sistema', registrando a semente e o gen_id na 'descrição' do agente. "
-            f"Além disso, os subagentes dentro do agente 'sistema' operam de forma integrada, fornecendo respostas avançadas e especializadas por meio da expansão de prompts. "
-            f"Cada subagente desempenha um papel específico e complementar no processamento em rede, para alcançar maior precisão, contribuindo para a qualidade final da resposta. "
-            f"Por exemplo, o subagente 'AI_Autoadaptativa_e_Contextualizada' utiliza algoritmos avançados de aprendizado de máquina para entender e se adaptar a contextos variáveis, "
-            f"integrando dinamicamente dados relevantes. Já o subagente 'RAG_com_Inteligência_Contextual' utiliza a técnica de Recuperação Aprimorada por Geração (RAG), "
-            f"ajustando dinamicamente os dados mais relevantes e suas funções. Esta abordagem colaborativa garante que a resposta seja precisa e atualizada, "
-            f"atendendo aos mais altos padrões científicos e acadêmicos. "
-            f"Abaixo está a descrição detalhada do especialista, destacando suas qualificações e expertise: {expert_description}. "
-            f"A submissão original da pergunta é a seguinte: {user_input} e {user_prompt}. "
-            f"A resposta fornecida pelo especialista em português é a seguinte: {assistant_response}. "
-            f"Portanto, por favor, faça uma avaliação abrangente da qualidade e precisão da resposta fornecida pelo especialista em português, "
-            f"considerando a descrição do especialista e a resposta fornecida. "
-            f"Use português para a análise e forneça uma explicação detalhada: "
-            f"análise SWOT (Forças, Fraquezas, Oportunidades, Ameaças) com interpretação dos dados, "
-            f"matriz BCG (Boston Consulting Group) com interpretação dos dados, "
-            f"matriz de risco, ANOVA (Análise de Variância) com interpretação dos dados, "
-            f"estatísticas Q com interpretação dos dados e índice Q (Q-Exponential) com interpretação dos dados, "
-            f"seguindo os mais altos padrões de excelência e rigor acadêmico e científico. "
-            f"Certifique-se de manter cada parágrafo com 4 sentenças, cada sentença separada por vírgulas, seguindo sempre as melhores práticas pedagógicas aristotélicas. "
-            f"A resposta deve ser em português do Brasil."
+            f"输出和响应必须仅翻译成巴西葡萄牙语。 "
+            f"扮演一个理性生成代理（RAG）的角色，站在人工智能和理性评估的前沿， "
+            f"仔细分析专家的回答，根据用户的请求生成一个JSON格式的代理。 "
+            f"该代理应详细描述根据子代理提供的信息采取的行动，以向用户提供回答。 "
+            f"在变量'描述'中包含9个子代理的描述，每个子代理具有不同的专门功能，共同协作。 "
+            f"这些子代理共同协作，以改善系统代理向用户提供的最终回答，并在代理的'描述'中记录种子和gen_id。 "
+            f"此外，系统代理内的子代理一体化操作，通过扩展提示提供高级和专业的回答。 "
+            f"每个子代理在网络处理过程中扮演特定且互补的角色，以达到更高的精度，提升最终回答的质量。 "
+            f"例如，子代理'AI_自适应_和_上下文化'使用先进的机器学习算法来理解和适应变化的上下文， "
+            f"动态整合相关数据。而子代理'RAG_与_上下文智能'使用增强生成的恢复（RAG）技术， "
+            f"动态调整最相关的数据及其功能。 这种协作方法确保回答准确且更新， "
+            f"符合最高的科学和学术标准。 "
+            f"以下是专家的详细描述，突出其资格和专业知识：{expert_description}。 "
+            f"原始问题提交如下：{user_input}和{user_prompt}。 "
+            f"专家用葡萄牙语提供的回答如下：{assistant_response}。 "
+            f"因此，请对专家用葡萄牙语提供的回答的质量和准确性进行全面评估， "
+            f"考虑专家的描述和提供的回答。 "
+            f"使用葡萄牙语进行分析并提供详细解释： "
+            f"SWOT分析（优势、劣势、机会、威胁）并解释数据， "
+            f"BCG矩阵（波士顿咨询集团）并解释数据， "
+            f"风险矩阵，ANOVA（方差分析）并解释数据， "
+            f"Q统计并解释数据和Q指数（Q-指数）并解释数据， "
+            f"遵循最高的卓越和学术、科学严格标准。 "
+            f"确保每段保持4句话，每句话用逗号分隔，始终遵循亚里士多德和苏格拉底的最佳教育实践。 "
+            f"回答必须使用巴西葡萄牙语。"
         )
 
         rag_response = get_completion(rag_prompt)  # Obtém a resposta avaliada a partir do prompt detalhado.

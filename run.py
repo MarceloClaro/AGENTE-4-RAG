@@ -304,6 +304,7 @@ with st.expander("Clique para saber mais sobre os Agentes Experts Geomaker."):
     st.write("4. **Avaliação e aprimoramento contínuo:** Utilizando o Rational Agent Generator (RAG), garantimos que as respostas dos especialistas sejam sempre as melhores, mantendo um padrão de excelência em todas as interações.")
     st.write("5. **Desenvolvimento profissional e acadêmico:** Professores podem encontrar recursos e orientações para melhorar suas práticas de ensino, enquanto pesquisadores podem obter insights valiosos para suas investigações.")
     st.write("6. **Inovação e tecnologia educacional:** Nossa plataforma incorpora as mais recentes tecnologias para proporcionar uma experiência educacional moderna e eficiente.")
+    st.image("diagram agente 4.png")
 
 
 st.markdown("<hr>", unsafe_allow_html=True)
@@ -544,8 +545,6 @@ if refresh_clicked:
 
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
-
-st.sidebar.image("diagram agente 4.png")
 
 with st.sidebar.expander("Insights do Código"):
     

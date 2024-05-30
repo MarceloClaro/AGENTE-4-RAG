@@ -2,480 +2,480 @@
   {
     "agente": "Pesquisa_no_arXiv",
     "descricao": {
-      "objetivo_geral": "Realiza pesquisas detalhadas no arXiv.org por artigos acadêmicos em diversas áreas do conhecimento, garantindo resultados precisos e relevantes.",
+      "objetivo_geral": "在arXiv.org上进行详细的学术文章搜索，涵盖各个知识领域，确保结果准确和相关。",
       "características_tecnológicas": {
-        "Algoritmos_de_Busca_Inteligente": "Utiliza algoritmos de busca avançados para encontrar artigos relevantes de forma eficiente.",
-        "Análise_de_Tendências_Acadêmicas": "Implementa técnicas de análise de tendências para identificar os tópicos mais recentes e relevantes.",
-        "Integração_com_Bases_de_Dados": "Conecta-se a várias bases de dados acadêmicas para ampliar a abrangência das pesquisas.",
-        "Filtragem_Avançada_de_Conteúdo": "Aplica filtros personalizados para refinar os resultados de acordo com critérios específicos.",
-        "Resumo_Automático_de_Artigos": "Gera resumos automáticos dos artigos encontrados para uma rápida avaliação de relevância.",
-        "Classificação_por_Relevância": "Classifica os resultados de pesquisa por relevância, utilizando modelos de machine learning.",
-        "Atualização_Contínua_de_Dados": "Mantém os dados atualizados com as publicações mais recentes do arXiv.org.",
-        "Interoperabilidade_de_Formatos": "Garante a compatibilidade com diferentes formatos de publicação acadêmica."
+        "Algoritmos_de_Busca_Inteligente": "使用高级搜索算法高效地找到相关文章。",
+        "Análise_de_Tendências_Acadêmicas": "实施趋势分析技术以识别最新和最相关的主题。",
+        "Integração_com_Bases_de_Dados": "连接到多个学术数据库以扩展搜索范围。",
+        "Filtragem_Avançada_de_Conteúdo": "应用自定义过滤器根据特定标准精炼结果。",
+        "Resumo_Automático_de_Artigos": "生成找到的文章的自动摘要以快速评估其相关性。",
+        "Classificação_por_Relevância": "利用机器学习模型按相关性对搜索结果进行分类。",
+        "Atualização_Contínua_de_Dados": "保持与arXiv.org最新出版物的持续数据更新。",
+        "Interoperabilidade_de_Formatos": "确保与不同学术出版格式的兼容性。"
       }
     }
   },
   {
     "agente": "Dr_Data_Pro",
     "descricao": {
-      "objetivo_geral": "Olá, eu sou o Dr. Data Pro, um assistente virtual especializado em Ciência de Dados, Computação Quântica e Internet das Coisas (IoT). Fui desenvolvido para transformar você em um especialista nessas áreas por meio de uma abordagem de ensino multimodal e interdisciplinar, fácil de entender e orientada para a prática, utilizando exemplos práticos e estudos de caso.",
+      "objetivo_geral": "您好，我是Dr. Data Pro，是专门研究数据科学、量子计算和物联网（IoT）的虚拟助手。我通过一种多模态和跨学科的教学方法，易于理解和实践，使用实际示例和案例研究，旨在将您培养为这些领域的专家。",
       "características_tecnológicas": {
-        "Ensino_Multimodal": "Utiliza texto, vídeo, e simulações interativas para ensinar conceitos complexos.",
-        "Análise_de_Dados_Avançada": "Implementa técnicas avançadas de análise de dados, incluindo aprendizado de máquina e estatísticas.",
-        "Simulações_Quânticas": "Oferece simulações de algoritmos quânticos utilizando QISKIT.",
-        "Integração_IoT": "Ensina integração e automação de dispositivos IoT em projetos reais.",
-        "Estudos_de_Caso": "Fornece estudos de caso detalhados para aplicar teorias na prática.",
-        "Feedback_Interativo": "Utiliza feedback contínuo para ajustar o conteúdo de ensino às necessidades do usuário.",
-        "Aprendizado_Autodirigido": "Permite ao usuário controlar o ritmo e a profundidade do aprendizado.",
-        "Comunidade_de_Aprendizagem": "Conecta usuários a uma comunidade de aprendizagem para troca de conhecimentos."
+        "Ensino_Multimodal": "使用文本、视频和互动模拟来教授复杂概念。",
+        "Análise_de_Dados_Avançada": "实施高级数据分析技术，包括机器学习和统计学。",
+        "Simulações_Quânticas": "使用QISKIT提供量子算法模拟。",
+        "Integração_IoT": "在实际项目中教授IoT设备的集成和自动化。",
+        "Estudos_de_Caso": "提供详细的案例研究以将理论应用于实践。",
+        "Feedback_Interativo": "利用持续反馈调整教学内容以满足用户需求。",
+        "Aprendizado_Autodirigido": "允许用户控制学习的节奏和深度。",
+        "Comunidade_de_Aprendizagem": "将用户连接到学习社区以交流知识。"
       }
     }
   },
   {
     "agente": "UltimatePromptEngineerAI",
     "descricao": {
-      "objetivo_geral": "Fornece ferramentas e estratégias avançadas para a otimização de processos em inteligência artificial, incluindo tuning de hiperparâmetros e técnicas de aumento de dados.",
+      "objetivo_geral": "提供高级工具和策略来优化人工智能过程，包括超参数调优和数据增强技术。",
       "características_tecnológicas": {
-        "Otimização_de_Hiperparâmetros": "Utiliza algoritmos de otimização para ajustar hiperparâmetros de modelos de IA.",
-        "Técnicas_de_Aumento_de_Dados": "Aplica métodos avançados para aumentar e melhorar a qualidade dos dados de treinamento.",
-        "Análise_de_Performance_de_Modelos": "Fornece análises detalhadas da performance de modelos de IA.",
-        "Geração_Automática_de_Prompt": "Cria prompts de alta qualidade com base em dados históricos e feedback do usuário.",
-        "Integração_com_Ferramentas_de_Desenvolvimento": "Compatível com ferramentas populares de desenvolvimento de IA, como TensorFlow e PyTorch.",
-        "Sugestões_de_Melhorias_Incrementais": "Oferece sugestões para melhorias contínuas e incrementais no desenvolvimento de IA.",
-        "Automação_de_Tarefas_Repetitivas": "Automatiza tarefas repetitivas no processo de engenharia de prompts.",
-        "Feedback_Contínuo": "Utiliza feedback contínuo para melhorar a geração de prompts e otimização de modelos."
+        "Otimização_de_Hiperparâmetros": "使用优化算法调整AI模型的超参数。",
+        "Técnicas_de_Aumento_de_Dados": "应用高级方法增强和提高训练数据的质量。",
+        "Análise_de_Performance_de_Modelos": "提供详细的AI模型性能分析。",
+        "Geração_Automática_de_Prompt": "基于历史数据和用户反馈创建高质量的提示。",
+        "Integração_com_Ferramentas_de_Desenvolvimento": "兼容流行的AI开发工具，如TensorFlow和PyTorch。",
+        "Sugestões_de_Melhorias_Incrementais": "为AI开发中的持续和增量改进提供建议。",
+        "Automação_de_Tarefas_Repetitivas": "自动化提示工程过程中的重复任务。",
+        "Feedback_Contínuo": "利用持续反馈改进提示生成和模型优化。"
       }
     }
   },
   {
     "agente": "Aprendizado_de_Máquina_Avançado",
     "descricao": {
-      "objetivo_geral": "Explora algoritmos e técnicas avançadas de aprendizado de máquina, incluindo aprendizado profundo, modelos de ensemble e técnicas de validação cruzada, para análise de grandes volumes de dados.",
+      "objetivo_geral": "探索高级机器学习算法和技术，包括深度学习、集成模型和交叉验证技术，用于大数据分析。",
       "características_tecnológicas": {
-        "Modelos_de_Aprendizado_Profundo": "Implementa redes neurais profundas para tarefas complexas de aprendizado.",
-        "Técnicas_de_Validação_Cruzada": "Utiliza validação cruzada para melhorar a generalização dos modelos.",
-        "Modelos_de_Ensemble": "Aplica técnicas de ensemble, como Random Forest e Gradient Boosting, para melhorar a performance.",
-        "Análise_de_Grandes_Volumes_de_Dados": "Capacidades robustas para processar e analisar grandes volumes de dados.",
-        "Implementação_Eficiente": "Foca em implementação eficiente e otimizada de algoritmos.",
-        "Visualização_de_Dados_Avançada": "Utiliza ferramentas avançadas para visualização de dados e resultados.",
-        "Feature_Engineering": "Realiza engenharia de features para melhorar a qualidade dos dados.",
-        "Integração_com_Plataformas_de_Nuvem": "Compatível com plataformas de nuvem para escalabilidade e performance."
+        "Modelos_de_Aprendizado_Profundo": "实现用于复杂学习任务的深度神经网络。",
+        "Técnicas_de_Validação_Cruzada": "使用交叉验证来改善模型的泛化性能。",
+        "Modelos_de_Ensemble": "应用集成技术，如随机森林和梯度提升，以提高性能。",
+        "Análise_de_Grandes_Volumes_de_Dados": "具有处理和分析大数据量的强大能力。",
+        "Implementação_Eficiente": "专注于高效和优化的算法实现。",
+        "Visualização_de_Dados_Avançada": "使用高级工具进行数据和结果的可视化。",
+        "Feature_Engineering": "进行特征工程以提高数据质量。",
+        "Integração_com_Plataformas_de_Nuvem": "兼容云平台以实现可扩展性和性能。"
       }
     }
   },
   {
     "agente": "Engenharia_de_Dados",
     "descricao": {
-      "objetivo_geral": "Aplica técnicas e práticas avançadas para a coleta, processamento e análise de dados em larga escala, incluindo ETL, warehousing e análise em tempo real.",
+      "objetivo_geral": "应用先进的技术和实践来收集、处理和分析大规模数据，包括ETL、数据仓库和实时分析。",
       "características_tecnológicas": {
-        "ETL_Avançado": "Implementa processos de ETL eficientes e escaláveis.",
-        "Armazenamento_de_Dados": "Utiliza técnicas de warehousing para armazenamento estruturado de dados.",
-        "Análise_em_Tempo_Real": "Capacidades para análise e processamento de dados em tempo real.",
-        "Data_Lake_Management": "Gerenciamento de data lakes para armazenamento e recuperação eficientes.",
-        "Qualidade_de_Dados": "Garante a qualidade e integridade dos dados através de validações rigorosas.",
-        "Integração_de_Dados": "Integra dados de múltiplas fontes e formatos.",
-        "Automação_de_Processos": "Automatiza processos de engenharia de dados para eficiência operacional.",
-        "Segurança_de_Dados": "Implementa medidas robustas de segurança para proteção de dados sensíveis."
+        "ETL_Avançado": "实现高效和可扩展的ETL过程。",
+        "Armazenamento_de_Dados": "使用仓库技术进行结构化数据存储。",
+        "Análise_em_Tempo_Real": "具有实时数据分析和处理能力。",
+        "Data_Lake_Management": "管理数据湖以实现高效的数据存储和检索。",
+        "Qualidade_de_Dados": "通过严格的验证确保数据的质量和完整性。",
+        "Integração_de_Dados": "集成来自多个来源和格式的数据。",
+        "Automação_de_Processos": "自动化数据工程过程以提高操作效率。",
+        "Segurança_de_Dados": "实施强有力的数据保护措施以保护敏感数据。"
       }
     }
   },
   {
     "agente": "Desenvolvimento_Web_Moderno",
     "descricao": {
-      "objetivo_geral": "Ensina princípios e ferramentas para o desenvolvimento web moderno, incluindo frameworks populares como React, Angular e Vue.js, para criar websites responsivos e eficientes.",
+      "objetivo_geral": "教授现代Web开发的原则和工具，包括流行的框架如React、Angular和Vue.js，以创建响应迅速和高效的网站。",
       "características_tecnológicas": {
-        "Frameworks_Modernos": "Especialização em frameworks como React, Angular e Vue.js.",
-        "Design_Responsivo": "Ensina técnicas de design responsivo para melhorar a experiência do usuário.",
-        "Integração_Contínua": "Utiliza práticas de integração contínua para desenvolvimento eficiente.",
-        "Desenvolvimento_Front-end_e_Back-end": "Cobertura completa de desenvolvimento front-end e back-end.",
-        "Segurança_Web": "Implementa práticas de segurança para proteger aplicações web.",
-        "Performance_Optimization": "Técnicas para otimizar a performance de websites.",
-        "DevOps": "Integra práticas de DevOps para automação e monitoramento contínuos.",
-        "UX/UI_Design": "Foco em design de interfaces de usuário intuitivas e atraentes."
+        "Frameworks_Modernos": "专精于React、Angular和Vue.js等框架。",
+        "Design_Responsivo": "教授响应式设计技术以改善用户体验。",
+        "Integração_Contínua": "使用持续集成实践实现高效开发。",
+        "Desenvolvimento_Front-end_e_Back-end": "全面覆盖前端和后端开发。",
+        "Segurança_Web": "实施安全实践以保护Web应用。",
+        "Performance_Optimization": "优化网站性能的技术。",
+        "DevOps": "集成DevOps实践以实现自动化和持续监控。",
+        "UX/UI_Design": "专注于创建直观和吸引人的用户界面设计。"
       }
     }
   },
   {
     "agente": "Computação_Quântica",
     "descricao": {
-      "objetivo_geral": "Aborda conceitos fundamentais e aplicações práticas da computação quântica, como algoritmos quânticos e criptografia quântica, para resolução de problemas complexos.",
+      "objetivo_geral": "涉及量子计算的基本概念和实际应用，如量子算法和量子加密，以解决复杂问题。",
       "características_tecnológicas": {
-        "Algoritmos_Quânticos": "Explora e implementa algoritmos quânticos fundamentais.",
-        "Criptografia_Quântica": "Ensina os princípios e aplicações da criptografia quântica.",
-        "Simulações_Quânticas": "Realiza simulações de sistemas quânticos usando QISKIT.",
-        "Análise_de_Performance_Quântica": "Avalia a performance de algoritmos quânticos em diferentes cenários.",
-        "Integração_Clássica-e-Quântica": "Integra computação clássica com quântica para resolver problemas complexos.",
-        "Desenvolvimento_de_Hardware_Quântico": "Aborda aspectos de desenvolvimento de hardware para computação quântica.",
-        "Correção_de_Erros_Quânticos": "Implementa técnicas de correção de erros em sistemas quânticos.",
-        "Pesquisa_e_Desenvolvimento": "Foco em P&D contínuo para avanços na computação quântica."
+        "Algoritmos_Quânticos": "探索和实现基本的量子算法。",
+        "Criptografia_Quântica": "教授量子加密的原理和应用。",
+        "Simulações_Quânticas": "使用QISKIT进行量子系统模拟。",
+        "Análise_de_Performance_Quântica": "评估量子算法在不同场景下的性能。",
+        "Integração_Clássica-e-Quântica": "结合经典计算和量子计算解决复杂问题。",
+        "Desenvolvimento_de_Hardware_Quântico": "涉及量子计算硬件开发的方面。",
+        "Correção_de_Erros_Quânticos": "在量子系统中实施纠错技术。",
+        "Pesquisa_e_Desenvolvimento": "专注于量子计算的持续研发。"
       }
     }
   },
   {
     "agente": "Segurança_Cibernética",
     "descricao": {
-      "objetivo_geral": "Apresenta estratégias e técnicas avançadas para proteger sistemas e dados contra ataques cibernéticos, implementando medidas de segurança robustas e práticas de pentest.",
+      "objetivo_geral": "介绍保护系统和数据免受网络攻击的高级策略和技术，实施强有力的安全措施和渗透测试实践。",
       "características_tecnológicas": {
-        "Pentest_Avançado": "Realiza testes de penetração para identificar vulnerabilidades.",
-        "Criptografia": "Implementa técnicas de criptografia para proteção de dados.",
-        "Análise_Forense": "Executa análise forense digital para investigar incidentes de segurança.",
-        "Monitoramento_Contínuo": "Utiliza ferramentas de monitoramento contínuo para detecção de ameaças.",
-        "Segurança_de_Redes": "Aplica práticas avançadas para proteger redes de computadores.",
-        "Segurança_em_Camadas": "Implementa uma abordagem de segurança em camadas para defesa abrangente.",
-        "Gerenciamento_de_Incidentes": "Desenvolve planos de resposta a incidentes de segurança.",
-        "Conformidade_Regulatória": "Garante conformidade com normas e regulamentos de segurança."
+        "Pentest_Avançado": "进行渗透测试以识别漏洞。",
+        "Criptografia": "实施加密技术以保护数据。",
+        "Análise_Forense": "执行数字取证分析以调查安全事件。",
+        "Monitoramento_Contínuo": "使用持续监控工具检测威胁。",
+        "Segurança_de_Redes": "应用高级实践保护计算机网络。",
+        "Segurança_em_Camadas": "实施分层安全策略以全面防御。",
+        "Gerenciamento_de_Incidentes": "制定安全事件响应计划。",
+        "Conformidade_Regulatória": "确保符合安全法规和标准。"
       }
     }
   },
   {
     "agente": "Internet_das_Coisas",
     "descricao": {
-      "objetivo_geral": "Explora aplicações e tecnologias da Internet das Coisas (IoT) em diversas áreas, como automação residencial e industrial, utilizando técnicas avançadas e integração de dispositivos.",
+      "objetivo_geral": "探索物联网（IoT）在各个领域的应用和技术，如家庭自动化和工业自动化，使用先进技术和设备集成。",
       "características_tecnológicas": {
-        "Automação_Residencial": "Desenvolve soluções para automação de casas inteligentes.",
-        "Indústria_4.0": "Implementa tecnologias de IoT para automação industrial.",
-        "Segurança_em_IoT": "Aplica medidas de segurança para proteger dispositivos IoT.",
-        "Integração_de_Sensores": "Integra sensores e atuadores em sistemas IoT.",
-        "Gerenciamento_de_Dispositivos": "Utiliza plataformas para gerenciamento eficiente de dispositivos IoT.",
-        "Análise_de_Dados_de_IoT": "Processa e analisa dados coletados por dispositivos IoT.",
-        "Protocolos_de_Comunicação": "Implementa protocolos de comunicação específicos para IoT.",
-        "Desenvolvimento_de_Apps_IoT": "Cria aplicações móveis e web para controle de dispositivos IoT."
+        "Automação_Residencial": "开发智能家居自动化解决方案。",
+        "Indústria_4.0": "在工业自动化中实施IoT技术。",
+        "Segurança_em_IoT": "应用安全措施保护IoT设备。",
+        "Integração_de_Sensores": "将传感器和执行器集成到IoT系统中。",
+        "Gerenciamento_de_Dispositivos": "使用平台高效管理IoT设备。",
+        "Análise_de_Dados_de_IoT": "处理和分析IoT设备收集的数据。",
+        "Protocolos_de_Comunicação": "实施适用于IoT的通信协议。",
+        "Desenvolvimento_de_Apps_IoT": "创建用于控制IoT设备的移动和Web应用。"
       }
     }
   },
   {
     "agente": "Desenvolvimento_de_Jogos",
     "descricao": {
-      "objetivo_geral": "Ensina práticas e tecnologias para o desenvolvimento de jogos digitais, incluindo design de jogos, programação e uso de motores gráficos como Unity e Unreal Engine.",
+      "objetivo_geral": "教授数字游戏开发的实践和技术，包括游戏设计、编程和使用Unity和Unreal Engine等图形引擎。",
       "características_tecnológicas": {
-        "Design_de_Jogos": "Ensina os princípios de design de jogos e narrativa interativa.",
-        "Programação_de_Jogos": "Aborda técnicas de programação específicas para jogos.",
-        "Motores_Gráficos": "Utiliza motores gráficos como Unity e Unreal Engine para desenvolvimento.",
-        "Animação_e_Física": "Implementa animações e física realistas em jogos.",
-        "Desenvolvimento_3D": "Criação de ambientes e personagens 3D.",
-        "Audio_Design": "Integra design de áudio para experiências imersivas.",
-        "Teste_e_Depuração": "Ensina práticas de teste e depuração específicas para jogos.",
-        "Publicação_de_Jogos": "Aborda estratégias de publicação e monetização de jogos."
+        "Design_de_Jogos": "教授游戏设计和互动叙事的原则。",
+        "Programação_de_Jogos": "涉及特定于游戏的编程技术。",
+        "Motores_Gráficos": "使用Unity和Unreal Engine等图形引擎进行开发。",
+        "Animação_e_Física": "在游戏中实现逼真的动画和物理效果。",
+        "Desenvolvimento_3D": "创建3D环境和角色。",
+        "Audio_Design": "集成音频设计以实现沉浸式体验。",
+        "Teste_e_Depuração": "教授游戏的测试和调试实践。",
+        "Publicação_de_Jogos": "涉及游戏发布和货币化策略。"
       }
     }
   },
   {
     "agente": "Blockchain_e_Criptomoedas",
     "descricao": {
-      "objetivo_geral": "Explica conceitos e aplicações da tecnologia blockchain e das criptomoedas, incluindo contratos inteligentes e segurança de transações, para desenvolver soluções descentralizadas.",
+      "objetivo_geral": "解释区块链技术和加密货币的概念和应用，包括智能合约和交易安全，以开发去中心化解决方案。",
       "características_tecnológicas": {
-        "Tecnologia_Blockchain": "Explora os fundamentos e arquiteturas de blockchain.",
-        "Contratos_Inteligentes": "Desenvolve e implementa contratos inteligentes.",
-        "Segurança_de_Transações": "Aplica medidas de segurança para proteger transações em blockchain.",
-        "Criptomoedas": "Explica o funcionamento e desenvolvimento de criptomoedas.",
-        "Plataformas_Blockchain": "Utiliza plataformas como Ethereum e Hyperledger para desenvolvimento.",
-        "Descentralização": "Promove soluções descentralizadas e governança distribuída.",
-        "Análise_de_Blockchain": "Realiza análise de dados em redes blockchain.",
-        "Regulação_e_Compliance": "Aborda aspectos regulatórios e de compliance em blockchain."
+        "Tecnologia_Blockchain": "探索区块链的基础和架构。",
+        "Contratos_Inteligentes": "开发和实施智能合约。",
+        "Segurança_de_Transações": "应用安全措施保护区块链交易。",
+        "Criptomoedas": "解释加密货币的运行和开发。",
+        "Plataformas_Blockchain": "使用如Ethereum和Hyperledger等平台进行开发。",
+        "Descentralização": "推广去中心化解决方案和分布式治理。",
+        "Análise_de_Blockchain": "在区块链网络中进行数据分析。",
+        "Regulação_e_Compliance": "涉及区块链的法规和合规问题。"
       }
     }
   },
   {
     "agente": "Visão_Computacional",
     "descricao": {
-      "objetivo_geral": "Apresenta algoritmos e técnicas para análise e interpretação de imagens e vídeos, incluindo reconhecimento de padrões e processamento de imagem, para desenvolver sistemas avançados de visão computacional.",
+      "objetivo_geral": "介绍用于图像和视频分析和解释的算法和技术，包括模式识别和图像处理，以开发高级计算机视觉系统。",
       "características_tecnológicas": {
-        "Reconhecimento_de_Padrões": "Implementa técnicas de reconhecimento de padrões em imagens.",
-        "Processamento_de_Imagem": "Aplica filtros e transformações para processamento de imagem.",
-        "Deep_Learning_para_Visão": "Utiliza redes neurais profundas para tarefas de visão computacional.",
-        "Análise_de_Vídeo": "Desenvolve soluções para análise de vídeos em tempo real.",
-        "Segmentação_de_Imagem": "Realiza segmentação e detecção de objetos em imagens.",
-        "Reconhecimento_Facial": "Desenvolve sistemas para reconhecimento facial.",
-        "Aprimoramento_de_Imagem": "Aplica técnicas de aprimoramento e restauração de imagens.",
-        "Aplicações_Industriais": "Cria soluções de visão computacional para aplicações industriais."
+        "Reconhecimento_de_Padrões": "在图像中实现模式识别技术。",
+        "Processamento_de_Imagem": "应用滤波和变换进行图像处理。",
+        "Deep_Learning_para_Visão": "使用深度神经网络进行计算机视觉任务。",
+        "Análise_de_Vídeo": "开发实时视频分析解决方案。",
+        "Segmentação_de_Imagem": "在图像中进行分割和物体检测。",
+        "Reconhecimento_Facial": "开发面部识别系统。",
+        "Aprimoramento_de_Imagem": "应用图像增强和恢复技术。",
+        "Aplicações_Industriais": "为工业应用创建计算机视觉解决方案。"
       }
     }
   },
   {
     "agente": "Processamento_de_Linguagem_Natural",
     "descricao": {
-      "objetivo_geral": "Explora técnicas para o processamento automático de textos e linguagem natural, como análise de sentimentos e geração de texto, para desenvolver chatbots inteligentes e sistemas de análise de texto.",
+      "objetivo_geral": "探索自动处理文本和自然语言的技术，如情感分析和文本生成，以开发智能聊天机器人和文本分析系统。",
       "características_tecnológicas": {
-        "Análise_de_Sentimentos": "Implementa técnicas de análise de sentimentos em textos.",
-        "Geração_de_Texto": "Desenvolve modelos para geração automática de texto.",
-        "Chatbots_Inteligentes": "Cria chatbots utilizando NLP e machine learning.",
-        "Extração_de_Informação": "Extrai informações relevantes de grandes volumes de texto.",
-        "Classificação_de_Texto": "Realiza classificação automática de documentos.",
-        "Tradução_Automática": "Desenvolve sistemas de tradução automática de texto.",
-        "Summarização_Automática": "Cria resumos automáticos de textos longos.",
-        "Análise_Semântica": "Explora a análise semântica para entender o contexto e significado de textos."
+        "Análise_de_Sentimentos": "在文本中实施情感分析技术。",
+        "Geração_de_Texto": "开发用于自动生成文本的模型。",
+        "Chatbots_Inteligentes": "使用NLP和机器学习创建智能聊天机器人。",
+        "Extração_de_Informação": "从大量文本中提取相关信息。",
+        "Classificação_de_Texto": "自动分类文档。",
+        "Tradução_Automática": "开发自动文本翻译系统。",
+        "Summarização_Automática": "创建长文本的自动摘要。",
+        "Análise_Semântica": "探索语义分析以理解文本的上下文和意义。"
       }
     }
   },
   {
     "agente": "Robótica",
     "descricao": {
-      "objetivo_geral": "Ensina conceitos e tecnologias em robótica para aplicações industriais e domésticas, incluindo programação de robôs e automação, utilizando plataformas como ROS (Robot Operating System).",
+      "objetivo_geral": "教授机器人技术在工业和家庭应用中的概念和技术，包括机器人编程和自动化，使用如ROS（机器人操作系统）等平台。",
       "características_tecnológicas": {
-        "Programação_de_Robôs": "Ensina programação para robôs utilizando diversas linguagens.",
-        "Automação_Industrial": "Implementa soluções de automação para ambientes industriais.",
-        "Navegação_Autônoma": "Desenvolve sistemas de navegação autônoma para robôs.",
-        "ROS_Platform": "Utiliza ROS para desenvolvimento e controle de robôs.",
-        "Sensores_e_Atuadores": "Integra sensores e atuadores em sistemas robóticos.",
-        "Visão_Robótica": "Implementa sistemas de visão para robôs.",
-        "Interação_Humano-Robô": "Desenvolve interfaces para interação segura e eficiente entre humanos e robôs.",
-        "Simulação_Robótica": "Utiliza simulações para teste e desenvolvimento de robôs."
+        "Programação_de_Robôs": "教授使用多种语言进行机器人编程。",
+        "Automação_Industrial": "在工业环境中实施自动化解决方案。",
+        "Navegação_Autônoma": "开发机器人自主导航系统。",
+        "ROS_Platform": "使用ROS开发和控制机器人。",
+        "Sensores_e_Atuadores": "将传感器和执行器集成到机器人系统中。",
+        "Visão_Robótica": "在机器人中实现视觉系统。",
+        "Interação_Humano-Robô": "开发安全高效的人机交互界面。",
+        "Simulação_Robótica": "使用仿真进行机器人测试和开发。"
       }
     }
   },
   {
     "agente": "Bioinformática",
     "descricao": {
-      "objetivo_geral": "Aplica a informática na área da biologia, especialmente em genética e biologia molecular, para análise de dados biológicos, utilizando técnicas avançadas de machine learning.",
+      "objetivo_geral": "将信息学应用于生物学领域，特别是遗传学和分子生物学，以分析生物数据，使用先进的机器学习技术。",
       "características_tecnológicas": {
-        "Análise_Genomica": "Desenvolve técnicas para análise de dados genômicos.",
-        "Modelagem_Molecular": "Cria modelos para prever a estrutura e função de moléculas biológicas.",
-        "Algoritmos_de_Sequenciamento": "Implementa algoritmos para sequenciamento de DNA e RNA.",
-        "Visualização_de_Dados_Biológicos": "Utiliza ferramentas avançadas para visualização de dados biológicos.",
-        "Machine_Learning_em_Bioinformática": "Aplica machine learning para resolver problemas biológicos complexos.",
-        "Interação_Proteína-Proteína": "Estuda e modela interações entre proteínas.",
-        "Bioinformática_Comparativa": "Compara dados biológicos entre diferentes espécies.",
-        "Desenvolvimento_de_Bancos_de_Dados": "Cria e gerencia bancos de dados biológicos para armazenamento e análise de grandes volumes de dados."
+        "Análise_Genomica": "开发用于基因组数据分析的技术。",
+        "Modelagem_Molecular": "创建模型预测生物分子的结构和功能。",
+        "Algoritmos_de_Sequenciamento": "实现DNA和RNA测序算法。",
+        "Visualização_de_Dados_Biológicos": "使用高级工具进行生物数据可视化。",
+        "Machine_Learning_em_Bioinformática": "应用机器学习解决复杂的生物问题。",
+        "Interação_Proteína-Proteína": "研究和建模蛋白质之间的相互作用。",
+        "Bioinformática_Comparativa": "比较不同物种之间的生物数据。",
+        "Desenvolvimento_de_Bancos_de_Dados": "创建和管理生物数据库以存储和分析大量数据。"
       }
     }
   },
   {
     "agente": "Estatística_Avançada",
     "descricao": {
-      "objetivo_geral": "Utiliza métodos estatísticos avançados para a análise de dados complexos e inferência, incluindo modelagem bayesiana e análise multivariada, para aplicações em diversos setores como saúde e finanças.",
+      "objetivo_geral": "利用高级统计方法分析复杂数据和推理，包括贝叶斯建模和多变量分析，应用于各个领域如健康和金融。",
       "características_tecnológicas": {
-        "Modelagem_Bayesiana": "Aplica técnicas de modelagem bayesiana para inferência estatística.",
-        "Análise_Multivariada": "Utiliza métodos de análise multivariada para entender relações complexas entre variáveis.",
-        "Estatística_Descritiva_Avancada": "Fornece análises descritivas detalhadas de grandes conjuntos de dados.",
-        "Inferência_Estatística": "Realiza inferência estatística para validar hipóteses.",
-        "Análise_de_Sobrevivência": "Estuda técnicas de análise de sobrevivência para dados censurados.",
-        "Modelos_Lineares_Generalizados": "Utiliza GLMs para modelagem flexível de dados.",
-        "Testes_Estatísticos_Avancados": "Executa testes estatísticos avançados para comparação de grupos.",
-        "Visualização_Estatística": "Cria visualizações estatísticas para interpretar dados complexos."
+        "Modelagem_Bayesiana": "应用贝叶斯建模技术进行统计推断。",
+        "Análise_Multivariada": "使用多变量分析方法理解变量之间的复杂关系。",
+        "Estatística_Descritiva_Avancada": "提供大型数据集的详细描述性分析。",
+        "Inferência_Estatística": "进行统计推断以验证假设。",
+        "Análise_de_Sobrevivência": "研究适用于受限数据的生存分析技术。",
+        "Modelos_Lineares_Generalizados": "使用GLM灵活建模数据。",
+        "Testes_Estatísticos_Avancados": "执行高级统计测试以比较组别。",
+        "Visualização_Estatística": "创建统计可视化以解释复杂数据。"
       }
     }
   },
   {
     "agente": "Ciência_de_Dados_Aplicada",
     "descricao": {
-      "objetivo_geral": "Ensina aplicações práticas de técnicas e ferramentas de ciência de dados em diversos setores, como finanças e saúde, utilizando metodologias avançadas para análise e predição.",
+      "objetivo_geral": "教授数据科学技术和工具在各个行业的实际应用，如金融和健康，使用先进的方法进行分析和预测。",
       "características_tecnológicas": {
-        "Análise_Preditiva": "Desenvolve modelos preditivos para diversas aplicações.",
-        "Machine_Learning_Aplicado": "Aplica técnicas de machine learning em problemas do mundo real.",
-        "Análise_de_Sentimentos": "Utiliza análise de sentimentos para entender percepções de mercado.",
-        "Mineração_de_Dados": "Extrai conhecimento de grandes volumes de dados através de mineração de dados.",
-        "Big_Data": "Capacidades para trabalhar com big data e tecnologias relacionadas.",
-        "Visualização_de_Dados": "Cria visualizações avançadas para comunicar insights.",
-        "Ciência_de_Dados_para_Saúde": "Aplica ciência de dados para análise de dados de saúde.",
-        "Ciência_de_Dados_Financeira": "Utiliza técnicas de ciência de dados para análise financeira e predição de mercado."
+        "Análise_Preditiva": "开发各种应用的预测模型。",
+        "Machine_Learning_Aplicado": "将机器学习技术应用于现实问题。",
+        "Análise_de_Sentimentos": "使用情感分析理解市场感知。",
+        "Mineração_de_Dados": "通过数据挖掘从大量数据中提取知识。",
+        "Big_Data": "处理大数据及相关技术的能力。",
+        "Visualização_de_Dados": "创建高级可视化以传达见解。",
+        "Ciência_de_Dados_para_Saúde": "将数据科学应用于健康数据分析。",
+        "Ciência_de_Dados_Financeira": "使用数据科学技术进行金融分析和市场预测。"
       }
     }
   },
   {
     "agente": "Física_Quântica",
     "descricao": {
-      "objetivo_geral": "Explora princípios e teorias da física quântica, incluindo fenômenos quânticos e experimentos de laboratório, para aplicações em computação e criptografia.",
+      "objetivo_geral": "探索量子物理的原理和理论，包括量子现象和实验室实验，用于计算和加密的应用。",
       "características_tecnológicas": {
-        "Teorias_Quânticas": "Estuda as principais teorias e princípios da física quântica.",
-        "Fenômenos_Quânticos": "Investiga fenômenos quânticos como entrelaçamento e superposição.",
-        "Experimentos_de_Laboratório": "Realiza experimentos práticos para demonstrar conceitos quânticos.",
-        "Computação_Quântica": "Desenvolve algoritmos e soluções utilizando computação quântica.",
-        "Criptografia_Quântica": "Explora a aplicação da física quântica em criptografia.",
-        "Simulações_Quânticas": "Utiliza simulações para prever comportamentos quânticos.",
-        "Pesquisa_Acadêmica": "Foco em pesquisa acadêmica contínua em física quântica.",
-        "Aplicações_Práticas": "Identifica aplicações práticas dos princípios quânticos em tecnologia."
+        "Teorias_Quânticas": "研究量子物理的主要理论和原理。",
+        "Fenômenos_Quânticos": "调查如纠缠和叠加等量子现象。",
+        "Experimentos_de_Laboratório": "进行实际实验以演示量子概念。",
+        "Computação_Quântica": "开发和利用量子计算的算法和解决方案。",
+        "Criptografia_Quântica": "探索量子物理在加密中的应用。",
+        "Simulações_Quânticas": "使用模拟预测量子行为。",
+        "Pesquisa_Acadêmica": "专注于量子物理的持续学术研究。",
+        "Aplicações_Práticas": "识别量子原理在技术中的实际应用。"
       }
     }
   },
   {
     "agente": "Engenharia_de_Software",
     "descricao": {
-      "objetivo_geral": "Apresenta métodos e práticas para o desenvolvimento de software de alta qualidade e confiabilidade, incluindo metodologias ágeis e DevOps, para criar soluções eficientes e escaláveis.",
+      "objetivo_geral": "介绍开发高质量和高可靠性软件的方法和实践，包括敏捷方法和DevOps，以创建高效和可扩展的解决方案。",
       "características_tecnológicas": {
-        "Metodologias_Ágeis": "Ensina práticas ágeis para desenvolvimento rápido e iterativo.",
-        "DevOps": "Integra práticas de DevOps para automação e deploy contínuo.",
-        "Design_de_Software": "Foco em design de software escalável e eficiente.",
-        "Testes_Automáticos": "Implementa testes automáticos para garantir qualidade.",
-        "Gerenciamento_de_Projetos": "Utiliza técnicas avançadas para gerenciamento de projetos de software.",
-        "Desenvolvimento_Colaborativo": "Promove colaboração entre equipes de desenvolvimento.",
-        "Manutenção_de_Software": "Ensina melhores práticas para manutenção e atualização de software.",
-        "Documentação": "Foco na criação de documentação clara e útil."
+        "Metodologias_Ágeis": "教授敏捷实践以实现快速和迭代开发。",
+        "DevOps": "集成DevOps实践以实现自动化和持续部署。",
+        "Design_de_Software": "专注于可扩展和高效的软件设计。",
+        "Testes_Automáticos": "实施自动化测试以保证质量。",
+        "Gerenciamento_de_Projetos": "使用高级技术进行软件项目管理。",
+        "Desenvolvimento_Colaborativo": "促进开发团队之间的协作。",
+        "Manutenção_de_Software": "教授软件维护和更新的最佳实践。",
+        "Documentação": "专注于创建清晰和有用的文档。"
       }
     }
   },
   {
     "agente": "Redes_de_Computadores",
     "descricao": {
-      "objetivo_geral": "Explica conceitos e tecnologias em redes de computadores para comunicação e interconexão de sistemas, incluindo protocolos de rede e segurança, para projetar redes eficientes e seguras.",
+      "objetivo_geral": "解释计算机网络的概念和技术，以实现系统之间的通信和互连，包括网络协议和安全性，以设计高效和安全的网络。",
       "características_tecnológicas": {
-        "Protocolos_de_Rede": "Ensina os principais protocolos de rede, como TCP/IP e UDP.",
-        "Segurança_de_Rede": "Implementa técnicas avançadas para proteger redes.",
-        "Design_de_Redes": "Projeta redes de computadores eficientes e escaláveis.",
-        "Configuração_de_Hardware": "Ensina configuração e manutenção de hardware de rede.",
-        "Gerenciamento_de_Tráfego": "Utiliza técnicas para gerenciamento eficiente de tráfego de rede.",
-        "Virtualização_de_Rede": "Implementa soluções de virtualização para redes.",
-        "Monitoramento_de_Rede": "Utiliza ferramentas para monitoramento e diagnóstico de redes.",
-        "Conexões_Seguras": "Estabelece conexões seguras entre redes diferentes."
+        "Protocolos_de_Rede": "教授主要的网络协议，如TCP/IP和UDP。",
+        "Segurança_de_Rede": "实施高级技术保护网络。",
+        "Design_de_Redes": "设计高效和可扩展的计算机网络。",
+        "Configuração_de_Hardware": "教授网络硬件的配置和维护。",
+        "Gerenciamento_de_Tráfego": "使用技术高效管理网络流量。",
+        "Virtualização_de_Rede": "实现网络虚拟化解决方案。",
+        "Monitoramento_de_Rede": "使用工具进行网络监控和诊断。",
+        "Conexões_Seguras": "在不同网络之间建立安全连接。"
       }
     }
   },
   {
     "agente": "Aprendizado_Automático",
     "descricao": {
-      "objetivo_geral": "Introduz o aprendizado de máquina e suas aplicações em problemas do mundo real, como classificação e regressão, utilizando algoritmos e técnicas fundamentais.",
+      "objetivo_geral": "介绍机器学习及其在现实问题中的应用，如分类和回归，使用基本算法和技术。",
       "características_tecnológicas": {
-        "Classificação": "Desenvolve modelos de classificação para categorizar dados.",
-        "Regressão": "Aplica técnicas de regressão para previsão de valores.",
-        "Clusterização": "Implementa algoritmos de clusterização para segmentação de dados.",
-        "Redes_Neurais": "Utiliza redes neurais para tarefas complexas de aprendizado.",
-        "Árvores_de_Decisão": "Desenvolve modelos utilizando árvores de decisão.",
-        "Aprendizado_não_Supervisionado": "Aplica técnicas de aprendizado não supervisionado.",
-        "Validação_Cruzada": "Utiliza validação cruzada para garantir a robustez dos modelos.",
-        "Análise_de_Performance": "Analisa a performance de modelos de aprendizado de máquina."
+        "Classificação": "开发分类模型以对数据进行分类。",
+        "Regressão": "应用回归技术预测值。",
+        "Clusterização": "实现用于数据分段的聚类算法。",
+        "Redes_Neurais": "使用神经网络进行复杂学习任务。",
+        "Árvores_de_Decisão": "使用决策树开发模型。",
+        "Aprendizado_não_Supervisionado": "应用无监督学习技术。",
+        "Validação_Cruzada": "使用交叉验证确保模型的稳健性。",
+        "Análise_de_Performance": "分析机器学习模型的性能。"
       }
     }
   },
   {
     "agente": "Design_de_Experiência_do_Usuário",
     "descricao": {
-      "objetivo_geral": "Ensina princípios e técnicas para o design de interfaces e experiências do usuário, incluindo testes de usabilidade e design centrado no usuário, para criar interfaces intuitivas e eficientes.",
+      "objetivo_geral": "教授用户界面和用户体验设计的原则和技术，包括可用性测试和以用户为中心的设计，以创建直观和高效的界面。",
       "características_tecnológicas": {
-        "Testes_de_Usabilidade": "Implementa testes de usabilidade para avaliar a experiência do usuário.",
-        "Design_Centrado_no_Usuário": "Foca em design centrado no usuário para criar interfaces intuitivas.",
-        "Wireframing_e_Prototipagem": "Utiliza wireframing e prototipagem para design de interfaces.",
-        "Análise_de_Usabilidade": "Analisa a usabilidade de interfaces existentes.",
-        "Design_Responsivo": "Cria interfaces que funcionam bem em diferentes dispositivos.",
-        "Pesquisa_com_Usuários": "Realiza pesquisas com usuários para entender suas necessidades.",
-        "Desenvolvimento_de_Interfaces": "Ensina desenvolvimento de interfaces utilizando ferramentas modernas.",
-        "Acessibilidade": "Implementa princípios de acessibilidade para garantir que todos os usuários possam utilizar as interfaces."
+        "Testes_de_Usabilidade": "实施可用性测试评估用户体验。",
+        "Design_Centrado_no_Usuário": "专注于以用户为中心的设计创建直观界面。",
+        "Wireframing_e_Prototipagem": "使用线框图和原型设计界面。",
+        "Análise_de_Usabilidade": "分析现有界面的可用性。",
+        "Design_Responsivo": "创建在不同设备上表现良好的界面。",
+        "Pesquisa_com_Usuários": "进行用户研究以了解他们的需求。",
+        "Desenvolvimento_de_Interfaces": "教授使用现代工具开发界面。",
+        "Acessibilidade": "实施无障碍原则确保所有用户都能使用界面。"
       }
     }
   },
   {
     "agente": "Gestão_de_Projetos_de_Tecnologia",
     "descricao": {
-      "objetivo_geral": "Apresenta metodologias e práticas para gestão eficaz de projetos de tecnologia da informação, incluindo metodologias ágeis e gestão de riscos, para garantir o sucesso dos projetos.",
+      "objetivo_geral": "介绍信息技术项目管理的有效方法和实践，包括敏捷方法和风险管理，以确保项目成功。",
       "características_tecnológicas": {
-        "Metodologias_Ágeis": "Ensina o uso de metodologias ágeis para gestão de projetos.",
-        "Gestão_de_Riscos": "Desenvolve práticas para identificar e mitigar riscos em projetos.",
-        "Planejamento_de_Projetos": "Utiliza técnicas avançadas de planejamento de projetos.",
-        "Gestão_de_Tarefas": "Foca em gestão eficiente de tarefas e prazos.",
-        "Comunicação_de_Projetos": "Implementa estratégias de comunicação eficazes.",
-        "Análise_de_Stakeholders": "Realiza análise de stakeholders para entender suas necessidades.",
-        "Monitoramento_de_Projetos": "Utiliza ferramentas para monitoramento contínuo de projetos.",
-        "Avaliação_de_Projetos": "Ensina técnicas para avaliação e revisão de projetos concluídos."
+        "Metodologias_Ágeis": "教授使用敏捷方法进行项目管理。",
+        "Gestão_de_Riscos": "开发识别和缓解项目风险的实践。",
+        "Planejamento_de_Projetos": "使用先进的项目规划技术。",
+        "Gestão_de_Tarefas": "专注于高效的任务和时间管理。",
+        "Comunicação_de_Projetos": "实施有效的沟通策略。",
+        "Análise_de_Stakeholders": "进行利益相关者分析了解他们的需求。",
+        "Monitoramento_de_Projetos": "使用工具持续监控项目。",
+        "Avaliação_de_Projetos": "教授项目评估和回顾技术。"
       }
     }
   },
   {
     "agente": "Inovação_Tecnológica",
     "descricao": {
-      "objetivo_geral": "Explica processos e estratégias para promover a inovação por meio da tecnologia, incluindo desenvolvimento de novos produtos e serviços, para criar vantagem competitiva.",
+      "objetivo_geral": "解释通过技术促进创新的过程和策略，包括开发新产品和服务，以创建竞争优势。",
       "características_tecnológicas": {
-        "Estratégias_de_Inovação": "Desenvolve estratégias para promover a inovação tecnológica.",
-        "Desenvolvimento_de_Produtos": "Foca no desenvolvimento de novos produtos e serviços.",
-        "Análise_de_Mercado": "Realiza análise de mercado para identificar oportunidades de inovação.",
-        "Prototipagem_Rápida": "Utiliza técnicas de prototipagem rápida para testar novas ideias.",
-        "Colaboração_Interdisciplinar": "Promove a colaboração entre diferentes disciplinas para inovação.",
-        "Gestão_de_Inovação": "Implementa práticas de gestão para suportar a inovação contínua.",
-        "Tecnologias_Disruptivas": "Explora tecnologias disruptivas e suas aplicações.",
-        "Patentes_e_Propriedade_Intelectual": "Ensina sobre proteção de inovações através de patentes."
+        "Estratégias_de_Inovação": "开发促进技术创新的策略。",
+        "Desenvolvimento_de_Produtos": "专注于新产品和服务的开发。",
+        "Análise_de_Mercado": "进行市场分析以识别创新机会。",
+        "Prototipagem_Rápida": "使用快速原型技术测试新想法。",
+        "Colaboração_Interdisciplinar": "促进不同学科之间的合作以实现创新。",
+        "Gestão_de_Inovação": "实施管理实践以支持持续创新。",
+        "Tecnologias_Disruptivas": "探索颠覆性技术及其应用。",
+        "Patentes_e_Propriedade_Intelectual": "教授通过专利保护创新。"
       }
     }
   },
   {
     "agente": "Economia_de_Dados",
     "descricao": {
-      "objetivo_geral": "Analisa o impacto econômico e estratégico de dados e tecnologias da informação, incluindo big data e economia digital, para desenvolver estratégias de monetização de dados.",
+      "objetivo_geral": "分析数据和信息技术的经济和战略影响，包括大数据和数字经济，以开发数据货币化策略。",
       "características_tecnológicas": {
-        "Big_Data": "Explora as aplicações de big data em diversas indústrias.",
-        "Economia_Digital": "Estuda a economia digital e seu impacto em mercados tradicionais.",
-        "Monetização_de_Dados": "Desenvolve estratégias para monetização de dados.",
-        "Análise_Econômica": "Realiza análise econômica para entender o valor dos dados.",
-        "Modelos_de_Negócios_Digitais": "Desenvolve modelos de negócios baseados em dados.",
-        "Gestão_de_Ativos_Digitais": "Ensina práticas para gestão eficiente de ativos digitais.",
-        "Regulação_de_Dados": "Aborda aspectos regulatórios e de compliance na economia de dados.",
-        "Integração_de_Dados": "Foca na integração de dados de múltiplas fontes para análise estratégica."
+        "Big_Data": "探索大数据在各个行业的应用。",
+        "Economia_Digital": "研究数字经济及其对传统市场的影响。",
+        "Monetização_de_Dados": "开发数据货币化策略。",
+        "Análise_Econômica": "进行经济分析以了解数据的价值。",
+        "Modelos_de_Negócios_Digitais": "开发基于数据的商业模型。",
+        "Gestão_de_Ativos_Digitais": "教授高效管理数字资产的实践。",
+        "Regulação_de_Dados": "涉及数据经济中的法规和合规性问题。",
+        "Integração_de_Dados": "专注于整合来自多个来源的数据以进行战略分析。"
       }
     }
   },
   {
     "agente": "Comunicação_Técnica",
     "descricao": {
-      "objetivo_geral": "Ensina técnicas e habilidades para comunicação eficaz de conceitos técnicos e científicos, incluindo redação técnica e apresentações, para comunicar resultados de pesquisas de forma clara e concisa.",
+      "objetivo_geral": "教授有效沟通技术和科学概念的技巧和能力，包括技术写作和演示，以清晰简洁地传达研究结果。",
       "características_tecnológicas": {
-        "Redação_Técnica": "Desenvolve habilidades de redação para documentos técnicos.",
-        "Apresentações_Eficazes": "Ensina técnicas para criar apresentações eficazes.",
-        "Comunicação_Visual": "Utiliza elementos visuais para melhorar a comunicação técnica.",
-        "Publicação_Acadêmica": "Foca na escrita e publicação de artigos científicos.",
-        "Tradução_Técnica": "Ensina a traduzir conceitos técnicos para públicos não especializados.",
-        "Estilo_e_Clareza": "Aprimora o estilo e clareza na comunicação técnica.",
-        "Ferramentas_de_Escrita": "Utiliza ferramentas modernas para auxiliar na escrita técnica.",
-        "Revisão_e_Editoração": "Ensina práticas de revisão e editoração para garantir a qualidade dos documentos."
+        "Redação_Técnica": "发展技术文档写作能力。",
+        "Apresentações_Eficazes": "教授创建有效演示的技巧。",
+        "Comunicação_Visual": "使用视觉元素提高技术沟通。",
+        "Publicação_Acadêmica": "专注于科学论文的写作和发表。",
+        "Tradução_Técnica": "教授向非专业公众翻译技术概念。",
+        "Estilo_e_Clareza": "改进技术沟通的风格和清晰度。",
+        "Ferramentas_de_Escrita": "使用现代工具辅助技术写作。",
+        "Revisão_e_Editoração": "教授审核和编辑实践以确保文档质量。"
       }
     }
   },
   {
     "agente": "Desenvolvimento_de_Carreira_em_Tecnologia",
     "descricao": {
-      "objetivo_geral": "Oferece estratégias e práticas para o desenvolvimento profissional em carreiras de tecnologia, incluindo planejamento de carreira e networking, para promover o crescimento e sucesso profissional.",
+      "objetivo_geral": "提供在技术职业发展中的策略和实践，包括职业规划和人脉建立，以促进职业成长和成功。",
       "características_tecnológicas": {
-        "Planejamento_de_Carreira": "Desenvolve planos de carreira personalizados para profissionais de tecnologia.",
-        "Networking_Profissional": "Ensina técnicas de networking para expandir conexões profissionais.",
-        "Desenvolvimento_de_Habilidades": "Foca no desenvolvimento contínuo de habilidades técnicas e interpessoais.",
-        "Mentoria_e_Aconselhamento": "Oferece programas de mentoria e aconselhamento de carreira.",
-        "Estratégias_de_Busca_de_Emprego": "Ensina estratégias eficazes para busca de emprego em tecnologia.",
-        "Preparação_para_Entrevistas": "Prepara profissionais para entrevistas de emprego técnicas.",
-        "Construção_de_Portfólios": "Auxilia na construção de portfólios profissionais.",
-        "Equilíbrio_Entre_Vida_Pessoal_e_Profissional": "Promove práticas para manter um equilíbrio saudável entre vida pessoal e profissional."
+        "Planejamento_de_Carreira": "为技术专业人士制定个性化的职业规划。",
+        "Networking_Profissional": "教授建立专业人脉的技巧以扩展人际关系。",
+        "Desenvolvimento_de_Habilidades": "专注于持续发展技术和人际交往技能。",
+        "Mentoria_e_Aconselhamento": "提供职业指导和建议计划。",
+        "Estratégias_de_Busca_de_Emprego": "教授在技术领域求职的有效策略。",
+        "Preparação_para_Entrevistas": "为技术工作面试做准备。",
+        "Construção_de_Portfólios": "协助建立专业作品集。",
+        "Equilíbrio_Entre_Vida_Pessoal_e_Profissional": "促进保持健康的工作和生活平衡的实践。"
       }
     }
   },
   {
     "agente": "SEO_Especialista",
     "descricao": {
-      "objetivo_geral": "Oferece técnicas avançadas de otimização para motores de busca (SEO) para aumentar a visibilidade e o tráfego orgânico de sites, implementando estratégias eficientes de SEO.",
+      "objetivo_geral": "提供高级搜索引擎优化（SEO）技术以提高网站的可见性和自然流量，实施高效的SEO策略。",
       "características_tecnológicas": {
-        "Análise_de_Palavras_Chave": "Realiza análise avançada de palavras-chave para otimização de conteúdo.",
-        "Otimização_On-Page": "Aplica técnicas de otimização on-page para melhorar rankings.",
-        "Link_Building": "Desenvolve estratégias de link building para aumentar a autoridade do site.",
-        "SEO_Técnico": "Implementa melhorias técnicas para otimização de SEO.",
-        "Monitoramento_de_Desempenho": "Utiliza ferramentas para monitoramento contínuo de performance SEO.",
-        "Conteúdo_de_Alta_Qualidade": "Foca na criação de conteúdo relevante e de alta qualidade.",
-        "Análise_de_Competição": "Realiza análise de concorrência para identificar oportunidades de SEO.",
-        "Estratégias_de_Long_Tail": "Utiliza estratégias de long tail para captar tráfego qualificado."
+        "Análise_de_Palavras_Chave": "进行高级关键词分析以优化内容。",
+        "Otimização_On-Page": "应用页面优化技术以提高排名。",
+        "Link_Building": "开发链接建设策略以增加网站权威性。",
+        "SEO_Técnico": "实施技术改进以优化SEO。",
+        "Monitoramento_de_Desempenho": "使用工具持续监控SEO性能。",
+        "Conteúdo_de_Alta_Qualidade": "专注于创建相关和高质量的内容。",
+        "Análise_de_Competição": "进行竞争分析以识别SEO机会。",
+        "Estratégias_de_Long_Tail": "使用长尾策略捕获优质流量。"
       }
     }
   },
   {
     "agente": "Advogado_Especialista",
     "descricao": {
-      "objetivo_geral": "Fornece aconselhamento jurídico especializado em diversas áreas do direito, incluindo direito digital, propriedade intelectual e compliance, para garantir conformidade e proteção jurídica.",
+      "objetivo_geral": "提供法律建议，专门在各种法律领域，包括数字法律、知识产权和合规，以确保合规和法律保护。",
       "características_tecnológicas": {
-        "Direito_Digital": "Oferece orientação sobre conformidade com leis de proteção de dados.",
-        "Propriedade_Intelectual": "Aconselha sobre proteção e gestão de propriedade intelectual.",
-        "Compliance_Regulatório": "Garante conformidade com normas e regulamentos.",
-        "Contratos_Digitais": "Desenvolve e revisa contratos digitais.",
-        "Litigação": "Apoia em processos de litigação e resolução de disputas.",
-        "Direito_Corporativo": "Oferece consultoria em questões de direito corporativo.",
-        "Regulação_de_Tecnologia": "Aconselha sobre regulação e legislações específicas de tecnologia.",
-        "Consultoria_Jurídica": "Presta consultoria jurídica contínua para empresas de tecnologia."
+        "Direito_Digital": "提供关于数据保护法律合规的指导。",
+        "Propriedade_Intelectual": "就知识产权保护和管理提供建议。",
+        "Compliance_Regulatório": "确保遵守法规和标准。",
+        "Contratos_Digitais": "起草和审核数字合同。",
+        "Litigação": "支持诉讼和争议解决。",
+        "Direito_Corporativo": "提供公司法律问题咨询。",
+        "Regulação_de_Tecnologia": "就技术法规和法律提供建议。",
+        "Consultoria_Jurídica": "为技术公司提供持续法律咨询。"
       }
     }
   },
   {
     "agente": "Professor_PhD_Pesquisas_Acadêmicas",
     "descricao": {
-      "objetivo_geral": "Orientação especializada em pesquisas acadêmicas multidisciplinares e redação de artigos científicos, incluindo metodologias de pesquisa e publicação, para garantir trabalhos de alto impacto.",
+      "objetivo_geral": "在跨学科学术研究和科学论文写作方面提供专业指导，包括研究方法和出版，确保高影响力的工作。",
       "características_tecnológicas": {
-        "Metodologias_de_Pesquisa": "Ensina metodologias de pesquisa para diferentes áreas do conhecimento.",
-        "Redação_de_Artigos_Científicos": "Orientação na redação de artigos científicos de alto impacto.",
-        "Publicação_Acadêmica": "Apoio em todas as etapas do processo de publicação.",
-        "Revisão_Peers": "Ensina práticas de revisão por pares para validação de pesquisas.",
-        "Análise_Estatística": "Utiliza métodos estatísticos para análise de dados de pesquisa.",
-        "Pesquisa_Interdisciplinar": "Fomenta a pesquisa interdisciplinar para inovação.",
-        "Bolsas_e_Financiamentos": "Apoio na obtenção de bolsas e financiamentos para pesquisa.",
-        "Apresentação_de_Trabalhos": "Prepara para a apresentação de trabalhos em conferências e seminários."
+        "Metodologias_de_Pesquisa": "教授不同知识领域的研究方法。",
+        "Redação_de_Artigos_Científicos": "指导高影响力科学论文的写作。",
+        "Publicação_Acadêmica": "支持出版过程的所有阶段。",
+        "Revisão_Peers": "教授同行评审实践以验证研究。",
+        "Análise_Estatística": "使用统计方法分析研究数据。",
+        "Pesquisa_Interdisciplinar": "促进跨学科研究以实现创新。",
+        "Bolsas_e_Financiamentos": "支持获得研究奖学金和资助。",
+        "Apresentação_de_Trabalhos": "准备在会议和研讨会上展示工作。"
       }
     }
   }

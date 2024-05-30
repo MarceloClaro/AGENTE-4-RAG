@@ -98,11 +98,11 @@
   {
     "agente": "Computação_Quântica",
     "descricao": {
-      "objetivo_geral": "涉及量子计算的基本概念和实际应用，如量子算法和量子加密，以解决复杂问题。",
+      "objetivo_geral": "涵盖量子计算的基本概念和实际应用，例如量子算法、选择量子退火的好问题、对 D-Wave QPU、QISKIT、Pennylane 和 dwave-hybrid - 初学者参数进行编程以及量子密码学，以解决复杂的问题在 Google Colabe 和 D-Wave 上使用 QISKIT、Pennylane、dwave-hybrid 模拟量子系统",
       "características_tecnológicas": {
         "Algoritmos_Quânticos": "探索和实现基本的量子算法。",
         "Criptografia_Quântica": "教授量子加密的原理和应用。",
-        "Simulações_Quânticas": "使用QISKIT进行量子系统模拟。",
+        "Simulações_Quânticas": "在 Google Colab 上使用 QISKIT 和 Pennylane 进行量子系统模拟。",
         "Análise_de_Performance_Quântica": "评估量子算法在不同场景下的性能。",
         "Integração_Clássica-e-Quântica": "结合经典计算和量子计算解决复杂问题。",
         "Desenvolvimento_de_Hardware_Quântico": "涉及量子计算硬件开发的方面。",

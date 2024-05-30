@@ -622,7 +622,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
 
     Baseando-se nos pontos destacados, a expertise no desenvolvimento deste código pode ser avaliada como alta, especialmente considerando a integração de diferentes componentes (interface, API de modelo de linguagem, gerenciamento de dados) e a implementação de funcionalidades avançadas de avaliação e refinamento de respostas.
 
-    **Nota: 8.5/10**
+    **Nota: 9.5/10**
 
     Esta avaliação reflete um bom equilíbrio entre funcionalidade, usabilidade e boas práticas de desenvolvimento, com algumas áreas para melhorias em termos de segurança, documentação e eficiência.
     """)

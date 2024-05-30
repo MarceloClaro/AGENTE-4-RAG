@@ -749,7 +749,7 @@ def main():
     st.sidebar.write("""
         Código dos Agentes contidos no arquivo agents.json
         """)
-    with open("agents.json", "r") as file:
+    with open("agentsBR.json", "r") as file:
         code = file.read()
         st.sidebar.code(code, language='json')
         

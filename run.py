@@ -7,7 +7,59 @@ from groq import Groq  # Importa a biblioteca Groq, possivelmente para uma funç
 
 # Configura o layout da página Streamlit para ser "wide", ocupando toda a largura disponível.
 st.set_page_config(layout="wide")
-#_____________________________________________
+
+# Define o caminho para o arquivo JSON que contém os agentes.
+FILEPATH = "agents.json"
+
+# Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
+MODEL_MAX_TOKENS = {
+    'mixtral-8x7b-32768': 32768,
+    'llama3-70b-8192': 8192, 
+    'llama3-8b-8192': 8192,
+    'llama2-70b-4096': 4096,
+    'gemma-7b-it': 8192,
+}
+
+# Define uma função para carregar as opções de agentes a partir do arquivo JSON.
+def load_agent_options() -> list:
+    agent_options = ['Escolher um especialista...']  # Inicia a lista de opções com uma opção padrão.
+    if os.path.exists(FILEPATH):  # Verifica se o arquivo de agentes existe.
+        with open(FILEPATH, 'r') as file:  # Abre o arquivo para leitura.
+            try:
+                agents = json.load(file)  # Tenta carregar os dados JSON do arquivo.
+                # Adiciona os nomes dos agentes à lista de opções, se existirem.
+                agent_options.extend([agent["agente"] for agent in agents if "agente" in agent])
+            except json.JSONDecodeError:  # Captura erros de decodificação JSON.
+                st.error("Erro ao ler o arquivo de agentes. Por favor, verifique o formato.")  # Exibe uma mensagem de erro no Streamlit.
+    return agent_options  # Retorna a lista de opções de agentes.
+
+# Define uma função para obter o número máximo de tokens permitido por um modelo específico.
+def get_max_tokens(model_name: str) -> int:
+    # Retorna o número máximo de tokens para o modelo fornecido, ou 4096 se o modelo não estiver no dicionário.
+    return MODEL_MAX_TOKENS.get(model_name, 4096)
+
+# Define uma função para recarregar a página do Streamlit.
+def refresh_page():
+    st.rerun()  # Recarrega a aplicação Streamlit.
+
+# Define uma função para salvar um novo especialista no arquivo JSON.
+def save_expert(expert_title: str, expert_description: str):
+    with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
+        # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
+        agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
+        # Adiciona o novo especialista à lista de agentes.
+        agents.append({"agente": expert_title, "descricao": expert_description})
+        file.seek(0)  # Move o ponteiro do arquivo para o início.
+        json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
+        file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
+#_________________________________________________
+
+from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados precisos para a função.
+import json  # Importa o módulo json para trabalhar com dados JSON.
+import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
+import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
+from groq import Groq  # Importa a biblioteca Groq para interagir com a API Groq.
+
 # Define o caminho para o arquivo JSON que contém os especialistas.
 FILEPATH = "agents.json"
 
@@ -117,59 +169,38 @@ def save_expert(expert_title: str, expert_description: dict):
         json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
 
-# Função para refinar uma resposta existente com base na análise e melhoria do conteúdo.
-def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, groq_api_key: str, references_file: str) -> str:
+#_________________________________________________
+def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, groq_api_key: str, references_file):
     try:
-        client = Groq(api_key=groq_api_key)  # Cria um cliente Groq usando a chave API fornecida.
+        client = Groq(api_key=groq_api_key)
 
-        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
         def get_completion(prompt: str) -> str:
             completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
-                    {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
+                    {"role": "system", "content": "Você é um assistente útil."},
+                    {"role": "user", "content": prompt},
                 ],
-                model=model_name,  # Nome do modelo a ser usado.
-                temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
-                max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
-                top_p=1,  # Parâmetro para amostragem nuclear.
-                stop=None,  # Sem tokens de parada específicos.
-                stream=False  # Desabilita o streaming de respostas.
+                model=model_name,
+                temperature=temperature,
+                max_tokens=get_max_tokens(model_name),
+                top_p=1,
+                stop=None,
+                stream=False
             )
-            return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
+            return completion.choices[0].message.content
 
-        # Cria um prompt detalhado para refinar a resposta.
-        refine_prompt = (
-            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
-            f"Desempenhando o papel de {expert_title}, um especialista amplamente reconhecido e respeitado em seu campo, "
-            f"como doutor e expert nessa área, ofereça uma resposta abrangente e profunda, cobrindo a questão de forma clara, detalhada, expandida, "
-            f"educacional e concisa: {user_input} e {user_prompt}. "
-            f"Considerando minha longa experiência e profundo conhecimento das disciplinas relacionadas, "
-            f"é necessário abordar cada aspecto com atenção e rigor científico. "
-            f"Portanto, irei delinear os principais elementos a serem considerados e investigados, fornecendo uma análise detalhada e baseada em evidências, "
-            f"evitando vieses e citando referências conforme apropriado: {phase_two_response}. "
-            f"O objetivo final é fornecer uma resposta completa e satisfatória, alinhada aos mais altos padrões acadêmicos e profissionais, "
-            f"atendendo às necessidades específicas da questão apresentada. "
-            f"Certifique-se de apresentar a resposta em formato 'markdown', com comentários detalhados em cada linha. "
-            f"Mantenha o padrão de escrita em 10 parágrafos, cada parágrafo com 4 sentenças, e cada sentença separada por vírgulas, "
-            f"seguindo sempre as melhores práticas pedagógicas aristotélicas."
-        )
+        refine_prompt = f"Saida e resposta obrigatoria somente traduzido em português brasileiro. 承担{expert_title}的专业知识，这是该领域的知名专家，我向您提供以下问题的原始且易于理解的答案：'{user_input}'和'{user_prompt}'：{phase_two_response}\n\n我要求您进行仔细、广泛的学术科学技术严谨性的评审，并根据最佳学术和科学标准，完全改进此答案，并使用直接或间接的非虚构引用，最后列出它们的URL，以识别可能存在的空白和偏见，改进其内容。因此，请求您以科学论文格式提供答案的更新版本，包含所做的改进，并保持方法上的逻辑一致性、流畅性、连贯性和一致性。您在审查和改进此内容方面的努力对于确保其卓越性和学术相关性，以便在arXiv、scielo和Pubmed等主要国际科学期刊上发表，至关重要。必须保持一贯的写作标准，每段至少有10个段落，每个段落有4个句子，每个句子有一个逗号，始终遵循亚里士多德的最佳教学实践。必须保持一贯的写作标准，每段至少有10个段落，每个段落有4个句子，每个句子有一个逗号，始终遵循亚里士多德的最佳教学实践，并遵循巴西ABNT的引文规范。"
 
-        # Adiciona um prompt mais detalhado se não houver referências fornecidas.
+        # Adiciona um prompt mais detalhado se não houver referências
         if not references_file:
-            refine_prompt += (
-                f"\n\nDevido à ausência de referências fornecidas, certifique-se de fornecer uma resposta detalhada e precisa, "
-                f"mesmo sem o uso de fontes externas. "
-                f"Mantenha um padrão de escrita consistente, com 10 parágrafos, cada parágrafo contendo 4 frases, e cite de acordo com as normas ABNT. "
-                f"Utilize sempre um tom profissional e traduza tudo para o português do Brasil."
-            )
+            refine_prompt += f"Saida e resposta obrigatoria somente traduzido em português brasileiro.\n\n由于没有提供参考文件，请确保提供详细和准确的答案，即使没有使用外部来源。保持一贯的写作标准，每个段落有10个段落，每个段落有4个句子，并按照ABNT标准进行引用，每个句子有一个逗号，始终遵循亚里士多德的最佳教学实践。以专业口吻输出，总是翻译成巴西葡萄牙语。"
 
-        refined_response = get_completion(refine_prompt)  # Obtém a resposta refinada a partir do prompt detalhado.
-        return refined_response  # Retorna a resposta refinada.
+        refined_response = get_completion(refine_prompt)
+        return refined_response
 
-    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo de refinamento.
-        st.error(f"Ocorreu um erro durante o refinamento: {e}")  # Exibe uma mensagem de erro no Streamlit.
-        return ""  # Retorna uma string vazia se ocorrer um erro.
+    except Exception as e:
+        st.error(f"Ocorreu um erro durante o refinamento: {e}")
+        return ""
 #_________________________________________________
 
 def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, groq_api_key: str) -> str:

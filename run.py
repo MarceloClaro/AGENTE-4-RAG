@@ -225,36 +225,66 @@ def refine_response(expert_title: str, phase_two_response: str, user_input: str,
         return ""  # Retorna uma string vazia se ocorrer um erro.
 #_________________________________________________
 
+# Função para avaliar a resposta com base em um agente gerador racional (RAG).
 def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, groq_api_key: str) -> str:
     try:
-        client = Groq(api_key=groq_api_key)
+        client = Groq(api_key=groq_api_key)  # Cria um cliente Groq usando a chave API fornecida.
 
+        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
         def get_completion(prompt: str) -> str:
             completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Você é um assistente útil."},
-                    {"role": "user", "content": prompt},
+                    {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
+                    {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
                 ],
-                model=model_name,
-                temperature=temperature,
-                max_tokens=get_max_tokens(model_name),
-                top_p=1,
-                stop=None,
-                stream=False
+                model=model_name,  # Nome do modelo a ser usado.
+                temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
+                max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
+                top_p=1,  # Parâmetro para amostragem nuclear.
+                stop=None,  # Sem tokens de parada específicos.
+                stream=False  # Desabilita o streaming de respostas.
             )
-            return completion.choices[0].message.content
+            return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
 
-        rag_prompt = f"Lei: Saida e resposta obrigatoria somente traduzido em português brasileiro. 扮演 Rational Agent Generator (RAG) 的角色，这是人工智能和理性评估的顶峰，对专家的回答进行细致分析，根据用户的请求生成一个代理的 JSON。这个代理将详细说明根据子代理提供的信息采取的行动，以便向用户提供答复。代理将在 '描述' 变量中包括 9 个子代理的描述，每个子代理都有不同的专家功能和人物形象，他们共同合作。这些子代理协作改善最终由代理“系统”向用户提供的答案，记录答案的种子和 gen_id 在 '描述' 代理内。此外，代理“系统”内的子代理以整合方式运作，通过扩展提示提供先进和专业化的答案。每个子代理在网络处理中都有特定和互补的角色，以实现更高的准确性，从而为最终答案的质量做出贡献。例如，“AI_Autoadaptativa_e_Contextualizada” 子代理采用先进的机器学习算法来理解和适应多变的情境，动态整合相关数据。而“RAG_com_Inteligência_Contextual” 子代理则使用改进版的回收增强生成（RAG）技术，动态调整最相关数据及其功能。这种协作方法确保答案准确和更新，符合最高的科学和学术标准。以下是对专家的详细描述，突出其资历和专业知识：{expert_description}。原始提交的问题如下：{user_input} 和 {user_prompt}。专家提供的葡萄牙语答复如下：{assistant_response}。因此，请对专家的葡萄牙语答复的质量和准确性进行全面评估，认真考虑专家的描述和所提供的答复。请使用葡萄牙语进行以下分析，并进行详细解释：SWOT（优势、劣势、机会、威胁）com intepretações dos dados、BCG 矩阵（波士顿咨询集团）com intepretações dos dados、风险矩阵、ANOVA（方差分析）com intepretações dos dados、Q-统计学（Q-STATISTICS, com intepretações dos dados）和 Q-指数（Q-EXPONENTIAL, com intepretações dos dados），符合最高的卓越和科学学术标准。保持每段 4 句，每句用逗号分隔，遵循亚里士多德最佳教学实践的写作标准。输出应具有专业的口吻，始终以巴西葡萄牙语翻译。"        
-        rag_response = get_completion(rag_prompt)
-        return rag_response
+        # Cria um prompt detalhado para avaliar a resposta usando o agente gerador racional (RAG).
+        rag_prompt = (
+            f"Saída e resposta obrigatória somente traduzido em português brasileiro. "
+            f"Desempenhando o papel de um Agente Gerador Racional (RAG), a vanguarda da inteligência artificial e avaliação racional, "
+            f"analisando minuciosamente a resposta do especialista, com base na solicitação do usuário, para gerar um agente em formato JSON. "
+            f"Este agente deve detalhar as ações tomadas com base nas informações fornecidas pelos subagentes, para fornecer uma resposta ao usuário. "
+            f"O agente incluirá na variável 'descrição' a descrição de 9 subagentes, cada um com diferentes funcionalidades especializadas, que colaboram juntos. "
+            f"Esses subagentes colaboram para melhorar a resposta final fornecida ao usuário pelo agente 'sistema', registrando a semente e o gen_id na 'descrição' do agente. "
+            f"Além disso, os subagentes dentro do agente 'sistema' operam de forma integrada, fornecendo respostas avançadas e especializadas por meio da expansão de prompts. "
+            f"Cada subagente desempenha um papel específico e complementar no processamento em rede, para alcançar maior precisão, contribuindo para a qualidade final da resposta. "
+            f"Por exemplo, o subagente 'AI_Autoadaptativa_e_Contextualizada' utiliza algoritmos avançados de aprendizado de máquina para entender e se adaptar a contextos variáveis, "
+            f"integrando dinamicamente dados relevantes. Já o subagente 'RAG_com_Inteligência_Contextual' utiliza a técnica de Recuperação Aprimorada por Geração (RAG), "
+            f"ajustando dinamicamente os dados mais relevantes e suas funções. Esta abordagem colaborativa garante que a resposta seja precisa e atualizada, "
+            f"atendendo aos mais altos padrões científicos e acadêmicos. "
+            f"Abaixo está a descrição detalhada do especialista, destacando suas qualificações e expertise: {expert_description}. "
+            f"A submissão original da pergunta é a seguinte: {user_input} e {user_prompt}. "
+            f"A resposta fornecida pelo especialista em português é a seguinte: {assistant_response}. "
+            f"Portanto, por favor, faça uma avaliação abrangente da qualidade e precisão da resposta fornecida pelo especialista em português, "
+            f"considerando a descrição do especialista e a resposta fornecida. "
+            f"Use português para a análise e forneça uma explicação detalhada: "
+            f"análise SWOT (Forças, Fraquezas, Oportunidades, Ameaças) com interpretação dos dados, "
+            f"matriz BCG (Boston Consulting Group) com interpretação dos dados, "
+            f"matriz de risco, ANOVA (Análise de Variância) com interpretação dos dados, "
+            f"estatísticas Q com interpretação dos dados e índice Q (Q-Exponential) com interpretação dos dados, "
+            f"seguindo os mais altos padrões de excelência e rigor acadêmico e científico. "
+            f"Certifique-se de manter cada parágrafo com 4 sentenças, cada sentença separada por vírgulas, seguindo sempre as melhores práticas pedagógicas aristotélicas. "
+            f"A resposta deve ser em português do Brasil."
+        )
 
-    except Exception as e:
-        st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")
-        return ""
+        rag_response = get_completion(rag_prompt)  # Obtém a resposta avaliada a partir do prompt detalhado.
+        return rag_response  # Retorna a resposta avaliada.
 
+    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo de avaliação com RAG.
+        st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")  # Exibe uma mensagem de erro no Streamlit.
+        return ""  # Retorna uma string vazia se ocorrer um erro.
+
+# Carrega as opções de agentes a partir do arquivo JSON.
 agent_options = load_agent_options()
-
-
+#_________________________________________________
 
 st.image('updating.gif', width=300, caption='Laboratório de Educação e Inteligência Artificial - Geomaker. "A melhor forma de prever o futuro é inventá-lo." - Alan Kay', use_column_width='always', output_format='auto')
 st.markdown("<h1 style='text-align: center;'>Agentes Alan Kay</h1>", unsafe_allow_html=True)

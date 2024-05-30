@@ -1,13 +1,17 @@
-import json
-import streamlit as st
-from streamlit.delta_generator import DeltaGenerator
-import os
-from typing import Tuple
-from groq import Groq
+import json  # Importa o módulo json para trabalhar com dados JSON.
+import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
+from streamlit.delta_generator import DeltaGenerator  # Importa DeltaGenerator, que é usado para gerar alterações na interface do Streamlit.
+import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
+from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados mais precisos para funções.
+from groq import Groq  # Importa a biblioteca Groq, possivelmente para uma função não especificada neste código.
 
+# Configura o layout da página Streamlit para ser "wide", ocupando toda a largura disponível.
 st.set_page_config(layout="wide")
 
+# Define o caminho para o arquivo JSON que contém os agentes.
 FILEPATH = "agents.json"
+
+# Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
 MODEL_MAX_TOKENS = {
     'mixtral-8x7b-32768': 32768,
     'llama3-70b-8192': 8192, 
@@ -16,79 +20,130 @@ MODEL_MAX_TOKENS = {
     'gemma-7b-it': 8192,
 }
 
+# Define uma função para carregar as opções de agentes a partir do arquivo JSON.
 def load_agent_options() -> list:
-    agent_options = ['Escolher um especialista...']
-    if os.path.exists(FILEPATH):
-        with open(FILEPATH, 'r') as file:
+    agent_options = ['Escolher um especialista...']  # Inicia a lista de opções com uma opção padrão.
+    if os.path.exists(FILEPATH):  # Verifica se o arquivo de agentes existe.
+        with open(FILEPATH, 'r') as file:  # Abre o arquivo para leitura.
             try:
-                agents = json.load(file)
+                agents = json.load(file)  # Tenta carregar os dados JSON do arquivo.
+                # Adiciona os nomes dos agentes à lista de opções, se existirem.
                 agent_options.extend([agent["agente"] for agent in agents if "agente" in agent])
-            except json.JSONDecodeError:
-                st.error("Erro ao ler o arquivo de agentes. Por favor, verifique o formato.")
-    return agent_options
+            except json.JSONDecodeError:  # Captura erros de decodificação JSON.
+                st.error("Erro ao ler o arquivo de agentes. Por favor, verifique o formato.")  # Exibe uma mensagem de erro no Streamlit.
+    return agent_options  # Retorna a lista de opções de agentes.
 
+# Define uma função para obter o número máximo de tokens permitido por um modelo específico.
 def get_max_tokens(model_name: str) -> int:
+    # Retorna o número máximo de tokens para o modelo fornecido, ou 4096 se o modelo não estiver no dicionário.
     return MODEL_MAX_TOKENS.get(model_name, 4096)
 
+# Define uma função para recarregar a página do Streamlit.
 def refresh_page():
-    st.rerun()
+    st.rerun()  # Recarrega a aplicação Streamlit.
 
+# Define uma função para salvar um novo especialista no arquivo JSON.
 def save_expert(expert_title: str, expert_description: str):
-    with open(FILEPATH, 'r+') as file:
+    with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
+        # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
         agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
+        # Adiciona o novo especialista à lista de agentes.
         agents.append({"agente": expert_title, "descricao": expert_description})
-        file.seek(0)
-        json.dump(agents, file, indent=4)
-        file.truncate()
+        file.seek(0)  # Move o ponteiro do arquivo para o início.
+        json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
+        file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
+#_________________________________________________
 
+from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados precisos para a função.
+import json  # Importa o módulo json para trabalhar com dados JSON.
+import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
+import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
+from groq import Groq  # Importa a biblioteca Groq para interagir com a API Groq.
+
+# Define o caminho para o arquivo JSON que contém os especialistas.
+FILEPATH = "agents.json"
+
+# Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
+MODEL_MAX_TOKENS = {
+    'mixtral-8x7b-32768': 32768,
+    'llama3-70b-8192': 8192, 
+    'llama3-8b-8192': 8192,
+    'llama2-70b-4096': 4096,
+    'gemma-7b-it': 8192,
+}
+
+# Função para obter o número máximo de tokens permitido por um modelo específico.
+def get_max_tokens(model_name: str) -> int:
+    # Retorna o número máximo de tokens para o modelo fornecido, ou 4096 se o modelo não estiver no dicionário.
+    return MODEL_MAX_TOKENS.get(model_name, 4096)
+
+# Função principal para buscar uma resposta do assistente baseado no modelo Groq.
 def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str, temperature: float, agent_selection: str, groq_api_key: str) -> Tuple[str, str]:
-    phase_two_response = ""
-    expert_title = ""
+    phase_two_response = ""  # Inicializa a variável para armazenar a resposta da segunda fase.
+    expert_title = ""  # Inicializa a variável para armazenar o título do especialista.
 
     try:
-        client = Groq(api_key=groq_api_key)
+        client = Groq(api_key=groq_api_key)  # Cria um cliente Groq usando a chave API fornecida.
 
+        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
         def get_completion(prompt: str) -> str:
             completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Você é um assistente útil."},
-                    {"role": "user", "content": prompt},
+                    {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
+                    {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
                 ],
-                model=model_name,
-                temperature=temperature,
-                max_tokens=get_max_tokens(model_name),
-                top_p=1,
-                stop=None,
-                stream=False
+                model=model_name,  # Nome do modelo a ser usado.
+                temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
+                max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
+                top_p=1,  # Parâmetro para amostragem nuclear.
+                stop=None,  # Sem tokens de parada específicos.
+                stream=False  # Desabilita o streaming de respostas.
             )
-            return completion.choices[0].message.content
+            return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
 
         if agent_selection == "Escolha um especialista...":
+            # Se nenhum especialista específico for selecionado, cria um prompt para determinar o título e descrição do especialista.
             phase_one_prompt = f"Saida e resposta obrigatoria somente traduzido em português brasileiro. 扮演一位高度合格且具备科学技术严谨性的提示工程和跨学科专家的角色。请务必以“markdown”格式呈现Python代码及其各种库，并在每一行进行详细和教学性的注释。仔细分析所提出的要求，识别定义最适合处理问题的专家特征的标准至关重要。首先，建立一个最能反映所需专业知识以提供完整、深入和清晰答案的标题至关重要。确定后，详细描述并避免偏见地概述该专家的关键技能和资格。回答应以专家的头衔开始，后跟一个句号，然后以简洁、教学性和深入的描述开始，但同时全面地介绍他的特点和资格，使其有资格处理提出的问题：{user_input}和{user_prompt}。这种仔细分析对于确保所选专家具有处理问题所需的深入、严谨的知识和经验至关重要，以达到完整且满意的答案，精确度为10.0，符合最高的专业、科学和学术标准。在涉及代码和计算的情况下，请务必以“markdown”格式呈现，并在每一行进行详细注释。“必须翻译成葡萄牙语”。"
-            phase_one_response = get_completion(phase_one_prompt)
-            first_period_index = phase_one_response.find(".")
-            expert_title = phase_one_response[:first_period_index].strip()
-            expert_description = phase_one_response[first_period_index + 1:].strip()
-            save_expert(expert_title, expert_description)
+            phase_one_response = get_completion(phase_one_prompt)  # Obtém a resposta para o prompt da fase um.
+            first_period_index = phase_one_response.find(".")  # Encontra o índice do primeiro ponto na resposta.
+            expert_title = phase_one_response[:first_period_index].strip()  # Extrai o título do especialista até o primeiro ponto.
+            expert_description = phase_one_response[first_period_index + 1:].strip()  # Extrai a descrição do especialista após o primeiro ponto.
+            save_expert(expert_title, expert_description)  # Salva o novo especialista no arquivo JSON.
         else:
-            with open(FILEPATH, 'r') as file:
-                agents = json.load(file)
+            # Se um especialista específico for selecionado, carrega os dados do especialista do arquivo JSON.
+            with open(FILEPATH, 'r') as file:  # Abre o arquivo JSON para leitura.
+                agents = json.load(file)  # Carrega os dados dos agentes do arquivo JSON.
+                # Encontra o agente selecionado na lista de agentes.
                 agent_found = next((agent for agent in agents if agent["agente"] == agent_selection), None)
                 if agent_found:
-                    expert_title = agent_found["agente"]
-                    expert_description = agent_found["descricao"]
+                    expert_title = agent_found["agente"]  # Obtém o título do especialista.
+                    expert_description = agent_found["descricao"]  # Obtém a descrição do especialista.
                 else:
-                    raise ValueError("Especialista selecionado não encontrado no arquivo.")
+                    raise ValueError("Especialista selecionado não encontrado no arquivo.")  # Lança um erro se o especialista não for encontrado.
 
+        # Cria um prompt para a segunda fase, onde o especialista selecionado fornece uma resposta detalhada.
         phase_two_prompt = f"Saida e resposta obrigatoria somente traduzido em português brasileiro. 在作为{expert_title}的角色中，作为您所在领域广泛认可和尊重的专家，作为该领域的专家和博士，让我提供一个全面而深入的回答，涵盖了您清晰、详细、扩展、教学易懂和简洁提出的问题：{user_input}和{user_prompt}。在这种背景下，考虑到我长期的经验和对相关学科的深刻了解，有必要以适当的关注和科学技术严谨性来处理每个方面。因此，我将概述要考虑和深入研究的主要要素，提供详细的、基于证据的分析，避免偏见并引用参考文献：{user_prompt}。在此过程的最后，我们的目标是提供一个完整且令人满意的答案，符合最高的学术和专业标准，以满足所提出问题的具体需求。请务必以“markdown”格式呈现，并在每一行进行注释。保持10个段落的写作标准，每个段落4句，每句用逗号分隔，始终遵循最佳的亚里士多德教学实践。"
-        phase_two_response = get_completion(phase_two_prompt)
+        phase_two_response = get_completion(phase_two_prompt)  # Obtém a resposta para o prompt da segunda fase.
 
-    except Exception as e:
-        st.error(f"Ocorreu um erro: {e}")
-        return "", ""
+    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo.
+        st.error(f"Ocorreu um erro: {e}")  # Exibe uma mensagem de erro no Streamlit.
+        return "", ""  # Retorna tuplas vazias se ocorrer um erro.
 
-    return expert_title, phase_two_response
+    return expert_title, phase_two_response  # Retorna o título do especialista e a resposta da segunda fase.
 
+# Função para salvar um novo especialista no arquivo JSON.
+def save_expert(expert_title: str, expert_description: str):
+    with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
+        # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
+        agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
+        # Adiciona o novo especialista à lista de agentes.
+        agents.append({"agente": expert_title, "descricao": expert_description})
+        file.seek(0)  # Move o ponteiro do arquivo para o início.
+        json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
+        file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
+
+
+#_________________________________________________
 def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, groq_api_key: str, references_file):
     try:
         client = Groq(api_key=groq_api_key)

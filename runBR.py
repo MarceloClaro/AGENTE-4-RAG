@@ -54,24 +54,6 @@ def save_expert(expert_title: str, expert_description: str):
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
 #_________________________________________________
 
-from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados precisos para a função.
-import json  # Importa o módulo json para trabalhar com dados JSON.
-import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
-import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
-from groq import Groq  # Importa a biblioteca Groq para interagir com a API Groq.
-
-# Define o caminho para o arquivo JSON que contém os especialistas.
-FILEPATH = "agents.json"
-
-# Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
-MODEL_MAX_TOKENS = {
-    'mixtral-8x7b-32768': 32768,
-    'llama3-70b-8192': 8192,
-    'llama3-8b-8192': 8192,
-    'llama2-70b-4096': 4096,
-    'gemma-7b-it': 8192,
-}
-
 # Função para obter o número máximo de tokens permitido por um modelo específico.
 def get_max_tokens(model_name: str) -> int:
     # Retorna o número máximo de tokens para o modelo fornecido, ou 4096 se o modelo não estiver no dicionário.

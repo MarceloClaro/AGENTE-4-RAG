@@ -292,7 +292,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Descubra como nossa plataforma pode revolucionar a educação.</h2>", unsafe_allow_html=True)
 
 # Conteúdo da caixa de informação
-with st.expander("Clique para saber mais sobre os Agentes Experts Geomaker."):
+with st.expander("Clique para saber mais sobre os Agentes Alan Kay."):
     st.write("1. **Conecte-se instantaneamente com especialistas:** Imagine ter acesso direto a especialistas em diversas áreas do conhecimento, prontos para responder às suas dúvidas e orientar seus estudos e pesquisas.")
     st.write("2. **Aprendizado personalizado e interativo:** Receba respostas detalhadas e educativas, adaptadas às suas necessidades específicas, tornando o aprendizado mais eficaz e envolvente.")
     st.write("3. **Suporte acadêmico abrangente:** Desde aulas particulares até orientações para projetos de pesquisa, nossa plataforma oferece um suporte completo para alunos, professores e pesquisadores.")
@@ -500,7 +500,7 @@ passo_1_content = """
 """
 
 passo_2_content = """
-1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes Experts Geomaker).
+1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes Alan Kay).
 
 2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
 

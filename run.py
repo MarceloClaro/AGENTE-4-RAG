@@ -758,8 +758,8 @@ def main():
 
     # Lista de arquivos MP3 disponíveis
     mp3_files = {
-        "Ambiente Índia": "ambienteindia.mp3",
-        "Agente 4": "agente4.mp3"
+        "Ambiente Índia": "ambienteindia.mp3"
+        
     }
 
     # Selecionar arquivo MP3

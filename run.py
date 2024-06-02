@@ -726,7 +726,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     """)
 
 
-import streamlit as st
+
 
 def main():
     st.sidebar.write("""
@@ -754,19 +754,20 @@ def main():
     # Adiciona um título na barra lateral
     st.sidebar.title("Controle de Áudio")
     
-    # Link direto para o arquivo MP3 no GitHub
-    mp3_url = "https://github.com/MarceloClaro/AGENTE-4-RAG/blob/27c82bcad2e8492dc8c931b3526353c779413b17/ambienteindia.mp3"
-    
-    # HTML para embutir o player de áudio
-    audio_html = f"""
-    <audio id="audio-player" controls>
-      <source src="{mp3_url}" type="audio/mp3">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-    """
-    
-    # Renderiza o player de áudio na barra lateral
-    st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+    # Tentar carregar o arquivo MP3
+    try:
+        mp3_url = "ambienteindia.mp3"
+        with open(mp3_url, "rb") as file:
+            audio_html = f"""
+            <audio id="audio-player" controls>
+              <source src="data:audio/mp3;base64,{file.read().encode('base64').decode()}" type="audio/mp3">
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+            """
+            # Renderiza o player de áudio na barra lateral
+            st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+    except FileNotFoundError:
+        st.sidebar.error("Arquivo ambienteindia.mp3 não encontrado.")
     
     # Controle de reprodução
     if st.sidebar.button("Play"):
@@ -806,4 +807,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

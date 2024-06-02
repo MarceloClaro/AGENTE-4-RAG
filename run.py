@@ -756,9 +756,19 @@ def main():
     # Adiciona um título na barra lateral
     st.sidebar.title("Controle de Áudio")
 
+    # Lista de arquivos MP3 disponíveis
+    mp3_files = {
+        "Ambiente Índia": "ambienteindia.mp3",
+        "Agente 4": "agente4.mp3"
+    }
+
+    # Selecionar arquivo MP3
+    selected_mp3 = st.sidebar.selectbox("Escolha um áudio", list(mp3_files.keys()))
+
     # Carregar e exibir o player de áudio
     try:
-        with open("ambienteindia.mp3", "rb") as audio_file:
+        mp3_path = mp3_files[selected_mp3]
+        with open(mp3_path, "rb") as audio_file:
             audio_bytes = audio_file.read()
             audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
             audio_html = f"""
@@ -769,7 +779,7 @@ def main():
             """
             st.sidebar.markdown(audio_html, unsafe_allow_html=True)
     except FileNotFoundError:
-        st.sidebar.error("Arquivo ambienteindia.mp3 não encontrado.")
+        st.sidebar.error(f"Arquivo {mp3_path} não encontrado.")
     
     # Controle de reprodução
     if st.sidebar.button("Play"):
@@ -809,6 +819,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 

@@ -759,22 +759,24 @@ def main():
     # Lista de arquivos MP3
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
-        "Agente 4": "agente4.mp3"
+        "AGENTE-4, Alan Kay 1": "AGENTE-4, Alan Kay 1.mp3",
+        "AGENTE-4, Alan Kay 2": "AGENTE-4, Alan Kay 2.mp3",
+        "AGENTE-4, Alan Kay 3": "AGENTE-4, Alan Kay 3.mp3",
+        "AGENTE-4, Alan Kay 4": "AGENTE-4, Alan Kay 4.mp3",
+        "AGENTE-4, Alan Kay 5": "AGENTE-4, Alan Kay 5.mp3",
+        "AGENTE-4, Alan Kay 6": "AGENTE-4, Alan Kay 6.mp3",
+        "AGENTE-4, Alan Kay 7": "AGENTE-4, Alan Kay 7.mp3",
+        "AGENTE-4, Alan Kay 8": "AGENTE-4, Alan Kay 8.mp3"
     }
 
     # Controle de seleção de música
-    selected_ambiente_india = st.sidebar.checkbox("Ambiente Índia", value=False)
-    selected_agente_4 = st.sidebar.checkbox("Agente 4", value=False)
-
-    if selected_ambiente_india and selected_agente_4:
-        st.sidebar.error("Selecione apenas uma música por vez.")
-        selected_mp3 = None
-    elif selected_ambiente_india:
-        selected_mp3 = "ambienteindia.mp3"
-    elif selected_agente_4:
-        selected_mp3 = "agente4.mp3"
-    else:
-        selected_mp3 = None
+    selected_mp3 = None
+    for title, filepath in mp3_files.items():
+        if st.sidebar.checkbox(title):
+            if selected_mp3:
+                st.sidebar.error("Selecione apenas uma música por vez.")
+                break
+            selected_mp3 = filepath
 
     # Opção de loop
     loop = st.sidebar.checkbox("Repetir música")
@@ -811,3 +813,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

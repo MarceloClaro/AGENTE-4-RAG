@@ -726,20 +726,71 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     """)
 
 
+import streamlit as st
+
 def main():
     st.sidebar.write("""
         Código principal do Agentes Alan Kay
-        """)
-    with open("runBR.py", "r") as file:
-        code = file.read()
-        st.sidebar.code(code, language='python')
+    """)
+    # Carregar e exibir o código Python
+    try:
+        with open("runBR.py", "r") as file:
+            code = file.read()
+            st.sidebar.code(code, language='python')
+    except FileNotFoundError:
+        st.sidebar.error("Arquivo runBR.py não encontrado.")
+
     st.sidebar.write("""
         Código dos Agentes contidos no arquivo agents.json
-        """)
-    with open("agentsBR.json", "r") as file:
-        code = file.read()
-        st.sidebar.code(code, language='json')
-        
+    """)
+    # Carregar e exibir o código JSON
+    try:
+        with open("agentsBR.json", "r") as file:
+            code = file.read()
+            st.sidebar.code(code, language='json')
+    except FileNotFoundError:
+        st.sidebar.error("Arquivo agentsBR.json não encontrado.")
+    
+    # Adiciona um título na barra lateral
+    st.sidebar.title("Controle de Áudio")
+    
+    # Link direto para o arquivo MP3 no GitHub
+    mp3_url = "https://github.com/MarceloClaro/AGENTE-4-RAG/blob/27c82bcad2e8492dc8c931b3526353c779413b17/ambienteindia.mp3"
+    
+    # HTML para embutir o player de áudio
+    audio_html = f"""
+    <audio id="audio-player" controls>
+      <source src="{mp3_url}" type="audio/mp3">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+    """
+    
+    # Renderiza o player de áudio na barra lateral
+    st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+    
+    # Controle de reprodução
+    if st.sidebar.button("Play"):
+        st.sidebar.markdown(
+            """
+            <script>
+                var audio = document.getElementById("audio-player");
+                audio.play();
+            </script>
+            """,
+            unsafe_allow_html=True,
+        )
+    
+    if st.sidebar.button("Pause"):
+        st.sidebar.markdown(
+            """
+            <script>
+                var audio = document.getElementById("audio-player");
+                audio.pause();
+            </script>
+            """,
+            unsafe_allow_html=True,
+        )
+
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""
@@ -755,3 +806,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

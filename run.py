@@ -777,6 +777,7 @@ def main():
     loop = st.sidebar.checkbox("Repetir música")
 
     # Carregar e exibir o player de áudio
+    audio_placeholder = st.sidebar.empty()
     if selected_mp3:
         mp3_path = mp3_files[selected_mp3]
         try:
@@ -790,11 +791,9 @@ def main():
                   Seu navegador não suporta o elemento de áudio.
                 </audio>
                 """
-                # Atualiza o player de áudio
-                st.sidebar.empty()
-                st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+                audio_placeholder.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
-            st.sidebar.error(f"Arquivo {mp3_path} não encontrado.")
+            audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
@@ -811,4 +810,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

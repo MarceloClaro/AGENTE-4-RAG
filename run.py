@@ -798,5 +798,18 @@ def main():
     except FileNotFoundError:
         st.error("Arquivo agentsBR.json não encontrado.")
 
+    # Informações de contato na barra lateral
+    st.sidebar.image("eu.ico", width=80)
+    st.sidebar.write("""
+    Projeto Geomaker + IA 
+    - Professor: Marcelo Claro.
+
+    Contatos: marceloclaro@gmail.com
+
+    Whatsapp: (88)981587145
+
+    Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
+    """)
+
 if __name__ == "__main__":
     main()

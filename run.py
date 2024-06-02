@@ -730,13 +730,6 @@ import streamlit as st
 import base64
 
 def main():
-    # Exibir o logo na página principal
-    st.image("logo.png", width=150)
-
-    st.write("""
-        ## Código principal do Agentes Alan Kay
-    """)
-
     # Adiciona um título na barra lateral
     st.sidebar.title("Controle de Áudio")
     

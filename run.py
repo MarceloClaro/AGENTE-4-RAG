@@ -732,7 +732,7 @@ import base64
 
 def main():
     st.sidebar.write("""
-        Código principal do Agentes 4  - Alan Kay
+        Código principal do Agentes Alan Kay
     """)
     # Carregar e exibir o código Python
     try:
@@ -743,7 +743,7 @@ def main():
         st.sidebar.error("Arquivo runBR.py não encontrado.")
 
     st.sidebar.write("""
-        Código dos Agentes 4  - contidos no arquivo agents.json
+        Código dos Agentes contidos no arquivo agents.json
     """)
     # Carregar e exibir o código JSON
     try:
@@ -758,8 +758,8 @@ def main():
     
     # Lista de arquivos MP3
     mp3_files = {
-        "Agente 4": "agente4.mp3",
-        "Ambiente Índia": "ambienteindia.mp3"
+        "Ambiente Índia": "ambienteindia.mp3",
+        "Agente 4": "agente4.mp3"
     }
 
     # Seleção do arquivo MP3
@@ -823,5 +823,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

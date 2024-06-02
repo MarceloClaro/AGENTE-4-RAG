@@ -795,29 +795,6 @@ def main():
                 st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
             st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
-    
-        # Controle de reprodução
-        if st.sidebar.button("Play"):
-            st.sidebar.markdown(
-                """
-                <script>
-                    var audio = document.getElementById("audio-player");
-                    audio.play();
-                </script>
-                """,
-                unsafe_allow_html=True,
-            )
-        
-        if st.sidebar.button("Pause"):
-            st.sidebar.markdown(
-                """
-                <script>
-                    var audio = document.getElementById("audio-player");
-                    audio.pause();
-                </script>
-                """,
-                unsafe_allow_html=True,
-            )
 
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
@@ -834,4 +811,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

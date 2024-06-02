@@ -736,14 +736,22 @@ def main():
     st.write("""
         ## Código principal do Agentes Alan Kay
     """)
-    
+
     # Adiciona um título na barra lateral
     st.sidebar.title("Controle de Áudio")
     
     # Lista de arquivos MP3
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
-        "Agente 4": "agente4.mp3"
+        "Agente 4": "agente4.mp3",
+        "AGENTE-AlanKay1": "AGENTE-AlanKay1.mp3",
+        "AGENTE-AlanKay2": "AGENTE-AlanKay2.mp3",
+        "AGENTE-AlanKay3": "AGENTE-AlanKay3.mp3",
+        "AGENTE-AlanKay4": "AGENTE-AlanKay4.mp3",
+        "AGENTE-AlanKay5": "AGENTE-AlanKay5.mp3",
+        "AGENTE-AlanKay6": "AGENTE-AlanKay6.mp3",
+        "AGENTE-AlanKay7": "AGENTE-AlanKay7.mp3",
+        "AGENTE-AlanKay8": "AGENTE-AlanKay8.mp3"
     }
 
     # Controle de seleção de música
@@ -771,8 +779,7 @@ def main():
         except FileNotFoundError:
             audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
-    #___________________________________________________________________
-        # Carregar e exibir o código Python
+    # Carregar e exibir o código Python
     try:
         with open("runBR.py", "r") as file:
             code = file.read()
@@ -790,20 +797,6 @@ def main():
             st.code(code, language='json')
     except FileNotFoundError:
         st.error("Arquivo agentsBR.json não encontrado.")
-    #___________________________________________________________________    
-
-    # Informações de contato na barra lateral
-    st.sidebar.image("eu.ico", width=80)
-    st.sidebar.write("""
-    Projeto Geomaker + IA 
-    - Professor: Marcelo Claro.
-
-    Contatos: marceloclaro@gmail.com
-
-    Whatsapp: (88)981587145
-
-    Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
-    """)
 
 if __name__ == "__main__":
     main()

@@ -760,33 +760,27 @@ def main():
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
         "Agente 4": "agente4.mp3",
-        "AGENTE-4 Alan Kay 6": "AGENTE-AlanKay6.mp3",
-        "AGENTE-4 Alan Kay 5": "AGENTE-AlanKay5.mp3",
-        "AGENTE-4 Alan Kay 4": "AGENTE-4AlanKay4.mp3",
-        "AGENTE-4 Alan Kay 3": "AGENTE-4AlanKay3.mp3",
-        "AGENTE-4 Alan Kay 2": "AGENTE-4AlanKay2.mp3",
-        "AGENTE-4 Alan Kay 1": "AGENTE-4AlanKay1.mp3",
-        "AGENTE-4 Alan Kay 8": "AGENTE-4AlanKay8.mp3",
-        "AGENTE-4 Alan Kay 7": "AGENTE-4AlanKay7.mp3"
+        "AGENTE-AlanKay1": "AGENTE-AlanKay1.mp3",
+        "AGENTE-AlanKay2": "AGENTE-AlanKay2.mp3",
+        "AGENTE-AlanKay3": "AGENTE-AlanKay3.mp3",
+        "AGENTE-AlanKay4": "AGENTE-AlanKay4.mp3",
+        "AGENTE-AlanKay5": "AGENTE-AlanKay5.mp3",
+        "AGENTE-AlanKay6": "AGENTE-AlanKay6.mp3",
+        "AGENTE-AlanKay7": "AGENTE-AlanKay7.mp3",
+        "AGENTE-AlanKay8": "AGENTE-AlanKay8.mp3"
     }
 
     # Controle de seleção de música
-    selected_mp3 = None
-    for name, path in mp3_files.items():
-        if st.sidebar.checkbox(name):
-            if selected_mp3:
-                st.sidebar.error("Selecione apenas uma música por vez.")
-                selected_mp3 = None
-                break
-            selected_mp3 = path
+    selected_mp3 = st.sidebar.radio("Escolha uma música", list(mp3_files.keys()))
 
     # Opção de loop
     loop = st.sidebar.checkbox("Repetir música")
 
     # Carregar e exibir o player de áudio
     if selected_mp3:
+        mp3_path = mp3_files[selected_mp3]
         try:
-            with open(selected_mp3, "rb") as audio_file:
+            with open(mp3_path, "rb") as audio_file:
                 audio_bytes = audio_file.read()
                 audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
                 loop_attr = "loop" if loop else ""
@@ -798,7 +792,7 @@ def main():
                 """
                 st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
-            st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
+            st.sidebar.error(f"Arquivo {mp3_path} não encontrado.")
 
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)

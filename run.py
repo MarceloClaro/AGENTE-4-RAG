@@ -725,7 +725,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     Esta avaliação reflete um bom equilíbrio entre funcionalidade, usabilidade e boas práticas de desenvolvimento, com algumas áreas para melhorias em termos de segurança, documentação e eficiência.
     """)
 
-
+#_________________________________________________________________
 
 import streamlit as st
 import base64

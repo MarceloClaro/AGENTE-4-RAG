@@ -762,51 +762,61 @@ def main():
         "Agente 4": "agente4.mp3"
     }
 
-    # Seleção do arquivo MP3
-    selected_mp3 = st.sidebar.selectbox("Escolha um áudio", list(mp3_files.keys()))
-    mp3_path = mp3_files[selected_mp3]
+    # Controle de seleção de música
+    ambiente_india = st.sidebar.checkbox("Ambiente Índia")
+    agente_4 = st.sidebar.checkbox("Agente 4")
+    
+    if ambiente_india:
+        agente_4 = False
+        selected_mp3 = "ambienteindia.mp3"
+    elif agente_4:
+        ambiente_india = False
+        selected_mp3 = "agente4.mp3"
+    else:
+        selected_mp3 = None
 
     # Opção de loop
     loop = st.sidebar.checkbox("Repetir música")
 
     # Carregar e exibir o player de áudio
-    try:
-        with open(mp3_path, "rb") as audio_file:
-            audio_bytes = audio_file.read()
-            audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
-            loop_attr = "loop" if loop else ""
-            audio_html = f"""
-            <audio id="audio-player" controls autoplay {loop_attr}>
-              <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
-              Seu navegador não suporta o elemento de áudio.
-            </audio>
-            """
-            st.sidebar.markdown(audio_html, unsafe_allow_html=True)
-    except FileNotFoundError:
-        st.sidebar.error(f"Arquivo {mp3_path} não encontrado.")
+    if selected_mp3:
+        try:
+            with open(selected_mp3, "rb") as audio_file:
+                audio_bytes = audio_file.read()
+                audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
+                loop_attr = "loop" if loop else ""
+                audio_html = f"""
+                <audio id="audio-player" controls autoplay {loop_attr}>
+                  <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
+                  Seu navegador não suporta o elemento de áudio.
+                </audio>
+                """
+                st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+        except FileNotFoundError:
+            st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
     
-    # Controle de reprodução
-    if st.sidebar.button("Play"):
-        st.sidebar.markdown(
-            """
-            <script>
-                var audio = document.getElementById("audio-player");
-                audio.play();
-            </script>
-            """,
-            unsafe_allow_html=True,
-        )
-    
-    if st.sidebar.button("Pause"):
-        st.sidebar.markdown(
-            """
-            <script>
-                var audio = document.getElementById("audio-player");
-                audio.pause();
-            </script>
-            """,
-            unsafe_allow_html=True,
-        )
+        # Controle de reprodução
+        if st.sidebar.button("Play"):
+            st.sidebar.markdown(
+                """
+                <script>
+                    var audio = document.getElementById("audio-player");
+                    audio.play();
+                </script>
+                """,
+                unsafe_allow_html=True,
+            )
+        
+        if st.sidebar.button("Pause"):
+            st.sidebar.markdown(
+                """
+                <script>
+                    var audio = document.getElementById("audio-player");
+                    audio.pause();
+                </script>
+                """,
+                unsafe_allow_html=True,
+            )
 
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
@@ -823,6 +833,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

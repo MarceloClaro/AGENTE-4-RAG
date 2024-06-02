@@ -743,15 +743,7 @@ def main():
     # Lista de arquivos MP3
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
-        "Agente 4": "agente4.mp3",
-        "AGENTE-AlanKay1": "AGENTE-AlanKay1.mp3",
-        "AGENTE-AlanKay2": "AGENTE-AlanKay2.mp3",
-        "AGENTE-AlanKay3": "AGENTE-AlanKay3.mp3",
-        "AGENTE-AlanKay4": "AGENTE-AlanKay4.mp3",
-        "AGENTE-AlanKay5": "AGENTE-AlanKay5.mp3",
-        "AGENTE-AlanKay6": "AGENTE-AlanKay6.mp3",
-        "AGENTE-AlanKay7": "AGENTE-AlanKay7.mp3",
-        "AGENTE-AlanKay8": "AGENTE-AlanKay8.mp3"
+        "Agente 4": "agente4.mp3"
     }
 
     # Controle de seleção de música
@@ -780,25 +772,20 @@ def main():
             audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
     # Carregar e exibir o código Python
-    try:
-        with open("runBR.py", "r") as file:
-            code = file.read()
-            st.code(code, language='python')
-    except FileNotFoundError:
-        st.error("Arquivo runBR.py não encontrado.")
-
-    st.write("""
-        ## Código dos Agentes contidos no arquivo agents.json
-    """)
-    # Carregar e exibir o código JSON
-    try:
-        with open("agentsBR.json", "r") as file:
-            code = file.read()
-            st.code(code, language='json')
-    except FileNotFoundError:
-        st.error("Arquivo agentsBR.json não encontrado.")
-
-    # Informações de contato na barra lateral
+     st.sidebar.write("""
+        Código principal do Agentes Alan Kay
+        """)
+    with open("runBR.py", "r") as file:
+        code = file.read()
+        st.sidebar.code(code, language='python')
+    st.sidebar.write("""
+        Código dos Agentes contidos no arquivo agents.json
+        """)
+    with open("agentsBR.json", "r") as file:
+        code = file.read()
+        st.sidebar.code(code, language='json')
+        
+    # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""
     Projeto Geomaker + IA 

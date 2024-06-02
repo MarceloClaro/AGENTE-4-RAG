@@ -760,14 +760,14 @@ def main():
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
         "Agente 4": "agente4.mp3",
-        "AGENTE-4, Alan Kay 6": "AGENTE-4, Alan Kay 6.mp3",
-        "AGENTE-4, Alan Kay 5": "AGENTE-4, Alan Kay 5.mp3",
-        "AGENTE-4, Alan Kay 4": "AGENTE-4, Alan Kay 4.mp3",
-        "AGENTE-4, Alan Kay 3": "AGENTE-4, Alan Kay 3.mp3",
-        "AGENTE-4, Alan Kay 2": "AGENTE-4, Alan Kay 2.mp3",
-        "AGENTE-4 Alan Kay 1": "AGENTE-4 Alan Kay 1.mp3",
-        "AGENTE-4, Alan Kay 8": "AGENTE-4, Alan Kay 8.mp3",
-        "AGENTE-4, Alan Kay 7": "AGENTE-4, Alan Kay 7.mp3"
+        "AGENTE-4 Alan Kay 6": "AGENTE-AlanKay6.mp3",
+        "AGENTE-4 Alan Kay 5": "AGENTE-AlanKay5.mp3",
+        "AGENTE-4 Alan Kay 4": "AGENTE-4AlanKay4.mp3",
+        "AGENTE-4 Alan Kay 3": "AGENTE-4AlanKay3.mp3",
+        "AGENTE-4 Alan Kay 2": "AGENTE-4AlanKay2.mp3",
+        "AGENTE-4 Alan Kay 1": "AGENTE-4AlanKay1.mp3",
+        "AGENTE-4 Alan Kay 8": "AGENTE-4AlanKay8.mp3",
+        "AGENTE-4 Alan Kay 7": "AGENTE-4AlanKay7.mp3"
     }
 
     # Controle de seleção de música

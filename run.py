@@ -726,6 +726,7 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     """)
 
 #_________________________________________________________________
+#_________________________________________________________________
 
 import streamlit as st
 import base64
@@ -763,17 +764,26 @@ def main():
     }
 
     # Controle de seleção de música
-    selected_mp3 = st.sidebar.radio("Escolha uma música", list(mp3_files.keys()))
+    selected_ambiente_india = st.sidebar.checkbox("Ambiente Índia", value=False)
+    selected_agente_4 = st.sidebar.checkbox("Agente 4", value=False)
+
+    if selected_ambiente_india and selected_agente_4:
+        st.sidebar.error("Selecione apenas uma música por vez.")
+        selected_mp3 = None
+    elif selected_ambiente_india:
+        selected_mp3 = "ambienteindia.mp3"
+    elif selected_agente_4:
+        selected_mp3 = "agente4.mp3"
+    else:
+        selected_mp3 = None
 
     # Opção de loop
     loop = st.sidebar.checkbox("Repetir música")
 
     # Carregar e exibir o player de áudio
-    audio_placeholder = st.sidebar.empty()
     if selected_mp3:
-        mp3_path = mp3_files[selected_mp3]
         try:
-            with open(mp3_path, "rb") as audio_file:
+            with open(selected_mp3, "rb") as audio_file:
                 audio_bytes = audio_file.read()
                 audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
                 loop_attr = "loop" if loop else ""
@@ -783,9 +793,9 @@ def main():
                   Seu navegador não suporta o elemento de áudio.
                 </audio>
                 """
-                audio_placeholder.markdown(audio_html, unsafe_allow_html=True)
+                st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
-            audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
+            st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
 
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)

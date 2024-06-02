@@ -726,12 +726,13 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     """)
 
 #_________________________________________________________________
-#_________________________________________________________________
 
 import streamlit as st
 import base64
 
 def main():
+    # Exibir o logo na página principal
+    st.image("logo.png", width=150)
     st.sidebar.write("""
         Código principal do Agentes Alan Kay
     """)
@@ -796,9 +797,7 @@ def main():
                 st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
             st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
-    # Informações de contato na barra lateral
-    st.sidebar.image("eu.ico", width=80)
-    st.sidebar.write("""
+
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""

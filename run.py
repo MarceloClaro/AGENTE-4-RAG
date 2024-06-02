@@ -790,6 +790,8 @@ def main():
                   Seu navegador não suporta o elemento de áudio.
                 </audio>
                 """
+                # Atualiza o player de áudio
+                st.sidebar.empty()
                 st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
             st.sidebar.error(f"Arquivo {mp3_path} não encontrado.")
@@ -809,3 +811,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

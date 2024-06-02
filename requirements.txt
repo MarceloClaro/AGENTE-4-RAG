@@ -2,4 +2,4 @@ streamlit
 groq
 toml
 pydub
- base64
+base64

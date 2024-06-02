@@ -765,7 +765,7 @@ def main():
         "AGENTE-4, Alan Kay 4": "AGENTE-4, Alan Kay 4.mp3",
         "AGENTE-4, Alan Kay 3": "AGENTE-4, Alan Kay 3.mp3",
         "AGENTE-4, Alan Kay 2": "AGENTE-4, Alan Kay 2.mp3",
-        "AGENTE-4, Alan Kay 1": "AGENTE-4, Alan Kay 1.mp3",
+        "AGENTE-4 Alan Kay 1": "AGENTE-4 Alan Kay 1.mp3",
         "AGENTE-4, Alan Kay 8": "AGENTE-4, Alan Kay 8.mp3",
         "AGENTE-4, Alan Kay 7": "AGENTE-4, Alan Kay 7.mp3"
     }

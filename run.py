@@ -772,9 +772,9 @@ def main():
             audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
     # Carregar e exibir o código Python
-     st.sidebar.write("""
+     st.sidebar.write("
         Código principal do Agentes Alan Kay
-        """)
+        ")
     with open("runBR.py", "r") as file:
         code = file.read()
         st.sidebar.code(code, language='python')

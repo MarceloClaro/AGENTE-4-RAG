@@ -1,5 +1,5 @@
-streamlit==1.34.0
-groq==0.5.0
-toml==0.10.2
+streamlit
+groq
+toml
 pydub
  base64

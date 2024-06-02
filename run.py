@@ -772,18 +772,25 @@ def main():
             audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
     # Carregar e exibir o código Python
-     st.sidebar.write("
+    st.sidebar.write("""
         Código principal do Agentes Alan Kay
-        ")
-    with open("runBR.py", "r") as file:
-        code = file.read()
-        st.sidebar.code(code, language='python')
+    """)
+    try:
+        with open("runBR.py", "r") as file:
+            code = file.read()
+            st.sidebar.code(code, language='python')
+    except FileNotFoundError:
+        st.sidebar.error("Arquivo runBR.py não encontrado.")
+
     st.sidebar.write("""
         Código dos Agentes contidos no arquivo agents.json
-        """)
-    with open("agentsBR.json", "r") as file:
-        code = file.read()
-        st.sidebar.code(code, language='json')
+    """)
+    try:
+        with open("agentsBR.json", "r") as file:
+            code = file.read()
+            st.sidebar.code(code, language='json')
+    except FileNotFoundError:
+        st.sidebar.error("Arquivo agentsBR.json não encontrado.")
         
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)

@@ -759,15 +759,7 @@ def main():
     # Lista de arquivos MP3
     mp3_files = {
         "Ambiente Índia": "ambienteindia.mp3",
-        "Agente 4": "agente4.mp3",
-        "AGENTE-AlanKay1": "AGENTE-AlanKay1.mp3",
-        "AGENTE-AlanKay2": "AGENTE-AlanKay2.mp3",
-        "AGENTE-AlanKay3": "AGENTE-AlanKay3.mp3",
-        "AGENTE-AlanKay4": "AGENTE-AlanKay4.mp3",
-        "AGENTE-AlanKay5": "AGENTE-AlanKay5.mp3",
-        "AGENTE-AlanKay6": "AGENTE-AlanKay6.mp3",
-        "AGENTE-AlanKay7": "AGENTE-AlanKay7.mp3",
-        "AGENTE-AlanKay8": "AGENTE-AlanKay8.mp3"
+        "Agente 4": "agente4.mp3"
     }
 
     # Controle de seleção de música

@@ -726,34 +726,34 @@ with st.sidebar.expander("Análise de Expertise do Código"):
     """)
 
 #_________________________________________________________________
-
 import streamlit as st
 import base64
 
 def main():
     # Exibir o logo na página principal
     st.image("logo.png", width=150)
-    st.sidebar.write("""
-        Código principal do Agentes Alan Kay
+
+    st.write("""
+        ## Código principal do Agentes Alan Kay
     """)
     # Carregar e exibir o código Python
     try:
         with open("runBR.py", "r") as file:
             code = file.read()
-            st.sidebar.code(code, language='python')
+            st.code(code, language='python')
     except FileNotFoundError:
-        st.sidebar.error("Arquivo runBR.py não encontrado.")
+        st.error("Arquivo runBR.py não encontrado.")
 
-    st.sidebar.write("""
-        Código dos Agentes contidos no arquivo agents.json
+    st.write("""
+        ## Código dos Agentes contidos no arquivo agents.json
     """)
     # Carregar e exibir o código JSON
     try:
         with open("agentsBR.json", "r") as file:
             code = file.read()
-            st.sidebar.code(code, language='json')
+            st.code(code, language='json')
     except FileNotFoundError:
-        st.sidebar.error("Arquivo agentsBR.json não encontrado.")
+        st.error("Arquivo agentsBR.json não encontrado.")
     
     # Adiciona um título na barra lateral
     st.sidebar.title("Controle de Áudio")
@@ -765,26 +765,17 @@ def main():
     }
 
     # Controle de seleção de música
-    selected_ambiente_india = st.sidebar.checkbox("Ambiente Índia", value=False)
-    selected_agente_4 = st.sidebar.checkbox("Agente 4", value=False)
-
-    if selected_ambiente_india and selected_agente_4:
-        st.sidebar.error("Selecione apenas uma música por vez.")
-        selected_mp3 = None
-    elif selected_ambiente_india:
-        selected_mp3 = "ambienteindia.mp3"
-    elif selected_agente_4:
-        selected_mp3 = "agente4.mp3"
-    else:
-        selected_mp3 = None
+    selected_mp3 = st.sidebar.radio("Escolha uma música", list(mp3_files.keys()))
 
     # Opção de loop
     loop = st.sidebar.checkbox("Repetir música")
 
     # Carregar e exibir o player de áudio
+    audio_placeholder = st.sidebar.empty()
     if selected_mp3:
+        mp3_path = mp3_files[selected_mp3]
         try:
-            with open(selected_mp3, "rb") as audio_file:
+            with open(mp3_path, "rb") as audio_file:
                 audio_bytes = audio_file.read()
                 audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
                 loop_attr = "loop" if loop else ""
@@ -794,11 +785,11 @@ def main():
                   Seu navegador não suporta o elemento de áudio.
                 </audio>
                 """
-                st.sidebar.markdown(audio_html, unsafe_allow_html=True)
+                audio_placeholder.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
-            st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
+            audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
 
-    # Informações de contato
+    # Informações de contato na barra lateral
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""
     Projeto Geomaker + IA 
@@ -813,3 +804,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

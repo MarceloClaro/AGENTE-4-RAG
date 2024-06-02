@@ -796,7 +796,9 @@ def main():
                 st.sidebar.markdown(audio_html, unsafe_allow_html=True)
         except FileNotFoundError:
             st.sidebar.error(f"Arquivo {selected_mp3} não encontrado.")
-
+    # Informações de contato na barra lateral
+    st.sidebar.image("eu.ico", width=80)
+    st.sidebar.write("""
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""

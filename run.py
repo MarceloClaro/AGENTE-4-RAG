@@ -8,7 +8,7 @@ from groq import Groq  # Importa a biblioteca Groq, possivelmente para uma funç
 # Configura o layout da página Streamlit para ser "wide", ocupando toda a largura disponível.
 st.set_page_config(layout="wide")
 
-# Define o caminho para o arquivo JSON que contém os agentes.
+# Define o caminho para o arquivo JSON que contém os Agentes 4  -.
 FILEPATH = "agents.json"
 
 # Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
@@ -19,18 +19,18 @@ MODEL_MAX_TOKENS = {
     'gemma-7b-it': 8192,
 }
 
-# Define uma função para carregar as opções de agentes a partir do arquivo JSON.
+# Define uma função para carregar as opções de Agentes 4  - a partir do arquivo JSON.
 def load_agent_options() -> list:
     agent_options = ['Escolher um especialista...']  # Inicia a lista de opções com uma opção padrão.
-    if os.path.exists(FILEPATH):  # Verifica se o arquivo de agentes existe.
+    if os.path.exists(FILEPATH):  # Verifica se o arquivo de Agentes 4  - existe.
         with open(FILEPATH, 'r') as file:  # Abre o arquivo para leitura.
             try:
                 agents = json.load(file)  # Tenta carregar os dados JSON do arquivo.
-                # Adiciona os nomes dos agentes à lista de opções, se existirem.
+                # Adiciona os nomes dos Agentes 4  - à lista de opções, se existirem.
                 agent_options.extend([agent["agente"] for agent in agents if "agente" in agent])
             except json.JSONDecodeError:  # Captura erros de decodificação JSON.
-                st.error("Erro ao ler o arquivo de agentes. Por favor, verifique o formato.")  # Exibe uma mensagem de erro no Streamlit.
-    return agent_options  # Retorna a lista de opções de agentes.
+                st.error("Erro ao ler o arquivo de Agentes 4  -. Por favor, verifique o formato.")  # Exibe uma mensagem de erro no Streamlit.
+    return agent_options  # Retorna a lista de opções de Agentes 4  -.
 
 # Define uma função para obter o número máximo de tokens permitido por um modelo específico.
 def get_max_tokens(model_name: str) -> int:
@@ -44,12 +44,12 @@ def refresh_page():
 # Define uma função para salvar um novo especialista no arquivo JSON.
 def save_expert(expert_title: str, expert_description: str):
     with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
-        # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
+        # Carrega os Agentes 4  - existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
         agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
-        # Adiciona o novo especialista à lista de agentes.
+        # Adiciona o novo especialista à lista de Agentes 4  -.
         agents.append({"agente": expert_title, "descricao": expert_description})
         file.seek(0)  # Move o ponteiro do arquivo para o início.
-        json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
+        json.dump(agents, file, indent=4)  # Grava a lista de Agentes 4  - de volta no arquivo com indentação para melhor legibilidade.
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
 #_________________________________________________
 
@@ -107,8 +107,8 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
         else:
             # Se um especialista específico for selecionado, carrega os dados do especialista do arquivo JSON.
             with open(FILEPATH, 'r') as file:  # Abre o arquivo JSON para leitura.
-                agents = json.load(file)  # Carrega os dados dos agentes do arquivo JSON.
-                # Encontra o agente selecionado na lista de agentes.
+                agents = json.load(file)  # Carrega os dados dos Agentes 4  - do arquivo JSON.
+                # Encontra o agente selecionado na lista de Agentes 4  -.
                 agent_found = next((agent for agent in agents if agent["agente"] == agent_selection), None)
                 if agent_found:
                     expert_title = agent_found["agente"]  # Obtém o título do especialista.
@@ -143,12 +143,12 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
 # Função para salvar um novo especialista no arquivo JSON.
 def save_expert(expert_title: str, expert_description: dict):
     with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
-        # Carrega os agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
+        # Carrega os Agentes 4  - existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
         agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
-        # Adiciona o novo especialista à lista de agentes.
+        # Adiciona o novo especialista à lista de Agentes 4  -.
         agents.append({"agente": expert_title, "descricao": expert_description})
         file.seek(0)  # Move o ponteiro do arquivo para o início.
-        json.dump(agents, file, indent=4)  # Grava a lista de agentes de volta no arquivo com indentação para melhor legibilidade.
+        json.dump(agents, file, indent=4)  # Grava a lista de Agentes 4  - de volta no arquivo com indentação para melhor legibilidade.
         file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
 
 #_________________________________________________
@@ -265,12 +265,12 @@ def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_descrip
         st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")  # Exibe uma mensagem de erro no Streamlit.
         return ""  # Retorna uma string vazia se ocorrer um erro.
 
-# Carrega as opções de agentes a partir do arquivo JSON.
+# Carrega as opções de Agentes 4  - a partir do arquivo JSON.
 agent_options = load_agent_options()
 #_________________________________________________
 
 st.image('updating.gif', width=300, caption='Laboratório de Educação e Inteligência Artificial - Geomaker. "A melhor forma de prever o futuro é inventá-lo." - Alan Kay', use_column_width='always', output_format='auto')
-st.markdown("<h1 style='text-align: center;'>Agentes Alan Kay</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Agentes 4  - Alan Kay</h1>", unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center;'>Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.</h2>", unsafe_allow_html=True)
 
@@ -280,7 +280,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center;'>Descubra como nossa plataforma pode revolucionar a educação.</h2>", unsafe_allow_html=True)
 
 # Conteúdo da caixa de informação
-with st.expander("Clique para saber mais sobre os Agentes Alan Kay."):
+with st.expander("Clique para saber mais sobre os Agentes 4  - Alan Kay."):
     st.write("1. **Conecte-se instantaneamente com especialistas:** Imagine ter acesso direto a especialistas em diversas áreas do conhecimento, prontos para responder às suas dúvidas e orientar seus estudos e pesquisas.")
     st.write("2. **Aprendizado personalizado e interativo:** Receba respostas detalhadas e educativas, adaptadas às suas necessidades específicas, tornando o aprendizado mais eficaz e envolvente.")
     st.write("3. **Suporte acadêmico abrangente:** Desde aulas particulares até orientações para projetos de pesquisa, nossa plataforma oferece um suporte completo para alunos, professores e pesquisadores.")
@@ -299,17 +299,17 @@ with st.expander("Clique para saber mais sobre os Agentes Alan Kay."):
                 "3. **Configurar página**:\n"
                 "   - Configuração inicial da página usando `streamlit` para definir o layout e outras propriedades da página.\n"
                 "4. **Verificar existência de agents.json**:\n"
-                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os agentes disponíveis.\n"
+                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os Agentes 4  - disponíveis.\n"
                 "5. **agents.json existe?**:\n"
                 "   - Decisão condicional:\n"
                 "     - **Sim**:\n"
-                "       - Carregar agentes: O arquivo `agents.json` é carregado.\n"
+                "       - Carregar Agentes 4  -: O arquivo `agents.json` é carregado.\n"
                 "       - **Erro ao carregar JSON?**:\n"
                 "         - **Sim**: Exibir mensagem de erro: O aplicativo mostra uma mensagem de erro indicando problemas ao carregar o arquivo JSON.\n"
-                "         - **Não**: Mostrar opções de agentes: As opções de agentes carregadas são exibidas.\n"
-                "     - **Não**: Usar opções de agentes padrão: Se o arquivo não for encontrado, o aplicativo usa opções de agentes padrão.\n"
-                "6. **Mostrar opções de agentes**:\n"
-                "   - O aplicativo exibe as opções de agentes para o usuário escolher.\n"
+                "         - **Não**: Mostrar opções de Agentes 4  -: As opções de Agentes 4  - carregadas são exibidas.\n"
+                "     - **Não**: Usar opções de Agentes 4  - padrão: Se o arquivo não for encontrado, o aplicativo usa opções de Agentes 4  - padrão.\n"
+                "6. **Mostrar opções de Agentes 4  -**:\n"
+                "   - O aplicativo exibe as opções de Agentes 4  - para o usuário escolher.\n"
                 "7. **Selecionar modelo e agente**:\n"
                 "   - O usuário seleciona o modelo de linguagem e o agente desejado.\n"
                 "8. **Obter tokens máximos para o modelo**:\n"
@@ -372,17 +372,17 @@ with st.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"
                 "3. **Configurar página**:\n"
                 "   - Configuração inicial da página usando `streamlit` para definir o layout e outras propriedades da página.\n"
                 "4. **Verificar existência de agents.json**:\n"
-                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os agentes disponíveis.\n"
+                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os Agentes 4  - disponíveis.\n"
                 "5. **agents.json existe?**:\n"
                 "   - Decisão condicional:\n"
                 "     - **Sim**:\n"
-                "       - Carregar agentes: O arquivo `agents.json` é carregado.\n"
+                "       - Carregar Agentes 4  -: O arquivo `agents.json` é carregado.\n"
                 "       - **Erro ao carregar JSON?**:\n"
                 "         - **Sim**: Exibir mensagem de erro: O aplicativo mostra uma mensagem de erro indicando problemas ao carregar o arquivo JSON.\n"
-                "         - **Não**: Mostrar opções de agentes: As opções de agentes carregadas são exibidas.\n"
-                "     - **Não**: Usar opções de agentes padrão: Se o arquivo não for encontrado, o aplicativo usa opções de agentes padrão.\n"
-                "6. **Mostrar opções de agentes**:\n"
-                "   - O aplicativo exibe as opções de agentes para o usuário escolher.\n"
+                "         - **Não**: Mostrar opções de Agentes 4  -: As opções de Agentes 4  - carregadas são exibidas.\n"
+                "     - **Não**: Usar opções de Agentes 4  - padrão: Se o arquivo não for encontrado, o aplicativo usa opções de Agentes 4  - padrão.\n"
+                "6. **Mostrar opções de Agentes 4  -**:\n"
+                "   - O aplicativo exibe as opções de Agentes 4  - para o usuário escolher.\n"
                 "7. **Selecionar modelo e agente**:\n"
                 "   - O usuário seleciona o modelo de linguagem e o agente desejado.\n"
                 "8. **Obter tokens máximos para o modelo**:\n"
@@ -488,7 +488,7 @@ passo_1_content = """
 """
 
 passo_2_content = """
-1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes Alan Kay).
+1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes 4  - Alan Kay).
 
 2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
 
@@ -647,7 +647,7 @@ st.sidebar.image("logo.png", width=200)
 with st.sidebar.expander("Insights do Código"):
     
     st.markdown("""
-    O código do Agentes Alan Kay é um exemplo de uma aplicação de chat baseada em modelos de linguagem (LLMs) utilizando a biblioteca Streamlit e a API Groq. Aqui, vamos analisar detalhadamente o código e discutir suas inovações, pontos positivos e limitações.
+    O código do Agentes 4  - Alan Kay é um exemplo de uma aplicação de chat baseada em modelos de linguagem (LLMs) utilizando a biblioteca Streamlit e a API Groq. Aqui, vamos analisar detalhadamente o código e discutir suas inovações, pontos positivos e limitações.
 
     **Inovações:**
     - Suporte a múltiplos modelos de linguagem: O código permite que o usuário escolha entre diferentes modelos de linguagem, como o LLaMA, para gerar respostas mais precisas e personalizadas.
@@ -732,7 +732,7 @@ import base64
 
 def main():
     st.sidebar.write("""
-        Código principal do Agentes Alan Kay
+        Código principal do Agentes 4  - Alan Kay
     """)
     # Carregar e exibir o código Python
     try:
@@ -743,7 +743,7 @@ def main():
         st.sidebar.error("Arquivo runBR.py não encontrado.")
 
     st.sidebar.write("""
-        Código dos Agentes contidos no arquivo agents.json
+        Código dos Agentes 4  - contidos no arquivo agents.json
     """)
     # Carregar e exibir o código JSON
     try:

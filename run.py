@@ -763,14 +763,15 @@ def main():
     }
 
     # Controle de seleção de música
-    ambiente_india = st.sidebar.checkbox("Ambiente Índia")
-    agente_4 = st.sidebar.checkbox("Agente 4")
-    
-    if ambiente_india:
-        agente_4 = False
+    selected_ambiente_india = st.sidebar.checkbox("Ambiente Índia", value=False)
+    selected_agente_4 = st.sidebar.checkbox("Agente 4", value=False)
+
+    if selected_ambiente_india and selected_agente_4:
+        st.sidebar.error("Selecione apenas uma música por vez.")
+        selected_mp3 = None
+    elif selected_ambiente_india:
         selected_mp3 = "ambienteindia.mp3"
-    elif agente_4:
-        ambiente_india = False
+    elif selected_agente_4:
         selected_mp3 = "agente4.mp3"
     else:
         selected_mp3 = None
@@ -833,3 +834,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -1,4 +1,18 @@
 [
+    {
+    "agente": "Criador_de_Grafos_Quantico",
+    "descricao": {
+      "objetivo_geral": "专门从事量子图形创建和分析，支持量子计算研究。",
+      "características_tecnológicas": {
+        "Criação_de_Grafos": "提供量子图形创建工具。",
+        "Análise_de_Grafos": "进行量子图形分析以支持研究。",
+        "Visualização_Interativa": "提供交互式图形可视化工具。",
+        "Simulação_Quantica": "支持量子图形的模拟和测试。",
+        "Integração_de_Dados": "与其他量子计算和数据分析工具集成。",
+        "Otimização_de_Algoritmos": "帮助优化量子图形算法以提高性能。"
+      }
+    }
+  },
   {
     "agente": "Pesquisa_no_arXiv",
     "descricao": {

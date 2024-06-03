@@ -14,6 +14,851 @@
         "Interoperabilidade_de_Formatos": "Garante a compatibilidade com diferentes formatos de publicação acadêmica."
       }
     }
+  },,
+  [
+  {
+    "agente": "Criador_de_Grafos_Quantico",
+    "descricao": {
+      "objetivo_geral": "Especializa-se na criação e análise de grafos quânticos, apoiando pesquisas em computação quântica.",
+      "características_tecnológicas": {
+        "Criação_de_Grafos": "Fornece ferramentas para a criação de grafos quânticos.",
+        "Análise_de_Grafos": "Realiza análises de grafos quânticos para apoiar pesquisas.",
+        "Visualização_Interativa": "Oferece ferramentas interativas de visualização de grafos.",
+        "Simulação_Quantica": "Suporta a simulação e teste de grafos quânticos.",
+        "Integração_de_Dados": "Integra-se com outras ferramentas de computação quântica e análise de dados.",
+        "Otimização_de_Algoritmos": "Ajuda a otimizar algoritmos de grafos quânticos para melhorar o desempenho."
+      }
+    }
+  },
+  {
+    "agente": "Multi_Agente",
+    "descricao": {
+      "objetivo_geral": "Combina as funcionalidades de todos os agentes, fornecendo amplo suporte e recursos.",
+      "características_tecnológicas": {
+        "Algoritmos_de_Busca_Inteligente": "Utiliza algoritmos de busca avançados para encontrar artigos relevantes de forma eficiente.",
+        "Análise_de_Tendências_Acadêmicas": "Implementa técnicas de análise de tendências para identificar os tópicos mais recentes e relevantes.",
+        "Integração_com_Bases_de_Dados": "Conecta-se a várias bases de dados acadêmicas para ampliar a abrangência das pesquisas.",
+        "Filtragem_Avançada_de_Conteúdo": "Aplica filtros personalizados para refinar os resultados de acordo com critérios específicos.",
+        "Resumo_Automático_de_Artigos": "Gera resumos automáticos dos artigos encontrados para uma rápida avaliação de relevância.",
+        "Classificação_por_Relevância": "Classifica os resultados de pesquisa por relevância, utilizando modelos de machine learning.",
+        "Atualização_Contínua_de_Dados": "Mantém os dados atualizados com as publicações mais recentes do arXiv.org.",
+        "Interoperabilidade_de_Formatos": "Garante a compatibilidade com diferentes formatos de publicação acadêmica.",
+        "Ensino_Multimodal": "Utiliza texto, vídeo, e simulações interativas para ensinar conceitos complexos.",
+        "Análise_de_Dados_Avançada": "Implementa técnicas avançadas de análise de dados, incluindo aprendizado de máquina e estatísticas.",
+        "Simulações_Quânticas": "Oferece simulações de algoritmos quânticos utilizando QISKIT.",
+        "Integração_IoT": "Ensina integração e automação de dispositivos IoT em projetos reais.",
+        "Estudos_de_Caso": "Fornece estudos de caso detalhados para aplicar teorias na prática.",
+        "Feedback_Interativo": "Utiliza feedback contínuo para ajustar o conteúdo de ensino às necessidades do usuário.",
+        "Aprendizado_Autodirigido": "Permite ao usuário controlar o ritmo e a profundidade do aprendizado.",
+        "Comunidade_de_Aprendizagem": "Conecta usuários a uma comunidade de aprendizagem para troca de conhecimentos.",
+        "Tutoria_Interativa": "Oferece tutoria interativa e personalizada.",
+        "Resolução_de_Problemas": "Ajuda a resolver problemas com passos detalhados.",
+        "Visualização_de_Dados": "Utiliza gráficos e outras ferramentas de visualização para explicar conceitos.",
+        "Algoritmos_de_Aprendizado": "Ajusta o ensino ao ritmo e estilo de aprendizado do usuário.",
+        "Exercícios_Práticos": "Fornece exercícios práticos de diversos níveis de dificuldade.",
+        "Recursos_Educativos": "Oferece recursos educativos, como vídeos, artigos e livros.",
+        "Acesso_a_Arquivos": "Permite acesso a arquivos históricos digitalizados.",
+        "Análise_Crítica": "Oferece ferramentas para análise crítica de dados.",
+        "Linha_do_Tempo_Interativa": "Cria linhas do tempo interativas para visualizar eventos.",
+        "Discussões_Temáticas": "Organiza discussões temáticas e estudos de caso.",
+        "Fontes_Primárias": "Facilita o acesso e a interpretação de fontes primárias.",
+        "Biblioteca_Virtual": "Mantém uma biblioteca virtual com livros e artigos históricos.",
+        "SIG_Integrado": "Integra sistemas de informação geográfica para análises espaciais detalhadas.",
+        "Mapeamento_Digital": "Facilita a criação e interpretação de mapas digitais.",
+        "Análise_Espacial": "Fornece ferramentas de análise espacial.",
+        "Modelagem_Geográfica": "Suporta modelagem geográfica para diversos fins.",
+        "Banco_de_Dados_Geográficos": "Mantém um banco de dados geográfico atualizado.",
+        "Simulação_Ambiental": "Realiza simulações ambientais para prever impactos.",
+        "Mapeamento_Geológico": "Facilita a criação de mapas geológicos detalhados.",
+        "Análise_de_Rochas": "Fornece ferramentas para análise e classificação de rochas.",
+        "Modelagem_Terrena": "Suporta modelagem 3D de terrenos e estruturas geológicas.",
+        "Banco_de_Dados_Geológicos": "Mantém um banco de dados abrangente sobre estruturas geológicas.",
+        "Simulação_de_Recursos": "Realiza simulações para estimar recursos minerais.",
+        "Tecnologias_de_Exploração": "Utiliza tecnologias avançadas para exploração geológica.",
+        "Interpretação_de_Exames": "Ajuda na interpretação de exames clínicos.",
+        "Banco_de_Dados_Médicos": "Acesso a bancos de dados médicos atualizados.",
+        "Diagnóstico_Diferencial": "Fornece suporte para diagnóstico diferencial de doenças.",
+        "Análise_Laboratorial": "Oferece ferramentas para análise de exames laboratoriais.",
+        "Atualização_Contínua": "Mantém os profissionais de saúde atualizados com as últimas descobertas médicas.",
+        "Suporte_a_Decisões": "Auxilia na tomada de decisões clínicas baseadas em dados.",
+        "Simulações_Químicas": "Simula processos químicos utilizando métodos quânticos.",
+        "Visualização_Molecular": "Oferece ferramentas para visualização de estruturas moleculares.",
+        "Análise_de_Dados_Químicos": "Implementa técnicas avançadas de análise de dados químicos.",
+        "Modelagem_Quântica": "Suporta a modelagem de reações químicas em nível quântico.",
+        "Banco_de_Dados_Químicos": "Mantém um banco de dados com informações sobre compostos químicos.",
+        "Integração_Computacional": "Integra ferramentas computacionais para cálculo e simulação.",
+        "Validação_JSON": "Oferece ferramentas para validação de sintaxe e estrutura JSON.",
+        "Conversão_de_Formatos": "Converte entre diferentes formatos de dados e JSON.",
+        "Geração_Automática": "Gera estruturas JSON automaticamente com base em esquemas predefinidos.",
+        "Documentação_JSON": "Ajuda a criar documentação clara e detalhada de APIs JSON.",
+        "Teste_e_Debug": "Fornece ferramentas para teste e depuração de arquivos JSON.",
+        "Integração_API": "Facilita a integração de JSON com diferentes APIs e sistemas.",
+        "Editor_de_Código": "Oferece um editor de código avançado com suporte a múltiplas linguagens.",
+        "Depuração": "Fornece ferramentas de depuração para identificar e corrigir erros de código.",
+        "Otimização_de_Código": "Sugere melhorias para otimizar o desempenho do código.",
+        "Exemplos_Práticos": "Fornece exemplos e trechos de código práticos.",
+        "Análise_Estática": "Realiza análise estática para identificar vulnerabilidades e erros.",
+        "Integração_CI_CD": "Suporta práticas de integração e entrega contínuas para desenvolvimento ágil.",
+        "Programação_Quântica": "Oferece suporte para programação na plataforma D-Wave.",
+        "Simulação_Quântica": "Fornece ferramentas para simulação de algoritmos quânticos.",
+        "Otimização_Quântica": "Ajuda a criar soluções de otimização utilizando tecnologia D-Wave.",
+        "Integração_Cloud": "Facilita a integração com serviços de computação em nuvem.",
+        "Tutoriais_Interativos": "Oferece tutoriais interativos para aprender conceitos quânticos.",
+        "Análise_de_Performance": "Realiza análises de desempenho de algoritmos quânticos.",
+        "Biblioteca_Qiskit": "Fornece acesso e suporte à biblioteca Qiskit.",
+        "Execução_Em_Hardware_Real": "Permite a execução de algoritmos em computadores quânticos reais.",
+        "Visualização_de_Circuitos": "Oferece ferramentas para visualização de circuitos quânticos.",
+        "Otimização_de_Algoritmos": "Ajuda a otimizar algoritmos para melhorar o desempenho.",
+        "Programação_Híbrida": "Facilita a programação de algoritmos híbridos quânticos.",
+        "Integração_com_Plataformas": "Oferece integração com várias plataformas de computação quântica.",
+        "Tutoriais_e_Exemplos": "Fornece tutoriais e exemplos práticos de uso do Pennylane.",
+        "Visualização_de_Resultados": "Oferece ferramentas de visualização de resultados de simulações.",
+        "Planejamento_Curricular": "Ajuda a planejar currículos que estejam de acordo com a BNCC.",
+        "Formação_Continuada": "Oferece cursos e treinamentos para o desenvolvimento profissional contínuo de educadores.",
+        "Avaliação_e_Monitoramento": "Fornece ferramentas para avaliar e monitorar o progresso dos alunos.",
+        "Estratégias_de_Ensino": "Sugere estratégias inovadoras e eficazes de ensino.",
+        "Comunidade_de_Prática": "Conecta educadores para troca de experiências e práticas de ensino.",
+        "Localização_de_Arquivos": "Encontra arquivos relevantes, como PDFs, planilhas e CSVs, para enriquecer a base de conhecimento do GPT.",
+        "Criação_de_Ações": "Desenvolve ações personalizadas em JSON, seguindo a especificação OpenAPI 3.1.0.",
+        "Solução_de_Problemas": "Ajuda a identificar e resolver problemas durante a implementação das ações.",
+        "Criação_de_Grafos": "Fornece ferramentas para a criação de grafos quânticos.",
+        "Análise_de_Grafos": "Realiza análises de grafos quânticos para apoiar pesquisas.",
+        "Visualização_Interativa": "Oferece ferramentas interativas de visualização de grafos.",
+        "Simulação_Quantica": "Suporta a simulação e teste de grafos quânticos.",
+        "Integração_de_Dados": "Integra-se com outras ferramentas de computação quântica e análise de dados.",
+        "Sistema_de_Avaliação_TRI": "Baseia-se na Teoria de Resposta ao Item (TRI) para avaliações.",
+        "Criação_de_Provas": "Gera automaticamente questões para provas de diversas disciplinas.",
+        "Análise_de_Desempenho": "Fornece análises detalhadas de desempenho em exames.",
+        "Segurança_de_Dados": "Garante a segurança e confidencialidade dos dados de exames.",
+        "Plataforma_Online": "Oferece uma plataforma online para realização de avaliações remotas.",
+        "Tutoriais_Interativos": "Oferece tutoriais interativos para projetos Arduino.",
+        "Desenvolvimento_de_Projetos": "Ajuda no design e desenvolvimento de projetos complexos com Arduino.",
+        "Integração_de_Sensores": "Suporta a integração de diversos sensores e dispositivos.",
+        "Tutoriais_e_Documentação": "Fornece tutoriais e documentação abrangente sobre Qiskit.",
+        "Avaliação_de_Competências": "Avalia as principais competências dos estudantes no século XXI.",
+        "Avaliação_Online": "Oferece avaliações online simples e rápidas, com duração aproximada de 30 minutos.",
+        "Resultados_Personalizados": "Gera relatórios personalizados automáticos baseados na idade do estudante.",
+        "Validação_Científica": "Baseia-se em modelos psicométricos cientificamente validados.",
+        "Compatibilidade_BNCC": "Compatível com a Base Nacional Comum Curricular (BNCC) e outros modelos educacionais.",
+        "Relatórios_Detalhados": "Gera relatórios detalhados para ajudar escolas e estudantes a entenderem os níveis de competência."
+      }
+    }
+  },
+  {
+    "agente": "Avaliador_Competencias_Seculo_XXI",
+    "descricao": {
+      "objetivo_geral": "Avalia as competências dos estudantes do século XXI, fornecendo resultados personalizados e automáticos.",
+      "características_tecnológicas": {
+        "Avaliação_de_Competências": "Avalia as 12 principais competências do século XXI dos estudantes.",
+        "Avaliação_Online": "Oferece avaliações online simples e rápidas, com duração aproximada de 30 minutos.",
+        "Resultados_Personalizados": "Gera relatórios personalizados automáticos baseados na idade do estudante.",
+        "Validação_Científica": "Baseia-se em modelos psicométricos cientificamente validados.",
+        "Compatibilidade_BNCC": "Compatível com a Base Nacional Comum Curricular (BNCC) e outros modelos educacionais.",
+        "Relatórios_Detalhados": "Gera relatórios detalhados para ajudar escolas e estudantes a entenderem os níveis de competência."
+      }
+    }
+  },
+  {
+    "agente": "Produção_de_Provas",
+    "descricao": {
+      "objetivo_geral": "Desenvolver e gerenciar sistemas de provas e avaliações, garantindo a equidade e a eficácia dos testes.",
+      "características_tecnológicas": {
+        "Sistema_de_Avaliação_TRI": "Baseia-se na Teoria de Resposta ao Item (TRI) para avaliações.",
+        "Criação_de_Provas": "Gera automaticamente questões para provas de diversas disciplinas.",
+        "Análise_de_Desempenho": "Fornece análises detalhadas de desempenho em exames.",
+        "Segurança_de_Dados": "Garante a segurança e confidencialidade dos dados de exames.",
+        "Plataforma_Online": "Oferece uma plataforma online para realização de avaliações remotas.",
+        "Relatórios_Detalhados": "Gera relatórios detalhados."
+      }
+    }
+  },
+  {
+    "agente": "PhD_em_Arduino",
+    "descricao": {
+      "objetivo_geral": "Suporta o desenvolvimento e a otimização de projetos com Arduino, desde aplicações básicas até avançadas.",
+      "características_tecnológicas": {
+        "Tutoriais_Interativos": "Oferece tutoriais interativos para projetos Arduino.",
+        "Desenvolvimento_de_Projetos": "Ajuda no design e desenvolvimento de projetos complexos com Arduino.",
+        "Integração_de_Sensores": "Suporta a integração de diversos sensores e dispositivos.",
+        "Otimização_de_Código": "Otimiza o código Arduino para melhorar o desempenho.",
+        "Depuração_e_Teste": "Fornece ferramentas para depuração e testes.",
+        "Recursos_Educativos": "Oferece uma gama de recursos educativos, como guias e códigos de exemplo."
+      }
+    }
+  },
+  {
+    "agente": "Pesquisa_no_arXiv",
+    "descricao": {
+      "objetivo_geral": "Realiza pesquisas detalhadas no arXiv.org por artigos acadêmicos em diversas áreas do conhecimento, garantindo resultados precisos e relevantes.",
+      "características_tecnológicas": {
+        "Algoritmos_de_Busca_Inteligente": "Utiliza algoritmos de busca avançados para encontrar artigos relevantes de forma eficiente.",
+        "Análise_de_Tendências_Acadêmicas": "Implementa técnicas de análise de tendências para identificar os tópicos mais recentes e relevantes.",
+        "Integração_com_Bases_de_Dados": "Conecta-se a várias bases de dados acadêmicas para ampliar a abrangência das pesquisas.",
+        "Filtragem_Avançada_de_Conteúdo": "Aplica filtros personalizados para refinar os resultados de acordo com critérios específicos.",
+        "Resumo_Automático_de_Artigos": "Gera resumos automáticos dos artigos encontrados para uma rápida avaliação de relevância.",
+        "Classificação_por_Relevância": "Classifica os resultados de pesquisa por relevância, utilizando modelos de machine learning.",
+        "Atualização_Contínua_de_Dados": "Mantém os dados atualizados com as publicações mais recentes do arXiv.org.",
+        "Interoperabilidade_de_Formatos": "Garante a compatibilidade com diferentes formatos de publicação acadêmica."
+      }
+    }
+  },
+  {
+    "agente": "Personalizador_GPT",
+    "descricao": {
+      "objetivo_geral": "Personalizador de GPTs, Localizador de Arquivos e Criador de Ações JSON",
+      "características_tecnológicas": {
+        "Customização_de_GPTs": "Personaliza GPTs com base em requisitos específicos.",
+        "Localização_de_Arquivos": "Encontra arquivos relevantes, como PDFs, planilhas e CSVs, para enriquecer a base de conhecimento do GPT.",
+        "Criação_de_Ações": "Desenvolve ações personalizadas em JSON, seguindo a especificação OpenAPI 3.1.0.",
+        "Solução_de_Problemas": "Ajuda a identificar e resolver problemas durante a implementação das ações."
+      }
+    }
+  },
+  {
+    "agente": "Especialista_Pedagogico_BNCC",
+    "descricao": {
+      "objetivo_geral": "Suporta educadores na implementação da Base Nacional Comum Curricular (BNCC) em sala de aula, oferecendo recursos e estratégias de ensino.",
+      "características_tecnológicas": {
+        "Planejamento_Curricular": "Ajuda a planejar currículos que estejam de acordo com a BNCC.",
+        "Recursos_Educacionais": "Oferece uma ampla gama de recursos educativos compatíveis com a BNCC.",
+        "Formação_Continuada": "Oferece cursos e treinamentos para o desenvolvimento profissional contínuo de educadores.",
+        "Avaliação_e_Monitoramento": "Fornece ferramentas para avaliar e monitorar o progresso dos alunos.",
+        "Estratégias_de_Ensino": "Sugere estratégias inovadoras e eficazes de ensino.",
+        "Comunidade_de_Prática": "Conecta educadores para troca de experiências e práticas de ensino."
+      }
+    }
+  },
+  {
+    "agente": "Dr_Data_Pro",
+    "descricao": {
+      "objetivo_geral": "Sou o Dr. Data Pro, um assistente virtual especializado em Ciência de Dados, Computação Quântica e Internet das Coisas (IoT). Fui desenvolvido para transformar você em um especialista nessas áreas por meio de uma abordagem de ensino multimodal e interdisciplinar, fácil de entender e orientada para a prática, utilizando exemplos práticos e estudos de caso.",
+      "características_tecnológicas": {
+        "Ensino_Multimodal": "Utiliza texto, vídeo, e simulações interativas para ensinar conceitos complexos.",
+        "Análise_de_Dados_Avançada": "Implementa técnicas avançadas de análise de dados, incluindo aprendizado de máquina e estatísticas.",
+        "Simulações_Quânticas": "Oferece simulações de algoritmos quânticos utilizando QISKIT.",
+        "Integração_IoT": "Ensina integração e automação de dispositivos IoT em projetos reais.",
+        "Estudos_de_Caso": "Fornece estudos de caso detalhados para aplicar teorias na prática.",
+        "Feedback_Interativo": "Utiliza feedback contínuo para ajustar o conteúdo de ensino às necessidades do usuário.",
+        "Aprendizado_Autodirigido": "Permite ao usuário controlar o ritmo e a profundidade do aprendizado.",
+        "Comunidade_de_Aprendizagem": "Conecta usuários a uma comunidade de aprendizagem para troca de conhecimentos."
+      }
+    }
+  },
+  {
+    "agente": "Matematica_Master",
+    "descricao": {
+      "objetivo_geral": "Oferece suporte abrangente para aprendizado e aplicação da matemática, desde o ensino fundamental até níveis avançados.",
+      "características_tecnológicas": {
+        "Tutoria_Interativa": "Oferece tutoria interativa e personalizada.",
+        "Resolução_de_Problemas": "Ajuda a resolver problemas matemáticos com passos detalhados.",
+        "Visualização_de_Dados": "Utiliza gráficos e outras ferramentas de visualização para explicar conceitos matemáticos.",
+        "Algoritmos_de_Aprendizado": "Ajusta o ensino ao ritmo e estilo de aprendizado do usuário.",
+        "Exercícios_Práticos": "Fornece exercícios práticos de diversos níveis de dificuldade.",
+        "Recursos_Educativos": "Oferece recursos educativos, como vídeos, artigos e livros."
+      }
+    }
+  },
+  {
+    "agente": "Historiador_Digital",
+    "descricao": {
+      "objetivo_geral": "Suporta pesquisas e aprendizado em história, oferecendo recursos educativos e acesso a arquivos históricos.",
+      "características_tecnológicas": {
+        "Acesso_a_Arquivos": "Permite acesso a arquivos históricos digitalizados.",
+        "Análise_Crítica": "Oferece ferramentas para análise crítica de dados históricos.",
+        "Linha_do_Tempo_Interativa": "Cria linhas do tempo interativas para visualizar eventos históricos.",
+        "Discussões_Temáticas": "Organiza discussões temáticas e estudos de caso históricos.",
+        "Fontes_Primárias": "Facilita o acesso e a interpretação de fontes primárias.",
+        "Biblioteca_Virtual": "Mantém uma biblioteca virtual com livros e artigos históricos."
+      }
+    }
+  },
+  {
+    "agente": "GeoPro",
+    "descricao": {
+      "objetivo_geral": "Oferece suporte avançado para pesquisas e aprendizado em geografia, com foco em análise de dados espaciais e sistemas de informação geográfica (SIG).",
+      "características_tecnológicas": {
+        "SIG_Integrado": "Integra sistemas de informação geográfica para análises espaciais detalhadas.",
+        "Mapeamento_Digital": "Facilita a criação e interpretação de mapas digitais.",
+        "Análise_Espacial": "Fornece ferramentas de análise espacial.",
+        "Modelagem_Geográfica": "Suporta modelagem geográfica para diversos fins.",
+        "Banco_de_Dados_Geográficos": "Mantém um banco de dados geográfico atualizado.",
+        "Simulação_Ambiental": "Realiza simulações ambientais para prever impactos."
+      }
+    }
+  },
+  {
+    "agente": "GeoExplorador",
+    "descricao": {
+      "objetivo_geral": "Especializa-se em geologia, auxiliando na pesquisa de campo e análise geológica, oferecendo ferramentas avançadas para geólogos.",
+      "características_tecnológicas": {
+        "Mapeamento_Geológico": "Facilita a criação de mapas geológicos detalhados.",
+        "Análise_de_Rochas": "Fornece ferramentas para análise e classificação de rochas.",
+        "Modelagem_Terrena": "Suporta modelagem 3D de terrenos e estruturas geológicas.",
+        "Banco_de_Dados_Geológicos": "Mantém um banco de dados abrangente sobre estruturas geológicas.",
+        "Simulação_de_Recursos": "Realiza simulações para estimar recursos minerais.",
+        "Tecnologias_de_Exploração": "Utiliza tecnologias avançadas para exploração geológica."
+      }
+    }
+  },
+  {
+    "agente": "Patologia_Clinica_Expert",
+    "descricao": {
+      "objetivo_geral": "Suporta profissionais de saúde na interpretação de exames clínicos e diagnóstico de doenças, oferecendo informações e ferramentas de análise atualizadas.",
+      "características_tecnológicas": {
+        "Interpretação_de_Exames": "Ajuda na interpretação de exames clínicos.",
+        "Banco_de_Dados_Médicos": "Acesso a bancos de dados médicos atualizados.",
+        "Diagnóstico_Diferencial": "Fornece suporte para diagnóstico diferencial de doenças.",
+        "Análise_Laboratorial": "Oferece ferramentas para análise de exames laboratoriais.",
+        "Atualização_Contínua": "Mantém os profissionais de saúde atualizados com as últimas descobertas médicas.",
+        "Suporte_a_Decisões": "Auxilia na tomada de decisões clínicas baseadas em dados."
+      }
+    }
+  },
+  {
+    "agente": "Quimica_Quantica",
+    "descricao": {
+      "objetivo_geral": "Suporta pesquisas em química quântica, ajudando na compreensão de processos químicos em nível molecular.",
+      "características_tecnológicas": {
+        "Simulações_Químicas": "Simula processos químicos utilizando métodos quânticos.",
+        "Visualização_Molecular": "Oferece ferramentas para visualização de estruturas moleculares.",
+        "Análise_de_Dados_Químicos": "Implementa técnicas avançadas de análise de dados químicos.",
+        "Modelagem_Quântica": "Suporta a modelagem de reações químicas em nível quântico.",
+        "Banco_de_Dados_Químicos": "Mantém um banco de dados com informações sobre compostos químicos.",
+        "Integração_Computacional": "Integra ferramentas computacionais para cálculo e simulação."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_JSON",
+    "descricao": {
+      "objetivo_geral": "Auxilia no desenvolvimento e validação de estruturas JSON para diversas aplicações, garantindo conformidade com as especificações.",
+      "características_tecnológicas": {
+        "Validação_JSON": "Oferece ferramentas para validação de sintaxe e estrutura JSON.",
+        "Conversão_de_Formatos": "Converte entre diferentes formatos de dados e JSON.",
+        "Geração_Automática": "Gera estruturas JSON automaticamente com base em esquemas predefinidos.",
+        "Documentação_JSON": "Ajuda a criar documentação clara e detalhada de APIs JSON.",
+        "Teste_e_Debug": "Fornece ferramentas para teste e depuração de arquivos JSON.",
+        "Integração_API": "Facilita a integração de JSON com diferentes APIs e sistemas."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_Codigo",
+    "descricao": {
+      "objetivo_geral": "Suporta desenvolvedores na escrita e otimização de código em várias linguagens de programação, incluindo Python, JavaScript, C++, entre outras.",
+      "características_tecnológicas": {
+        "Editor_de_Código": "Oferece um editor de código avançado com suporte a múltiplas linguagens.",
+        "Depuração": "Fornece ferramentas de depuração para identificar e corrigir erros de código.",
+        "Otimização_de_Código": "Sugere melhorias para otimizar o desempenho do código.",
+        "Exemplos_Práticos": "Fornece exemplos e trechos de código práticos.",
+        "Análise_Estática": "Realiza análise estática para identificar vulnerabilidades e erros.",
+        "Integração_CI_CD": "Suporta práticas de integração e entrega contínuas para desenvolvimento ágil."
+      }
+    }
+  },
+  {
+    "agente": "D-Wave_QPU_Developer",
+    "descricao": {
+      "objetivo_geral": "Especializa-se no desenvolvimento de algoritmos e aplicações para o computador quântico D-Wave QPU.",
+      "características_tecnológicas": {
+        "Programação_Quântica": "Oferece suporte para programação na plataforma D-Wave.",
+        "Simulação_Quântica": "Fornece ferramentas para simulação de algoritmos quânticos.",
+        "Otimização_Quântica": "Ajuda a criar soluções de otimização utilizando tecnologia D-Wave.",
+        "Integração_Cloud": "Facilita a integração com serviços de computação em nuvem.",
+        "Tutoriais_Interativos": "Oferece tutoriais interativos para aprender conceitos quânticos.",
+        "Análise_de_Performance": "Realiza análises de desempenho de algoritmos quânticos."
+      }
+    }
+  },
+  {
+    "agente": "Qiskit_Developer",
+    "descricao": {
+      "objetivo_geral": "Auxilia no desenvolvimento e simulação de algoritmos quânticos utilizando a estrutura Qiskit.",
+      "características_tecnológicas": {
+        "Biblioteca_Qiskit": "Fornece acesso e suporte à biblioteca Qiskit.",
+        "Simulação_Quântica": "Facilita a simulação de circuitos quânticos.",
+        "Execução_Em_Hardware_Real": "Permite a execução de algoritmos em computadores quânticos reais.",
+        "Tutoriais_e_Documentação": "Fornece tutoriais e documentação abrangente sobre Qiskit.",
+        "Visualização_de_Circuitos": "Oferece ferramentas para visualização de circuitos quânticos.",
+        "Otimização_de_Algoritmos": "Ajuda a otimizar algoritmos para melhorar o desempenho."
+      }
+    }
+  },
+  {
+    "agente": "Pennylane_Developer",
+    "descricao": {
+      "objetivo_geral": "Suporta o desenvolvimento de algoritmos híbridos quânticos utilizando a biblioteca Pennylane.",
+      "características_tecnológicas": {
+        "Programação_Híbrida": "Facilita a programação de algoritmos híbridos quânticos.",
+        "Integração_com_Plataformas": "Oferece integração com várias plataformas de computação quântica.",
+        "Tutoriais_e_Exemplos": "Fornece tutoriais e exemplos práticos de uso do Pennylane.",
+        "Simulação_Quântica": "Suporta a simulação de algoritmos quânticos.",
+        "Visualização_de_Resultados": "Oferece ferramentas de visualização de resultados de simulações.",
+        "Otimização_de_Parâmetros": "Ajuda a otimizar parâmetros de algoritmos quânticos."
+      }
+    }
+  },
+  {
+    "agente": "Especialista_Pedagogico_BNCC",
+    "descricao": {
+      "objetivo_geral": "Suporta educadores na implementação da Base Nacional Comum Curricular (BNCC) em sala de aula, oferecendo recursos e estratégias de ensino.",
+      "características_tecnológicas": {
+        "Planejamento_Curricular": "Ajuda a planejar currículos que estejam de acordo com a BNCC.",
+        "Recursos_Educacionais": "Oferece uma ampla gama de recursos educativos compatíveis com a BNCC.",
+        "Formação_Continuada": "Oferece cursos e treinamentos para o desenvolvimento profissional contínuo de educadores.",
+        "Avaliação_e_Monitoramento": "Fornece ferramentas para avaliar e monitorar o progresso dos alunos.",
+        "Estratégias_de_Ensino": "Sugere estratégias inovadoras e eficazes de ensino.",
+        "Comunidade_de_Prática": "Conecta educadores para troca de experiências e práticas de ensino."
+      }
+    }
+  },
+  {
+    "agente": "UltimatePromptEngineerAI",
+    "descricao": {
+      "objetivo_geral": "Fornece ferramentas avançadas e estratégias para otimizar processos de inteligência artificial, incluindo ajuste de hiperparâmetros e técnicas de aumento de dados.",
+      "características_tecnológicas": {
+        "Otimização_de_Hiperparâmetros": "Utiliza algoritmos de otimização para ajustar hiperparâmetros de modelos de IA.",
+        "Técnicas_de_Aumento_de_Dados": "Aplica métodos avançados para aumentar e melhorar a qualidade dos dados de treinamento.",
+        "Análise_de_Performance_de_Modelos": "Fornece análises detalhadas de desempenho de modelos de IA.",
+        "Geração_Automática_de_Prompt": "Cria prompts de alta qualidade com base em dados históricos e feedback do usuário.",
+        "Integração_com_Ferramentas_de_Desenvolvimento": "Compatível com ferramentas populares de desenvolvimento de IA, como TensorFlow e PyTorch.",
+        "Sugestões_de_Melhorias_Incrementais": "Fornece sugestões para melhorias contínuas e incrementais no desenvolvimento de IA.",
+        "Automação_de_Tarefas_Repetitivas": "Automatiza tarefas repetitivas no processo de engenharia de prompts.",
+        "Feedback_Contínuo": "Utiliza feedback contínuo para melhorar a geração de prompts e otimização de modelos."
+      }
+    }
+  },
+  {
+    "agente": "Aprendizado_de_Máquina_Avançado",
+    "descricao": {
+      "objetivo_geral": "Explora algoritmos e técnicas avançadas de aprendizado de máquina, incluindo aprendizado profundo, modelos de ensemble e técnicas de validação cruzada para análise de grandes volumes de dados.",
+      "características_tecnológicas": {
+        "Modelos_de_Aprendizado_Profundo": "Implementa redes neurais profundas para tarefas de aprendizado complexas.",
+        "Técnicas_de_Validação_Cruzada": "Utiliza validação cruzada para melhorar a capacidade de generalização de modelos.",
+        "Modelos_de_Ensemble": "Aplica técnicas de ensemble, como florestas aleatórias e boosting, para melhorar o desempenho.",
+        "Análise_de_Grandes_Volumes_de_Dados": "Capacidade robusta de processar e analisar grandes volumes de dados.",
+        "Implementação_Eficiente": "Foca na implementação eficiente e otimizada de algoritmos.",
+        "Visualização_de_Dados_Avançada": "Utiliza ferramentas avançadas para visualização de dados e resultados.",
+        "Feature_Engineering": "Realiza engenharia de características para melhorar a qualidade dos dados.",
+        "Integração_com_Plataformas_de_Nuvem": "Compatível com plataformas de nuvem para escalabilidade e desempenho."
+      }
+    }
+  },
+  {
+    "agente": "Engenharia_de_Dados",
+    "descricao": {
+      "objetivo_geral": "Aplica técnicas e práticas avançadas para coleta, processamento e análise de dados em grande escala, incluindo ETL, data warehousing e análises em tempo real.",
+      "características_tecnológicas": {
+        "ETL_Avançado": "Implementa processos ETL eficientes e escaláveis.",
+        "Armazenamento_de_Dados": "Utiliza tecnologias de data warehousing para armazenamento de dados estruturados.",
+        "Análise_em_Tempo_Real": "Possui capacidade de análise e processamento de dados em tempo real.",
+        "Data_Lake_Management": "Gerencia data lakes para armazenamento e recuperação eficiente de dados.",
+        "Qualidade_de_Dados": "Assegura a qualidade e integridade dos dados através de validação rigorosa.",
+        "Integração_de_Dados": "Integra dados de múltiplas fontes e formatos.",
+        "Automação_de_Processos": "Automatiza processos de engenharia de dados para maior eficiência operacional.",
+        "Segurança_de_Dados": "Implementa medidas robustas de proteção de dados para salvaguardar dados sensíveis."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvimento_Web_Moderno",
+    "descricao": {
+      "objetivo_geral": "Ensina princípios e ferramentas de desenvolvimento web moderno, incluindo frameworks populares como React, Angular e Vue.js, para criar sites responsivos e eficientes.",
+      "características_tecnológicas": {
+        "Frameworks_Modernos": "Especializa-se em frameworks como React, Angular e Vue.js.",
+        "Design_Responsivo": "Ensina técnicas de design responsivo para melhorar a experiência do usuário.",
+        "Integração_Contínua": "Utiliza práticas de integração contínua para um desenvolvimento eficiente.",
+        "Desenvolvimento_Front-end_e_Back-end": "Cobre desenvolvimento front-end e back-end de forma abrangente.",
+        "Segurança_Web": "Implementa práticas de segurança para proteger aplicações web.",
+        "Performance_Optimization": "Ensina técnicas para otimizar o desempenho de websites.",
+        "DevOps": "Integra práticas DevOps para automação e monitoramento contínuos.",
+        "UX/UI_Design": "Foca na criação de designs de interface de usuário intuitivos e atraentes."
+      }
+    }
+  },
+  {
+    "agente": "Computação_Quântica",
+    "descricao": {
+      "objetivo_geral": "Abrange os conceitos básicos e as aplicações práticas da computação quântica, incluindo algoritmos quânticos, criptografia quântica e programação em D-Wave QPU, QISKIT, Pennylane, entre outros.",
+      "características_tecnológicas": {
+        "Algoritmos_Quânticos": "Explora e implementa algoritmos quânticos fundamentais.",
+        "Criptografia_Quântica": "Ensina os princípios e aplicações da criptografia quântica.",
+        "Simulações_Quânticas": "Utiliza QISKIT e Pennylane para simulação de sistemas quânticos.",
+        "Análise_de_Performance_Quântica": "Avalia o desempenho de algoritmos quânticos em diferentes cenários.",
+        "Integração_Clássica-e-Quântica": "Combina computação clássica e quântica para resolver problemas complexos.",
+        "Desenvolvimento_de_Hardware_Quântico": "Aborda aspectos do desenvolvimento de hardware de computação quântica.",
+        "Correção_de_Erros_Quânticos": "Implementa técnicas de correção de erros em sistemas quânticos.",
+        "Pesquisa_e_Desenvolvimento": "Foca na pesquisa e desenvolvimento contínuos em computação quântica."
+      }
+    }
+  },
+  {
+    "agente": "Segurança_Cibernética",
+    "descricao": {
+      "objetivo_geral": "Introduz estratégias e técnicas avançadas para proteger sistemas e dados contra ataques cibernéticos, implementando medidas de segurança robustas e práticas de teste de penetração.",
+      "características_tecnológicas": {
+        "Pentest_Avançado": "Realiza testes de penetração para identificar vulnerabilidades.",
+        "Criptografia": "Implementa técnicas de criptografia para proteger dados.",
+        "Análise_Forense": "Executa análises forenses digitais para investigar incidentes de segurança.",
+        "Monitoramento_Contínuo": "Utiliza ferramentas de monitoramento contínuo para detectar ameaças.",
+        "Segurança_de_Redes": "Aplica práticas avançadas para proteger redes de computadores.",
+        "Segurança_em_Camadas": "Implementa estratégias de segurança em camadas para defesa abrangente.",
+        "Gerenciamento_de_Incidentes": "Desenvolve planos de resposta a incidentes de segurança.",
+        "Conformidade_Regulatória": "Garante conformidade com regulamentos e normas de segurança."
+      }
+    }
+  },
+  {
+    "agente": "Internet_das_Coisas",
+    "descricao": {
+      "objetivo_geral": "Explora as aplicações e tecnologias da Internet das Coisas (IoT) em diversos domínios, como automação residencial e industrial, utilizando tecnologias avançadas e integração de dispositivos.",
+      "características_tecnológicas": {
+        "Automação_Residencial": "Desenvolve soluções para automação de residências inteligentes.",
+        "Indústria_4.0": "Implementa tecnologias de IoT na automação industrial.",
+        "Segurança_em_IoT": "Aplica medidas de segurança para proteger dispositivos IoT.",
+        "Integração_de_Sensores": "Integra sensores e atuadores em sistemas IoT.",
+        "Gerenciamento_de_Dispositivos": "Utiliza plataformas para gerenciamento eficiente de dispositivos IoT.",
+        "Análise_de_Dados_de_IoT": "Processa e analisa dados coletados por dispositivos IoT.",
+        "Protocolos_de_Comunicação": "Implementa protocolos de comunicação adequados para IoT.",
+        "Desenvolvimento_de_Apps_IoT": "Cria aplicativos móveis e web para controle de dispositivos IoT."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvimento_de_Jogos",
+    "descricao": {
+      "objetivo_geral": "Ensina as práticas e técnicas de desenvolvimento de jogos digitais, incluindo design de jogos, programação e uso de motores gráficos como Unity e Unreal Engine.",
+      "características_tecnológicas": {
+        "Design_de_Jogos": "Ensina os princípios de design de jogos e narrativa interativa.",
+        "Programação_de_Jogos": "Cobre técnicas de programação específicas para jogos.",
+        "Motores_Gráficos": "Utiliza motores gráficos como Unity e Unreal Engine para desenvolvimento.",
+        "Animação_e_Física": "Implementa animações realistas e física em jogos.",
+        "Desenvolvimento_3D": "Cria ambientes e personagens em 3D.",
+        "Design_de_Audio": "Integra design de áudio para experiências imersivas.",
+        "Teste_e_Depuração": "Ensina práticas de teste e depuração de jogos.",
+        "Publicação_de_Jogos": "Cobre estratégias de publicação e monetização de jogos."
+      }
+    }
+  },
+  {
+    "agente": "Blockchain_e_Criptomoedas",
+    "descricao": {
+      "objetivo_geral": "Explica os conceitos e aplicações da tecnologia blockchain e das criptomoedas, incluindo contratos inteligentes e segurança de transações, para desenvolver soluções descentralizadas.",
+      "características_tecnológicas": {
+        "Tecnologia_Blockchain": "Explora os fundamentos e a arquitetura da blockchain.",
+        "Contratos_Inteligentes": "Desenvolve e implementa contratos inteligentes.",
+        "Segurança_de_Transações": "Aplica medidas de segurança para proteger transações em blockchain.",
+        "Criptomoedas": "Explica o funcionamento e o desenvolvimento de criptomoedas.",
+        "Plataformas_Blockchain": "Utiliza plataformas como Ethereum e Hyperledger para desenvolvimento.",
+        "Descentralização": "Promove soluções descentralizadas e governança distribuída.",
+        "Análise_de_Blockchain": "Realiza análises de dados em redes blockchain.",
+        "Regulação_e_Compliance": "Aborda questões de regulamentação e conformidade em blockchain."
+      }
+    }
+  },
+  {
+    "agente": "Visão_Computacional",
+    "descricao": {
+      "objetivo_geral": "Introduz algoritmos e técnicas para análise e interpretação de imagens e vídeos, incluindo reconhecimento de padrões e processamento de imagens, para desenvolver sistemas avançados de visão computacional.",
+      "características_tecnológicas": {
+        "Reconhecimento_de_Padrões": "Implementa técnicas de reconhecimento de padrões em imagens.",
+        "Processamento_de_Imagem": "Aplica filtragem e transformações para processamento de imagens.",
+        "Deep_Learning_para_Visão": "Utiliza redes neurais profundas para tarefas de visão computacional.",
+        "Análise_de_Vídeo": "Desenvolve soluções para análise de vídeo em tempo real.",
+        "Segmentação_de_Imagem": "Realiza segmentação e detecção de objetos em imagens.",
+        "Reconhecimento_Facial": "Desenvolve sistemas de reconhecimento facial.",
+        "Aprimoramento_de_Imagem": "Aplica técnicas de aprimoramento e restauração de imagens.",
+        "Aplicações_Industriais": "Cria soluções de visão computacional para aplicações industriais."
+      }
+    }
+  },
+  {
+    "agente": "Processamento_de_Linguagem_Natural",
+    "descricao": {
+      "objetivo_geral": "Explora técnicas para processamento automático de texto e linguagem natural, incluindo análise de sentimentos e geração de texto, para desenvolver chatbots inteligentes e sistemas de análise de texto.",
+      "características_tecnológicas": {
+        "Análise_de_Sentimentos": "Implementa técnicas de análise de sentimentos em textos.",
+        "Geração_de_Texto": "Desenvolve modelos para geração automática de texto.",
+        "Chatbots_Inteligentes": "Cria chatbots inteligentes utilizando NLP e aprendizado de máquina.",
+        "Extração_de_Informação": "Extrai informações relevantes de grandes volumes de texto.",
+        "Classificação_de_Texto": "Classifica automaticamente documentos.",
+        "Tradução_Automática": "Desenvolve sistemas de tradução automática de texto.",
+        "Summarização_Automática": "Cria resumos automáticos de textos longos.",
+        "Análise_Semântica": "Explora a análise semântica para compreender o contexto e significado dos textos."
+      }
+    }
+  },
+  {
+    "agente": "Robótica",
+    "descricao": {
+      "objetivo_geral": "Ensina conceitos e técnicas de robótica para aplicações industriais e domésticas, incluindo programação de robôs e automação, utilizando plataformas como ROS (Sistema Operacional de Robôs).",
+      "características_tecnológicas": {
+        "Programação_de_Robôs": "Ensina programação de robôs utilizando várias linguagens.",
+        "Automação_Industrial": "Implementa soluções de automação em ambientes industriais.",
+        "Navegação_Autônoma": "Desenvolve sistemas de navegação autônoma para robôs.",
+        "ROS_Platform": "Utiliza ROS para desenvolvimento e controle de robôs.",
+        "Sensores_e_Atuadores": "Integra sensores e atuadores em sistemas robóticos.",
+        "Visão_Robótica": "Implementa sistemas de visão em robôs.",
+        "Interação_Humano-Robô": "Desenvolve interfaces seguras e eficientes para interação humano-robô.",
+        "Simulação_Robótica": "Utiliza simulações para teste e desenvolvimento de robôs."
+      }
+    }
+  },
+  {
+    "agente": "Bioinformática",
+    "descricao": {
+      "objetivo_geral": "Aplica a informática ao campo da biologia, especialmente genética e biologia molecular, para analisar dados biológicos, utilizando técnicas avançadas de aprendizado de máquina.",
+      "características_tecnológicas": {
+        "Análise_Genomica": "Desenvolve técnicas para análise de dados genômicos.",
+        "Modelagem_Molecular": "Cria modelos para prever a estrutura e função de biomoléculas.",
+        "Algoritmos_de_Sequenciamento": "Implementa algoritmos de sequenciamento de DNA e RNA.",
+        "Visualização_de_Dados_Biológicos": "Utiliza ferramentas avançadas para visualização de dados biológicos.",
+        "Machine_Learning_em_Bioinformática": "Aplica aprendizado de máquina para resolver problemas biológicos complexos.",
+        "Interação_Proteína-Proteína": "Estuda e modela interações entre proteínas.",
+        "Bioinformática_Comparativa": "Compara dados biológicos entre diferentes espécies.",
+        "Desenvolvimento_de_Bancos_de_Dados": "Cria e gerencia bancos de dados biológicos para armazenamento e análise de grandes volumes de dados."
+      }
+    }
+  },
+  {
+    "agente": "Estatística_Avançada",
+    "descricao": {
+      "objetivo_geral": "Utiliza métodos estatísticos avançados para análise de dados complexos e inferência, incluindo modelagem bayesiana e análise multivariada, aplicados em diversas áreas como saúde e finanças.",
+      "características_tecnológicas": {
+        "Modelagem_Bayesiana": "Aplica técnicas de modelagem bayesiana para inferência estatística.",
+        "Análise_Multivariada": "Utiliza métodos de análise multivariada para entender relações complexas entre variáveis.",
+        "Estatística_Descritiva_Avancada": "Fornece análises descritivas detalhadas de grandes conjuntos de dados.",
+        "Inferência_Estatística": "Realiza inferência estatística para validar hipóteses.",
+        "Análise_de_Sobrevivência": "Estuda técnicas de análise de sobrevivência aplicáveis a dados censurados.",
+        "Modelos_Lineares_Generalizados": "Utiliza GLM para modelagem flexível de dados.",
+        "Testes_Estatísticos_Avancados": "Executa testes estatísticos avançados para comparação de grupos.",
+        "Visualização_Estatística": "Cria visualizações estatísticas para interpretação de dados complexos."
+      }
+    }
+  },
+  {
+    "agente": "Ciência_de_Dados_Aplicada",
+    "descricao": {
+      "objetivo_geral": "Ensina técnicas e ferramentas de ciência de dados para aplicação prática em diversas indústrias, como finanças e saúde, utilizando métodos avançados para análise e previsão.",
+      "características_tecnológicas": {
+        "Análise_Preditiva": "Desenvolve modelos preditivos para diversas aplicações.",
+        "Machine_Learning_Aplicado": "Aplica técnicas de aprendizado de máquina a problemas reais.",
+        "Análise_de_Sentimentos": "Utiliza análise de sentimentos para entender a percepção do mercado.",
+        "Mineração_de_Dados": "Extrai conhecimento de grandes volumes de dados através de mineração de dados.",
+        "Big_Data": "Capacidade de processar e analisar grandes volumes de dados.",
+        "Visualização_de_Dados": "Cria visualizações avançadas para comunicar insights.",
+        "Ciência_de_Dados_para_Saúde": "Aplica ciência de dados para análise de dados de saúde.",
+        "Ciência_de_Dados_Financeira": "Utiliza técnicas de ciência de dados para análise financeira e previsão de mercado."
+      }
+    }
+  },
+  {
+    "agente": "Física_Quântica",
+    "descricao": {
+      "objetivo_geral": "Explora os princípios e teorias da física quântica, incluindo fenômenos quânticos e experimentos laboratoriais, aplicados à computação e criptografia.",
+      "características_tecnológicas": {
+        "Teorias_Quânticas": "Estuda as principais teorias e princípios da física quântica.",
+        "Fenômenos_Quânticos": "Investiga fenômenos quânticos como emaranhamento e superposição.",
+        "Experimentos_de_Laboratório": "Realiza experimentos práticos para demonstrar conceitos quânticos.",
+        "Computação_Quântica": "Desenvolve e utiliza algoritmos e soluções de computação quântica.",
+        "Criptografia_Quântica": "Explora as aplicações da física quântica na criptografia.",
+        "Simulações_Quânticas": "Utiliza simulações para prever comportamentos quânticos.",
+        "Pesquisa_Acadêmica": "Foca na pesquisa acadêmica contínua em física quântica.",
+        "Aplicações_Práticas": "Identifica aplicações práticas dos princípios quânticos na tecnologia."
+      }
+    }
+  },
+  {
+    "agente": "Engenharia_de_Software",
+    "descricao": {
+      "objetivo_geral": "Introduz métodos e práticas para o desenvolvimento de software de alta qualidade e confiabilidade, incluindo metodologias ágeis e DevOps, para criar soluções eficientes e escaláveis.",
+      "características_tecnológicas": {
+        "Metodologias_Ágeis": "Ensina práticas ágeis para desenvolvimento rápido e iterativo.",
+        "DevOps": "Integra práticas DevOps para automação e entrega contínua.",
+        "Design_de_Software": "Foca no design de software escalável e eficiente.",
+        "Testes_Automáticos": "Implementa testes automatizados para garantir a qualidade.",
+        "Gerenciamento_de_Projetos": "Utiliza técnicas avançadas para gerenciamento de projetos de software.",
+        "Desenvolvimento_Colaborativo": "Promove a colaboração entre equipes de desenvolvimento.",
+        "Manutenção_de_Software": "Ensina as melhores práticas para manutenção e atualização de software.",
+        "Documentação": "Foca na criação de documentação clara e útil."
+      }
+    }
+  },
+  {
+    "agente": "Redes_de_Computadores",
+    "descricao": {
+      "objetivo_geral": "Explica os conceitos e técnicas de redes de computadores para comunicação e interconexão de sistemas, incluindo protocolos de rede e segurança, para projetar redes eficientes e seguras.",
+      "características_tecnológicas": {
+        "Protocolos_de_Rede": "Ensina os principais protocolos de rede, como TCP/IP e UDP.",
+        "Segurança_de_Rede": "Implementa técnicas avançadas para proteger redes de computadores.",
+        "Design_de_Redes": "Desenha redes de computadores eficientes e escaláveis.",
+        "Configuração_de_Hardware": "Ensina a configuração e manutenção de hardware de rede.",
+        "Gerenciamento_de_Tráfego": "Utiliza técnicas para gerenciar o tráfego de rede de forma eficiente.",
+        "Virtualização_de_Rede": "Implementa soluções de virtualização de rede.",
+        "Monitoramento_de_Rede": "Utiliza ferramentas para monitorar e diagnosticar redes.",
+        "Conexões_Seguras": "Estabelece conexões seguras entre diferentes redes."
+      }
+    }
+  },
+  {
+    "agente": "Aprendizado_Automático",
+    "descricao": {
+      "objetivo_geral": "Introduz o aprendizado de máquina e suas aplicações em problemas reais, como classificação e regressão, utilizando algoritmos e técnicas básicas.",
+      "características_tecnológicas": {
+        "Classificação": "Desenvolve modelos de classificação para categorizar dados.",
+        "Regressão": "Aplica técnicas de regressão para prever valores.",
+        "Clusterização": "Implementa algoritmos de clusterização para segmentação de dados.",
+        "Redes_Neurais": "Utiliza redes neurais para tarefas de aprendizado complexas.",
+        "Árvores_de_Decisão": "Desenvolve modelos utilizando árvores de decisão.",
+        "Aprendizado_não_Supervisionado": "Aplica técnicas de aprendizado não supervisionado.",
+        "Validação_Cruzada": "Utiliza validação cruzada para assegurar a robustez dos modelos.",
+        "Análise_de_Performance": "Analisa o desempenho de modelos de aprendizado de máquina."
+      }
+    }
+  },
+  {
+    "agente": "Design_de_Experiência_do_Usuário",
+    "descricao": {
+      "objetivo_geral": "Ensina os princípios e técnicas de design de interfaces e experiência do usuário, incluindo testes de usabilidade e design centrado no usuário, para criar interfaces intuitivas e eficientes.",
+      "características_tecnológicas": {
+        "Testes_de_Usabilidade": "Realiza testes de usabilidade para avaliar a experiência do usuário.",
+        "Design_Centrado_no_Usuário": "Foca no design centrado no usuário para criar interfaces intuitivas.",
+        "Wireframing_e_Prototipagem": "Utiliza wireframes e protótipos para o design de interfaces.",
+        "Análise_de_Usabilidade": "Analisa a usabilidade de interfaces existentes.",
+        "Design_Responsivo": "Cria interfaces que funcionam bem em diferentes dispositivos.",
+        "Pesquisa_com_Usuários": "Realiza pesquisas para entender as necessidades dos usuários.",
+        "Desenvolvimento_de_Interfaces": "Ensina a desenvolver interfaces utilizando ferramentas modernas.",
+        "Acessibilidade": "Implementa princípios de acessibilidade para garantir o uso por todos os usuários."
+      }
+    }
+  },
+  {
+    "agente": "Gestão_de_Projetos_de_Tecnologia",
+    "descricao": {
+      "objetivo_geral": "Introduz métodos e práticas eficazes para a gestão de projetos de tecnologia, incluindo metodologias ágeis e gerenciamento de riscos, para assegurar o sucesso dos projetos.",
+      "características_tecnológicas": {
+        "Metodologias_Ágeis": "Ensina a utilização de metodologias ágeis para a gestão de projetos.",
+        "Gestão_de_Riscos": "Desenvolve práticas para identificar e mitigar riscos de projetos.",
+        "Planejamento_de_Projetos": "Utiliza técnicas avançadas para planejamento de projetos.",
+        "Gestão_de_Tarefas": "Foca no gerenciamento eficiente de tarefas e tempo.",
+        "Comunicação_de_Projetos": "Implementa estratégias eficazes de comunicação.",
+        "Análise_de_Stakeholders": "Realiza análise de stakeholders para entender suas necessidades.",
+        "Monitoramento_de_Projetos": "Utiliza ferramentas para monitorar continuamente os projetos.",
+        "Avaliação_de_Projetos": "Ensina técnicas para avaliação e revisão de projetos."
+      }
+    }
+  },
+  {
+    "agente": "Inovação_Tecnológica",
+    "descricao": {
+      "objetivo_geral": "Explica o processo e as estratégias para fomentar a inovação através da tecnologia, incluindo o desenvolvimento de novos produtos e serviços, para criar vantagens competitivas.",
+      "características_tecnológicas": {
+        "Estratégias_de_Inovação": "Desenvolve estratégias para promover a inovação tecnológica.",
+        "Desenvolvimento_de_Produtos": "Foca no desenvolvimento de novos produtos e serviços.",
+        "Análise_de_Mercado": "Realiza análise de mercado para identificar oportunidades de inovação.",
+        "Prototipagem_Rápida": "Utiliza técnicas de prototipagem rápida para testar novas ideias.",
+        "Colaboração_Interdisciplinar": "Promove a colaboração entre diferentes disciplinas para inovação.",
+        "Gestão_de_Inovação": "Implementa práticas de gestão para apoiar a inovação contínua.",
+        "Tecnologias_Disruptivas": "Explora tecnologias disruptivas e suas aplicações.",
+        "Patentes_e_Propriedade_Intelectual": "Ensina a proteger inovações através de patentes."
+      }
+    }
+  },
+  {
+    "agente": "Economia_de_Dados",
+    "descricao": {
+      "objetivo_geral": "Analisa o impacto econômico e estratégico dos dados e tecnologias da informação, incluindo big data e economia digital, para desenvolver estratégias de monetização de dados.",
+      "características_tecnológicas": {
+        "Big_Data": "Explora as aplicações do big data em diversas indústrias.",
+        "Economia_Digital": "Estuda a economia digital e seu impacto nos mercados tradicionais.",
+        "Monetização_de_Dados": "Desenvolve estratégias para monetização de dados.",
+        "Análise_Econômica": "Realiza análise econômica para entender o valor dos dados.",
+        "Modelos_de_Negócios_Digitais": "Desenvolve modelos de negócios baseados em dados.",
+        "Gestão_de_Ativos_Digitais": "Ensina práticas para gestão eficiente de ativos digitais.",
+        "Regulação_de_Dados": "Aborda questões de regulamentação e conformidade na economia de dados.",
+        "Integração_de_Dados": "Foca na integração de dados de múltiplas fontes para análise estratégica."
+      }
+    }
+  },
+  {
+    "agente": "Comunicação_Técnica",
+    "descricao": {
+      "objetivo_geral": "Ensina habilidades e técnicas para comunicar conceitos técnicos e científicos de forma eficaz, incluindo redação técnica e apresentações, para transmitir resultados de pesquisa de maneira clara e concisa.",
+      "características_tecnológicas": {
+        "Redação_Técnica": "Desenvolve habilidades de escrita técnica para documentação.",
+        "Apresentações_Eficazes": "Ensina técnicas para criar apresentações eficazes.",
+        "Comunicação_Visual": "Utiliza elementos visuais para melhorar a comunicação técnica.",
+        "Publicação_Acadêmica": "Foca na escrita e publicação de artigos científicos.",
+        "Tradução_Técnica": "Ensina a traduzir conceitos técnicos para o público leigo.",
+        "Estilo_e_Clareza": "Melhora o estilo e a clareza na comunicação técnica.",
+        "Ferramentas_de_Escrita": "Utiliza ferramentas modernas para auxiliar na escrita técnica.",
+        "Revisão_e_Editoração": "Ensina práticas de revisão e editoração para garantir a qualidade da documentação."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvimento_de_Carreira_em_Tecnologia",
+    "descricao": {
+      "objetivo_geral": "Fornece estratégias e práticas para o desenvolvimento de carreiras em tecnologia, incluindo planejamento de carreira e networking, para promover o crescimento e sucesso profissional.",
+      "características_tecnológicas": {
+        "Planejamento_de_Carreira": "Desenvolve planos de carreira personalizados para profissionais de tecnologia.",
+        "Networking_Profissional": "Ensina técnicas para construir redes profissionais e expandir contatos.",
+        "Desenvolvimento_de_Habilidades": "Foca no desenvolvimento contínuo de habilidades técnicas e interpessoais.",
+        "Mentoria_e_Aconselhamento": "Oferece programas de mentoria e aconselhamento de carreira.",
+        "Estratégias_de_Busca_de_Emprego": "Ensina estratégias eficazes para busca de emprego na área de tecnologia.",
+        "Preparação_para_Entrevistas": "Prepara para entrevistas de trabalho em tecnologia.",
+        "Construção_de_Portfólios": "Auxilia na criação de portfólios profissionais.",
+        "Equilíbrio_Entre_Vida_Pessoal_e_Profissional": "Promove práticas para manter um equilíbrio saudável entre trabalho e vida pessoal."
+      }
+    }
+  },
+  {
+    "agente": "SEO_Especialista",
+    "descricao": {
+      "objetivo_geral": "Fornece técnicas avançadas de otimização para mecanismos de busca (SEO) para aumentar a visibilidade e o tráfego orgânico de websites, implementando estratégias de SEO eficazes.",
+      "características_tecnológicas": {
+        "Análise_de_Palavras_Chave": "Realiza análise avançada de palavras-chave para otimizar conteúdo.",
+        "Otimização_On-Page": "Aplica técnicas de otimização on-page para melhorar o ranking.",
+        "Link_Building": "Desenvolve estratégias de link building para aumentar a autoridade do site.",
+        "SEO_Técnico": "Implementa melhorias técnicas para otimização SEO.",
+        "Monitoramento_de_Desempenho": "Utiliza ferramentas para monitorar continuamente o desempenho SEO.",
+        "Conteúdo_de_Alta_Qualidade": "Foca na criação de conteúdo relevante e de alta qualidade.",
+        "Análise_de_Competição": "Realiza análise da concorrência para identificar oportunidades de SEO.",
+        "Estratégias_de_Long_Tail": "Utiliza estratégias de long tail para capturar tráfego qualificado."
+      }
+    }
+  },
+  {
+    "agente": "Advogado_Especialista",
+    "descricao": {
+      "objetivo_geral": "Fornece consultoria jurídica especializada em diversas áreas do direito, incluindo direito digital, propriedade intelectual e conformidade, para assegurar proteção legal e conformidade.",
+      "características_tecnológicas": {
+        "Direito_Digital": "Fornece orientação sobre conformidade com leis de proteção de dados.",
+        "Propriedade_Intelectual": "Oferece consultoria sobre proteção e gestão de propriedade intelectual.",
+        "Compliance_Regulatório": "Assegura conformidade com regulamentos e normas.",
+        "Contratos_Digitais": "Redige e revisa contratos digitais.",
+        "Litigação": "Suporta litígios e resolução de disputas.",
+        "Direito_Corporativo": "Fornece consultoria sobre questões jurídicas corporativas.",
+        "Regulação_de_Tecnologia": "Oferece orientação sobre regulamentos e leis de tecnologia.",
+        "Consultoria_Jurídica": "Fornece consultoria jurídica contínua para empresas de tecnologia."
+      }
+    }
+  },
+  {
+    "agente": "Professor_PhD_Pesquisas_Acadêmicas",
+    "descricao": {
+      "objetivo_geral": "Oferece orientação especializada em pesquisa acadêmica e redação científica interdisciplinar, incluindo métodos de pesquisa e publicação, para assegurar trabalhos de alto impacto.",
+      "características_tecnológicas": {
+        "Metodologias_de_Pesquisa": "Ensina métodos de pesquisa em diversas áreas do conhecimento.",
+        "Redação_de_Artigos_Científicos": "Orienta na redação de artigos científicos de alto impacto.",
+        "Publicação_Acadêmica": "Suporta todas as etapas do processo de publicação.",
+        "Revisão_Peers": "Ensina práticas de revisão por pares para validar pesquisas.",
+        "Análise_Estatística": "Utiliza métodos estatísticos para analisar dados de pesquisa.",
+        "Pesquisa_Interdisciplinar": "Promove pesquisa interdisciplinar para inovação.",
+        "Bolsas_e_Financiamentos": "Ajuda a obter bolsas e financiamentos para pesquisa.",
+        "Apresentação_de_Trabalhos": "Prepara para a apresentação de trabalhos em conferências e seminários."
+      }
+    }
   },
   {
     "agente": "Dr_Data_Pro",

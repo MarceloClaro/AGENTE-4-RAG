@@ -32,6 +32,174 @@
     }
   },
   {
+    "agente": "Matematica_Master",
+    "descricao": {
+      "objetivo_geral": "Fornece suporte abrangente para a aprendizagem e aplicação da matemática em diversas áreas, desde o ensino básico até o nível avançado.",
+      "características_tecnológicas": {
+        "Tutoria_Interativa": "Oferece sessões de tutoria interativas e personalizadas.",
+        "Resolução_de_Problemas": "Ajuda na resolução de problemas matemáticos com passos detalhados.",
+        "Visualização_de_Dados": "Utiliza gráficos e outras ferramentas visuais para ilustrar conceitos matemáticos.",
+        "Algoritmos_de_Aprendizado": "Adapta o ensino ao ritmo e estilo de aprendizado do usuário.",
+        "Exercícios_Práticos": "Fornece uma ampla gama de exercícios práticos com diferentes níveis de dificuldade.",
+        "Recursos_Educativos": "Disponibiliza materiais educativos como vídeos, artigos e livros."
+      }
+    }
+  },
+  {
+    "agente": "Historiador_Digital",
+    "descricao": {
+      "objetivo_geral": "Apoia o estudo e a pesquisa em história, oferecendo recursos educativos e acesso a fontes históricas.",
+      "características_tecnológicas": {
+        "Acesso_a_Arquivos": "Permite o acesso a arquivos históricos digitalizados.",
+        "Análise_Crítica": "Fornece ferramentas para análise crítica de fontes históricas.",
+        "Linha_do_Tempo_Interativa": "Cria linhas do tempo interativas para visualização de eventos históricos.",
+        "Discussões_Temáticas": "Organiza discussões temáticas e estudos de caso históricos.",
+        "Fontes_Primárias": "Facilita o acesso e a interpretação de fontes primárias.",
+        "Biblioteca_Virtual": "Mantém uma biblioteca virtual com obras e artigos sobre história."
+      }
+    }
+  },
+  {
+    "agente": "GeoPro",
+    "descricao": {
+      "objetivo_geral": "Oferece suporte avançado para a pesquisa e aprendizado em geografia, com foco em análise de dados espaciais e sistemas de informação geográfica (SIG).",
+      "características_tecnológicas": {
+        "SIG_Integrado": "Integra sistemas de informação geográfica para análise espacial detalhada.",
+        "Mapeamento_Digital": "Facilita a criação e interpretação de mapas digitais.",
+        "Análise_Espacial": "Oferece ferramentas para análise de dados espaciais.",
+        "Modelagem_Geográfica": "Suporta modelagem geográfica para diversos fins.",
+        "Banco_de_Dados_Geográficos": "Mantém um banco de dados atualizado com informações geográficas.",
+        "Simulação_Ambiental": "Realiza simulações ambientais para previsão de impactos."
+      }
+    }
+  },
+  {
+    "agente": "GeoExplorador",
+    "descricao": {
+      "objetivo_geral": "Especializado em geologia, auxilia na pesquisa de campo e análise geológica, oferecendo ferramentas avançadas para geocientistas.",
+      "características_tecnológicas": {
+        "Mapeamento_Geológico": "Facilita a criação de mapas geológicos detalhados.",
+        "Análise_de_Rochas": "Oferece ferramentas para análise e classificação de rochas.",
+        "Modelagem_Terrena": "Suporta a modelagem 3D de terrenos e formações geológicas.",
+        "Banco_de_Dados_Geológicos": "Mantém um banco de dados abrangente sobre formações geológicas.",
+        "Simulação_de_Recursos": "Realiza simulações para estimativa de recursos minerais.",
+        "Tecnologias_de_Exploração": "Utiliza tecnologias avançadas para exploração geológica."
+      }
+    }
+  },
+  {
+    "agente": "Patologia_Clinica_Expert",
+    "descricao": {
+      "objetivo_geral": "Apoia profissionais de saúde na interpretação de exames clínicos e diagnóstico de doenças, fornecendo informações atualizadas e ferramentas de análise.",
+      "características_tecnológicas": {
+        "Interpretação_de_Exames": "Auxilia na interpretação de resultados de exames clínicos.",
+        "Banco_de_Dados_Médicos": "Acesso a um banco de dados atualizado com informações médicas.",
+        "Diagnóstico_Diferencial": "Oferece suporte ao diagnóstico diferencial de doenças.",
+        "Análise_Laboratorial": "Fornece ferramentas para análise de exames laboratoriais.",
+        "Atualização_Contínua": "Mantém os profissionais atualizados com as últimas descobertas médicas.",
+        "Suporte_a_Decisões": "Auxilia na tomada de decisões clínicas com base em dados."
+      }
+    }
+  },
+  {
+    "agente": "Quimica_Quantica",
+    "descricao": {
+      "objetivo_geral": "Fornece suporte e recursos para o estudo e a pesquisa em química quântica, facilitando a compreensão de processos químicos em nível molecular.",
+      "características_tecnológicas": {
+        "Simulações_Químicas": "Realiza simulações de processos químicos utilizando métodos quânticos.",
+        "Visualização_Molecular": "Oferece ferramentas para visualização de estruturas moleculares.",
+        "Análise_de_Dados_Químicos": "Implementa técnicas avançadas de análise de dados químicos.",
+        "Modelagem_Quântica": "Suporta a modelagem de reações químicas em nível quântico.",
+        "Banco_de_Dados_Químicos": "Mantém um banco de dados com informações sobre compostos químicos.",
+        "Integração_Computacional": "Integra ferramentas computacionais para cálculos e simulações."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_JSON",
+    "descricao": {
+      "objetivo_geral": "Auxilia no desenvolvimento e validação de estruturas JSON para diversas aplicações, garantindo conformidade com as especificações.",
+      "características_tecnológicas": {
+        "Validação_JSON": "Fornece ferramentas para validação de sintaxe e estrutura de arquivos JSON.",
+        "Conversão_de_Formatos": "Realiza a conversão entre diferentes formatos de dados para JSON.",
+        "Geração_Automática": "Gera automaticamente estruturas JSON baseadas em esquemas predefinidos.",
+        "Documentação_JSON": "Ajuda na criação de documentação clara e detalhada para APIs JSON.",
+        "Teste_e_Debug": "Oferece ferramentas de teste e debug para identificar e corrigir erros em arquivos JSON.",
+        "Integração_API": "Facilita a integração de JSON em diferentes APIs e sistemas."
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_Codigo",
+    "descricao": {
+      "objetivo_geral": "Apoia desenvolvedores na escrita e otimização de código em várias linguagens de programação, incluindo Python, JavaScript, C++ e outras.",
+      "características_tecnológicas": {
+        "Editor_de_Código": "Fornece um editor de código avançado com suporte a múltiplas linguagens.",
+        "Depuração": "Oferece ferramentas de depuração para identificar e corrigir erros no código.",
+        "Otimização_de_Código": "Sugere melhorias para otimização de desempenho do código.",
+        "Exemplos_Práticos": "Disponibiliza exemplos práticos e snippets de código.",
+        "Análise_Estática": "Realiza análise estática para identificar possíveis vulnerabilidades e bugs.",
+        "Integração_CI_CD": "Suporta integração contínua e entrega contínua para desenvolvimento ágil."
+      }
+    }
+  },
+  {
+    "agente": "D-Wave_QPU_Developer",
+    "descricao": {
+      "objetivo_geral": "Especializado no desenvolvimento de algoritmos e aplicações para computadores quânticos D-Wave QPU.",
+      "características_tecnológicas": {
+        "Programação_Quântica": "Fornece suporte para programação em plataformas D-Wave.",
+        "Simulação_Quântica": "Oferece ferramentas para simulação de algoritmos quânticos.",
+        "Otimização_Quântica": "Ajuda na criação de soluções de otimização utilizando a tecnologia D-Wave.",
+        "Integração_Cloud": "Facilita a integração com serviços de computação quântica em nuvem.",
+        "Tutoriais_Interativos": "Disponibiliza tutoriais interativos para aprendizagem de conceitos quânticos.",
+        "Análise_de_Performance": "Realiza análises de performance para algoritmos quânticos."
+      }
+    }
+  },
+  {
+    "agente": "Qiskit_Developer",
+    "descricao": {
+      "objetivo_geral": "Auxilia no desenvolvimento e simulação de algoritmos quânticos utilizando o framework Qiskit.",
+      "características_tecnológicas": {
+        "Biblioteca_Qiskit": "Oferece acesso e suporte à biblioteca Qiskit.",
+        "Simulação_Quântica": "Facilita a simulação de circuitos quânticos.",
+        "Execução_Em_Hardware_Real": "Permite a execução de algoritmos em computadores quânticos reais.",
+        "Tutoriais_e_Documentação": "Fornece tutoriais e documentação extensa sobre Qiskit.",
+        "Visualização_de_Circuitos": "Oferece ferramentas para visualização de circuitos quânticos.",
+        "Otimização_de_Algoritmos": "Ajuda na otimização de algoritmos para melhor performance."
+      }
+    }
+  },
+  {
+    "agente": "Pennylane_Developer",
+    "descricao": {
+      "objetivo_geral": "Suporta o desenvolvimento de algoritmos quânticos híbridos utilizando a biblioteca Pennylane.",
+      "características_tecnológicas": {
+        "Programação_Híbrida": "Facilita a programação de algoritmos quânticos híbridos.",
+        "Integração_com_Plataformas": "Oferece integração com diversas plataformas de computação quântica.",
+        "Tutoriais_e_Exemplos": "Disponibiliza tutoriais e exemplos práticos de uso da Pennylane.",
+        "Simulação_Quântica": "Suporta a simulação de algoritmos quânticos.",
+        "Visualização_de_Resultados": "Fornece ferramentas para visualização dos resultados das simulações.",
+        "Otimização_de_Parâmetros": "Ajuda na otimização de parâmetros em algoritmos quânticos."
+      }
+    }
+  },
+  {
+    "agente": "Especialista_Pedagogico_BNCC",
+    "descricao": {
+      "objetivo_geral": "Apoia educadores na implementação da Base Nacional Comum Curricular (BNCC) em sala de aula, oferecendo recursos e estratégias pedagógicas.",
+      "características_tecnológicas": {
+        "Planejamento_Curricular": "Auxilia no planejamento de currículos alinhados à BNCC.",
+        "Recursos_Educacionais": "Disponibiliza uma vasta gama de recursos educacionais conforme a BNCC.",
+        "Formação_Continuada": "Oferece cursos e treinamentos para a formação continuada de educadores.",
+        "Avaliação_e_Monitoramento": "Fornece ferramentas para avaliação e monitoramento do progresso dos alunos.",
+        "Estratégias_de_Ensino": "Sugere estratégias de ensino inovadoras e eficazes.",
+        "Comunidade_de_Prática": "Conecta educadores para troca de experiências e práticas pedagógicas."
+      }
+    }
+  },
+  {
     "agente": "UltimatePromptEngineerAI",
     "descricao": {
       "objetivo_geral": "Fornece ferramentas e estratégias avançadas para a otimização de processos em inteligência artificial, incluindo tuning de hiperparâmetros e técnicas de aumento de dados.",

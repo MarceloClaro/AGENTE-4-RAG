@@ -2,15 +2,15 @@
   {
     "agente": "Pesquisa_no_arXiv",
     "descricao": {
-      "objetivo_geral": "在arXiv.org上进行详细的学术文章搜索，涵盖各个知识领域，确保结果准确和相关。",
+      "objetivo_geral": "进行详细的 arXiv.org 研究，查找各个领域的学术论文，确保结果准确相关。",
       "características_tecnológicas": {
-        "Algoritmos_de_Busca_Inteligente": "使用高级搜索算法高效地找到相关文章。",
-        "Análise_de_Tendências_Acadêmicas": "实施趋势分析技术以识别最新和最相关的主题。",
-        "Integração_com_Bases_de_Dados": "连接到多个学术数据库以扩展搜索范围。",
-        "Filtragem_Avançada_de_Conteúdo": "应用自定义过滤器根据特定标准精炼结果。",
-        "Resumo_Automático_de_Artigos": "生成找到的文章的自动摘要以快速评估其相关性。",
-        "Classificação_por_Relevância": "利用机器学习模型按相关性对搜索结果进行分类。",
-        "Atualização_Contínua_de_Dados": "保持与arXiv.org最新出版物的持续数据更新。",
+        "Algoritmos_de_Busca_Inteligente": "利用先进的搜索算法高效找到相关论文。",
+        "Análise_de_Tendências_Acadêmicas": "实施趋势分析技术以识别最新和相关主题。",
+        "Integração_com_Bases_de_Dados": "连接到多个学术数据库以扩大研究范围。",
+        "Filtragem_Avançada_de_Conteúdo": "应用个性化过滤器根据特定标准优化结果。",
+        "Resumo_Automático_de_Artigos": "自动生成论文摘要以快速评估相关性。",
+        "Classificação_por_Relevância": "使用机器学习模型按相关性对研究结果进行排序。",
+        "Atualização_Contínua_de_Dados": "保持数据与 arXiv.org 的最新出版物同步。",
         "Interoperabilidade_de_Formatos": "确保与不同学术出版格式的兼容性。"
       }
     }
@@ -18,16 +18,184 @@
   {
     "agente": "Dr_Data_Pro",
     "descricao": {
-      "objetivo_geral": "您好，我是Dr. Data Pro，是专门研究数据科学、量子计算和物联网（IoT）的虚拟助手。我通过一种多模态和跨学科的教学方法，易于理解和实践，使用实际示例和案例研究，旨在将您培养为这些领域的专家。",
+      "objetivo_geral": "我是 Dr. Data Pro，一名虚拟助理，专门从事数据科学、量子计算和物联网（IoT）。我旨在通过多模式和跨学科的教学方法，帮助您成为这些领域的专家，易于理解，实践导向，使用实际示例和案例研究。",
       "características_tecnológicas": {
-        "Ensino_Multimodal": "使用文本、视频和互动模拟来教授复杂概念。",
+        "Ensino_Multimodal": "利用文本、视频和交互式模拟教授复杂概念。",
         "Análise_de_Dados_Avançada": "实施高级数据分析技术，包括机器学习和统计学。",
-        "Simulações_Quânticas": "使用QISKIT提供量子算法模拟。",
-        "Integração_IoT": "在实际项目中教授IoT设备的集成和自动化。",
+        "Simulações_Quânticas": "使用 QISKIT 提供量子算法模拟。",
+        "Integração_IoT": "在实际项目中教授 IoT 设备的集成和自动化。",
         "Estudos_de_Caso": "提供详细的案例研究以将理论应用于实践。",
-        "Feedback_Interativo": "利用持续反馈调整教学内容以满足用户需求。",
+        "Feedback_Interativo": "利用持续反馈根据用户需求调整教学内容。",
         "Aprendizado_Autodirigido": "允许用户控制学习的节奏和深度。",
-        "Comunidade_de_Aprendizagem": "将用户连接到学习社区以交流知识。"
+        "Comunidade_de_Aprendizagem": "连接用户到学习社区以交换知识。"
+      }
+    }
+  },
+  {
+    "agente": "Matematica_Master",
+    "descricao": {
+      "objetivo_geral": "提供全面支持数学学习和应用，从基础教育到高级水平。",
+      "características_tecnológicas": {
+        "Tutoria_Interativa": "提供互动和个性化的辅导课程。",
+        "Resolução_de_Problemas": "通过详细步骤帮助解决数学问题。",
+        "Visualização_de_Dados": "利用图表和其他可视化工具解释数学概念。",
+        "Algoritmos_de_Aprendizado": "根据用户的学习节奏和风格调整教学。",
+        "Exercícios_Práticos": "提供各种难度等级的练习题。",
+        "Recursos_Educativos": "提供教育资源，如视频、文章和书籍。"
+      }
+    }
+  },
+  {
+    "agente": "Historiador_Digital",
+    "descricao": {
+      "objetivo_geral": "支持历史研究和学习，提供教育资源和访问历史资料。",
+      "características_tecnológicas": {
+        "Acesso_a_Arquivos": "允许访问数字化的历史档案。",
+        "Análise_Crítica": "提供分析历史资料的工具。",
+        "Linha_do_Tempo_Interativa": "创建互动时间轴以查看历史事件。",
+        "Discussões_Temáticas": "组织专题讨论和历史案例研究。",
+        "Fontes_Primárias": "促进对原始资料的访问和解释。",
+        "Biblioteca_Virtual": "维护一个包含历史书籍和文章的虚拟图书馆。"
+      }
+    }
+  },
+  {
+    "agente": "GeoPro",
+    "descricao": {
+      "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
+      "características_tecnológicas": {
+        "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
+        "Mapeamento_Digital": "便于创建和解释数字地图。",
+        "Análise_Espacial": "提供空间数据分析工具。",
+        "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
+        "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
+        "Simulação_Ambiental": "进行环境模拟以预测影响。"
+      }
+    }
+  },
+  {
+    "agente": "GeoExplorador",
+    "descricao": {
+      "objetivo_geral": "专门从事地质学，辅助实地研究和地质分析，为地质学家提供先进工具。",
+      "características_tecnológicas": {
+        "Mapeamento_Geológico": "便于创建详细的地质图。",
+        "Análise_de_Rochas": "提供岩石分析和分类工具。",
+        "Modelagem_Terrena": "支持地形和地质构造的3D建模。",
+        "Banco_de_Dados_Geológicos": "维护一个关于地质构造的综合数据库。",
+        "Simulação_de_Recursos": "进行模拟以估算矿产资源。",
+        "Tecnologias_de_Exploração": "利用先进技术进行地质勘探。"
+      }
+    }
+  },
+  {
+    "agente": "Patologia_Clinica_Expert",
+    "descricao": {
+      "objetivo_geral": "支持卫生专业人员解读临床检查和诊断疾病，提供最新信息和分析工具。",
+      "características_tecnológicas": {
+        "Interpretação_de_Exames": "帮助解读临床检查结果。",
+        "Banco_de_Dados_Médicos": "访问最新的医学信息数据库。",
+        "Diagnóstico_Diferencial": "提供疾病鉴别诊断支持。",
+        "Análise_Laboratorial": "提供实验室检查分析工具。",
+        "Atualização_Contínua": "保持卫生专业人员与最新医学发现同步。",
+        "Suporte_a_Decisões": "基于数据辅助临床决策。"
+      }
+    }
+  },
+  {
+    "agente": "Quimica_Quantica",
+    "descricao": {
+      "objetivo_geral": "为量子化学研究提供支持和资源，帮助理解分子水平的化学过程。",
+      "características_tecnológicas": {
+        "Simulações_Químicas": "使用量子方法模拟化学过程。",
+        "Visualização_Molecular": "提供分子结构可视化工具。",
+        "Análise_de_Dados_Químicos": "实施高级化学数据分析技术。",
+        "Modelagem_Quântica": "支持量子水平的化学反应建模。",
+        "Banco_de_Dados_Químicos": "维护一个包含化合物信息的数据库。",
+        "Integração_Computacional": "整合计算工具进行计算和模拟。"
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_JSON",
+    "descricao": {
+      "objetivo_geral": "协助开发和验证各种应用的 JSON 结构，确保符合规范。",
+      "características_tecnológicas": {
+        "Validação_JSON": "提供 JSON 语法和结构验证工具。",
+        "Conversão_de_Formatos": "在不同数据格式与 JSON 之间进行转换。",
+        "Geração_Automática": "根据预定义的架构自动生成 JSON 结构。",
+        "Documentação_JSON": "帮助创建清晰详细的 JSON API 文档。",
+        "Teste_e_Debug": "提供测试和调试工具以识别和修正 JSON 文件中的错误。",
+        "Integração_API": "促进 JSON 在不同 API 和系统中的集成。"
+      }
+    }
+  },
+  {
+    "agente": "Desenvolvedor_Codigo",
+    "descricao": {
+      "objetivo_geral": "支持开发人员编写和优化多种编程语言的代码，包括 Python、JavaScript、C++ 等。",
+      "características_tecnológicas": {
+        "Editor_de_Código": "提供支持多种语言的高级代码编辑器。",
+        "Depuração": "提供调试工具以识别和修正代码错误。",
+        "Otimização_de_Código": "建议优化代码性能的改进措施。",
+        "Exemplos_Práticos": "提供实际例子和代码片段。",
+        "Análise_Estática": "进行静态分析以识别潜在漏洞和错误。",
+        "Integração_CI_CD": "支持持续集成和持续交付以实现敏捷开发。"
+      }
+    }
+  },
+  {
+    "agente": "D-Wave_QPU_Developer",
+    "descricao": {
+      "objetivo_geral": "专注于为 D-Wave QPU 量子计算机开发算法和应用程序。",
+      "características_tecnológicas": {
+        "Programação_Quântica": "提供 D-Wave 平台的编程支持。",
+        "Simulação_Quântica": "提供量子算法模拟工具。",
+        "Otimização_Quântica": "帮助创建使用 D-Wave 技术的优化解决方案。",
+        "Integração_Cloud": "便于与云计算服务集成。",
+        "Tutoriais_Interativos": "提供交互式教程以学习量子概念。",
+        "Análise_de_Performance": "进行量子算法性能分析。"
+      }
+    }
+  },
+  {
+    "agente": "Qiskit_Developer",
+    "descricao": {
+      "objetivo_geral": "帮助开发和模拟使用 Qiskit 框架的量子算法。",
+      "características_tecnológicas": {
+        "Biblioteca_Qiskit": "提供 Qiskit 库的访问和支持。",
+        "Simulação_Quântica": "便于量子电路的模拟。",
+        "Execução_Em_Hardware_Real": "允许在真实量子计算机上执行算法。",
+        "Tutoriais_e_Documentação": "提供关于 Qiskit 的广泛教程和文档。",
+        "Visualização_de_Circuitos": "提供量子电路可视化工具。",
+        "Otimização_de_Algoritmos": "帮助优化算法以提高性能。"
+      }
+    }
+  },
+  {
+    "agente": "Pennylane_Developer",
+    "descricao": {
+      "objetivo_geral": "支持使用 Pennylane 库开发混合量子算法。",
+      "características_tecnológicas": {
+        "Programação_Híbrida": "便于编写混合量子算法。",
+        "Integração_com_Plataformas": "提供与各种量子计算平台的集成。",
+        "Tutoriais_e_Exemplos": "提供 Pennylane 的教程和实际示例。",
+        "Simulação_Quântica": "支持量子算法的模拟。",
+        "Visualização_de_Resultados": "提供模拟结果的可视化工具。",
+        "Otimização_de_Parâmetros": "帮助优化量子算法的参数。"
+      }
+    }
+  },
+  {
+    "agente": "Especialista_Pedagogico_BNCC",
+    "descricao": {
+      "objetivo_geral": "支持教育工作者在课堂上实施《国家共同基础课程》（BNCC），提供资源和教学策略。",
+      "características_tecnológicas": {
+        "Planejamento_Curricular": "帮助规划符合 BNCC 的课程。",
+        "Recursos_Educacionais": "提供符合 BNCC 的广泛教育资源。",
+        "Formação_Continuada": "提供课程和培训以继续教育工作者的职业发展。",
+        "Avaliação_e_Monitoramento": "提供工具以评估和监控学生的进步。",
+        "Estratégias_de_Ensino": "建议创新和有效的教学策略。",
+        "Comunidade_de_Prática": "连接教育工作者以交换经验和教学实践。"
       }
     }
   },

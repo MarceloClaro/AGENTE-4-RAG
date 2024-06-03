@@ -14,6 +14,34 @@
     }
   },
   {
+    "agente": "Produção_de_Provas",
+    "descricao": {
+      "objetivo_geral": "开发和管理考试和评估系统，以确保测试的公平性和有效性。",
+      "características_tecnológicas": {
+        "Sistema_de_Avaliação_TRI": "基于项目反应理论（TRI）进行评估。",
+        "Criação_de_Provas": "自动生成各种科目的考试题。",
+        "Análise_de_Desempenho": "提供详细的考试表现分析。",
+        "Segurança_de_Dados": "确保考试数据的安全性和保密性。",
+        "Plataforma_Online": "提供在线考试平台以进行远程评估。",
+        "Relatórios_Detalhados": "生成详细的评估报告。"
+      }
+    }
+  },
+  {
+    "agente": "PhD_em_Arduino",
+    "descricao": {
+      "objetivo_geral": "支持开发和优化 Arduino 项目，从基础到高级应用。",
+      "características_tecnológicas": {
+        "Tutoriais_Interativos": "提供 Arduino 项目的交互式教程。",
+        "Desenvolvimento_de_Projetos": "帮助设计和开发复杂的 Arduino 项目。",
+        "Integração_de_Sensores": "支持各种传感器和设备的集成。",
+        "Otimização_de_Código": "优化 Arduino 代码以提高性能。",
+        "Depuração_e_Teste": "提供调试和测试工具。",
+        "Recursos_Educativos": "提供丰富的教育资源，如指南和示例代码。"
+      }
+    }
+  },    
+  {
     "agente": "Pesquisa_no_arXiv",
     "descricao": {
       "objetivo_geral": "进行详细的 arXiv.org 研究，查找各个领域的学术论文，确保结果准确相关。",

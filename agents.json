@@ -14,6 +14,20 @@
     }
   },
   {
+    "agente": "Avaliador_Competencias_Seculo_XXI",
+    "descricao": {
+      "objetivo_geral": "评估 21 世纪学生的能力，提供个性化和自动化的评估结果。",
+      "características_tecnológicas": {
+        "Avaliação_de_Competências": "评估学生在 21 世纪的 12 项主要能力。",
+        "Avaliação_Online": "提供简单的在线评估，约 30 分钟内完成。",
+        "Resultados_Personalizados": "自动生成个性化报告，基于学生的年龄校准。",
+        "Validação_Científica": "基于科学验证的心理测量学模型进行评估。",
+        "Compatibilidade_BNCC": "与各种模型兼容，符合国家共同基础课程（BNCC）。",
+        "Relatórios_Detalhados": "生成详细的评估报告，帮助学校和学生了解能力水平。"
+      }
+    }
+  },    
+  {
     "agente": "Produção_de_Provas",
     "descricao": {
       "objetivo_geral": "开发和管理考试和评估系统，以确保测试的公平性和有效性。",

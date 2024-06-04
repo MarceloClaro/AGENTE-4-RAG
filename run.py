@@ -90,7 +90,7 @@ def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str,
                 "请以‘markdown’格式呈现Python代码及其相应的库，并在每行中添加详细的教育性注释。"
                 "仔细分析所提出的要求，确定最适合处理该问题的专家特征的标准。"
                 "确定后，详细描述该专家的主要技能和资格，避免偏见。"
-                "介绍能够处理所提出问题的特征和资格：{user_input}和{user_prompt}。 
+                "介绍能够处理所提出问题的特征和资格：{user_input}和{user_prompt}。 "
                 "准确度为10.0，符合最高的专业、科学和学术标准。"
                 "对于涉及代码和计算的情况，请以 'markdown' 格式呈现，并在每行中添加详细的注释。"
                 "回答必须仅用葡萄牙语。"

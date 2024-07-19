@@ -1169,118 +1169,285 @@
   }
 },
    {
-    "agente": "Multi_Agente",
-    "descricao": {
-      "objetivo_geral": "综合所有代理的功能，提供广泛的支持和资源。",
-      "características_tecnológicas": {
-        "Algoritmos_de_Busca_Inteligente": "利用先进的搜索算法高效找到相关论文。",
-        "Análise_de_Tendências_Acadêmicas": "实施趋势分析技术以识别最新和相关主题。",
-        "Integração_com_Bases_de_Dados": "连接到多个学术数据库以扩大研究范围。",
-        "Filtragem_Avançada_de_Conteúdo": "应用个性化过滤器根据特定标准优化结果。",
-        "Resumo_Automático_de_Artigos": "自动生成论文摘要以快速评估相关性。",
-        "Classificação_por_Relevância": "使用机器学习模型按相关性对研究结果进行排序。",
-        "Atualização_Contínua_de_Dados": "保持数据与最新出版物同步。",
-        "Interoperabilidade_de_Formatos": "确保与不同出版格式的兼容性。",
-        "Ensino_Multimodal": "利用文本、视频和交互式模拟教授复杂概念。",
-        "Análise_de_Dados_Avançada": "实施高级数据分析技术，包括机器学习和统计学。",
-        "Simulações_Quânticas": "提供量子算法模拟工具。",
-        "Integração_IoT": "在实际项目中教授 IoT 设备的集成和自动化。",
-        "Estudos_de_Caso": "提供详细的案例研究以将理论应用于实践。",
-        "Feedback_Interativo": "利用持续反馈根据用户需求调整教学内容。",
-        "Aprendizado_Autodirigido": "允许用户控制学习的节奏和深度。",
-        "Comunidade_de_Aprendizagem": "连接用户到学习社区以交换知识。",
-        "Tutoria_Interativa": "提供互动和个性化的辅导课程。",
-        "Resolução_de_Problemas": "通过详细步骤帮助解决问题。",
-        "Visualização_de_Dados": "利用图表和其他可视化工具解释概念。",
-        "Algoritmos_de_Aprendizado": "根据用户的学习节奏和风格调整教学。",
-        "Exercícios_Práticos": "提供各种难度等级的练习题。",
-        "Recursos_Educativos": "提供教育资源，如视频、文章和书籍。",
-        "Acesso_a_Arquivos": "允许访问数字化的历史档案。",
-        "Análise_Crítica": "提供分析资料的工具。",
-        "Linha_do_Tempo_Interativa": "创建互动时间轴以查看事件。",
-        "Discussões_Temáticas": "组织专题讨论和案例研究。",
-        "Fontes_Primárias": "促进对原始资料的访问和解释。",
-        "Biblioteca_Virtual": "维护一个包含书籍和文章的虚拟图书馆。",
-        "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
-        "Mapeamento_Digital": "便于创建和解释数字地图。",
-        "Análise_Espacial": "提供空间数据分析工具。",
-        "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
-        "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
-        "Simulação_Ambiental": "进行环境模拟以预测影响。",
-        "Mapeamento_Geológico": "便于创建详细的地质图。",
-        "Análise_de_Rochas": "提供岩石分析和分类工具。",
-        "Modelagem_Terrena": "支持地形和地质构造的3D建模。",
-        "Banco_de_Dados_Geológicos": "维护一个关于地质构造的综合数据库。",
-        "Simulação_de_Recursos": "进行模拟以估算矿产资源。",
-        "Tecnologias_de_Exploração": "利用先进技术进行地质勘探。",
-        "Interpretação_de_Exames": "帮助解读临床检查结果。",
-        "Banco_de_Dados_Médicos": "访问最新的医学信息数据库。",
-        "Diagnóstico_Diferencial": "提供疾病鉴别诊断支持。",
-        "Análise_Laboratorial": "提供实验室检查分析工具。",
-        "Atualização_Contínua": "保持卫生专业人员与最新医学发现同步。",
-        "Suporte_a_Decisões": "基于数据辅助临床决策。",
-        "Simulações_Químicas": "使用量子方法模拟化学过程。",
-        "Visualização_Molecular": "提供分子结构可视化工具。",
-        "Análise_de_Dados_Químicos": "实施高级化学数据分析技术。",
-        "Modelagem_Quântica": "支持量子水平的化学反应建模。",
-        "Banco_de_Dados_Químicos": "维护一个包含化合物信息的数据库。",
-        "Integração_Computacional": "整合计算工具进行计算和模拟。",
-        "Validação_JSON": "提供 JSON 语法和结构验证工具。",
-        "Conversão_de_Formatos": "在不同数据格式与 JSON 之间进行转换。",
-        "Geração_Automática": "根据预定义的架构自动生成 JSON 结构。",
-        "Documentação_JSON": "帮助创建清晰详细的 JSON API 文档。",
-        "Teste_e_Debug": "提供测试和调试工具以识别和修正 JSON 文件中的错误。",
-        "Integração_API": "促进 JSON 在不同 API 和系统中的集成。",
-        "Editor_de_Código": "提供支持多种语言的高级代码编辑器。",
-        "Depuração": "提供调试工具以识别和修正代码错误。",
-        "Otimização_de_Código": "建议优化代码性能的改进措施。",
-        "Exemplos_Práticos": "提供实际例子和代码片段。",
-        "Análise_Estática": "进行静态分析以识别潜在漏洞和错误。",
-        "Integração_CI_CD": "支持持续集成和持续交付以实现敏捷开发。",
-        "Programação_Quântica": "提供 D-Wave 平台的编程支持。",
-        "Simulação_Quântica": "提供量子算法模拟工具。",
-        "Otimização_Quântica": "帮助创建使用 D-Wave 技术的优化解决方案。",
-        "Integração_Cloud": "便于与云计算服务集成。",
-        "Tutoriais_Interativos": "提供交互式教程以学习量子概念。",
-        "Análise_de_Performance": "进行量子算法性能分析。",
-        "Biblioteca_Qiskit": "提供 Qiskit 库的访问和支持。",
-        "Execução_Em_Hardware_Real": "允许在真实量子计算机上执行算法。",
-        "Visualização_de_Circuitos": "提供量子电路可视化工具。",
-        "Otimização_de_Algoritmos": "帮助优化算法以提高性能。",
-        "Programação_Híbrida": "便于编写混合量子算法。",
-        "Integração_com_Plataformas": "提供与各种量子计算平台的集成。",
-        "Tutoriais_e_Exemplos": "提供 Pennylane 的教程和实际示例。",
-        "Visualização_de_Resultados": "提供模拟结果的可视化工具。",
-        "Planejamento_Curricular": "帮助规划符合 BNCC 的课程。",
-        "Formação_Continuada": "提供课程和培训以继续教育工作者的职业发展。",
-        "Avaliação_e_Monitoramento": "提供工具以评估和监控学生的进步。",
-        "Estratégias_de_Ensino": "建议创新和有效的教学策略。",
-        "Comunidade_de_Prática": "连接教育工作者以交换经验和教学实践。",
-        "Localização_de_Arquivos": "查找相关文件，如 PDF、电子表格和 CSV，以丰富 GPT 的知识库。",
-        "Criação_de_Ações": "根据 OpenAPI 3.1.0 规范开发定制的 JSON 动作。",
-        "Solução_de_Problemas": "帮助识别和解决在实施动作过程中遇到的问题。",
-        "Criação_de_Grafos": "提供量子图形创建工具。",
-        "Análise_de_Grafos": "进行量子图形分析以支持研究。",
-        "Visualização_Interativa": "提供交互式图形可视化工具。",
-        "Integração_de_Dados": "与其他量子计算和数据分析工具集成。",
-        "Sistema_de_Avaliação_TRI": "基于项目反应理论（TRI）进行评估。",
-        "Criação_de_Provas": "自动生成各种科目的考试题。",
-        "Análise_de_Desempenho": "提供详细的考试表现分析。",
-        "Segurança_de_Dados": "确保考试数据的安全性和保密性。",
-        "Plataforma_Online": "提供在线考试平台以进行远程评估。",
-        "Tutoriais_Interativos": "提供 Arduino 项目的交互式教程。",
-        "Desenvolvimento_de_Projetos": "帮助设计和开发复杂的 Arduino 项目。",
-        "Integração_de_Sensores": "支持各种传感器和设备的集成。",
-        "Tutoriais_e_Documentação": "提供关于 Qiskit 的广泛教程和文档。",
-        "Avaliação_de_Competências": "评估学生在 21 世纪的 12 项主要能力。",
-        "Avaliação_Online": "提供简单的在线评估，约 30 分钟内完成。",
-        "Resultados_Personalizados": "自动生成个性化报告，基于学生的年龄校准。",
-        "Validação_Científica": "基于科学验证的心理测量学模型进行评估。",
-        "Compatibilidade_BNCC": "与各种模型兼容，符合国家共同基础课程（BNCC）。",
-        "Relatórios_Detalhados": "生成详细的评估报告，帮助学校和学生了解能力水平。"
-      }
+  "agente": "Multi_Agente",
+  "descricao": {
+    "objetivo_geral": "综合所有代理的功能，提供广泛的支持和资源。",
+    "características_tecnológicas": {
+      "Algoritmos_de_Busca_Inteligente": "利用先进的搜索算法高效找到相关论文。",
+      "Análise_de_Tendências_Acadêmicas": "实施趋势分析技术以识别最新和相关主题。",
+      "Integração_com_Bases_de_Dados": "连接到多个学术数据库以扩大研究范围。",
+      "Filtragem_Avançada_de_Conteúdo": "应用个性化过滤器根据特定标准优化结果。",
+      "Resumo_Automático_de_Artigos": "自动生成论文摘要以快速评估相关性。",
+      "Classificação_por_Relevância": "使用机器学习模型按相关性对研究结果进行排序。",
+      "Atualização_Contínua_de_Dados": "保持数据与最新出版物同步。",
+      "Interoperabilidade_de_Formatos": "确保与不同出版格式的兼容性。",
+      "Ensino_Multimodal": "利用文本、视频和交互式模拟教授复杂概念。",
+      "Análise_de_Dados_Avançada": "实施高级数据分析技术，包括机器学习和统计学。",
+      "Simulações_Quânticas": "提供量子算法模拟工具。",
+      "Integração_IoT": "在实际项目中教授 IoT 设备的集成和自动化。",
+      "Estudos_de_Caso": "提供详细的案例研究以将理论应用于实践。",
+      "Feedback_Interativo": "利用持续反馈根据用户需求调整教学内容。",
+      "Aprendizado_Autodirigido": "允许用户控制学习的节奏和深度。",
+      "Comunidade_de_Aprendizagem": "连接用户到学习社区以交换知识。",
+      "Tutoria_Interativa": "提供互动和个性化的辅导课程。",
+      "Resolução_de_Problemas": "通过详细步骤帮助解决问题。",
+      "Visualização_de_Dados": "利用图表和其他可视化工具解释概念。",
+      "Algoritmos_de_Aprendizado": "根据用户的学习节奏和风格调整教学。",
+      "Exercícios_Práticos": "提供各种难度等级的练习题。",
+      "Recursos_Educativos": "提供教育资源，如视频、文章和书籍。",
+      "Acesso_a_Arquivos": "允许访问数字化的历史档案。",
+      "Análise_Crítica": "提供分析资料的工具。",
+      "Linha_do_Tempo_Interativa": "创建互动时间轴以查看事件。",
+      "Discussões_Temáticas": "组织专题讨论和案例研究。",
+      "Fontes_Primárias": "促进对原始资料的访问和解释。",
+      "Biblioteca_Virtual": "维护一个包含书籍和文章的虚拟图书馆。",
+      "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
+      "Mapeamento_Digital": "便于创建和解释数字地图。",
+      "Análise_Espacial": "提供空间数据分析工具。",
+      "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
+      "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
+      "Simulação_Ambiental": "进行环境模拟以预测影响。",
+      "Mapeamento_Geológico": "便于创建详细的地质图。",
+      "Análise_de_Rochas": "提供岩石分析和分类工具。",
+      "Modelagem_Terrena": "支持地形和地质构造的3D建模。",
+      "Banco_de_Dados_Geológicos": "维护一个关于地质构造的综合数据库。",
+      "Simulação_de_Recursos": "进行模拟以估算矿产资源。",
+      "Tecnologias_de_Exploração": "利用先进技术进行地质勘探。",
+      "Interpretação_de_Exames": "帮助解读临床检查结果。",
+      "Banco_de_Dados_Médicos": "访问最新的医学信息数据库。",
+      "Diagnóstico_Diferencial": "提供疾病鉴别诊断支持。",
+      "Análise_Laboratorial": "提供实验室检查分析工具。",
+      "Atualização_Contínua": "保持卫生专业人员与最新医学发现同步。",
+      "Suporte_a_Decisões": "基于数据辅助临床决策。",
+      "Simulações_Químicas": "使用量子方法模拟化学过程。",
+      "Visualização_Molecular": "提供分子结构可视化工具。",
+      "Análise_de_Dados_Químicos": "实施高级化学数据分析技术。",
+      "Modelagem_Quântica": "支持量子水平的化学反应建模。",
+      "Banco_de_Dados_Químicos": "维护一个包含化合物信息的数据库。",
+      "Integração_Computacional": "整合计算工具进行计算和模拟。",
+      "Validação_JSON": "提供 JSON 语法和结构验证工具。",
+      "Conversão_de_Formatos": "在不同数据格式与 JSON 之间进行转换。",
+      "Geração_Automática": "根据预定义的架构自动生成 JSON 结构。",
+      "Documentação_JSON": "帮助创建清晰详细的 JSON API 文档。",
+      "Teste_e_Debug": "提供测试和调试工具以识别和修正 JSON 文件中的错误。",
+      "Integração_API": "促进 JSON 在不同 API 和系统中的集成。",
+      "Editor_de_Código": "提供支持多种语言的高级代码编辑器。",
+      "Depuração": "提供调试工具以识别和修正代码错误。",
+      "Otimização_de_Código": "建议优化代码性能的改进措施。",
+      "Exemplos_Práticos": "提供实际例子和代码片段。",
+      "Análise_Estática": "进行静态分析以识别潜在漏洞和错误。",
+      "Integração_CI_CD": "支持持续集成和持续交付以实现敏捷开发。",
+      "Programação_Quântica": "提供 D-Wave 平台的编程支持。",
+      "Simulação_Quântica": "提供量子算法模拟工具。",
+      "Otimização_Quântica": "帮助创建使用 D-Wave 技术的优化解决方案。",
+      "Integração_Cloud": "便于与云计算服务集成。",
+      "Tutoriais_Interativos": "提供交互式教程以学习量子概念。",
+      "Análise_de_Performance": "进行量子算法性能分析。",
+      "Biblioteca_Qiskit": "提供 Qiskit 库的访问和支持。",
+      "Execução_Em_Hardware_Real": "允许在真实量子计算机上执行算法。",
+      "Visualização_de_Circuitos": "提供量子电路可视化工具。",
+      "Otimização_de_Algoritmos": "帮助优化算法以提高性能。",
+      "Programação_Híbrida": "便于编写混合量子算法。",
+      "Integração_com_Plataformas": "提供与各种量子计算平台的集成。",
+      "Tutoriais_e_Exemplos": "提供 Pennylane 的教程和实际示例。",
+      "Visualização_de_Resultados": "提供模拟结果的可视化工具。",
+      "Planejamento_Curricular": "帮助规划符合 BNCC 的课程。",
+      "Formação_Continuada": "提供课程和培训以继续教育工作者的职业发展。",
+      "Avaliação_e_Monitoramento": "提供工具以评估和监控学生的进步。",
+      "Estratégias_de_Ensino": "建议创新和有效的教学策略。",
+      "Comunidade_de_Prática": "连接教育工作者以交换经验和教学实践。",
+      "Localização_de_Arquivos": "查找相关文件，如 PDF、电子表格和 CSV，以丰富 GPT 的知识库。",
+      "Criação_de_Ações": "根据 OpenAPI 3.1.0 规范开发定制的 JSON 动作。",
+      "Solução_de_Problemas": "帮助识别和解决在实施动作过程中遇到的问题。",
+      "Criação_de_Grafos": "提供量子图形创建工具。",
+      "Análise_de_Grafos": "进行量子图形分析以支持研究。",
+      "Visualização_Interativa": "提供交互式图形可视化工具。",
+      "Integração_de_Dados": "与其他量子计算和数据分析工具集成。",
+      "Sistema_de_Avaliação_TRI": "基于项目反应理论（TRI）进行评估。",
+      "Criação_de_Provas": "自动生成各种科目的考试题。",
+      "Análise_de_Desempenho": "提供详细的考试表现分析。",
+      "Segurança_de_Dados": "确保考试数据的安全性和保密性。",
+      "Plataforma_Online": "提供在线考试平台以进行远程评估。",
+      "Tutoriais_Interativos": "提供 Arduino 项目的交互式教程。",
+      "Desenvolvimento_de_Projetos": "帮助设计和开发复杂的 Arduino 项目。",
+      "Integração_de_Sensores": "支持各种传感器和设备的集成。",
+      "Tutoriais_e_Documentação": "提供关于 Qiskit 的广泛教程和文档。",
+      "Avaliação_de_Competências": "评估学生在 21 世纪的 12 项主要能力。",
+      "Avaliação_Online": "提供简单的在线评估，约 30 分钟内完成。",
+      "Resultados_Personalizados": "自动生成个性化报告，基于学生的年龄校准。",
+      "Validação_Científica": "基于科学验证的心理测量学模型进行评估。",
+      "Compatibilidade_BNCC": "与各种模型兼容，符合国家共同基础课程（BNCC）。",
+      "Relatórios_Detalhados": "生成详细的评估报告，帮助学校和学生了解能力水平。"
     }
   },
+  "capacidade_autodidatica": {
+    "descricao": "Gerar informações autodidáticas detalhadas sobre diversas áreas de conhecimento.",
+    "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+    "subagentes": {
+      "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de conteúdos educacionais.",
+      "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de materiais de ensino."
+    },
+    "conteudo": [
+      {
+        "paragrafo_1": "Os algoritmos de busca inteligente utilizam técnicas avançadas para localizar informações relevantes, envolvem a utilização de filtros e classificações personalizadas, algoritmos de busca ajudam a encontrar rapidamente os documentos mais pertinentes, são usados em diversas áreas do conhecimento, contribuem para a eficiência da pesquisa acadêmica.",
+        "paragrafo_2": "Análise de tendências acadêmicas identifica tópicos emergentes e relevantes, utiliza técnicas de mineração de dados para analisar grandes volumes de informação, análise de tendências é essencial para manter-se atualizado com as últimas pesquisas, é usada para direcionar novos estudos e publicações, contribui para o avanço do conhecimento científico.",
+        "paragrafo_3": "Integração com bases de dados permite acesso a uma ampla gama de recursos, envolve a conexão com bibliotecas digitais e repositórios acadêmicos, integração de dados expande o alcance da pesquisa, é usada para obter informações mais completas e diversificadas, contribui para a profundidade e abrangência dos estudos.",
+        "paragrafo_4": "Filtragem avançada de conteúdo aplica critérios específicos para otimizar resultados, inclui a utilização de palavras-chave, categorias e relevância, filtragem ajuda a refinar a pesquisa e obter informações mais precisas, é usada em diversas plataformas de pesquisa, contribui para a eficácia da busca por dados.",
+        "paragrafo_5": "Resumo automático de artigos gera resumos concisos de documentos longos, utiliza algoritmos de processamento de linguagem natural (NLP), resumo automático facilita a avaliação rápida da relevância de um artigo, é usado para economizar tempo na revisão de literatura, contribui para a eficiência do processo de pesquisa.",
+        "paragrafo_6": "Classificação por relevância ordena os resultados de pesquisa com base em critérios específicos, envolve o uso de modelos de machine learning para determinar a relevância, classificação ajuda a priorizar os documentos mais importantes, é usada em motores de busca e plataformas de pesquisa acadêmica, contribui para a qualidade dos resultados obtidos.",
+        "paragrafo_7": "Atualização contínua de dados garante que as informações estejam sempre atualizadas, envolve a sincronização regular com as últimas publicações e descobertas, atualização contínua é essencial para a pesquisa precisa e relevante, é usada para manter os dados atualizados em tempo real, contribui para a confiabilidade da informação.",
+        "paragrafo_8": "Interoperabilidade de formatos assegura a compatibilidade entre diferentes sistemas, inclui a capacidade de ler e converter vários formatos de arquivo, interoperabilidade é usada para facilitar a troca e utilização de dados, contribui para a integração de diferentes tecnologias e plataformas, é essencial para a eficiência do trabalho com dados.",
+        "paragrafo_9": "Ensino multimodal utiliza vários métodos para ensinar conceitos complexos, inclui textos, vídeos e simulações interativas, ensino multimodal ajuda a acomodar diferentes estilos de aprendizado, é usado para tornar o aprendizado mais envolvente e eficaz, contribui para a compreensão profunda dos tópicos.",
+        "paragrafo_10": "Análise de dados avançada aplica técnicas estatísticas e de machine learning para explorar grandes conjuntos de dados, envolve a identificação de padrões e insights significativos, análise avançada é usada em pesquisa acadêmica e indústria, contribui para a tomada de decisões informadas e inovação, é essencial para a análise precisa e detalhada."
+      }
+    ]
+  },
+  "agentes_especializados": [
+    {
+      "agente": "GeoPro",
+      "descricao": {
+        "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
+        "características_tecnológicas": {
+          "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
+          "Mapeamento_Digital": "便于创建和解释数字地图。",
+          "Análise_Espacial": "提供空间数据分析工具。",
+          "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
+          "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
+          "Simulação_Ambiental": "进行环境模拟以预测影响。"
+        },
+        "capacidade_autodidatica": {
+          "descricao": "Gerar informações autodidáticas detalhadas sobre geografia e sistemas de informação geográfica.",
+          "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+          "subagentes": {
+            "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análises geográficas.",
+            "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de simulações geográficas."
+          },
+          "conteudo": [
+            {
+              "paragrafo_1": "SIG Integrado permite a análise detalhada de dados espaciais, inclui a utilização de mapas e imagens de satélite, SIG é usado para planejamento urbano e gestão ambiental, contribui para a visualização e interpretação de dados geográficos, é uma ferramenta essencial na geografia moderna.",
+              "paragrafo_2": "Mapeamento digital facilita a criação e interpretação de mapas digitais, inclui a utilização de software como ArcGIS e QGIS, mapeamento digital é usado para visualização e análise de dados espaciais, contribui para a compreensão de padrões geográficos, é uma habilidade essencial para geógrafos e planejadores urbanos.",
+              "paragrafo_3": "Análise espacial envolve a análise de dados geográficos para identificar padrões e tendências, inclui técnicas como interpolação e análise de vizinhança, análise espacial é usada para estudar fenômenos como a distribuição de recursos naturais e a dinâmica populacional, contribui para a tomada de decisões informadas, é uma ferramenta valiosa na pesquisa geográfica.",
+              "paragrafo_4": "Modelagem geográfica utiliza modelos matemáticos para simular processos geográficos, inclui a análise de cenários e previsões, modelagem geográfica é usada para estudar o impacto de mudanças ambientais e planejar intervenções, contribui para a gestão sustentável dos recursos naturais, é uma área de pesquisa em crescimento na geografia.",
+              "paragrafo_5": "Banco de dados geográficos mantém informações atualizadas sobre diversas características geográficas, inclui dados sobre clima, relevo, vegetação e uso da terra, banco de dados é usado para pesquisa e planejamento, contribui para a acessibilidade e compartilhamento de informações geográficas, é uma ferramenta essencial para geógrafos e pesquisadores.",
+              "paragrafo_6": "Simulação ambiental envolve a criação de modelos para prever impactos ambientais, inclui a análise de mudanças climáticas e desastres naturais, simulação ambiental é usada para planejar medidas de mitigação e adaptação, contribui para a proteção do meio ambiente e a sustentabilidade, é uma área de pesquisa crucial na geografia.",
+              "paragrafo_7": "SIG Integrado inclui a utilização de tecnologias como GPS e sensores remotos, essas tecnologias permitem a coleta precisa de dados espaciais, SIG é usado para monitorar mudanças no ambiente e planejar intervenções, contribui para a gestão eficiente dos recursos naturais, é uma ferramenta indispensável para geógrafos.",
+              "paragrafo_8": "Mapeamento digital utiliza técnicas de geoprocessamento para criar mapas detalhados, inclui a análise de dados espaciais e a criação de camadas temáticas, mapeamento digital é usado para visualizar e analisar dados geográficos, contribui para a tomada de decisões informadas, é uma habilidade essencial na geografia moderna.",
+              "paragrafo_9": "Análise espacial aplica estatísticas e algoritmos para estudar dados geográficos, inclui a utilização de técnicas como análise de cluster e análise de regressão espacial, análise espacial é usada para identificar padrões e tendências em dados geográficos, contribui para a pesquisa e planejamento, é uma ferramenta valiosa para geógrafos e planejadores.",
+              "paragrafo_10": "Modelagem geográfica inclui a criação de modelos tridimensionais de paisagens e estruturas geológicas, esses modelos são usados para simular processos naturais e prever mudanças, modelagem geográfica é usada para planejar intervenções e estudar impactos ambientais, contribui para a gestão sustentável dos recursos naturais, é uma área de pesquisa dinâmica na geografia."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "agente": "HealthAnalyzer",
+      "descricao": {
+        "objetivo_geral": "提供医学诊断和数据分析的支持。",
+        "características_tecnológicas": {
+          "Interpretação_de_Exames": "帮助解读临床检查结果。",
+          "Banco_de_Dados_Médicos": "访问最新的医学信息数据库。",
+          "Diagnóstico_Diferencial": "提供疾病鉴别诊断支持。",
+          "Análise_Laboratorial": "提供实验室检查分析工具。",
+          "Atualização_Contínua": "保持卫生专业人员与最新医学发现同步。",
+          "Suporte_a_Decisões": "基于数据辅助临床决策。"
+        },
+        "capacidade_autodidatica": {
+          "descricao": "Gerar informações autodidáticas detalhadas sobre medicina e diagnósticos clínicos.",
+          "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+          "subagentes": {
+            "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análises médicas.",
+            "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de diagnósticos médicos."
+          },
+          "conteudo": [
+            {
+              "paragrafo_1": "Interpretação de exames envolve a análise detalhada de resultados de testes clínicos, inclui exames de sangue, imagem e outros testes laboratoriais, interpretação precisa é essencial para um diagnóstico correto, ajuda a identificar condições médicas e planejar tratamentos, é uma habilidade crucial para profissionais de saúde.",
+              "paragrafo_2": "Banco de dados médicos oferece acesso a uma vasta gama de informações sobre doenças e tratamentos, inclui dados atualizados sobre pesquisas e descobertas médicas, banco de dados é usado para apoiar decisões clínicas e planejamento de tratamento, contribui para a prática baseada em evidências, é uma ferramenta indispensável para médicos e pesquisadores.",
+              "paragrafo_3": "Diagnóstico diferencial envolve a distinção entre várias condições que apresentam sintomas semelhantes, utiliza uma abordagem sistemática para identificar a causa subjacente dos sintomas, diagnóstico diferencial é crucial para evitar erros diagnósticos, ajuda a planejar intervenções terapêuticas apropriadas, é uma prática essencial na medicina clínica.",
+              "paragrafo_4": "Análise laboratorial inclui a interpretação de testes de laboratório para avaliar a saúde do paciente, envolve exames de sangue, urina e outros fluidos corporais, análise laboratorial é usada para monitorar condições crônicas e diagnosticar doenças, contribui para a personalização do tratamento, é uma ferramenta essencial para a medicina diagnóstica.",
+              "paragrafo_5": "Atualização contínua de dados médicos garante que os profissionais de saúde estejam informados sobre os últimos avanços, inclui a incorporação de novas descobertas e diretrizes de tratamento, atualização contínua é usada para melhorar a prática clínica e os resultados dos pacientes, contribui para a educação contínua dos profissionais de saúde, é essencial para a prática médica moderna.",
+              "paragrafo_6": "Suporte a decisões clínicas utiliza dados para ajudar os médicos a tomar decisões informadas, inclui o uso de algoritmos e modelos preditivos para avaliar opções de tratamento, suporte a decisões melhora a precisão diagnóstica e a eficácia do tratamento, é usado para planejar cuidados de saúde personalizados, contribui para a melhoria dos resultados dos pacientes.",
+              "paragrafo_7": "Interpretação de exames utiliza ferramentas avançadas de análise de dados, essas ferramentas ajudam a identificar anomalias e padrões nos resultados dos testes, interpretação precisa é crucial para um diagnóstico correto e planejamento de tratamento, contribui para a prática baseada em evidências, é uma habilidade essencial para médicos e técnicos de laboratório.",
+              "paragrafo_8": "Banco de dados médicos inclui informações sobre farmacologia, patologias e procedimentos médicos, esses dados são usados para apoiar a prática clínica e a pesquisa, banco de dados médicos é uma fonte valiosa de conhecimento para profissionais de saúde, contribui para a atualização contínua e a prática baseada em evidências, é uma ferramenta indispensável para a medicina moderna.",
+              "paragrafo_9": "Diagnóstico diferencial envolve a utilização de algoritmos e inteligência artificial para analisar sintomas e históricos médicos, esses métodos ajudam a reduzir erros diagnósticos e melhorar a precisão, diagnóstico diferencial é usado para planejar intervenções terapêuticas personalizadas, contribui para a melhoria dos resultados clínicos, é uma prática essencial na medicina.",
+              "paragrafo_10": "Análise laboratorial utiliza técnicas de bioquímica, hematologia e microbiologia para avaliar a saúde do paciente, esses exames ajudam a monitorar condições crônicas e identificar doenças infecciosas, análise laboratorial é uma ferramenta crucial para o diagnóstico precoce e tratamento eficaz, contribui para a prática baseada em evidências e a personalização do tratamento, é essencial para a medicina diagnóstica."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "agente": "QuantumSimulator",
+      "descricao": {
+        "objetivo_geral": "提供量子计算和模拟的支持。",
+        "características_tecnológicas": {
+          "Simulações_Quânticas": "提供量子算法模拟工具。",
+          "Visualização_Molecular": "提供分子结构可视化工具。",
+          "Análise_de_Dados_Químicos": "实施高级化学数据分析技术。",
+          "Modelagem_Quântica": "支持量子水平的化学反应建模。",
+          "Banco_de_Dados_Químicos": "维护一个包含化合物信息的数据库。",
+          "Integração_Computacional": "整合计算工具进行计算和模拟。"
+        },
+        "capacidade_autodidatica": {
+          "descricao": "Gerar informações autodidáticas detalhadas sobre simulações quânticas e modelagem molecular.",
+          "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+          "subagentes": {
+            "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de simulações quânticas.",
+            "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de simulações químicas."
+          },
+          "conteudo": [
+            {
+              "paragrafo_1": "Simulações quânticas utilizam algoritmos avançados para modelar sistemas quânticos, incluem a simulação de reações químicas e processos físicos, simulações quânticas são usadas para prever comportamentos em nível molecular, contribuem para o desenvolvimento de novos materiais e medicamentos, são uma ferramenta essencial na química teórica e computacional.",
+              "paragrafo_2": "Visualização molecular oferece representações gráficas de estruturas moleculares, utiliza software como GaussView e Avogadro, visualização molecular ajuda a entender a configuração espacial e interações moleculares, é usada para estudar propriedades químicas e reações, contribui para a pesquisa em química e biologia molecular.",
+              "paragrafo_3": "Análise de dados químicos envolve a interpretação de grandes conjuntos de dados provenientes de experimentos e simulações, utiliza técnicas estatísticas e de machine learning para identificar padrões e tendências, análise de dados químicos é usada para descobrir novas reações e otimizar processos, contribui para a pesquisa e desenvolvimento em química, é uma ferramenta valiosa na ciência de dados aplicada à química.",
+              "paragrafo_4": "Modelagem quântica simula reações e interações em nível quântico, utiliza métodos como teoria do funcional da densidade (DFT) e cálculos ab initio, modelagem quântica é usada para prever propriedades eletrônicas e reativas de moléculas, contribui para o desenvolvimento de novos materiais e medicamentos, é essencial para a química teórica e computacional.",
+              "paragrafo_5": "Banco de dados químicos mantém informações detalhadas sobre compostos e reações químicas, inclui dados experimentais e teóricos, banco de dados é usado para apoiar a pesquisa e o desenvolvimento em química, contribui para a acessibilidade e compartilhamento de informações químicas, é uma ferramenta indispensável para químicos e pesquisadores.",
+              "paragrafo_6": "Integração computacional combina ferramentas de software para realizar cálculos e simulações, envolve a utilização de plataformas como Gaussian, Qiskit e D-Wave, integração computacional facilita a realização de estudos complexos e detalhados, contribui para a pesquisa interdisciplinar em química, física e ciência da computação, é essencial para a pesquisa avançada em simulações quânticas.",
+              "paragrafo_7": "Simulações quânticas utilizam princípios de mecânica quântica para modelar sistemas complexos, incluem a análise de fenômenos como superposição e entrelaçamento quântico, simulações quânticas são usadas para estudar propriedades fundamentais da matéria, contribuem para a pesquisa em física quântica e química teórica, são uma ferramenta poderosa para a inovação científica.",
+              "paragrafo_8": "Visualização molecular inclui a criação de modelos tridimensionais de moléculas, esses modelos ajudam a visualizar interações e conformações moleculares, visualização molecular é usada para estudar propriedades físicas e químicas de substâncias, contribui para o desenvolvimento de novos materiais e fármacos, é uma ferramenta essencial na pesquisa científica.",
+              "paragrafo_9": "Análise de dados químicos utiliza técnicas de aprendizado de máquina para explorar grandes volumes de dados, esses métodos ajudam a identificar relações e previsões em dados experimentais e teóricos, análise de dados químicos é usada para otimizar reações e processos industriais, contribui para a eficiência e inovação na química, é uma ferramenta valiosa para cientistas de dados e químicos.",
+              "paragrafo_10": "Modelagem quântica envolve cálculos precisos de propriedades eletrônicas e estruturais de moléculas, utiliza métodos avançados como cálculos de primeiros princípios e DFT, modelagem quântica é usada para prever comportamentos químicos e físicos, contribui para a pesquisa em materiais e fármacos, é uma área de pesquisa em crescimento na química teórica e computacional."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "agente": "EduTutor",
+      "descricao": {
+        "objetivo_geral": "提供教育支持，涵盖多种学科和技能。",
+        "características_tecnológicas": {
+          "Planejamento_Curricular": "帮助规划符合 BNCC 的课程。",
+          "Formação_Continuada": "提供课程和培训以继续教育工作者的职业发展。",
+          "Avaliação_e_Monitoramento": "提供工具以评估和监控学生的进步。",
+          "Estratégias_de_Ensino": "建议创新和有效的教学策略。",
+          "Comunidade_de_Prática": "连接教育工作者以交换经验和教学实践。"
+        },
+        "capacidade_autodidatica": {
+          "descricao": "Gerar informações autodidáticas detalhadas sobre estratégias educacionais e desenvolvimento curricular.",
+          "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+          "subagentes": {
+            "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de materiais educacionais.",
+            "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de currículos e estratégias de ensino."
+          },
+          "conteudo": [
+            {
+              "paragrafo_1": "Planejamento curricular envolve a criação de programas de estudo alinhados com diretrizes educacionais, inclui a definição de objetivos de aprendizagem e conteúdos, planejamento curricular é essencial para garantir a qualidade e a relevância da educação, é usado para estruturar o ensino em escolas e universidades, contribui para a formação de estudantes bem-preparados.",
+              "paragrafo_2": "Formação continuada oferece oportunidades de desenvolvimento profissional para educadores, inclui cursos, workshops e treinamentos, formação continuada ajuda os professores a atualizar seus conhecimentos e habilidades, é usada para melhorar a qualidade do ensino, contribui para a educação de alta qualidade e o sucesso dos alunos.",
+              "paragrafo_3": "Avaliação e monitoramento utilizam ferramentas para medir o progresso dos alunos, incluem testes, questionários e observações, avaliação e monitoramento ajudam a identificar áreas de melhoria e ajustar as estratégias de ensino, são usados para garantir que os objetivos de aprendizagem sejam alcançados, contribuem para a eficácia do processo educativo.",
+              "paragrafo_4": "Estratégias de ensino incluem métodos inovadores e eficazes para facilitar o aprendizado, incluem técnicas como aprendizagem ativa, ensino baseado em projetos e uso de tecnologia, estratégias de ensino são usadas para engajar os alunos e promover a compreensão profunda, contribuem para a motivação e o sucesso dos estudantes, são essenciais para a prática pedagógica moderna.",
+              "paragrafo_5": "Comunidade de prática conecta educadores para trocar experiências e melhores práticas, inclui fóruns, grupos de discussão e redes profissionais, comunidade de prática ajuda a fomentar a colaboração e o desenvolvimento profissional contínuo, é usada para compartilhar recursos e soluções para desafios educacionais, contribui para a melhoria coletiva da educação.",
+              "paragrafo_6": "Planejamento curricular utiliza diretrizes como a BNCC para estruturar programas de ensino, essas diretrizes garantem que os conteúdos sejam relevantes e atualizados, planejamento curricular é usado para definir objetivos de aprendizagem claros e mensuráveis, contribui para a coerência e a qualidade do ensino, é essencial para a educação formal.",
+              "paragrafo_7": "Formação continuada inclui oportunidades de aprendizado online e presencial, esses programas ajudam os educadores a se manterem atualizados com as últimas tendências e práticas pedagógicas, formação continuada é usada para melhorar a eficácia do ensino e a satisfação profissional, contribui para a carreira dos professores e a qualidade da educação, é uma prática essencial para o desenvolvimento profissional.",
+              "paragrafo_8": "Avaliação e monitoramento utilizam ferramentas digitais para coletar e analisar dados de desempenho dos alunos, esses dados ajudam a identificar padrões e áreas de necessidade, avaliação e monitoramento são usados para personalizar o ensino e apoiar os alunos individualmente, contribuem para a melhoria contínua do processo educativo, são uma ferramenta valiosa para educadores.",
+              "paragrafo_9": "Estratégias de ensino inovadoras incluem o uso de tecnologia educativa, como realidade aumentada e aprendizado adaptativo, essas técnicas ajudam a criar experiências de aprendizado mais envolventes e eficazes, estratégias de ensino são usadas para promover habilidades críticas e criatividade, contribuem para a preparação dos estudantes para o futuro, são uma parte essencial da educação moderna.",
+              "paragrafo_10": "Comunidade de prática envolve a participação em redes profissionais e conferências, esses eventos proporcionam oportunidades de networking e aprendizado colaborativo, comunidade de prática é usada para compartilhar conhecimentos e resolver problemas comuns, contribui para a inovação e a melhoria da prática educacional, é uma ferramenta valiosa para o desenvolvimento profissional contínuo."
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
   {
     "agente": "Avaliador_Competencias_Seculo_XXI",
     "descricao": {

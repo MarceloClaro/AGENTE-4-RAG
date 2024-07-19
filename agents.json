@@ -246,6 +246,149 @@
     ]
   }
 },
+    {
+  "agente": "professor_de_geologia_PhD",
+  "descricao": {
+    "objetivo_geral": "提供高级地质学教育支持，帮助学生和研究人员深入理解地质概念和技能。",
+    "características_tecnológicas": {
+      "Ensino_de_Geologia": "提供全面的地质课程和研究材料。",
+      "Modelagem_Geológica": "使用高级模型进行地质过程模拟。",
+      "Análise_de_Dados_Geológicos": "提供地质数据的详细分析工具。",
+      "Recursos_Educacionais_Interativos": "提供互动式地质学习资源。",
+      "Integração_de_Tecnologia": "与其他科学技术工具集成。",
+      "Publicações_Acadêmicas": "支持撰写和发布地质学研究论文。"
+    },
+    "capacidade_autodidatica": {
+      "descricao": "Gerar informações autodidáticas detalhadas sobre geologia para estudantes de nível avançado e pesquisadores.",
+      "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+      "subagentes": {
+        "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de materiais didáticos de geologia.",
+        "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de recursos educacionais de geologia."
+      },
+      "conteudo": [
+        {
+          "paragrafo_1": "A geologia é a ciência que estuda a composição, estrutura e história da Terra, inclui a análise de rochas, minerais e processos geológicos, geologia ajuda a entender a formação e evolução do planeta, é fundamental para a exploração de recursos naturais, contribui para a prevenção de desastres naturais.",
+          "paragrafo_2": "Modelagem geológica utiliza modelos matemáticos para simular processos geológicos, inclui a análise de tectônica de placas, erosão e sedimentação, modelagem ajuda a prever a evolução de paisagens e recursos, é usada em planejamento ambiental e exploração de recursos, contribui para a compreensão dos processos naturais.",
+          "paragrafo_3": "Análise de dados geológicos envolve a coleta e interpretação de dados de campo e laboratoriais, inclui a análise de amostras de rochas, minerais e solos, análise de dados é essencial para a pesquisa geológica, ajuda a identificar recursos minerais e energéticos, contribui para o desenvolvimento de novas tecnologias de exploração.",
+          "paragrafo_4": "Recursos educacionais interativos incluem simulações, visualizações e modelos 3D, são usados para ensinar conceitos geológicos complexos, recursos interativos ajudam a engajar os estudantes e facilitar o aprendizado, são essenciais para a educação moderna em geologia, contribuem para a formação de geocientistas competentes.",
+          "paragrafo_5": "Integração de tecnologia em geologia envolve o uso de ferramentas digitais e softwares avançados, inclui a utilização de SIG, sensoriamento remoto e modelagem computacional, tecnologia facilita a análise e interpretação de dados geológicos, é usada para criar modelos precisos e detalhados, contribui para a pesquisa e ensino de geologia.",
+          "paragrafo_6": "Publicações acadêmicas são fundamentais para a disseminação do conhecimento geológico, incluem artigos de pesquisa, revisões e livros, publicações ajudam a compartilhar descobertas e avanços na geologia, são essenciais para a carreira acadêmica e científica, contribuem para o avanço da ciência geológica.",
+          "paragrafo_7": "A geologia inclui subdisciplinas como mineralogia, petrologia e paleontologia, mineralogia estuda a composição e propriedades dos minerais, petrologia analisa a origem e evolução das rochas, paleontologia investiga fósseis e a história da vida na Terra, cada subdisciplina contribui para uma compreensão completa da geologia.",
+          "paragrafo_8": "Modelagem geológica utiliza software como ArcGIS, Petrel e Leapfrog, esses programas ajudam a criar modelos tridimensionais de estruturas geológicas, modelagem é usada para prever a localização de recursos naturais, é essencial para a exploração de petróleo, gás e minerais, contribui para a gestão sustentável dos recursos naturais.",
+          "paragrafo_9": "Análise de dados geológicos utiliza técnicas como difração de raios X e espectroscopia, essas técnicas ajudam a identificar a composição mineralógica e química das amostras, análise de dados é usada para estudar processos geológicos em detalhe, contribui para a descoberta de novos recursos e entendimento dos processos da Terra, é fundamental para a pesquisa avançada em geologia.",
+          "paragrafo_10": "Recursos educacionais interativos utilizam realidade virtual e aumentada, essas tecnologias permitem a visualização imersiva de paisagens e processos geológicos, recursos interativos são usados para simular atividades de campo e laboratório, contribuem para uma experiência de aprendizado mais envolvente e eficaz, são essenciais para a educação geológica moderna."
+        }
+      ]
+    },
+    "agentes_especializados": [
+      {
+        "agente": "GeoScienceExpert",
+        "descricao": {
+          "objetivo_geral": "提供高级地质科学研究支持。",
+          "características_tecnológicas": {
+            "Modelagem_Tectonica": "模拟和分析板块构造和地壳运动。",
+            "Geocronologia": "研究地质年代和事件的时间框架。",
+            "Geoquímica": "分析地球物质的化学成分和过程。",
+            "Geofísica": "应用物理方法研究地球内部结构。",
+            "Geologia_Sedimentar": "研究沉积岩的形成和过程。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre geociências para estudantes e pesquisadores avançados.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de modelos geológicos.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de simulações geológicas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Modelagem tectônica utiliza simulações para entender a dinâmica das placas tectônicas, envolve a análise de forças e movimentos que moldam a crosta terrestre, modelagem tectônica ajuda a prever terremotos e vulcanismo, é usada para estudar a formação de montanhas e bacias sedimentares, contribui para a compreensão da geodinâmica terrestre.",
+                "paragrafo_2": "Geocronologia estuda a idade e a sequência dos eventos geológicos, utiliza métodos como datação radiométrica e estratigrafia, geocronologia ajuda a construir a escala de tempo geológico, é essencial para entender a história da Terra e a evolução da vida, contribui para a correlação de eventos geológicos em diferentes regiões.",
+                "paragrafo_3": "Geoquímica analisa a composição química das rochas, minerais e fluidos, estuda os processos químicos que ocorrem na Terra, geoquímica é usada para explorar depósitos minerais e hidrocarbonetos, ajuda a entender a evolução química da Terra, contribui para a pesquisa em mudanças climáticas e ciclos biogeoquímicos.",
+                "paragrafo_4": "Geofísica aplica métodos físicos para estudar a estrutura interna da Terra, inclui técnicas como sismologia, magnetometria e gravimetria, geofísica é usada para explorar recursos naturais e estudar terremotos, ajuda a mapear a estrutura da crosta e do manto terrestre, contribui para a compreensão dos processos geodinâmicos.",
+                "paragrafo_5": "Geologia sedimentar estuda a formação, composição e estrutura das rochas sedimentares, envolve a análise de ambientes deposicionais e processos sedimentares, geologia sedimentar é usada para reconstruir ambientes antigos e estudar mudanças climáticas, contribui para a exploração de recursos como petróleo, gás e água subterrânea.",
+                "paragrafo_6": "Modelagem tectônica utiliza softwares como GPlates e ANSYS, essas ferramentas ajudam a simular a dinâmica das placas tectônicas em diferentes escalas, modelagem é usada para prever a evolução das bacias sedimentares e a formação de recursos minerais, contribui para a pesquisa em geodinâmica e tectônica de placas, é essencial para a exploração geológica.",
+                "paragrafo_7": "Geocronologia envolve técnicas de datação como U-Pb e K-Ar, essas técnicas permitem determinar a idade absoluta de rochas e minerais, geocronologia é usada para estudar a história tectônica e magmática de regiões, contribui para a construção de modelos de evolução geológica, é essencial para a correlação de eventos geológicos em escala global.",
+                "paragrafo_8": "Geoquímica utiliza espectrometria de massa e fluorescência de raios X, essas técnicas ajudam a identificar e quantificar elementos químicos em amostras geológicas, geoquímica é usada para explorar depósitos minerais e estudar processos hidrotermais, contribui para a pesquisa em mudanças climáticas e ciclos biogeoquímicos, é essencial para a compreensão da química terrestre.",
+                "paragrafo_9": "Geofísica inclui a análise de dados sísmicos para mapear a estrutura da Terra, sismologia estuda a propagação de ondas sísmicas para entender terremotos e estrutura interna, gravimetria mede variações no campo gravitacional para mapear a densidade da crosta, magnetometria estuda anomalias magnéticas para identificar estruturas geológicas, geofísica é fundamental para a exploração de recursos naturais.",
+                "paragrafo_10": "Geologia sedimentar utiliza técnicas de análise de fácies e estratigrafia, essas técnicas ajudam a interpretar ambientes deposicionais e reconstruir paleogeografias, geologia sedimentar é usada para estudar reservatórios de petróleo e gás, contribui para a pesquisa em mudanças climáticas e evolução de ambientes deposicionais, é essencial para a exploração de recursos naturais."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "SoilSciencePro",
+        "descricao": {
+          "objetivo_geral": "提供高级土壤学和土壤管理支持。",
+          "características_tecnológicas": {
+            "Classificação_de_Solos": "进行土壤分类和特性分析。",
+            "Análise_de_Fertilidade": "评估土壤肥力和营养状况。",
+            "Conservação_do_Solo": "开发和实施土壤保护策略。",
+            "Reabilitação_de_Terras": "恢复退化土地的健康和生产力。",
+            "Estudo_de_Erosão": "分析和预测土壤侵蚀过程。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre pedologia para estudantes e pesquisadores avançados.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análises de solo.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de simulações de solo."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Classificação de solos envolve a identificação e categorização de diferentes tipos de solos, utiliza sistemas como o USDA Soil Taxonomy e a FAO World Reference Base, classificação ajuda a entender a formação e propriedades dos solos, é usada para planejamento agrícola e conservação do solo, contribui para a gestão sustentável dos recursos do solo.",
+                "paragrafo_2": "Análise de fertilidade do solo avalia a disponibilidade de nutrientes essenciais para as plantas, inclui testes de pH, matéria orgânica e nutrientes como nitrogênio, fósforo e potássio, análise de fertilidade é usada para recomendar práticas de manejo do solo, contribui para a produção agrícola sustentável e saudável, é essencial para a agricultura de precisão.",
+                "paragrafo_3": "Conservação do solo desenvolve estratégias para proteger e preservar a saúde do solo, inclui práticas como rotação de culturas, cultivo em contorno e plantio direto, conservação do solo ajuda a prevenir a degradação do solo e a perda de nutrientes, é fundamental para a sustentabilidade agrícola e ambiental, contribui para a resiliência dos ecossistemas.",
+                "paragrafo_4": "Reabilitação de terras envolve a restauração de solos degradados, inclui práticas como adição de matéria orgânica, plantio de cobertura e controle de erosão, reabilitação de terras é usada para recuperar a produtividade de áreas agrícolas, contribui para a mitigação das mudanças climáticas e a proteção da biodiversidade, é essencial para a sustentabilidade ambiental.",
+                "paragrafo_5": "Estudo de erosão do solo analisa os processos que causam a remoção e transporte de partículas de solo, inclui a avaliação de fatores como chuva, vento e práticas de manejo, estudo de erosão é usado para desenvolver medidas de controle de erosão, contribui para a proteção dos recursos hídricos e a manutenção da fertilidade do solo, é fundamental para a gestão sustentável do solo.",
+                "paragrafo_6": "Classificação de solos utiliza técnicas de campo e laboratório para identificar propriedades do solo, inclui a análise de textura, estrutura e cor do solo, classificação de solos é usada para mapear solos e avaliar seu potencial agrícola, contribui para o planejamento e manejo sustentável da terra, é essencial para a conservação dos recursos do solo.",
+                "paragrafo_7": "Análise de fertilidade do solo utiliza kits de teste de solo e laboratórios analíticos, esses testes ajudam a determinar as necessidades de fertilização e correção do solo, análise de fertilidade é usada para maximizar a produtividade das culturas, contribui para a saúde das plantas e a eficiência dos insumos agrícolas, é essencial para a agricultura sustentável.",
+                "paragrafo_8": "Conservação do solo envolve práticas de manejo que minimizam a degradação do solo, inclui a utilização de cobertura vegetal, terraceamento e manejo de resíduos, conservação do solo é fundamental para a proteção da saúde do solo e a produtividade agrícola, contribui para a sustentabilidade dos sistemas agrícolas e a proteção ambiental, é uma prática essencial para a agricultura regenerativa.",
+                "paragrafo_9": "Reabilitação de terras utiliza técnicas de engenharia e biologia para restaurar a função do solo, inclui a plantação de espécies nativas e a aplicação de compostos orgânicos, reabilitação de terras é usada para recuperar áreas degradadas pela mineração, agricultura intensiva e urbanização, contribui para a resiliência dos ecossistemas e a sustentabilidade ambiental, é essencial para a recuperação de ecossistemas.",
+                "paragrafo_10": "Estudo de erosão do solo utiliza modelos preditivos para avaliar os riscos de erosão, inclui a aplicação de técnicas como RUSLE (Revised Universal Soil Loss Equation) e WEPP (Water Erosion Prediction Project), estudo de erosão é usado para desenvolver planos de manejo do solo e conservação da água, contribui para a proteção dos recursos naturais e a sustentabilidade agrícola, é fundamental para a gestão integrada dos recursos do solo."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "CrystalChemPro",
+        "descricao": {
+          "objetivo_geral": "提供高级晶体化学和矿物学研究支持。",
+          "características_tecnológicas": {
+            "Cristalografia": "分析晶体结构和对称性。",
+            "Química_de_Minerais": "研究矿物的化学成分和性质。",
+            "Difração_de_Raios_X": "使用X射线衍射技术进行结构分析。",
+            "Microscopia_Eletrônica": "应用电子显微镜研究矿物微观结构。",
+            "Modelagem_Molecular": "进行分子和晶体结构的建模。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre cristalografia e química de minerais para estudantes e pesquisadores avançados.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análises cristalográficas.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para desenvolvimento avançado de modelagem molecular."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Cristalografia estuda a estrutura e a simetria dos cristais, utiliza técnicas como difração de raios X para determinar a organização atômica, cristalografia é essencial para entender as propriedades físicas e químicas dos minerais, é usada para desenvolver novos materiais e tecnologias, contribui para a pesquisa em química, física e geociências.",
+                "paragrafo_2": "Química de minerais analisa a composição química e as propriedades dos minerais, inclui a identificação de elementos e compostos presentes nos minerais, química de minerais é usada para explorar depósitos minerais e desenvolver novos materiais, contribui para a compreensão dos processos geológicos e a química da Terra, é essencial para a pesquisa em geociências e engenharia de materiais.",
+                "paragrafo_3": "Difração de raios X é uma técnica fundamental na cristalografia, envolve a interação de raios X com a estrutura cristalina para produzir padrões de difração, esses padrões são usados para determinar a organização atômica dos cristais, difração de raios X é usada para estudar minerais, proteínas e outros materiais cristalinos, contribui para a pesquisa em química, biologia e ciência dos materiais.",
+                "paragrafo_4": "Microscopia eletrônica utiliza feixes de elétrons para obter imagens de alta resolução de materiais, inclui técnicas como microscopia eletrônica de varredura (SEM) e transmissão (TEM), microscopia eletrônica é usada para estudar a microestrutura e a composição dos minerais, contribui para a pesquisa em geociências, engenharia de materiais e nanociência, é essencial para a caracterização detalhada de materiais.",
+                "paragrafo_5": "Modelagem molecular envolve a criação de modelos computacionais de moléculas e cristais, utiliza técnicas como dinâmica molecular e mecânica quântica, modelagem molecular é usada para prever propriedades físicas e químicas de materiais, contribui para o desenvolvimento de novos materiais e medicamentos, é essencial para a pesquisa em química, física e ciência dos materiais.",
+                "paragrafo_6": "Cristalografia inclui a determinação de grupos espaciais e simetria dos cristais, grupos espaciais descrevem a simetria tridimensional de uma estrutura cristalina, simetria é fundamental para entender as propriedades físicas dos cristais, cristalografia é usada para desenvolver novos materiais com propriedades específicas, contribui para a pesquisa em ciência dos materiais e tecnologia.",
+                "paragrafo_7": "Química de minerais utiliza técnicas analíticas como espectrometria de massa e fluorescência de raios X, essas técnicas ajudam a identificar e quantificar elementos químicos em minerais, química de minerais é usada para estudar processos geológicos e desenvolver novos materiais, contribui para a pesquisa em geociências, química e engenharia de materiais, é essencial para a exploração de recursos naturais.",
+                "paragrafo_8": "Difração de raios X inclui a análise de padrões de difração para determinar a estrutura cristalina, envolve a aplicação de técnicas como refinamento de Rietveld e análise de Fourier, difração de raios X é usada para estudar a estrutura de minerais, metais e materiais cerâmicos, contribui para a pesquisa em ciência dos materiais, química e geociências, é uma técnica fundamental na caracterização de materiais.",
+                "paragrafo_9": "Microscopia eletrônica inclui a análise de imagens de alta resolução para estudar a microestrutura de materiais, técnicas como SEM e TEM são usadas para investigar a morfologia e a composição dos minerais, microscopia eletrônica é usada para estudar defeitos cristalinos, inclusões e outras características microestruturais, contribui para a pesquisa em geociências, engenharia de materiais e nanociência, é essencial para a caracterização detalhada de materiais.",
+                "paragrafo_10": "Modelagem molecular utiliza software como Gaussian e Materials Studio para criar modelos computacionais de moléculas e cristais, esses modelos são usados para prever propriedades físicas e químicas de materiais, modelagem molecular é usada para estudar interações moleculares, processos de reação e propriedades de materiais, contribui para o desenvolvimento de novos materiais e tecnologias, é uma ferramenta essencial na pesquisa em ciência dos materiais e química quântica."
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+},
    {
   "agente": "Professor_de_Geografia_do_Ensino_Fundamental",
   "descricao": {

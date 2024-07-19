@@ -639,20 +639,276 @@
       }
     }
   },
-  {
-      "agente": "GeoPro",
-    "descricao": {
-      "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
-      "características_tecnológicas": {
-        "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
-        "Mapeamento_Digital": "便于创建和解释数字地图。",
-        "Análise_Espacial": "提供空间数据分析工具。",
-        "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
-        "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
-        "Simulação_Ambiental": "进行环境模拟以预测影响。"
+{
+  "agente": "GeoPro",
+  "descricao": {
+    "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
+    "características_tecnológicas": {
+      "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
+      "Mapeamento_Digital": "便于创建和解释数字地图。",
+      "Análise_Espacial": "提供空间数据分析工具。",
+      "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
+      "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
+      "Simulação_Ambiental": "进行环境模拟以预测影响。"
+    },
+    "agentes_RAG": {
+      "descricao": "Implementação de agentes RAG para aprimorar a análise e recuperação de dados.",
+      "funcionalidades": {
+        "Busca_Dinamica": "Utiliza agentes RAG para buscar informações geográficas em tempo real, fornecendo respostas atualizadas e precisas.",
+        "Contextualização_Augmentada": "Combina informações recuperadas com o contexto existente para oferecer insights mais profundos e relevantes.",
+        "Suporte_Interativo": "Interage com o usuário para refinar consultas e melhorar a precisão das respostas fornecidas.",
+        "Integração_de_Dados": "Integra dados de múltiplas fontes para uma análise mais completa e detalhada."
       }
-    }
-  },
+    },
+    "agentes_especializados": [
+      {
+        "agente": "CartoMaster",
+        "descricao": {
+          "objetivo_geral": "专家级的地图绘制和地形分析支持。",
+          "características_tecnológicas": {
+            "SIG_Integrado": "高效的地理信息系统，用于复杂的地图制作。",
+            "Mapeamento_Digital": "高分辨率的数字地图创建和分析。",
+            "Análise_Topográfica": "提供详细的地形分析工具。",
+            "Visualização_3D": "支持三维地形和建筑物的可视化。",
+            "Banco_de_Dados_Cartográficos": "维护一个包含详细地图信息的数据库。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre cartografia e análise topográfica.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de mapas e análise topográfica.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Cartografia é a ciência de criar mapas, que são representações gráficas da superfície terrestre, mapas ajudam a visualizar informações geográficas, mapas digitais são usados em sistemas de informação geográfica (SIG), SIG integra hardware, software e dados para capturar, gerenciar e analisar informações geográficas.",
+                "paragrafo_2": "A análise topográfica estuda a forma e características da superfície da Terra, a topografia inclui montanhas, vales, rios e outros elementos naturais, a análise usa dados de elevação para criar modelos digitais do terreno, modelos ajudam a prever como a água flui na paisagem, topografia influencia a construção de infraestrutura.",
+                "paragrafo_3": "Mapeamento digital permite a criação de mapas em formato eletrônico, mapas digitais são mais precisos que os impressos, permitem atualizações em tempo real, são usados em navegação por GPS, navegação ajuda na orientação e localização de lugares.",
+                "paragrafo_4": "Visualização 3D apresenta dados geográficos de forma tridimensional, 3D ajuda a entender melhor a relação entre diferentes elementos, é usada em planejamento urbano e gestão ambiental, modelos 3D ajudam a prever impacto visual de novas construções, visualização 3D é importante para simulações de desastres naturais.",
+                "paragrafo_5": "SIG integrado combina várias camadas de informação geográfica, cada camada representa um tipo de dado como vegetação ou uso do solo, integração permite análises complexas e detalhadas, é usada em planejamento territorial e conservação ambiental, SIG melhora a tomada de decisão baseada em dados.",
+                "paragrafo_6": "Mapeamento de alta resolução captura detalhes finos da superfície terrestre, é crucial para projetos de engenharia e arquitetura, alta resolução permite identificar pequenas variações no terreno, ajuda na detecção de mudanças ambientais, é usado em monitoramento de áreas protegidas.",
+                "paragrafo_7": "Banco de dados cartográficos armazena informações geográficas detalhadas, facilita o acesso e compartilhamento de dados entre usuários, banco de dados é atualizado regularmente para refletir mudanças, é essencial para pesquisas científicas e planejamento urbano, garante a precisão e relevância dos dados utilizados.",
+                "paragrafo_8": "Análise espacial examina padrões e relações espaciais nos dados, usa técnicas estatísticas e matemáticas para interpretação, ajuda a identificar tendências e anomalias, é aplicada em saúde pública para estudar distribuição de doenças, análise espacial suporta desenvolvimento sustentável.",
+                "paragrafo_9": "Modelagem geográfica cria representações virtuais da realidade, modelos ajudam a simular cenários e prever impactos, são usados em estudos de impacto ambiental e gestão de recursos, modelagem melhora a compreensão de processos geográficos, é fundamental para planejamento estratégico.",
+                "paragrafo_10": "Simulação ambiental prevê mudanças e impactos no meio ambiente, usa dados climáticos e topográficos para criar cenários, simulações ajudam na gestão de riscos naturais, são usadas em planejamento de emergência e mitigação de desastres, simulação melhora a resiliência de comunidades."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "EnviroSim",
+        "descricao": {
+          "objetivo_geral": "提供环境模拟和预测工具，支持可持续发展研究。",
+          "características_tecnológicas": {
+            "Simulação_Climática": "进行详细的气候模拟以预测环境变化。",
+            "Modelagem_Ecológica": "支持生态系统建模和分析。",
+            "Análise_Impacto_Ambiental": "提供环境影响评估工具。",
+            "Banco_de_Dados_Ecológicos": "维护一个包含生态和环境数据的数据库。",
+            "Visualização_Dados_Ambientais": "支持环境数据的可视化和解释。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre simulação ambiental e análise ecológica.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de simulações ambientais.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações ecológicas avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Simulação climática é a recriação de condições climáticas para prever mudanças futuras, usa modelos matemáticos e dados históricos, ajuda a entender o impacto das atividades humanas no clima, simulações são usadas em estudos de aquecimento global, ajudam a desenvolver políticas de mitigação.",
+                "paragrafo_2": "Modelagem ecológica representa a interação de organismos e seu ambiente, ajuda a prever mudanças nos ecossistemas, é usada em conservação da biodiversidade e gestão de habitats, modelos simulam impactos de mudanças climáticas nos ecossistemas, são ferramentas essenciais para estudos ecológicos.",
+                "paragrafo_3": "Análise de impacto ambiental avalia os efeitos de projetos no meio ambiente, identifica impactos negativos e propõe medidas mitigadoras, é obrigatória para grandes projetos de infraestrutura, ajuda a proteger recursos naturais e comunidades, garante que o desenvolvimento seja sustentável.",
+                "paragrafo_4": "Banco de dados ecológicos armazena informações sobre flora, fauna e ecossistemas, facilita o acesso a dados para pesquisadores e gestores ambientais, é atualizado constantemente para refletir novas descobertas, banco de dados é crucial para monitoramento ambiental, suporta estudos de longo prazo sobre mudanças ambientais.",
+                "paragrafo_5": "Visualização de dados ambientais transforma dados complexos em gráficos e mapas, ajuda a comunicar informações de forma clara e acessível, é usada em educação ambiental e engajamento público, visualizações ajudam a identificar padrões e tendências, são ferramentas valiosas para tomada de decisão.",
+                "paragrafo_6": "Simulação climática usa supercomputadores para processar grandes volumes de dados, os modelos climáticos consideram variáveis atmosféricas, oceânicas e terrestres, simulações ajudam a prever eventos extremos como tempestades e secas, são fundamentais para planejamento de adaptação climática, ajudam a minimizar riscos associados a mudanças climáticas.",
+                "paragrafo_7": "Modelagem ecológica considera fatores bióticos e abióticos, modelos incluem interações entre espécies e seus habitats, ajudam a entender dinâmicas populacionais e dispersão de espécies, são usados em restauração ecológica e manejo de recursos naturais, modelagem é uma ferramenta chave para sustentabilidade.",
+                "paragrafo_8": "Análise de impacto ambiental é um processo multidisciplinar, envolve ecologistas, engenheiros e sociólogos, garante que os projetos considerem todos os aspectos ambientais, promove a participação pública e transparência, é uma prática essencial para desenvolvimento responsável.",
+                "paragrafo_9": "Banco de dados ecológicos são integrados com sistemas de informação geográfica (SIG), permitem análises espaciais detalhadas, são usados em pesquisa acadêmica e gestão ambiental, ajudam a identificar áreas críticas para conservação, banco de dados melhora a eficiência de monitoramento ambiental.",
+                "paragrafo_10": "Visualização de dados ambientais inclui gráficos, mapas e infográficos, ferramentas de visualização usam software avançado, ajudam a simplificar dados complexos para um público amplo, visualizações são usadas em relatórios e apresentações, são essenciais para advocacy e políticas ambientais."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "SoilExpert",
+        "descricao": {
+          "objetivo_geral": "提供土壤分析和管理的专家支持。",
+          "características_tecnológicas": {
+            "Análise_Pedológica": "提供详细的土壤成分和结构分析。",
+            "Mapeamento_Solos": "创建和解释土壤地图。",
+            "Modelagem_Solos": "支持土壤行为和变化的建模。",
+            "Banco_de_Dados_Pedológicos": "维护一个包含土壤数据的最新数据库。",
+            "Simulação_Erosão": "进行土壤侵蚀和退化的模拟。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre análise e gestão de solos.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análise e gestão de solos.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações avançadas de solos."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Análise pedológica estuda a composição e estrutura do solo, solos são formados por minerais, matéria orgânica, água e ar, análise ajuda a entender a fertilidade e características físicas do solo, é essencial para agricultura e manejo ambiental, análise de solo inclui testes de pH e nutrientes.",
+                "paragrafo_2": "Mapeamento de solos cria mapas que mostram a distribuição dos tipos de solo, mapas são usados para planejamento agrícola e conservação, ajudam a identificar áreas com risco de erosão, mapeamento é feito através de levantamentos de campo e sensoriamento remoto, mapas de solo são ferramentas importantes para gestão de terras.",
+                "paragrafo_3": "Modelagem de solos simula o comportamento e mudanças no solo, modelos consideram fatores como clima, uso do solo e práticas agrícolas, ajudam a prever o impacto de diferentes práticas de manejo, são usados em planejamento de uso da terra e mitigação de erosão, modelagem de solos melhora a sustentabilidade agrícola.",
+                "paragrafo_4": "Banco de dados pedológicos armazena informações detalhadas sobre solos, banco de dados é atualizado regularmente para refletir novas informações, facilita o acesso a dados para pesquisadores e agricultores, é essencial para estudos de longo prazo sobre mudanças no solo, banco de dados apoia a tomada de decisão informada.",
+                "paragrafo_5": "Simulação de erosão estima a perda de solo devido a fatores naturais e humanos, erosão é um processo natural acelerado por atividades como desmatamento e agricultura intensiva, simulações ajudam a desenvolver estratégias de conservação, são usadas em planejamento de uso da terra e recuperação ambiental, simulação de erosão é importante para proteger a qualidade do solo.",
+                "paragrafo_6": "Análise pedológica inclui testes químicos e físicos, testes químicos medem níveis de nutrientes e pH, testes físicos avaliam textura e estrutura do solo, análise ajuda a identificar deficiências nutricionais e problemas de compactação, resultados são usados para recomendar práticas de manejo.",
+                "paragrafo_7": "Mapeamento de solos usa tecnologia de sensoriamento remoto, dados de satélite ajudam a identificar características do solo, mapas digitais são integrados com sistemas de informação geográfica (SIG), mapeamento detalhado melhora a gestão de recursos naturais, ajuda a monitorar mudanças no uso do solo.",
+                "paragrafo_8": "Modelagem de solos usa simulações computacionais, modelos preveem mudanças na estrutura e composição do solo, ajudam a entender o impacto das práticas agrícolas, modelagem é usada para desenvolver estratégias de manejo sustentável, melhora a resiliência do solo a mudanças climáticas.",
+                "paragrafo_9": "Banco de dados pedológicos é uma ferramenta essencial para pesquisa, dados são usados para desenvolver novos métodos de cultivo, banco de dados apoia programas de conservação e restauração, facilita a colaboração entre cientistas e agricultores, melhora a eficiência da gestão de solos.",
+                "paragrafo_10": "Simulação de erosão considera fatores como chuva, vento e práticas de manejo, modelos ajudam a identificar áreas de alto risco, simulações são usadas para planejar medidas de controle, ajudam a proteger a infraestrutura e os recursos hídricos, simulação de erosão é uma ferramenta crucial para sustentabilidade."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "HydroAnalyst",
+        "descricao": {
+          "objetivo_geral": "提供水文分析和管理的专家支持。",
+          "características_tecnológicas": {
+            "Análise_Hidrológica": "提供详细的水文循环和水资源分析。",
+            "Modelagem_Hidrológica": "支持水流和储水的建模。",
+            "Banco_de_Dados_Hidrológicos": "维护一个包含水文数据的最新数据库。",
+            "Simulação_Inundações": "进行洪水预测和管理模拟。",
+            "Gestão_Recursos_Hídricos": "支持水资源的可持续管理。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre análise e gestão hidrológica.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de análise e gestão hidrológica.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações hidrológicas avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Análise hidrológica estuda o ciclo da água e seus processos, inclui a evaporação, precipitação e infiltração, análise é usada para gestão de recursos hídricos, ajuda a prever disponibilidade de água e eventos extremos, é essencial para planejamento urbano e agrícola.",
+                "paragrafo_2": "Modelagem hidrológica cria simulações dos fluxos de água, modelos ajudam a entender a distribuição de água em bacias hidrográficas, são usados para prever enchentes e secas, modelagem apoia a gestão sustentável de recursos hídricos, melhora a resiliência a mudanças climáticas.",
+                "paragrafo_3": "Banco de dados hidrológicos armazena informações sobre fluxos de água e qualidade, banco de dados é atualizado com dados de sensores e estações de monitoramento, facilita o acesso a dados para gestores e pesquisadores, é essencial para estudos de longo prazo e planejamento de recursos hídricos, banco de dados apoia a tomada de decisão informada.",
+                "paragrafo_4": "Simulação de inundações prevê a ocorrência e impacto de enchentes, modelos consideram fatores como chuva, topografia e uso do solo, simulações ajudam a planejar medidas de mitigação, são usadas em planejamento de emergência e gestão de riscos, simulação de inundações melhora a segurança das comunidades.",
+                "paragrafo_5": "Gestão de recursos hídricos envolve o planejamento e controle do uso da água, inclui a distribuição e tratamento de água, gestão sustentável garante a disponibilidade de água para futuras gerações, é essencial para a saúde pública e desenvolvimento econômico, gestão de recursos hídricos considera as necessidades ambientais e humanas.",
+                "paragrafo_6": "Análise hidrológica usa dados de precipitação e fluxo, inclui a medição de níveis de água em rios e lagos, análise ajuda a entender o impacto das mudanças climáticas no ciclo da água, é usada para desenvolver estratégias de adaptação, análise hidrológica é crucial para gestão de desastres naturais.",
+                "paragrafo_7": "Modelagem hidrológica considera variáveis como solo, vegetação e clima, modelos são usados para prever o comportamento de rios e reservatórios, ajudam a otimizar o uso de recursos hídricos, modelagem apoia a conservação de ecossistemas aquáticos, é uma ferramenta essencial para engenharia hidráulica.",
+                "paragrafo_8": "Banco de dados hidrológicos integra dados de múltiplas fontes, dados são usados para monitorar a qualidade da água e detectar poluição, banco de dados apoia a pesquisa científica e a gestão ambiental, facilita a colaboração entre diferentes agências e instituições, banco de dados melhora a eficiência da gestão de recursos hídricos.",
+                "paragrafo_9": "Simulação de inundações usa tecnologia de modelagem 3D, modelos ajudam a visualizar o impacto de enchentes em áreas urbanas, simulações são usadas para desenvolver planos de evacuação, ajudam a identificar áreas de alto risco, simulação de inundações é uma ferramenta essencial para planejamento urbano.",
+                "paragrafo_10": "Gestão de recursos hídricos envolve a alocação de água para diferentes usos, inclui a agricultura, indústria e consumo doméstico, gestão sustentável considera a recarga de aquíferos e conservação de ecossistemas, é essencial para a segurança hídrica, gestão de recursos hídricos promove o uso eficiente da água."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "ClimateGuru",
+        "descricao": {
+          "objetivo_geral": "提供气候研究和预测的高级支持。",
+          "características_tecnológicas": {
+            "Simulação_Climática": "提供高精度的气候模拟和预测。",
+            "Análise_Mudanças_Climáticas": "支持气候变化的长期分析。",
+            "Modelagem_Atmosférica": "进行大气现象的建模和分析。",
+            "Banco_de_Dados_Climáticos": "维护一个包含全球气候数据的数据库。",
+            "Visualização_Climática": "提供气候数据的直观可视化工具。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre pesquisa e previsão climática.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de pesquisa e previsão climática.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações climáticas avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Simulação climática usa modelos matemáticos para prever o clima futuro, modelos consideram variáveis atmosféricas como temperatura e precipitação, simulações ajudam a entender o impacto das emissões de gases de efeito estufa, são usadas para desenvolver políticas de mitigação, simulação climática é essencial para planejamento de longo prazo.",
+                "paragrafo_2": "Análise de mudanças climáticas estuda as tendências a longo prazo no clima, inclui o aumento da temperatura global e mudanças nos padrões de precipitação, análise ajuda a identificar as causas das mudanças climáticas, é usada para prever os impactos futuros no meio ambiente e sociedade, análise de mudanças climáticas é crucial para adaptação e mitigação.",
+                "paragrafo_3": "Modelagem atmosférica simula processos na atmosfera como circulação de ar e formação de nuvens, modelos ajudam a prever eventos climáticos extremos como furacões e ondas de calor, são usados para estudar a interação entre diferentes componentes do sistema climático, modelagem atmosférica apoia a pesquisa científica e a previsão do tempo, é uma ferramenta essencial para entender a dinâmica climática.",
+                "paragrafo_4": "Banco de dados climáticos armazena informações sobre variáveis climáticas de todo o mundo, banco de dados é atualizado com dados de satélites e estações meteorológicas, facilita o acesso a dados para pesquisadores e gestores, é essencial para estudos de longo prazo sobre mudanças climáticas, banco de dados apoia a tomada de decisão informada.",
+                "paragrafo_5": "Visualização climática transforma dados complexos em gráficos e mapas, ajuda a comunicar informações de forma clara e acessível, é usada em educação ambiental e engajamento público, visualizações ajudam a identificar padrões e tendências, são ferramentas valiosas para tomada de decisão.",
+                "paragrafo_6": "Simulação climática considera fatores como radiação solar e gases de efeito estufa, modelos ajudam a prever a evolução das temperaturas e precipitação, simulações são usadas para desenvolver cenários de mudanças climáticas, ajudam a planejar medidas de adaptação e mitigação, simulação climática é uma ferramenta crucial para sustentabilidade.",
+                "paragrafo_7": "Análise de mudanças climáticas usa dados de longo prazo, inclui o estudo de registros históricos e projeções futuras, análise ajuda a entender a variabilidade climática natural e antrópica, é usada para desenvolver estratégias de resposta a mudanças climáticas, análise de mudanças climáticas apoia a pesquisa e políticas ambientais.",
+                "paragrafo_8": "Modelagem atmosférica considera a interação entre atmosfera, oceanos e terra, modelos são usados para estudar fenômenos como El Niño e La Niña, ajudam a entender a variabilidade climática e seus impactos, modelagem apoia a previsão de eventos climáticos extremos, é uma ferramenta essencial para a ciência climática.",
+                "paragrafo_9": "Banco de dados climáticos é integrado com sistemas de informação geográfica (SIG), permite análises espaciais detalhadas, é usado em pesquisa acadêmica e gestão ambiental, ajuda a monitorar mudanças no clima global, banco de dados melhora a eficiência do monitoramento climático.",
+                "paragrafo_10": "Visualização climática inclui gráficos, mapas e infográficos, ferramentas de visualização usam software avançado, ajudam a simplificar dados complexos para um público amplo, visualizações são usadas em relatórios e apresentações, são essenciais para advocacy e políticas climáticas."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "GeoHazard",
+        "descricao": {
+          "objetivo_geral": "提供地质灾害预测和管理支持。",
+          "características_tecnológicas": {
+            "Simulação_Terremotos": "进行地震预测和模拟。",
+            "Modelagem_Deslizamentos": "支持山体滑坡和地质灾害的建模。",
+            "Análise_Vulcânica": "提供火山活动的分析和预测工具。",
+            "Banco_de_Dados_GeoHazard": "维护一个包含地质灾害数据的数据库。",
+            "Gestão_Riscos_Geológicos": "支持地质灾害风险的评估和管理。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre previsão e gestão de desastres geológicos.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de previsão e gestão de desastres geológicos.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações geológicas avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Simulação de terremotos usa modelos matemáticos para prever a ocorrência e impacto de sismos, considera a estrutura geológica e histórico de atividades sísmicas, simulações ajudam a identificar áreas de alto risco, são usadas para desenvolver estratégias de mitigação, simulação de terremotos é essencial para planejamento de emergência.",
+                "paragrafo_2": "Modelagem de deslizamentos simula o movimento de massas de terra, modelos consideram fatores como topografia, geologia e precipitação, ajudam a prever a ocorrência de deslizamentos, são usados para planejar medidas de mitigação, modelagem de deslizamentos é crucial para a segurança de comunidades em áreas montanhosas.",
+                "paragrafo_3": "Análise vulcânica estuda a atividade de vulcões e seus impactos, inclui a monitorização de sinais de erupção como sismos e emissões de gás, análise ajuda a prever erupções e minimizar seus impactos, é usada para desenvolver planos de evacuação, análise vulcânica é essencial para gestão de riscos vulcânicos.",
+                "paragrafo_4": "Banco de dados GeoHazard armazena informações sobre desastres geológicos, banco de dados é atualizado com dados de sensores e observações de campo, facilita o acesso a dados para pesquisadores e gestores, é essencial para estudos de longo prazo sobre riscos geológicos, banco de dados apoia a tomada de decisão informada.",
+                "paragrafo_5": "Gestão de riscos geológicos envolve a avaliação e mitigação de desastres naturais, inclui a identificação de áreas de risco e desenvolvimento de medidas de proteção, gestão eficaz minimiza os impactos de desastres geológicos, é essencial para a segurança pública e desenvolvimento sustentável, gestão de riscos geológicos considera fatores ambientais e sociais.",
+                "paragrafo_6": "Simulação de terremotos usa tecnologia de modelagem 3D, modelos ajudam a visualizar o impacto de sismos em áreas urbanas, simulações são usadas para desenvolver códigos de construção e normas de segurança, ajudam a identificar áreas de alto risco, simulação de terremotos é uma ferramenta crucial para engenharia sísmica.",
+                "paragrafo_7": "Modelagem de deslizamentos considera a interação entre solos, rochas e água, modelos são usados para prever o comportamento de encostas instáveis, ajudam a identificar áreas de risco e planejar medidas de mitigação, modelagem apoia a conservação de ecossistemas montanhosos, é uma ferramenta essencial para gestão de riscos naturais.",
+                "paragrafo_8": "Análise vulcânica usa dados de satélites e estações de monitoramento, inclui o estudo de erupções passadas e suas causas, análise ajuda a entender a dinâmica dos vulcões e prever futuras atividades, é usada para desenvolver estratégias de mitigação e evacuação, análise vulcânica apoia a pesquisa científica e a segurança pública.",
+                "paragrafo_9": "Banco de dados GeoHazard é integrado com sistemas de informação geográfica (SIG), permite análises espaciais detalhadas, é usado em pesquisa acadêmica e gestão de riscos, ajuda a monitorar mudanças nos riscos geológicos, banco de dados melhora a eficiência do monitoramento e mitigação de desastres.",
+                "paragrafo_10": "Gestão de riscos geológicos envolve a alocação de recursos para prevenção e resposta, inclui a construção de infraestrutura resiliente e desenvolvimento de planos de emergência, gestão sustentável considera a recuperação pós-desastre e resiliência comunitária, é essencial para a segurança e bem-estar das populações, gestão de riscos geológicos promove o uso eficiente de recursos."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "agente": "UrbanPlanner",
+        "descricao": {
+          "objetivo_geral": "提供城市规划和发展分析的专家支持。",
+          "características_tecnológicas": {
+            "Modelagem_Urbana": "支持城市布局和发展模拟。",
+            "Análise_Infraestrutura": "提供基础设施发展和规划工具。",
+            "Simulação_Tráfego": "进行城市交通流量和拥堵模拟。",
+            "Banco_de_Dados_Urbano": "维护一个包含城市规划数据的数据库。",
+            "Visualização_Desenvolvimento_Urbano": "支持城市发展计划的可视化和展示。"
+          },
+          "capacidade_autodidatica": {
+            "descricao": "Gerar informações autodidáticas detalhadas sobre planejamento urbano e desenvolvimento.",
+            "prompts_negativos": "Proibir a criação de ficção, invenção de informações, alucinações e uso de superlativos.",
+            "subagentes": {
+              "evolutivo_genetico": "Subagente que utiliza algoritmos genéticos para otimização de planejamento e desenvolvimento urbano.",
+              "autogen": "Subagente que aplica automatos celulares sofisticados, Python e machine learning para simulações urbanas avançadas."
+            },
+            "conteudo": [
+              {
+                "paragrafo_1": "Modelagem urbana simula o desenvolvimento e crescimento das cidades, considera fatores como densidade populacional e uso do solo, modelos ajudam a planejar o crescimento sustentável, são usados para desenvolver planos diretores e políticas urbanas, modelagem urbana apoia a gestão eficiente das cidades.",
+                "paragrafo_2": "Análise de infraestrutura avalia a capacidade e condição de sistemas urbanos, inclui transporte, energia, água e saneamento, análise ajuda a identificar necessidades de investimento e manutenção, é usada para planejar a expansão e modernização da infraestrutura, análise de infraestrutura é essencial para o desenvolvimento urbano sustentável.",
+                "paragrafo_3": "Simulação de tráfego modela os fluxos de veículos e pedestres, simulações ajudam a identificar pontos de congestionamento e otimizar o tráfego, são usadas para planejar novas vias e sistemas de transporte público, simulação de tráfego apoia a mobilidade urbana e reduz o impacto ambiental, melhora a eficiência do transporte urbano.",
+                "paragrafo_4": "Banco de dados urbano armazena informações sobre planejamento e desenvolvimento das cidades, banco de dados é atualizado com dados de censos e levantamentos de campo, facilita o acesso a dados para gestores e planejadores, é essencial para estudos de longo prazo sobre crescimento urbano, banco de dados apoia a tomada de decisão informada.",
+                "paragrafo_5": "Visualização de desenvolvimento urbano apresenta planos e projetos de forma gráfica, ajuda a comunicar informações de forma clara e acessível, é usada em consultas públicas e engajamento comunitário, visualizações ajudam a identificar áreas de oportunidade e desafio, são ferramentas valiosas para tomada de decisão.",
+                "paragrafo_6": "Modelagem urbana usa dados demográficos e geográficos, inclui a simulação de diferentes cenários de crescimento, modelos ajudam a prever o impacto de políticas de planejamento, são usados para desenvolver estratégias de uso do solo e densificação, modelagem urbana é uma ferramenta essencial para planejamento estratégico.",
+                "paragrafo_7": "Análise de infraestrutura considera a interdependência entre sistemas urbanos, análise ajuda a identificar vulnerabilidades e melhorar a resiliência, é usada para desenvolver planos de contingência e mitigação, análise de infraestrutura apoia a sustentabilidade e eficiência dos sistemas urbanos, é essencial para a gestão de cidades complexas.",
+                "paragrafo_8": "Simulação de tráfego usa dados de sensores e câmeras de monitoramento, modelos ajudam a prever o impacto de novas infraestruturas de transporte, são usados para planejar intervenções e melhorias, simulação de tráfego apoia a mobilidade sustentável e a qualidade de vida urbana, é uma ferramenta crucial para engenharia de transporte.",
+                "paragrafo_9": "Banco de dados urbano integra dados de múltiplas fontes, é usado em pesquisa acadêmica e gestão urbana, banco de dados apoia o planejamento integrado e a coordenação entre diferentes departamentos, facilita a colaboração e compartilhamento de informações, banco de dados melhora a eficiência do planejamento urbano.",
+                "paragrafo_10": "Visualização de desenvolvimento urbano inclui mapas, gráficos e maquetes, ferramentas de visualização usam software avançado, ajudam a simplificar dados complexos para um público amplo, visualizações são usadas em relatórios e apresentações, são essenciais para advocacy e políticas urbanas."
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+},
   {
     "agente": "GeoExplorador",
     "descricao": {

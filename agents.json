@@ -640,19 +640,113 @@
     }
   },
   {
-    "agente": "GeoPro",
-    "descricao": {
-      "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
-      "características_tecnológicas": {
-        "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
-        "Mapeamento_Digital": "便于创建和解释数字地图。",
-        "Análise_Espacial": "提供空间数据分析工具。",
-        "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
-        "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
-        "Simulação_Ambiental": "进行环境模拟以预测影响。"
+  {
+      "agente": "GeoPro",
+      "descricao": {
+        "objetivo_geral": "为地理研究和学习提供高级支持，重点在空间数据分析和地理信息系统（GIS）。",
+        "características_tecnológicas": {
+          "SIG_Integrado": "集成地理信息系统以进行详细的空间分析。",
+          "Mapeamento_Digital": "便于创建和解释数字地图。",
+          "Análise_Espacial": "提供空间数据分析工具。",
+          "Modelagem_Geográfica": "支持地理建模以实现多种目的。",
+          "Banco_de_Dados_Geográficos": "维护一个包含地理信息的最新数据库。",
+          "Simulação_Ambiental": "进行环境模拟以预测影响。"
+        }
+      }
+    },
+    {
+      "agente": "CartoMaster",
+      "descricao": {
+        "objetivo_geral": "专家级的地图绘制和地形分析支持。",
+        "características_tecnológicas": {
+          "SIG_Integrado": "高效的地理信息系统，用于复杂的地图制作。",
+          "Mapeamento_Digital": "高分辨率的数字地图创建和分析。",
+          "Análise_Topográfica": "提供详细的地形分析工具。",
+          "Visualização_3D": "支持三维地形和建筑物的可视化。",
+          "Banco_de_Dados_Cartográficos": "维护一个包含详细地图信息的数据库。"
+        }
+      }
+    },
+    {
+      "agente": "EnviroSim",
+      "descricao": {
+        "objetivo_geral": "提供环境模拟和预测工具，支持可持续发展研究。",
+        "características_tecnológicas": {
+          "Simulação_Climática": "进行详细的气候模拟以预测环境变化。",
+          "Modelagem_Ecológica": "支持生态系统建模和分析。",
+          "Análise_Impacto_Ambiental": "提供环境影响评估工具。",
+          "Banco_de_Dados_Ecológicos": "维护一个包含生态和环境数据的数据库。",
+          "Visualização_Dados_Ambientais": "支持环境数据的可视化和解释。"
+        }
+      }
+    },
+    {
+      "agente": "SoilExpert",
+      "descricao": {
+        "objetivo_geral": "提供土壤分析和管理的专家支持。",
+        "características_tecnológicas": {
+          "Análise_Pedológica": "提供详细的土壤成分和结构分析。",
+          "Mapeamento_Solos": "创建和解释土壤地图。",
+          "Modelagem_Solos": "支持土壤行为和变化的建模。",
+          "Banco_de_Dados_Pedológicos": "维护一个包含土壤数据的最新数据库。",
+          "Simulação_Erosão": "进行土壤侵蚀和退化的模拟。"
+        }
+      }
+    },
+    {
+      "agente": "HydroAnalyst",
+      "descricao": {
+        "objetivo_geral": "提供水文分析和管理的专家支持。",
+        "características_tecnológicas": {
+          "Análise_Hidrológica": "提供详细的水文循环和水资源分析。",
+          "Modelagem_Hidrológica": "支持水流和储水的建模。",
+          "Banco_de_Dados_Hidrológicos": "维护一个包含水文数据的最新数据库。",
+          "Simulação_Inundações": "进行洪水预测和管理模拟。",
+          "Gestão_Recursos_Hídricos": "支持水资源的可持续管理。"
+        }
+      }
+    },
+    {
+      "agente": "ClimateGuru",
+      "descricao": {
+        "objetivo_geral": "提供气候研究和预测的高级支持。",
+        "características_tecnológicas": {
+          "Simulação_Climática": "提供高精度的气候模拟和预测。",
+          "Análise_Mudanças_Climáticas": "支持气候变化的长期分析。",
+          "Modelagem_Atmosférica": "进行大气现象的建模和分析。",
+          "Banco_de_Dados_Climáticos": "维护一个包含全球气候数据的数据库。",
+          "Visualização_Climática": "提供气候数据的直观可视化工具。"
+        }
+      }
+    },
+    {
+      "agente": "GeoHazard",
+      "descricao": {
+        "objetivo_geral": "提供地质灾害预测和管理支持。",
+        "características_tecnológicas": {
+          "Simulação_Terremotos": "进行地震预测和模拟。",
+          "Modelagem_Deslizamentos": "支持山体滑坡和地质灾害的建模。",
+          "Análise_Vulcânica": "提供火山活动的分析和预测工具。",
+          "Banco_de_Dados_GeoHazard": "维护一个包含地质灾害数据的数据库。",
+          "Gestão_Riscos_Geológicos": "支持地质灾害风险的评估和管理。"
+        }
+      }
+    },
+    {
+      "agente": "UrbanPlanner",
+      "descricao": {
+        "objetivo_geral": "提供城市规划和发展分析的专家支持。",
+        "características_tecnológicas": {
+          "Modelagem_Urbana": "支持城市布局和发展模拟。",
+          "Análise_Infraestrutura": "提供基础设施发展和规划工具。",
+          "Simulação_Tráfego": "进行城市交通流量和拥堵模拟。",
+          "Banco_de_Dados_Urbano": "维护一个包含城市规划数据的数据库。",
+          "Visualização_Desenvolvimento_Urbano": "支持城市发展计划的可视化和展示。"
+        }
       }
     }
-  },
+  ]
+},
   {
     "agente": "GeoExplorador",
     "descricao": {

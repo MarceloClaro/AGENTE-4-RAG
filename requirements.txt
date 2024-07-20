@@ -1,4 +1,8 @@
-streamlit==1.34.0
-groq==0.5.0
-toml==0.10.2
-pydub
+streamlit==1.36.0
+requests
+beautifulsoup4
+groq==0.9.0
+crewai==0.41.0
+crewai_tools==0.4.26
+pysqlite3-binary
+PyPDF2

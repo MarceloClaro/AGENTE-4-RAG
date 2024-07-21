@@ -6,3 +6,6 @@ crewai==0.41.0
 crewai_tools==0.4.26
 pysqlite3-binary
 PyPDF2
+matplotlib
+seaborn
+

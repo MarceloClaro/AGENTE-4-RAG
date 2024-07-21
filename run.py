@@ -10,6 +10,12 @@ from groq import Groq
 import base64
 
 # Configurações da página do Streamlit
+st.set_page_config(
+    page_title="Geomaker +IA",
+    page_icon="https://cdn-icons-png.flaticon.com/512/2516/2516640.png",
+    layout="wide",
+    
+)
 st.set_page_config(layout="wide")
 
 # Definição de caminhos para arquivos

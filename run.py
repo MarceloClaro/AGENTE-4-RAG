@@ -16,7 +16,6 @@ st.set_page_config(
     layout="wide",
     
 )
-st.set_page_config(layout="wide")
 
 # Definição de caminhos para arquivos
 FILEPATH = "agents.json"

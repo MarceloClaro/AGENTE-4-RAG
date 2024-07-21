@@ -1,18 +1,23 @@
-import json  # Importa o módulo json para trabalhar com dados JSON.
-import streamlit as st  # Importa o Streamlit para criar aplicativos web interativos.
-import os  # Importa o módulo os para interagir com o sistema operacional, como verificar a existência de arquivos.
-from typing import Tuple  # Importa Tuple da biblioteca typing para fornecer tipos de dados mais precisos para funções.
-from groq import Groq  # Importa a biblioteca Groq, possivelmente para uma função não especificada neste código.
-import time  # Importa o módulo time para adicionar atrasos entre as tentativas de solicitação da API
+import json
+import os
+import time
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import streamlit as st
+from typing import Tuple
+from groq import Groq
+import base64
 
-# Configura o layout da página Streamlit para ser "wide", ocupando toda a largura disponível.
+# Configurações da página do Streamlit
 st.set_page_config(layout="wide")
 
-# Define o caminho para o arquivo JSON que contém os Agentes.
+# Definição de caminhos para arquivos
 FILEPATH = "agents.json"
 CHAT_HISTORY_FILE = 'chat_history.json'
+API_USAGE_FILE = 'api_usage.json'
 
-# Define um dicionário que mapeia nomes de modelos para o número máximo de tokens que cada modelo suporta.
+# Definição de modelos e tokens
 MODEL_MAX_TOKENS = {
     'mixtral-8x7b-32768': 32768,
     'llama3-70b-8192': 8192,
@@ -20,288 +25,67 @@ MODEL_MAX_TOKENS = {
     'gemma-7b-it': 8192,
 }
 
-# API keys
-API_KEY_FETCH = "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"
-API_KEY_REFINE = "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"
-API_KEY_EVALUATE = "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"
+# Chaves da API
+API_KEYS = {
+    "fetch": ["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", "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"],
+    "refine": ["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", "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"],
+    "evaluate": ["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", "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"]
+}
 
-# Define uma função para carregar as opções de Agentes a partir do arquivo JSON.
+# Função para obter a próxima chave de API disponível
+def get_api_key(action: str) -> str:
+    keys = API_KEYS[action]
+    return keys.pop(0)
+
+# Função para carregar opções de agentes
 def load_agent_options() -> list:
-    agent_options = ['Escolher um especialista...']  # Inicia a lista de opções com uma opção padrão.
-    if os.path.exists(FILEPATH):  # Verifica se o arquivo de Agentes existe.
-        with open(FILEPATH, 'r') as file:  # Abre o arquivo para leitura.
+    agent_options = ['Escolher um especialista...']
+    if os.path.exists(FILEPATH):
+        with open(FILEPATH, 'r') as file:
             try:
-                agents = json.load(file)  # Tenta carregar os dados JSON do arquivo.
-                # Adiciona os nomes dos Agentes à lista de opções, se existirem.
+                agents = json.load(file)
                 agent_options.extend([agent["agente"] for agent in agents if "agente" in agent])
-            except json.JSONDecodeError:  # Captura erros de decodificação JSON.
-                st.error("Erro ao ler o arquivo de Agentes. Por favor, verifique o formato.")  # Exibe uma mensagem de erro no Streamlit.
-    return agent_options  # Retorna a lista de opções de Agentes.
+            except json.JSONDecodeError:
+                st.error("Erro ao ler o arquivo de Agentes. Por favor, verifique o formato.")
+    return agent_options
 
-# Define uma função para obter o número máximo de tokens permitido por um modelo específico.
+# Função para obter o número máximo de tokens de um modelo
 def get_max_tokens(model_name: str) -> int:
-    # Retorna o número máximo de tokens para o modelo fornecido, ou 4096 se o modelo não estiver no dicionário.
     return MODEL_MAX_TOKENS.get(model_name, 4096)
-#_________________________________________________
-# Define uma função para recarregar a página do Streamlit.
-def refresh_page():
-    st.experimental_rerun()  # Recarrega a aplicação Streamlit.
 
-# Define uma função para salvar um novo especialista no arquivo JSON.
-def save_expert(expert_title: str, expert_description: dict):
-    with open(FILEPATH, 'r+') as file:  # Abre o arquivo para leitura e escrita.
-        # Carrega os Agentes existentes se o arquivo não estiver vazio, caso contrário, inicia uma lista vazia.
-        agents = json.load(file) if os.path.getsize(FILEPATH) > 0 else []
-        # Adiciona o novo especialista à lista de Agentes.
-        agents.append({"agente": expert_title, "descricao": expert_description})
-        file.seek(0)  # Move o ponteiro do arquivo para o início.
-        json.dump(agents, file, indent=4)  # Grava a lista de Agentes de volta no arquivo com indentação para melhor legibilidade.
-        file.truncate()  # Remove qualquer conteúdo restante do arquivo após a nova escrita para evitar dados obsoletos.
-#_________________________________________________
-# Função para buscar uma resposta do assistente baseado no modelo Groq, incluindo o histórico.
-def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str, temperature: float, agent_selection: str, chat_history: list) -> Tuple[str, str]:
-    phase_two_response = ""  # Inicializa a variável para armazenar a resposta da segunda fase.
-    expert_title = ""  # Inicializa a variável para armazenar o título do especialista.
+# Função para registrar o uso da API
+def log_api_usage(action: str, interaction_number: int, tokens_used: int, time_taken: float, user_input: str, user_prompt: str, api_response: str, agent_used: str, agent_description: str):
+    entry = {
+        'action': action,
+        'interaction_number': interaction_number,
+        'tokens_used': tokens_used,
+        'time_taken': time_taken,
+        'user_input': user_input,
+        'user_prompt': user_prompt,
+        'api_response': api_response,
+        'agent_used': agent_used,
+        'agent_description': agent_description
+    }
+    if os.path.exists(API_USAGE_FILE):
+        with open(API_USAGE_FILE, 'r+') as file:
+            api_usage = json.load(file)
+            api_usage.append(entry)
+            file.seek(0)
+            json.dump(api_usage, file, indent=4)
+    else:
+        with open(API_USAGE_FILE, 'w') as file:
+            json.dump([entry], file, indent=4)
 
-    try:
-        client = Groq(api_key=API_KEY_FETCH)  # Usa a chave API específica para buscar respostas.
-
-        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
-        def get_completion(prompt: str) -> str:
-            while True:  # Loop para tentar novamente em caso de erro de limite de taxa
-                try:
-                    completion = client.chat.completions.create(
-                        messages=[
-                            {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
-                            {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
-                        ],
-                        model=model_name,  # Nome do modelo a ser usado.
-                        temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
-                        max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
-                        top_p=1,  # Parâmetro para amostragem nuclear.
-                        stop=None,  # Sem tokens de parada específicos.
-                        stream=False  # Desabilita o streaming de respostas.
-                    )
-                    return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
-                except Exception as e:
-                    error_message = str(e)
-                    if 'rate_limit_exceeded' in error_message:
-                        wait_time = float(error_message.split("try again in")[1].split("s.")[0].strip())
-                        time.sleep(wait_time)  # Espera pelo tempo sugerido antes de tentar novamente
-                    else:
-                        raise e  # Se o erro não for de limite de taxa, relança a exceção
-
-        if agent_selection == "Escolher um especialista...":
-            # Se nenhum especialista específico for selecionado, cria um prompt para determinar o título e descrição do especialista.
-            phase_one_prompt = (
-                f"假设自己是一位具有高度科学严谨性的高级提示工程专家。"
-                f"请以‘markdown’格式呈现Python代码及其相应的库，并在每行中添加详细的教育性注释。"
-                f"仔细分析所提出的要求，确定最适合处理该问题的专家特征的标准。"
-                f"确定后，详细描述该专家的主要技能和资格，避免偏见。"
-                f"介绍能够处理所提出问题的特征和资格：{user_input}和{user_prompt}。"
-                f"准确度为10.0，符合最高的专业、科学和学术标准。"
-                f"对于涉及代码和计算的情况，请以 'markdown' 格式呈现，并在每行中添加详细的注释。"
-                f"回答必须仅用葡萄牙语。"
-                f"假设你是高级工程方面的专家，并且具有高度的科学严谨性。"
-                f"请以‘markdown’格式提供 Python 代码及其相应的库。"
-                f"在该行中添加详细的教育说明。"
-                f"仔细分析所提出的要求，以确定最适合处理问题的专家的特征的标准。"
-                f"首先，有必要确定最能反映需要提供完整、深入和明确答案的答案。"
-                f"需要经验的头衔。"
-                f"一旦确定，请详细描述专家的关键技能和资格，以避免偏见。"
-                f"就这样，然后从清晰的、有教育意义的、深入的描述开始。"
-                f"介绍允许他们处理所提出问题的特征和资格：{user_input} 和 {user_prompt}。"
-                f"这种详细的分析对于确保所选专家拥有必要的知识和经验来提供完整且令人满意的答复至关重要。"
-                f"准确度为10.0，符合最高的专业、科学和学术标准，每一行都有详细的注释。"
-            )
-
-            phase_one_response = get_completion(phase_one_prompt)  # Obtém a resposta para o prompt da fase um.
-            first_period_index = phase_one_response.find(".")  # Encontra o índice do primeiro ponto na resposta.
-            expert_title = phase_one_response[:first_period_index].strip()  # Extrai o título do especialista até o primeiro ponto.
-            expert_description = phase_one_response[first_period_index + 1:].strip()  # Extrai a descrição do especialista após o primeiro ponto.
-            save_expert(expert_title, expert_description)  # Salva o novo especialista no arquivo JSON.
-        else:
-            # Se um especialista específico for selecionado, carrega os dados do especialista do arquivo JSON.
-            with open(FILEPATH, 'r') as file:  # Abre o arquivo JSON para leitura.
-                agents = json.load(file)  # Carrega os dados dos Agentes do arquivo JSON.
-                # Encontra o agente selecionado na lista de Agentes.
-                agent_found = next((agent for agent in agents if agent["agente"] == agent_selection), None)
-                if agent_found:
-                    expert_title = agent_found["agente"]  # Obtém o título do especialista.
-                    expert_description = agent_found["descricao"]  # Obtém a descrição do especialista.
-                else:
-                    raise ValueError("Especialista selecionado não encontrado no arquivo.")  # Lança um erro se o especialista não for encontrado.
-#_________________________________________________
-        # Formata o histórico do chat para incluir nas mensagens do prompt.
-        history_context = ""
-        for entry in chat_history:
-            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
-#_________________________________________________
-        # Cria um prompt para a segunda fase, onde o especialista selecionado fornece uma resposta detalhada.
-        phase_two_prompt = (
-            f"输出和响应必须仅翻译成巴西葡萄牙语。"
-            f"扮演{expert_title}的角色，这是一位在其领域内广受认可和尊敬的专家，"
-            f"作为该领域的博士和专家，提供一个全面且深入的回答，涵盖问题的各个方面，做到清晰、详细、扩展、"
-            f"教育性和简洁：{user_input}和{user_prompt}。"
-            f"考虑到我在相关学科的丰富经验和深厚知识，"
-            f"有必要以科学严谨的态度关注并探讨每个方面。"
-            f"因此，我将概述需要考虑和调查的主要要素，提供基于证据的详细分析，"
-            f"避免偏见，并根据需要引用参考文献：{user_prompt}。"
-            f"最终目标是提供一个完整且令人满意的回答，符合最高的学术和 profissional标准，"
-            f"满足所提出问题的具体需求。"
-            f"确保以'markdown'格式呈现回答，并在每行中添加详细注释。"
-            f"保持写作标准在10个段落，每个段落4句话，每句话用逗号分隔，"
-            f"始终遵循亚里士多德的最佳教育实践。"
-            f"\n\nHistórico do chat:{history_context}"
-        )
-        phase_two_response = get_completion(phase_two_prompt)  # Obtém a resposta para o prompt da segunda fase.
-
-    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo.
-        st.error(f"Ocorreu um erro: {e}")  # Exibe uma mensagem de erro no Streamlit.
-        return "", ""  # Retorna tuplas vazias se ocorrer um erro.
-
-    return expert_title, phase_two_response  # Retorna o título do especialista e a resposta da segunda fase.
-#_________________________________________________
-# Função para refinar uma resposta existente com base na análise e melhoria do conteúdo.
-def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, references_file: str, chat_history: list) -> str:
-    try:
-        client = Groq(api_key=API_KEY_REFINE)  # Usa a chave API específica para refinar respostas.
-
-        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
-        def get_completion(prompt: str) -> str:
-            while True:  # Loop para tentar novamente em caso de erro de limite de taxa
-                try:
-                    completion = client.chat.completions.create(
-                        messages=[
-                            {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
-                            {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
-                        ],
-                        model=model_name,  # Nome do modelo a ser usado.
-                        temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
-                        max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
-                        top_p=1,  # Parâmetro para amostragem nuclear.
-                        stop=None,  # Sem tokens de parada específicos.
-                        stream=False  # Desabilita o streaming de respostas.
-                    )
-                    return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
-                except Exception as e:
-                    error_message = str(e)
-                    if 'rate_limit_exceeded' in error_message:
-                        wait_time = float(error_message.split("try again in")[1].split("s.")[0].strip())
-                        time.sleep(wait_time)  # Espera pelo tempo sugerido antes de tentar novamente
-                    else:
-                        raise e  # Se o erro não for de limite de taxa, relança a exceção
-
-        # Formata o histórico do chat para incluir nas mensagens do prompt.
-        history_context = ""
-        for entry in chat_history:
-            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
-#_________________________________________________
-        # Cria um prompt detalhado para refinar a resposta.
-        refine_prompt = (
-            f"输出和响应必须仅翻译成巴西葡萄牙语。"
-            f"扮演{expert_title}的角色，这是一位在其领域内广受认可和尊敬的专家，"
-            f"作为该领域的博士和专家，提供一个全面且深入的回答，涵盖问题的各个方面，做到清晰、详细、扩展、"
-            f"教育性和简洁：{user_input}和{user_prompt}。"
-            f"考虑到我在相关学科的丰富经验和深厚知识，"
-            f"有必要以科学严谨的态度关注并探讨每个方面。"
-            f"因此，我将概述需要考虑和调查的主要要素，提供基于证据的详细分析，"
-            f"避免偏见，并根据需要引用参考文献：{phase_two_response}。"
-            f"最终目标是提供一个完整且令人满意的回答，符合最高的学术 e profissional标准，"
-            f"满足所提出问题的具体需求。"
-            f"确保以'markdown'格式呈现回答，并在每行中添加详细注释。"
-            f"保持写作 padrão em 10 parágrafos，每个 parágrafo contendo 4 frases, "
-            f"e sempre seguindo as melhores práticas educacionais de Aristóteles."
-            f"\n\nHistórico do chat:{history_context}"
-        )
-#_________________________________________________
-        # Adiciona um prompt mais detalhado se não houver referências fornecidas.
-        if not references_file:
-            refine_prompt += (
-                f"\n\nDevido à ausência de referências fornecidas, certifique-se de fornecer uma resposta detalhada e precisa, "
-                f"mesmo sem o uso de fontes externas. "
-                f"Mantenha um padrão de escrita consistente, com 10 parágrafos, cada parágrafo contendo 4 frases, e cite de acordo com as normas ABNT. "
-                f"Utilize sempre um tom profissional e traduza tudo para o português do Brasil."
-            )
-
-        refined_response = get_completion(refine_prompt)  # Obtém a resposta refinada a partir do prompt detalhado.
-        return refined_response  # Retorna a resposta refinada.
-
-    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo de refinamento.
-        st.error(f"Ocorreu um erro durante o refinamento: {e}")  # Exibe uma mensagem de erro no Streamlit.
-        return ""  # Retorna uma string vazia se ocorrer um erro.
-
-# Função para avaliar a resposta com base em um agente gerador racional (RAG).
-def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, groq_api_key: str, chat_history: list) -> str:
-    try:
-        client = Groq(api_key=API_KEY_EVALUATE)  # Usa a chave API específica para avaliar respostas.
-
-        # Define uma função interna para obter a conclusão/completar um prompt usando a API Groq.
-        def get_completion(prompt: str) -> str:
-            while True:  # Loop para tentar novamente em caso de erro de limite de taxa
-                try:
-                    completion = client.chat.completions.create(
-                        messages=[
-                            {"role": "system", "content": "Você é um assistente útil."},  # Mensagem do sistema definindo o comportamento do assistente.
-                            {"role": "user", "content": prompt},  # Mensagem do usuário contendo o prompt.
-                        ],
-                        model=model_name,  # Nome do modelo a ser usado.
-                        temperature=temperature,  # Temperatura para controlar a aleatoriedade das respostas.
-                        max_tokens=get_max_tokens(model_name),  # Número máximo de tokens permitido para o modelo.
-                        top_p=1,  # Parâmetro para amostragem nuclear.
-                        stop=None,  # Sem tokens de parada específicos.
-                        stream=False  # Desabilita o streaming de respostas.
-                    )
-                    return completion.choices[0].message.content  # Retorna o conteúdo da primeira escolha da resposta.
-                except Exception as e:
-                    error_message = str(e)
-                    if 'rate_limit_exceeded' in error_message:
-                        wait_time = float(error_message.split("try again in")[1].split("s.")[0].strip())
-                        time.sleep(wait_time)  # Espera pelo tempo sugerido antes de tentar novamente
-                    else:
-                        raise e  # Se o erro não for de limite de taxa, relança a exceção
-
-        # Formata o histórico do chat para incluir nas mensagens do prompt.
-        history_context = ""
-        for entry in chat_history:
-            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
-#_________________________________________________
-        # Cria um prompt detalhado para avaliar a resposta usando o agente gerador racional (RAG).
-        rag_prompt = (
-            f"输出和响应必须仅翻译成巴西葡萄牙语。"
-            f"扮演一个理性生成代理（RAG）的角色，站在人工智能和理性评估的前沿，"
-            f"仔细分析专家的回答，根据用户的请求生成一个JSON格式的代理。"
-            f"该代理应详细描述根据子代理提供的信息采取的行动，以向用户提供回答。"
-            f"在变量'描述'中包含9个子代理的描述，每个子代理具有不同的专门功能，共同协作。"
-            f"这些子代理共同协作，以改善系统代理向用户提供的最终回答，并在代理的'描述'中记录种子和gen_id。"
-            f"此外，系统代理内的子代理一体化操作，通过扩展提示提供高级和专业的回答。"
-            f"每个子代理在网络处理过程中扮演特定且互补的角色，以达到更高的精度，提升最终回答的质量。"
-            f"例如，子代理'AI_自适应_和_上下文化'使用先进的机器学习算法来理解和适应变化的上下文，"
-            f"动态整合相关数据。而子代理'RAG_与_上下文智能'使用增强生成的恢复（RAG）技术，"
-            f"动态调整最相关的数据及其功能。 这种协作方法确保回答准确且更新，"
-            f"符合最高的科学和学术标准。"
-            f"以下是专家的详细描述，突出其资格和专业知识：{expert_description}。"
-            f"原始问题提交如下：{user_input}和{user_prompt}。"
-            f"专家用葡萄牙语提供的回答如下：{assistant_response}。"
-            f"因此，请对专家用葡萄牙语提供的回答的质量和准确性进行全面评估，"
-            f"考虑专家的描述和提供的回答。"
-            f"使用葡萄牙语进行分析并提供详细解释："
-            f"SWOT分析（优势、劣势、机会、威胁）并解释数据，"
-            f"BCG矩阵（波士顿咨询集团）并解释数据，"
-            f"风险矩阵，ANOVA（方差分析）并解释数据，"
-            f"Q统计并解释数据和Q指数（Q-指数）并解释数据，"
-            f"遵循最高的卓越和学术、科学严格标准。"
-            f"确保每段保持4句话，每句话用逗号分隔，始终遵循亚里士多德和苏格拉底的最佳教育实践。"
-            f"回答必须使用巴西葡萄牙语。"
-            f"\n\nHistórico do chat:{history_context}"
-        )
-
-        rag_response = get_completion(rag_prompt)  # Obtém a resposta avaliada a partir do prompt detalhado.
-        return rag_response  # Retorna a resposta avaliada.
-
-    except Exception as e:  # Captura qualquer exceção que ocorra durante o processo de avaliação com RAG.
-        st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")  # Exibe uma mensagem de erro no Streamlit.
-        return ""  # Retorna uma string vazia se ocorrer um erro.
+# Função para lidar com limite de taxa
+def handle_rate_limit(error_message: str, action: str):
+    if 'rate_limit_exceeded' in error_message:
+        wait_time = float(error_message.split("try again in")[1].split("s.")[0].strip())
+        st.warning(f"Limite de taxa atingido. Aguardando {wait_time} segundos...")
+        time.sleep(wait_time)
+        # Alterna para a próxima chave de API disponível
+        API_KEYS[action].append(API_KEYS[action].pop(0))
+    else:
+        raise Exception(error_message)
 
 # Função para salvar o histórico de chat
 def save_chat_history(user_input, user_prompt, expert_response, chat_history_file=CHAT_HISTORY_FILE):
@@ -328,25 +112,266 @@ def load_chat_history(chat_history_file=CHAT_HISTORY_FILE):
         return chat_history
     return []
 
-# Função para apagar o histórico de chat
+# Função para limpar o histórico de chat
 def clear_chat_history(chat_history_file=CHAT_HISTORY_FILE):
     if os.path.exists(chat_history_file):
         os.remove(chat_history_file)
 
-# Carrega as opções de Agentes a partir do arquivo JSON.
+# Função para carregar o uso da API
+def load_api_usage():
+    if os.path.exists(API_USAGE_FILE):
+        with open(API_USAGE_FILE, 'r') as file:
+            api_usage = json.load(file)
+        return api_usage
+    return []
+
+# Função para plotar o uso da API
+def plot_api_usage(api_usage):
+    df = pd.DataFrame(api_usage)
+
+    if 'action' not in df.columns:
+        st.error("A coluna 'action' não foi encontrada no dataframe de uso da API.")
+        return
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
+
+    sns.histplot(df[df['action'] == 'fetch']['tokens_used'], bins=20, color='blue', label='Fetch', ax=ax1, kde=True)
+    sns.histplot(df[df['action'] == 'refine']['tokens_used'], bins=20, color='green', label='Refine', ax=ax1, kde=True)
+    sns.histplot(df[df['action'] == 'evaluate']['tokens_used'], bins=20, color='red', label='Evaluate', ax=ax1, kde=True)
+    ax1.set_title('Uso de Tokens por Chamada de API')
+    ax1.set_xlabel('Tokens')
+    ax1.set_ylabel('Frequência')
+    ax1.legend()
+
+    sns.histplot(df[df['action'] == 'fetch']['time_taken'], bins=20, color='blue', label='Fetch', ax=ax2, kde=True)
+    sns.histplot(df[df['action'] == 'refine']['time_taken'], bins=20, color='green', label='Refine', ax=ax2, kde=True)
+    sns.histplot(df[df['action'] == 'evaluate']['time_taken'], bins=20, color='red', label='Evaluate', ax=ax2, kde=True)
+    ax2.set_title('Tempo por Chamada de API')
+    ax2.set_xlabel('Tempo (s)')
+    ax2.set_ylabel('Frequência')
+    ax2.legend()
+
+    st.sidebar.pyplot(fig)
+
+    # Adicionar visualização do DataFrame no sidebar
+    st.sidebar.markdown("### Uso da API - DataFrame")
+    st.sidebar.dataframe(df)
+
+# Função para resetar o uso da API
+def reset_api_usage():
+    if os.path.exists(API_USAGE_FILE):
+        os.remove(API_USAGE_FILE)
+    st.success("Os dados de uso da API foram resetados.")
+
+# Função para buscar resposta do assistente
+def fetch_assistant_response(user_input: str, user_prompt: str, model_name: str, temperature: float, agent_selection: str, chat_history: list, interaction_number: int) -> Tuple[str, str]:
+    phase_two_response = ""
+    expert_title = ""
+    expert_description = ""
+    try:
+        client = Groq(api_key=get_api_key('fetch'))
+
+        def get_completion(prompt: str) -> str:
+            start_time = time.time()
+            while True:
+                try:
+                    completion = client.chat.completions.create(
+                        messages=[
+                            {"role": "system", "content": "Você é um assistente útil."},
+                            {"role": "user", "content": prompt},
+                        ],
+                        model=model_name,
+                        temperature=temperature,
+                        max_tokens=get_max_tokens(model_name),
+                        top_p=1,
+                        stop=None,
+                        stream=False
+                    )
+                    end_time = time.time()
+                    tokens_used = completion.usage.total_tokens
+                    time_taken = end_time - start_time
+                    api_response = completion.choices[0].message.content
+                    log_api_usage('fetch', interaction_number, tokens_used, time_taken, user_input, user_prompt, api_response, expert_title, expert_description)
+                    return api_response
+                except Exception as e:
+                    handle_rate_limit(str(e), 'fetch')
+
+        if agent_selection == "Escolher um especialista...":
+            phase_one_prompt = (
+                f"Descreva o especialista ideal para responder a seguinte solicitação: {user_input} e {user_prompt}."
+            )
+            phase_one_response = get_completion(phase_one_prompt)
+            first_period_index = phase_one_response.find(".")
+            expert_title = phase_one_response[:first_period_index].strip()
+            expert_description = phase_one_response[first_period_index + 1:].strip()
+            save_expert(expert_title, expert_description)
+        else:
+            with open(FILEPATH, 'r') as file:
+                agents = json.load(file)
+                agent_found = next((agent for agent in agents if agent["agente"] == agent_selection), None)
+                if agent_found:
+                    expert_title = agent_found["agente"]
+                    expert_description = agent_found["descricao"]
+                else:
+                    raise ValueError("Especialista selecionado não encontrado no arquivo.")
+
+        history_context = ""
+        for entry in chat_history:
+            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
+
+        phase_two_prompt = (
+            f"{expert_title}, responda a seguinte solicitação de forma completa e detalhada: {user_input} e {user_prompt}."
+            f"\n\nHistórico do chat:{history_context}"
+        )
+        phase_two_response = get_completion(phase_two_prompt)
+
+    except Exception as e:
+        st.error(f"Ocorreu um erro: {e}")
+        return "", ""
+
+    return expert_title, phase_two_response
+
+# Função para refinar resposta
+def refine_response(expert_title: str, phase_two_response: str, user_input: str, user_prompt: str, model_name: str, temperature: float, references_file: str, chat_history: list, interaction_number: int) -> str:
+    try:
+        client = Groq(api_key=get_api_key('refine'))
+
+        def get_completion(prompt: str) -> str:
+            start_time = time.time()
+            while True:
+                try:
+                    completion = client.chat.completions.create(
+                        messages=[
+                            {"role": "system", "content": "Você é um assistente útil."},
+                            {"role": "user", "content": prompt},
+                        ],
+                        model=model_name,
+                        temperature=temperature,
+                        max_tokens=get_max_tokens(model_name),
+                        top_p=1,
+                        stop=None,
+                        stream=False
+                    )
+                    end_time = time.time()
+                    tokens_used = completion.usage.total_tokens
+                    time_taken = end_time - start_time
+                    api_response = completion.choices[0].message.content
+                    log_api_usage('refine', interaction_number, tokens_used, time_taken, user_input, user_prompt, api_response, expert_title, "")
+                    return api_response
+                except Exception as e:
+                    handle_rate_limit(str(e), 'refine')
+
+        history_context = ""
+        for entry in chat_history:
+            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
+
+        refine_prompt = (
+            f"{expert_title}, refine a seguinte resposta: {phase_two_response}. Solicitação original: {user_input} e {user_prompt}."
+            f"\n\nHistórico do chat:{history_context}"
+        )
+
+        if not references_file:
+            refine_prompt += (
+                f"\n\nDevido à ausência de referências fornecidas, certifique-se de fornecer uma resposta detalhada e precisa, mesmo sem o uso de fontes externas."
+            )
+
+        refined_response = get_completion(refine_prompt)
+        return refined_response
+
+    except Exception as e:
+        st.error(f"Ocorreu um erro durante o refinamento: {e}")
+        return ""
+
+# Função para avaliar resposta com RAG
+def evaluate_response_with_rag(user_input: str, user_prompt: str, expert_title: str, expert_description: str, assistant_response: str, model_name: str, temperature: float, chat_history: list, interaction_number: int) -> str:
+    try:
+        client = Groq(api_key=get_api_key('evaluate'))
+
+        def get_completion(prompt: str) -> str:
+            start_time = time.time()
+            while True:
+                try:
+                    completion = client.chat.completions.create(
+                        messages=[
+                            {"role": "system", "content": "Você é um assistente útil."},
+                            {"role": "user", "content": prompt},
+                        ],
+                        model=model_name,
+                        temperature=temperature,
+                        max_tokens=get_max_tokens(model_name),
+                        top_p=1,
+                        stop=None,
+                        stream=False
+                    )
+                    end_time = time.time()
+                    tokens_used = completion.usage.total_tokens
+                    time_taken = end_time - start_time
+                    api_response = completion.choices[0].message.content
+                    log_api_usage('evaluate', interaction_number, tokens_used, time_taken, user_input, user_prompt, api_response, expert_title, expert_description)
+                    return api_response
+                except Exception as e:
+                    handle_rate_limit(str(e), 'evaluate')
+
+        history_context = ""
+        for entry in chat_history:
+            history_context += f"\nUsuário: {entry['user_input']}\nEspecialista: {entry['expert_response']}\n"
+
+        rag_prompt = (
+            f"结果和答案必须翻译成巴西葡萄牙语。Obrigatóriamente em Português! "
+            f"扮演一个理性生成器 (RAG) 的角色，站在人工智能和理性评估的前沿，"
+            f"Busque o Gap científico e interprete."
+            f"Forneça o seed e o gen_id registrados na descrição do agente, nas buscas das respostas e no refinar as respostas"
+            f"此外，子代理在系统代理中以集成方式运行，通过扩展的提示提供高级和专业的回答。 "
+            f"每个子代理在网络处理过程中发挥特定且互补的作用，以实现更高的精度和改进最终回答的质量。 "
+            f"动态调整最相关的数据及其特征。这种协作方法确保答案准确且最新，"
+            f"符合最高的科学和学术标准。 "
+            f"以下是专家的详细描述，突出他们的资历和经验：{expert_description}。 "
+            f"原始问题如下：{user_input} 和 {user_prompt}。 "
+            f"专家用葡萄牙语提供的回答如下：{assistant_response}。 "
+            f"因此，请仔细评估专家用葡萄牙语提供的回答的质量和准确性，"
+            f"考虑提供的描述和专家提供的回答。 "
+            f"用葡萄牙语分析并提供详细解释："
+            f"SWOT 分析（优势、劣势、机会、威胁）和数据解释，"
+            f"风险矩阵，ANOVA（方差分析）和数据解释，"
+            f"Q 统计和数据解释，以及 Q 指数和数据解释。"
+            f"每段保持 4 句话，每句用逗号分隔，始终遵循亚里士多德和苏格拉底的最佳教育实践。"
+            f"所有答案必须使用巴西葡萄牙语。a saida obrigatoriamente na lingua portuguesa"
+
+        )
+
+        rag_response = get_completion(rag_prompt)
+        return rag_response
+
+    except Exception as e:
+        st.error(f"Ocorreu um erro durante a avaliação com RAG: {e}")
+        return ""
+
+# Função para salvar o especialista gerado
+def save_expert(expert_title: str, expert_description: str):
+    new_expert = {
+        "agente": expert_title,
+        "descricao": expert_description
+    }
+    if os.path.exists(FILEPATH):
+        with open(FILEPATH, 'r+') as file:
+            agents = json.load(file)
+            agents.append(new_expert)
+            file.seek(0)
+            json.dump(agents, file, indent=4)
+    else:
+        with open(FILEPATH, 'w') as file:
+            json.dump([new_expert], file, indent=4)
+
+# Carrega as opções de Agentes a partir do arquivo JSON
 agent_options = load_agent_options()
-#_________________________________________________
+
 # Layout da página
 st.image('updating.gif', width=300, caption='Laboratório de Educação e Inteligência Artificial - Geomaker. "A melhor forma de prever o futuro é inventá-lo." - Alan Kay', use_column_width='always', output_format='auto')
 st.markdown("<h1 style='text-align: center;'>Agentes Alan Kay</h1>", unsafe_allow_html=True)
-
 st.markdown("<h2 style='text-align: center;'>Utilize o Rational Agent Generator (RAG) para avaliar a resposta do especialista e garantir qualidade e precisão.</h2>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
-# Título da caixa de informação
 st.markdown("<h2 style='text-align: center;'>Descubra como nossa plataforma pode revolucionar a educação.</h2>", unsafe_allow_html=True)
 
-# Exibe informações sobre os Agentes Alan Kay
-# Conteúdo da caixa de informação
 with st.expander("Clique para saber mais sobre os Agentes Alan Kay."):
     st.write("1. **Conecte-se instantaneamente com especialistas:** Imagine ter acesso direto a especialistas em diversas áreas do conhecimento, prontos para responder às suas dúvidas e orientar seus estudos e pesquisas.")
     st.write("2. **Aprendizado personalizado e interativo:** Receba respostas detalhadas e educativas, adaptadas às suas necessidades específicas, tornando o aprendizado mais eficaz e envolvente.")
@@ -356,293 +381,6 @@ with st.expander("Clique para saber mais sobre os Agentes Alan Kay."):
     st.write("6. **Inovação e tecnologia educacional:** Nossa plataforma incorpora as mais recentes tecnologias para proporcionar uma experiência educacional moderna e eficiente.")
     st.image("fluxograma agente 4.png")
 
-#_________________________________________________
-    st.markdown("### Explicando o Fluxograma de Utilização\n"
-                "Vamos detalhar o processo de utilização da plataforma, conforme representado no fluxograma, passo a passo. A plataforma é projetada para ajudar usuários a interagir com modelos de linguagem avançados através de uma interface intuitiva. Vamos explorar cada etapa para que você possa aproveitar ao máximo todas as funcionalidades oferecidas.\n"
-                "#### Passo a Passo do Fluxograma\n"
-                "1. **Início**:\n"
-                "   - O fluxo começa com o início da execução do aplicativo.\n"
-                "2. **Importar bibliotecas**:\n"
-                "   - Importação de todas as bibliotecas necessárias, incluindo `streamlit`, `json`, e outras bibliotecas essenciais para o funcionamento da aplicação.\n"
-                "3. **Configurar página**:\n"
-                "   - Configuração inicial da página usando `streamlit` para definir o layout e outras propriedades da página.\n"
-                "4. **Verificar existência de agents.json**:\n"
-                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os Agentes 4  - disponíveis.\n"
-                "5. **agents.json existe?**:\n"
-                "   - Decisão condicional:\n"
-                "     - **Sim**:\n"
-                "       - Carregar Agentes 4  -: O arquivo `agents.json` é carregado.\n"
-                "       - **Erro ao carregar JSON?**:\n"
-                "         - **Sim**: Exibir mensagem de erro: O aplicativo mostra uma mensagem de erro indicando problemas ao carregar o arquivo JSON.\n"
-                "         - **Não**: Mostrar opções de Agentes 4  -: As opções de Agentes 4  - carregadas são exibidas.\n"
-                "     - **Não**: Usar opções de Agentes 4  - padrão: Se o arquivo não for encontrado, o aplicativo usa opções de Agentes 4  - padrão.\n"
-                "6. **Mostrar opções de Agentes 4  -**:\n"
-                "   - O aplicativo exibe as opções de Agentes 4  - para o usuário escolher.\n"
-                "7. **Selecionar modelo e agente**:\n"
-                "   - O usuário seleciona o modelo de linguagem e o agente desejado.\n"
-                "8. **Obter tokens máximos para o modelo**:\n"
-                "   - O aplicativo obtém o número máximo de tokens permitidos para o modelo selecionado.\n"
-                "9. **Solicitar resposta do assistente**:\n"
-                "   - O usuário solicita uma resposta do assistente.\n"
-                "10. **Agente selecionado?**:\n"
-                "    - Decisão condicional:\n"
-                "      - **Não**: Solicitar seleção de agente: O aplicativo pede ao usuário que selecione um agente.\n"
-                "      - **Sim**: Criar cliente Groq: O cliente para interação com a API Groq é criado.\n"
-                "        - Gerar resposta do assistente: O aplicativo gera a resposta do assistente usando o modelo de linguagem selecionado.\n"
-                "        - Retornar resposta do assistente: A resposta gerada é retornada pelo modelo.\n"
-                "        - Exibir resposta do assistente: A resposta é exibida ao usuário.\n"
-                "11. **Solicitar refinamento da resposta**:\n"
-                "    - O usuário pode solicitar um refinamento da resposta fornecida.\n"
-                "12. **Refinar resposta do assistente**:\n"
-                "    - O assistente refina a resposta com base nas novas informações ou correções fornecidas pelo usuário.\n"
-                "13. **Retornar resposta refinada**:\n"
-                "    - A resposta refinada é retornada pelo modelo.\n"
-                "14. **Exibir resposta refinada**:\n"
-                "    - A resposta refinada é exibida ao usuário.\n"
-                "15. **Solicitar avaliação RAG**:\n"
-                "    - O usuário pode solicitar uma avaliação da resposta usando o Rational Agent Generator (RAG).\n"
-                "16. **Avaliar resposta com RAG**:\n"
-                "    - O assistente avalia a resposta utilizando RAG.\n"
-                "17. **Retornar avaliação RAG**:\n"
-                "    - A avaliação do RAG é retornada pelo modelo.\n"
-                "18. **Exibir avaliação RAG**:\n"
-                "    - A avaliação do RAG é exibida ao usuário.\n"
-                "19. **Fim**:\n"
-                "    - O fluxo termina.\n"
-                "### Conclusão\n"
-                "Este fluxograma detalha de maneira clara e organizada todas as etapas que o usuário deve seguir para utilizar a plataforma de maneira eficaz. Com este guia, esperamos que você possa explorar todas as funcionalidades disponíveis e tirar o máximo proveito das ferramentas avançadas de interação com modelos de linguagem.\n"
-                "Aproveite para experimentar, fazer perguntas complexas e refinar suas interações para obter as respostas mais precisas e relevantes possíveis.\n")
-
-    
-st.markdown("<hr>", unsafe_allow_html=True)
-# Informações sobre o Rational Agent Generator (RAG)
-with st.expander("Clique para saber mais sobre o Rational Agent Generator (RAG)"):
-    st.info("""
-    O Rational Agent Generator (RAG) é usado para avaliar a resposta fornecida pelo especialista. Aqui está uma explicação mais detalhada de como ele é usado:
-    
-    1. Quando o usuário busca uma resposta do especialista, a função `fetch_assistant_response()` é chamada. Nessa função, é gerado um prompt para o modelo de linguagem que representa a solicitação do usuário e o prompt específico para o especialista escolhido. A resposta inicial do especialista é então obtida usando o Groq API.
-    
-    2. Se o usuário optar por refinar a resposta, a função `refine_response()` é chamada. Nessa função, é gerado um novo prompt que inclui a resposta inicial do especialista e solicita uma resposta mais detalhada e aprimorada, levando em consideração as referências fornecidas pelo usuário. A resposta refinada é obtida usando novamente o Groq API.
-    
-    3. Se o usuário optar por avaliar a resposta com o RAG, a função `evaluate_response_with_rag()` é chamada. Nessa função, é gerado um prompt que inclui a descrição do especialista e as respostas inicial e refinada do especialista. O RAG é então usado para avaliar a qualidade e a precisão da resposta do especialista.
-    
-    Em resumo, o RAG é usado como uma ferramenta para avaliar e melhorar a qualidade das respostas fornecidas pelos especialistas, garantindo que atendam aos mais altos padrões de excelência e rigor científico.
-    """)
-    st.image("diagram agente 4.png")
-
-    st.markdown("### Explicando o Fluxograma de Funcionamento\n"
-                "Neste post, vamos detalhar o processo de utilização da plataforma, conforme representado no fluxograma, passo a passo. A plataforma é projetada para ajudar usuários a interagir com modelos de linguagem avançados através de uma interface intuitiva. Vamos explorar cada etapa para que você possa aproveitar ao máximo todas as funcionalidades oferecidas.\n"
-                "#### Passo a Passo do Fluxograma de funcionamento\n"
-                "1. **Início**:\n"
-                "   - O fluxo começa com o início da execução do aplicativo.\n"
-                "2. **Importar bibliotecas**:\n"
-                "   - Importação de todas as bibliotecas necessárias, incluindo `streamlit`, `json`, e outras bibliotecas essenciais para o funcionamento da aplicação.\n"
-                "3. **Configurar página**:\n"
-                "   - Configuração inicial da página usando `streamlit` para definir o layout e outras propriedades da página.\n"
-                "4. **Verificar existência de agents.json**:\n"
-                "   - O aplicativo verifica se o arquivo `agents.json` existe no diretório. Este arquivo contém informações sobre os Agentes 4  - disponíveis.\n"
-                "5. **agents.json existe?**:\n"
-                "   - Decisão condicional:\n"
-                "     - **Sim**:\n"
-                "       - Carregar Agentes 4  -: O arquivo `agents.json` é carregado.\n"
-                "       - **Erro ao carregar JSON?**:\n"
-                "         - **Sim**: Exibir mensagem de erro: O aplicativo mostra uma mensagem de erro indicando problemas ao carregar o arquivo JSON.\n"
-                "         - **Não**: Mostrar opções de Agentes 4  -: As opções de Agentes 4  - carregadas são exibidas.\n"
-                "     - **Não**: Usar opções de Agentes 4  - padrão: Se o arquivo não for encontrado, o aplicativo usa opções de Agentes 4  - padrão.\n"
-                "6. **Mostrar opções de Agentes 4  -**:\n"
-                "   - O aplicativo exibe as opções de Agentes 4  - para o usuário escolher.\n"
-                "7. **Selecionar modelo e agente**:\n"
-                "   - O usuário seleciona o modelo de linguagem e o agente desejado.\n"
-                "8. **Obter tokens máximos para o modelo**:\n"
-                "   - O aplicativo obtém o número máximo de tokens permitidos para o modelo selecionado.\n"
-                "9. **Solicitar resposta do assistente**:\n"
-                "   - O usuário solicita uma resposta do assistente.\n"
-                "10. **Agente selecionado?**:\n"
-                "    - Decisão condicional:\n"
-                "      - **Não**: Solicitar seleção de agente: O aplicativo pede ao usuário que selecione um agente.\n"
-                "      - **Sim**: Criar cliente Groq: O cliente para interação com a API Groq é criado.\n"
-                "        - Gerar resposta do assistente: O aplicativo gera a resposta do assistente usando o modelo de linguagem selecionado.\n"
-                "        - Retornar resposta do assistente: A resposta gerada é retornada pelo modelo.\n"
-                "        - Exibir resposta do assistente: A resposta é exibida ao usuário.\n"
-                "11. **Solicitar refinamento da resposta**:\n"
-                "    - O usuário pode solicitar um refinamento da resposta fornecida.\n"
-                "12. **Refinar resposta do assistente**:\n"
-                "    - O assistente refina a resposta com base nas novas informações ou correções fornecidas pelo usuário.\n"
-                "13. **Retornar resposta refinada**:\n"
-                "    - A resposta refinada é retornada pelo modelo.\n"
-                "14. **Exibir resposta refinada**:\n"
-                "    - A resposta refinada é exibida ao usuário.\n"
-                "15. **Solicitar avaliação RAG**:\n"
-                "    - O usuário pode solicitar uma avaliação da resposta usando o Rational Agent Generator (RAG).\n"
-                "16. **Avaliar resposta com RAG**:\n"
-                "    - O assistente avalia a resposta utilizando RAG.\n"
-                "17. **Retornar avaliação RAG**:\n"
-                "    - A avaliação do RAG é retornada pelo modelo.\n"
-                "18. **Exibir avaliação RAG**:\n"
-                "    - A avaliação do RAG é exibida ao usuário.\n"
-                "19. **Fim**:\n"
-                "    - O fluxo termina.\n"
-                "### Conclusão\n"
-                "Este fluxograma detalha de maneira clara e organizada todas as etapas que o usuário deve seguir para utilizar a plataforma de maneira eficaz. Com este guia, esperamos que você possa explorar todas as funcionalidades disponíveis e tirar o máximo proveito das ferramentas avançadas de interação com modelos de linguagem.\n"
-                "Aproveite para experimentar, fazer perguntas complexas e refinar suas interações para obter as respostas mais precisas e relevantes possíveis.\n")
-
-st.markdown("<hr>", unsafe_allow_html=True)
-
-
-with st.expander("Informações sobre Análises de Avaliação do RAG"):
-    st.markdown("""
-    ### As análises realizadas por diferentes modelos de avaliação são cruciais para garantir a qualidade e a precisão das respostas fornecidas pelos especialistas. Aqui estão as análises mencionadas no código e suas explicações:
-    
-    1. **SWOT Analysis (Análise SWOT)**:
-        
-        - **O que é**: A análise SWOT é uma ferramenta de planejamento estratégico usada para identificar e analisar os pontos fortes (Strengths), fracos (Weaknesses), oportunidades (Opportunities) e ameaças (Threats) de uma organização, projeto ou situação.
-        
-        - **Por que é feita**: A análise SWOT é realizada para entender os fatores internos e externos que podem impactar o sucesso de uma resposta ou decisão. Isso ajuda a maximizar os pontos fortes, minimizar os pontos fracos, explorar oportunidades e mitigar ameaças.
-    
-    2. **BCG Matrix (Matriz BCG)**:
-        - **O que é**: A matriz BCG é uma ferramenta de gestão desenvolvida pela Boston Consulting Group, que ajuda as empresas a analisar seus produtos ou unidades de negócios com base na participação de mercado e no crescimento do mercado.
-        
-        - **Por que é feita**: A análise BCG é realizada para ajudar na tomada de decisões sobre investimentos, desinvestimentos ou desenvolvimento de novos produtos. Classifica produtos em quatro categorias: Estrelas, Vacas Leiteiras, Interrogações e Abacaxis.
-    
-    3. **Risk Matrix (Matriz de Riscos)**:
-       
-        - **O que é**: A matriz de riscos é uma ferramenta de avaliação de riscos que ajuda a identificar, avaliar e priorizar riscos com base na sua probabilidade e impacto.
-       
-        - **Por que é feita**: A análise de riscos é feita para entender os potenciais perigos que podem afetar o sucesso de um projeto ou decisão. Isso permite o desenvolvimento de estratégias para mitigar ou gerenciar esses riscos.
-    
-    4. **ANOVA (Análise de Variância)**:
-       
-        - **O que é**: A ANOVA é uma técnica estatística usada para comparar as médias de três ou mais grupos e determinar se há diferenças estatisticamente significativas entre eles.
-       
-        - **Por que é feita**: A análise ANOVA é realizada para entender se as variações observadas nos dados são devidas ao fator sendo estudado ou ao acaso. Isso é útil para validar hipóteses e identificar fatores significativos que influenciam os resultados.
-    
-    5. **Q-Statistics (Estatísticas Q)**:
-       
-        - **O que é**: As estatísticas Q são métodos estatísticos usados para detectar heterogeneidade e identificar outliers em conjuntos de dados.
-       
-        - **Por que é feita**: A análise Q-Statistics é realizada para garantir a qualidade dos dados e identificar pontos de dados que podem distorcer os resultados. Isso ajuda a melhorar a precisão das análises e conclusões.
-    
-    6. **Q-Exponential (Q-Exponencial)**:
-       
-        - **O que é**: O Q-Exponential é uma função usada na estatística e na teoria da informação para modelar distribuições de probabilidade com caudas pesadas.
-       
-        - **Por que é feita**: A análise Q-Exponential é realizada para entender melhor a distribuição dos dados e identificar padrões que não seguem a distribuição normal. Isso é útil para modelar fenômenos complexos e tomar decisões baseadas em dados mais realistas.
-    
-    Essas análises ajudam a garantir que as respostas fornecidas pelos especialistas sejam rigorosas, detalhadas e baseadas em metodologias científicas sólidas, alinhadas com os mais altos padrões acadêmicos e profissionais.
-    """)
-st.markdown("<hr>", unsafe_allow_html=True)
-
-# Função para criar um expander estilizado
-# Título da caixa de informação
-
-st.markdown("<h2 style='text-align: center;'>Manual de uso básico.</h2>", unsafe_allow_html=True)
-
-def expander(title: str, content: str, icon: str):
-    with st.expander(title): 
-        
-        st.markdown(f'<img src="{icon}" style="vertical-align:middle"> {content}', unsafe_allow_html=True)
-
-# Conteúdo do manual de uso
-passo_1_content = """
-1. Acesse o Groq Playground em https://console.groq.com/playground.
-
-2. Faça login na sua conta ou crie uma nova conta.
-
-3. No menu lateral, selecione "API Keys".
-
-4. Clique em "Create API Key" e siga as instruções para criar uma chave API. Copie a chave gerada, pois será necessária para autenticar suas consultas.
-
-5. Se quiser usar esta API Key provisória: [...]. Lembre-se de que ela pode não funcionar mais devido ao uso excessivo pelos usuários. Portanto, é aconselhável que cada usuário tenha sua própria chave API.
-"""
-
-passo_2_content = """
-1. Acesse o Streamlit Chat Application em https://agente4.streamlit.app/#87cc9dff (Agentes 4  - Alan Kay).
-
-2. Na interface do aplicativo, você verá um campo para inserir a sua chave API do Groq. Cole a chave que você copiou no Passo 1.
-
-3. Escolha um Agente Especializado e um dos modelos de agente disponíveis para interagir. Você pode selecionar entre 'mixtral-8x7b-32768' com 32768 tokens, 'llama3-70b-8192'com 8192 tokens, 'llama3-8b-8192' com 8192 tokens, 'llama2-70b-4096'com 4096 tokens ou 'gemma-7b-it' com 8192 tokens.
-
-4. Digite sua pergunta ou solicitação na caixa de texto e clique em "Enviar".
-
-5. O aplicativo consultará o Groq API e apresentará a resposta do especialista. Você terá a opção de refinar a resposta ou avaliá-la com o RAG.
-"""
-
-passo_3_content = """
-1. Se desejar refinar a resposta do especialista, clique em "Refinar Resposta". Digite mais detalhes ou correções na caixa de texto e clique em "Enviar".
-
-2. O aplicativo consultará novamente o Groq API e apresentará a resposta refinada.
-"""
-
-passo_4_content = """
-1. Se preferir avaliar a resposta com o RAG, clique em "Avaliar Resposta com o RAG". O RAG analisará a qualidade e a precisão da resposta do especialista e apresentará uma avaliação.
-
-2. Você terá a opção de concordar ou discordar com a avaliação do RAG e fornecer feedback adicional, se desejar.
-"""
-
-passo_5_content = """
-1. Após refinar a resposta ou avaliá-la com o RAG, você poderá encerrar a consulta ou fazer uma nova pergunta.
-"""
-
-
-passo_6_content = """
-Para melhorar a eficiência e qualidade das respostas geradas pelos modelos de linguagem, o conteúdo inserido no campo "Escreva um prompt ou coloque o texto para consulta para o especialista (opcional)" deve ser detalhado, claro e específico. Aqui estão algumas diretrizes e possibilidades sobre o que incluir nesse campo:
-        
-#### Diretrizes para um Prompt Eficiente
-        
-1. **Contexto**: Forneça o contexto necessário para entender o problema ou a pergunta. Inclua informações relevantes sobre o cenário ou o objetivo da solicitação.
-2. **Detalhamento**: Seja detalhado em sua pergunta ou solicitação. Quanto mais informações você fornecer, melhor o modelo poderá entender e responder.
-3. **Objetivos**: Especifique claramente o que você espera obter com a resposta. Isso ajuda o modelo a focar nos aspectos mais importantes.
-4. **Formato de Resposta**: Indique o formato desejado para a resposta (por exemplo, uma explicação passo a passo, código em Python com comentários, etc.).
-5. **Referências**: Se aplicável, inclua referências ou fontes de informação que podem ser úteis para a resposta.
-        
-#### Exemplos de Prompts
-        
-1. **Análise de Dados**
-   - Contexto: "Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano."
-   - Detalhamento: "Os dados incluem colunas para data, produto, quantidade vendida e receita."
-   - Objetivos: "Gostaria de saber quais produtos têm o maior crescimento de vendas mensal e identificar padrões sazonais."
-   - Formato de Resposta: "Por favor, forneça uma análise em Python, incluindo gráficos e comentários explicativos."
-        
-2. **Desenvolvimento de Modelo de Machine Learning**
-   - Contexto: "Estou trabalhando em um projeto de previsão de preços de imóveis."
-   - Detalhamento: "Os dados incluem características dos imóveis, como número de quartos, localização, tamanho e preço."
-   - Objetivos: "Preciso desenvolver um modelo de machine learning que preveja os preços dos imóveis com base nessas características."
-   - Formato de Resposta: "Gostaria de um exemplo de código em Python usando scikit-learn, com explicações sobre a escolha do modelo e a avaliação de desempenho."
-        
-3. **Revisão de Código**
-   - Contexto: "Estou desenvolvendo um script para automatizar a coleta de dados da web."
-   - Detalhamento: "O script é escrito em Python e utiliza bibliotecas como BeautifulSoup e requests."
-   - Objetivos: "Gostaria de uma revisão do código para identificar possíveis melhorias em termos de eficiência e boas práticas de programação."
-   - Formato de Resposta: "Por favor, forneça sugestões de melhorias e justifique-as com exemplos de código."
-        
-4. **Pesquisa Acadêmica**
-   - Contexto: "Estou escrevendo um artigo sobre os impactos das mudanças climáticas na biodiversidade."
-   - Detalhamento: "Estou focando nos efeitos em ecossistemas marinhos e terrestres."
-   - Objetivos: "Preciso de uma revisão bibliográfica detalhada, incluindo as principais pesquisas recentes e suas conclusões."
-   - Formato de Resposta: "Por favor, forneça um resumo estruturado com citações em formato ABNT."
-        
-#### Exemplo de Prompt Detalhado
-        
-        
-Contexto: Eu tenho um conjunto de dados sobre vendas de produtos ao longo de um ano. Os dados incluem colunas para data, produto, quantidade vendida e receita.
-Objetivos: Gostaria de saber quais produtos têm o maior crescimento de vendas mensal e identificar padrões sazonais.
-Formato de Resposta: Por favor, forneça uma análise em Python, incluindo gráficos e comentários explicativos.
-        
-#### Conclusão
-        
-A qualidade do prompt é fundamental para obter respostas úteis e precisas de modelos de linguagem. Seguindo essas diretrizes e incluindo detalhes específicos no campo de prompt, você maximizará a eficiência e a qualidade das respostas geradas.
-"""
-
-
-# Exibição do manual de uso com expander estilizado
-expander("Passo 1: Criação da Chave API no Groq Playground", passo_1_content, "https://img.icons8.com/office/30/000000/api-settings.png")
-expander("Passo 2: Acesso ao Streamlit Chat Application", passo_2_content, "https://img.icons8.com/office/30/000000/chat.png")
-expander("Passo 3: Refinamento da Resposta", passo_3_content, "https://img.icons8.com/office/30/000000/edit-property.png")
-expander("Passo 4: Avaliação da Resposta com o RAG", passo_4_content, "https://img.icons8.com/office/30/000000/like--v1.png")
-expander("Passo 5: Conclusão da Consulta", passo_5_content, "https://img.icons8.com/office/30/000000/faq.png")
-expander("Passo 6: Construindo o Prompt", passo_6_content, "https://img.icons8.com/dusk/30/000000/code-file.png")
-st.markdown("<hr>", unsafe_allow_html=True)
-#_________________________________________________
 # Seleção de memória do chat
 memory_selection = st.selectbox("Selecione a quantidade de interações para lembrar:", options=[5, 10, 15, 25, 50, 100])
 
@@ -656,9 +394,7 @@ with col1:
     agent_selection = st.selectbox("Escolha um Especialista", options=agent_options, index=0, key="selecao_agente")
     model_name = st.selectbox("Escolha um Modelo", list(MODEL_MAX_TOKENS.keys()), index=0, key="nome_modelo")
     temperature = st.slider("Nível de Criatividade", min_value=0.0, max_value=1.0, value=0.0, step=0.01, key="temperatura")
-    groq_api_key = st.text_input("Chave da API Groq:", key="groq_api_key")
-    max_tokens = get_max_tokens(model_name)
-    st.write(f"Número Máximo de Tokens para o modelo selecionado: {max_tokens}")
+    interaction_number = len(load_api_usage()) + 1
 
     fetch_clicked = st.button("Buscar Resposta")
     refine_clicked = st.button("Refinar Resposta")
@@ -681,26 +417,26 @@ with col2:
 
     container_saida = st.container()
 
-    chat_history = load_chat_history()[-memory_selection:]  # Carrega as últimas 'memory_selection' interações
+    chat_history = load_chat_history()[-memory_selection:]
 
     if fetch_clicked:
         if references_file is None:
-            st.warning("Não foi fornecido um arquivo de referências. Certifique-se de fornecer uma resposta detalhada e precisa, mesmo sem o uso de fontes externas. Saída sempre traduzido para o portugues brasileiro com tom profissional.")
-        st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente = fetch_assistant_response(user_input, user_prompt, model_name, temperature, agent_selection, chat_history)
+            st.warning("Não foi fornecido um arquivo de referências. Certifique-se de fornecer uma resposta detalhada e precisa, mesmo sem o uso de fontes externas.")
+        st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente = fetch_assistant_response(user_input, user_prompt, model_name, temperature, agent_selection, chat_history, interaction_number)
         st.session_state.resposta_original = st.session_state.resposta_assistente
         st.session_state.resposta_refinada = ""
         save_chat_history(user_input, user_prompt, st.session_state.resposta_assistente)
 
     if refine_clicked:
         if st.session_state.resposta_assistente:
-            st.session_state.resposta_refinada = refine_response(st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente, user_input, user_prompt, model_name, temperature, references_file, chat_history)
+            st.session_state.resposta_refinada = refine_response(st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente, user_input, user_prompt, model_name, temperature, references_file, chat_history, interaction_number)
             save_chat_history(user_input, user_prompt, st.session_state.resposta_refinada)
         else:
             st.warning("Por favor, busque uma resposta antes de refinar.")
 
     if evaluate_clicked:
         if st.session_state.resposta_assistente and st.session_state.descricao_especialista_ideal:
-            st.session_state.rag_resposta = evaluate_response_with_rag(user_input, user_prompt, st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente, model_name, temperature, groq_api_key, chat_history)
+            st.session_state.rag_resposta = evaluate_response_with_rag(user_input, user_prompt, st.session_state.descricao_especialista_ideal, st.session_state.descricao_especialista_ideal, st.session_state.resposta_assistente, model_name, temperature, chat_history, interaction_number)
             save_chat_history(user_input, user_prompt, st.session_state.rag_resposta)
         else:
             st.warning("Por favor, busque uma resposta e forneça uma descrição do especialista antes de avaliar com RAG.")
@@ -713,7 +449,6 @@ with col2:
         if st.session_state.rag_resposta:
             st.write(f"\n**#Avaliação com RAG:**\n{st.session_state.rag_resposta}")
 
-    # Exibe o histórico do chat
     st.markdown("### Histórico do Chat")
     for entry in chat_history:
         st.write(f"**Entrada do Usuário:** {entry['user_input']}")
@@ -722,10 +457,10 @@ with col2:
         st.markdown("---")
 
 if refresh_clicked:
-    clear_chat_history()  # Limpa o arquivo de histórico de chat
-    st.session_state.clear()  # Reseta o estado do Streamlit
-    st.experimental_rerun()  # Recarrega a aplicação Streamlit
-#_________________________________________________
+    clear_chat_history()
+    st.session_state.clear()
+    st.rerun()
+
 # Sidebar com manual de uso
 st.sidebar.image("logo.png", width=200)
 with st.sidebar.expander("Insights do Código"):
@@ -753,9 +488,7 @@ with st.sidebar.expander("Insights do Código"):
 
     Em resumo, o código é uma aplicação inovadora que combina modelos de linguagem com a API Groq para proporcionar respostas precisas e personalizadas. No entanto, é importante considerar as limitações do aplicativo e trabalhar para melhorá-lo ainda mais.
     """)
-#_________________________________________________________________
 
-       
     # Informações de contato
     st.sidebar.image("eu.ico", width=80)
     st.sidebar.write("""
@@ -768,3 +501,48 @@ with st.sidebar.expander("Insights do Código"):
 
     Instagram: [https://www.instagram.com/marceloclaro.geomaker/](https://www.instagram.com/marceloclaro.geomaker/)
     """)
+
+# Carrega o uso da API e plota o histograma
+api_usage = load_api_usage()
+if api_usage:
+    plot_api_usage(api_usage)
+
+# Botão para resetar os gráficos
+if st.sidebar.button("Resetar Gráficos"):
+    reset_api_usage()
+
+# Controle de Áudio
+st.sidebar.title("Controle de Áudio")
+
+# Lista de arquivos MP3
+mp3_files = {
+    "Entenda o projeto:": "rag (1).mp3"
+}
+
+# Controle de seleção de música
+selected_mp3 = st.sidebar.radio("Escolha uma música", list(mp3_files.keys()))
+
+# Opção de loop
+loop = st.sidebar.checkbox("Repetir música")
+
+# Botão de play
+play_button = st.sidebar.button("Play")
+
+# Carregar e exibir o player de áudio
+audio_placeholder = st.sidebar.empty()
+if selected_mp3 and play_button:
+    mp3_path = mp3_files[selected_mp3]
+    try:
+        with open(mp3_path, "rb") as audio_file:
+            audio_bytes = audio_file.read()
+            audio_base64 = base64.b64encode(audio_bytes).decode('utf-8')
+            loop_attr = "loop" if loop else ""
+            audio_html = f"""
+            <audio id="audio-player" controls autoplay {loop_attr}>
+              <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mp3">
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+            """
+            audio_placeholder.markdown(audio_html, unsafe_allow_html=True)
+    except FileNotFoundError:
+        audio_placeholder.error(f"Arquivo {mp3_path} não encontrado.")
